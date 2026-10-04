@@ -12,6 +12,14 @@
   --bordure: rgba(11, 11, 11, 0.10);
   --serie-1: #2a78d6;      /* créations, entreprises actives */
   --serie-2: #eb6834;      /* fermetures */
+  --serie-3: #1baf7a;
+  --serie-4: #eda100;
+  --serie-5: #e87ba4;
+  --neutre: #b4b2a9;       /* « toutes activités », comparaison */
+  /* échelle bleue (peu → beaucoup) */
+  --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf; --seq-6: #104281;
+  /* échelle baisse (rouge) ↔ hausse (bleu), gris au milieu */
+  --div-baisse-forte: #d03b3b; --div-baisse: #f2a7a5; --div-stable: #e1e0d9; --div-hausse: #9ec5f4; --div-hausse-forte: #2a78d6;
   --hausse: #0ca30c;
   --baisse: #d03b3b;
   --stable: #898781;
@@ -32,6 +40,12 @@
     --bordure: rgba(255, 255, 255, 0.10);
     --serie-1: #3987e5;
     --serie-2: #d95926;
+    --serie-3: #199e70;
+    --serie-4: #c98500;
+    --serie-5: #d55181;
+    --neutre: #6b6a64;
+    --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
+    --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #383835; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
     --alerte-fond: #2e2410;
   }
 }
@@ -48,6 +62,12 @@
   --bordure: rgba(255, 255, 255, 0.10);
   --serie-1: #3987e5;
   --serie-2: #d95926;
+  --serie-3: #199e70;
+  --serie-4: #c98500;
+  --serie-5: #d55181;
+  --neutre: #6b6a64;
+  --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
+  --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #383835; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
   --alerte-fond: #2e2410;
 }
 
@@ -192,7 +212,7 @@ input[type="search"]:focus, select:focus { outline: 2px solid var(--serie-1); ou
 /* Tuiles de chiffres clés */
 .tuiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -263,3 +283,55 @@ td { font-variant-numeric: tabular-nums; }
 .sources li { margin-bottom: 4px; }
 .sources a { color: inherit; }
 #date-calcul { margin-top: 16px; font-size: 0.85rem; }
+
+/* --- Blocs du secteur ------------------------------------------------------------ */
+
+.bloc { margin: 32px 0 16px; }
+.titre-bloc { font-size: 1.25rem; margin: 0 0 12px; }
+figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
+.zone-basse { height: 200px; }
+
+/* Portrait : barres empilées à 100 % */
+.portrait { display: flex; flex-direction: column; gap: 18px; }
+.portrait-titre { font-size: 0.85rem; color: var(--texte-secondaire); margin: 0 0 6px; }
+.barre-empilee { display: flex; height: 14px; gap: 2px; }
+.barre-empilee span { display: block; height: 100%; min-width: 2px; }
+.barre-empilee span:first-child { border-radius: 4px 0 0 4px; }
+.barre-empilee span:last-child { border-radius: 0 4px 4px 0; }
+.legende-empilee { display: flex; flex-wrap: wrap; gap: 4px 14px; list-style: none; margin: 8px 0 0; padding: 0; font-size: 0.8rem; color: var(--texte-secondaire); }
+.legende-empilee li { display: flex; align-items: center; gap: 6px; }
+.legende-empilee strong { color: var(--texte); font-weight: 600; }
+.portrait-phrase { font-size: 0.9rem; margin: 0; }
+
+/* Carte */
+.choix-indicateur { display: inline-flex; border: 1px solid var(--axe); border-radius: 8px; overflow: hidden; }
+.choix-indicateur button {
+  font: inherit; font-size: 0.85rem; padding: 6px 12px; border: 0; background: var(--fond-carte);
+  color: var(--texte-secondaire); cursor: pointer;
+}
+.choix-indicateur button[aria-checked="true"] { background: var(--texte); color: var(--fond-carte); }
+.legende-carte { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 0.8rem; color: var(--texte-secondaire); }
+.legende-carte span { display: inline-flex; align-items: center; gap: 5px; }
+.legende-carte i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.conteneur-carte { position: relative; max-width: 640px; margin: 0 auto; }
+#carte-departements { width: 100%; height: auto; display: block; }
+#carte-departements path { stroke: var(--fond-carte); stroke-width: 0.6; cursor: pointer; }
+#carte-departements path:hover { stroke: var(--texte); stroke-width: 1.2; }
+#carte-departements path.choisi { stroke: var(--texte); stroke-width: 2; }
+#carte-departements rect { fill: none; stroke: var(--grille); }
+#carte-departements text { fill: var(--texte-discret); font-size: 9px; }
+.infobulle {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--fond-carte); color: var(--texte); border: 1px solid var(--axe); border-radius: 8px;
+  padding: 8px 10px; font-size: 0.85rem; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); white-space: nowrap;
+}
+.infobulle strong { display: block; }
+
+/* Dans ma ville */
+.resultat-ville { margin-top: 16px; }
+.resultat-ville h3 { margin-bottom: 4px; }
+.comparaison-ville { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0 0; }
+.comparaison-ville div { border: 1px solid var(--bordure); border-radius: 8px; padding: 10px 12px; }
+.comparaison-ville dt { font-size: 0.8rem; color: var(--texte-secondaire); }
+.comparaison-ville dd { margin: 2px 0 0; font-size: 1.3rem; font-weight: 600; }
+.comparaison-ville dd small { display: block; font-size: 0.8rem; font-weight: 400; color: var(--texte-secondaire); }

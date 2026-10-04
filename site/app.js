@@ -1,69 +1,40 @@
-// BizCheck — affichage d'un secteur à partir des fichiers JSON de donnees/
-// (produits par bizcheck.py). Aucune donnée n'est écrite à la main ici.
+// BizCheck — page d'un secteur, à partir des fichiers JSON de donnees/ (produits par bizcheck.py).
+// Aucune donnée n'est écrite à la main ici.
+//
+// Les autres fichiers : recherche.js (moteur de recherche), graphiques.js (Chart.js),
+// carte.js (carte des départements), ville.js (« Et dans ma ville ? »), outils.js (mise en forme).
 
+import { colorer, preparerCarte } from "./carte.js";
+import { dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie } from "./graphiques.js";
+import {
+  $, decimal, densite, element, formaterDate, lireJson, nombre, pluriel, pourcent, signe,
+} from "./outils.js";
 import { creerIndex, rechercher } from "./recherche.js";
+import { brancherVille, mettreAJourVille } from "./ville.js";
 
-const SEUIL_TENDANCE_PCT = 2; // au-delà de ±2 % sur la période : croissance ou déclin
+const SEUIL_TENDANCE_PCT = 2; // au-delà de ±2 % sur 3 ans : croissance ou déclin
 
-const nombre = new Intl.NumberFormat("fr-FR");
-const dateLongue = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-
-// infos, zones et secteurs sont lus une fois ; chiffres = fichier du secteur affiché
 const etat = {
-  infos: null, zones: null, secteurs: {}, index: null, chiffres: null, zone: "FR", graphiques: [],
-  suggestions: [], suggestionActive: -1,
+  infos: null,        // infos.json : années, sources, limites
+  zones: null,        // zones.json : France, régions, départements (avec population)
+  secteurs: {},       // recherche.json, par code NAF : libellé, notes INSEE
+  classement: {},     // secteurs.json, par code NAF : évolution et rang national
+  tous: null,         // naf/TOUS.json : toutes activités confondues (point de comparaison)
+  index: null,        // index du moteur de recherche
+  chiffres: null,     // naf/<code>.json du secteur affiché
+  zone: "FR",
+  suggestions: [],
+  suggestionActive: -1,
 };
 
-// --- Petits utilitaires -------------------------------------------------------
+// --- Lecture des chiffres --------------------------------------------------------
 
-function $(id) {
-  return document.getElementById(id);
-}
-
-function pourcent(valeur, avecSigne = true) {
-  if (valeur === null || valeur === undefined) return "—";
-  const texte = Math.abs(valeur).toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-  const signe = valeur > 0 ? "+" : valeur < 0 ? "−" : "";
-  return `${avecSigne ? signe : ""}${texte} %`;
-}
-
-function signe(valeur) {
-  return (valeur > 0 ? "+" : valeur < 0 ? "−" : "") + nombre.format(Math.abs(valeur));
-}
-
-function formaterDate(texteIso) {
-  const texte = dateLongue.format(new Date(`${texteIso}T12:00:00`));
-  return texte.replace(/^1 /, "1er "); // « 1er octobre », pas « 1 octobre »
-}
-
-function evolution(indicateurs) {
-  const debut = indicateurs[0].entreprises_actives_fin_annee;
-  const fin = indicateurs[indicateurs.length - 1].entreprises_actives_fin_annee;
-  return debut ? 100 * (fin / debut - 1) : null;
-}
-
-function couleur(nomVariable) {
-  return getComputedStyle(document.documentElement).getPropertyValue(nomVariable).trim();
-}
-
-async function lireJson(chemin) {
-  const reponse = await fetch(chemin);
-  if (!reponse.ok) throw new Error(`${chemin} : ${reponse.status}`);
-  return reponse.json();
-}
-
-function afficherErreur(texte) {
-  $("message-erreur").textContent = texte;
-  $("message-erreur").hidden = false;
-  $("contenu").hidden = true;
-}
-
-// Indicateurs d'une zone, année par année, à partir des nombres bruts du fichier du secteur.
+// Indicateurs année par année d'une zone (10 ans), à partir des nombres bruts d'un fichier.
 // Une zone absente du fichier n'a aucune entreprise du secteur : tout vaut 0.
-function indicateursZone(codeZone) {
-  const brut = etat.chiffres.zones[codeZone];
+function indicateursZone(fichier, codeZone) {
+  const brut = fichier.zones[codeZone];
   return etat.infos.annees.map((annee, i) => {
-    const valeur = (nom) => (brut ? brut[nom][i] : 0);
+    const valeur = (nom) => brut?.[nom]?.[i] ?? 0;
     const activesDebut = valeur("actives_debut");
     const creations = valeur("creations");
     const fermetures = valeur("fermetures");
@@ -80,16 +51,38 @@ function indicateursZone(codeZone) {
   });
 }
 
-// --- Chargement ---------------------------------------------------------------
+// Les 3 dernières années (tendance, chiffres clés)
+function periodePrincipale(indicateurs) {
+  return indicateurs.slice(-etat.infos.nb_annees_principales);
+}
+
+function evolution(indicateurs) {
+  const debut = indicateurs[0].entreprises_actives_fin_annee;
+  const fin = indicateurs[indicateurs.length - 1].entreprises_actives_fin_annee;
+  return debut ? 100 * (fin / debut - 1) : null;
+}
+
+function afficherErreur(texte) {
+  $("message-erreur").textContent = texte;
+  $("message-erreur").hidden = false;
+  $("contenu").hidden = true;
+}
+
+// --- Chargement ---------------------------------------------------------------------
 
 async function demarrer() {
   const parametres = new URLSearchParams(location.search);
   let listeSecteurs;
+  let classement;
+  let fondDeCarte;
   try {
-    [etat.infos, etat.zones, listeSecteurs] = await Promise.all([
+    [etat.infos, etat.zones, listeSecteurs, classement, etat.tous, fondDeCarte] = await Promise.all([
       lireJson("donnees/infos.json"),
       lireJson("donnees/zones.json"),
       lireJson("donnees/recherche.json"),
+      lireJson("donnees/secteurs.json"),
+      lireJson("donnees/naf/TOUS.json"),
+      lireJson("donnees/carte.json"),
     ]);
   } catch (erreur) {
     afficherErreur("Impossible de lire les données. Le site doit être ouvert via le serveur local "
@@ -97,15 +90,15 @@ async function demarrer() {
     return;
   }
   for (const s of listeSecteurs) etat.secteurs[s.code_naf] = s;
+  for (const s of classement) etat.classement[s.code_naf] = s;
   etat.index = creerIndex(listeSecteurs);
 
   etat.zone = etat.zones[parametres.get("zone")] ? parametres.get("zone") : "FR";
   remplirChoixZone();
-  $("choix-zone").addEventListener("change", (e) => {
-    etat.zone = e.target.value;
-    afficher();
-  });
+  $("choix-zone").addEventListener("change", (e) => changerZone(e.target.value));
   brancherRecherche();
+  await preparerCarte(fondDeCarte, changerZone);
+  brancherVille(parametres.get("ville"));
   // Mode clair / sombre changé dans le système : on redessine avec les bonnes couleurs
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", afficher);
 
@@ -131,7 +124,33 @@ async function chargerSecteur(code) {
   afficher();
 }
 
-// --- Recherche ----------------------------------------------------------------
+function changerZone(codeZone) {
+  etat.zone = codeZone;
+  $("choix-zone").value = codeZone;
+  afficher();
+}
+
+function remplirChoixZone() {
+  const zones = etat.zones;
+  const choix = $("choix-zone");
+  choix.add(new Option("France entière", "FR"));
+
+  const groupes = [
+    ["Régions", "region", (a, b) => zones[a].nom.localeCompare(zones[b].nom, "fr"), (c) => zones[c].nom],
+    ["Départements", "departement", (a, b) => a.localeCompare(b, "fr", { numeric: true }),
+      (c) => `${c.slice(1)} — ${zones[c].nom}`],
+  ];
+  for (const [titre, type, tri, libelle] of groupes) {
+    const groupe = document.createElement("optgroup");
+    groupe.label = titre;
+    Object.keys(zones).filter((c) => zones[c].type === type).sort(tri)
+      .forEach((c) => groupe.append(new Option(libelle(c), c)));
+    choix.append(groupe);
+  }
+  choix.value = etat.zone;
+}
+
+// --- Recherche d'activité --------------------------------------------------------------
 
 function brancherRecherche() {
   const champ = $("champ-recherche");
@@ -164,13 +183,6 @@ function brancherRecherche() {
       proposer(champ.value);
     });
   });
-}
-
-function element(balise, classe, texte) {
-  const el = document.createElement(balise);
-  if (classe) el.className = classe;
-  if (texte !== undefined) el.textContent = texte;
-  return el;
 }
 
 function proposer(texte) {
@@ -232,7 +244,7 @@ function choisir(code) {
   chargerSecteur(code);
 }
 
-// --- Ce que regroupe le secteur -----------------------------------------------
+// --- Ce que regroupe le secteur -------------------------------------------------------
 
 function afficherPerimetre(fiche) {
   const comprend = [...fiche.comprend, ...fiche.comprend_aussi];
@@ -260,117 +272,157 @@ function afficherPerimetre(fiche) {
   }
 }
 
-function remplirChoixZone() {
-  const zones = etat.zones;
-  const choix = $("choix-zone");
-  choix.add(new Option("France entière", "FR"));
-
-  const groupes = [
-    ["Régions", "region", (a, b) => zones[a].nom.localeCompare(zones[b].nom, "fr"), (c) => zones[c].nom],
-    ["Départements", "departement", (a, b) => a.localeCompare(b, "fr", { numeric: true }),
-      (c) => `${c.slice(1)} — ${zones[c].nom}`],
-  ];
-  for (const [titre, type, tri, libelle] of groupes) {
-    const groupe = document.createElement("optgroup");
-    groupe.label = titre;
-    Object.keys(zones).filter((c) => zones[c].type === type).sort(tri)
-      .forEach((c) => groupe.append(new Option(libelle(c), c)));
-    choix.append(groupe);
-  }
-  choix.value = etat.zone;
-}
-
-// --- Affichage ----------------------------------------------------------------
-
-// « 0 création », « 1 création », « 2 créations » (en français, 0 et 1 sont au singulier)
-function pluriel(n, singulier, pluriel) {
-  return `${nombre.format(n)} ${n > 1 ? pluriel : singulier}`;
-}
-
-// Phrase de résumé, accordée selon les nombres
-function commentaire(nomZone, premier, dernier, evo) {
-  const actives = dernier.entreprises_actives_fin_annee;
-  const phraseEvolution = evo === null
-    ? `alors qu'il n'y en avait aucune fin ${premier.annee}`
-    : `soit ${pourcent(evo)} par rapport à fin ${premier.annee}`;
-  let comparaison = "";
-  if (etat.zone !== "FR") comparaison = ` (France entière : ${pourcent(evolution(indicateursZone("FR")))})`;
-
-  const { creations, fermetures, solde_net: solde } = dernier;
-  const phraseCreations = creations === 0 ? "aucune entreprise n'a été créée"
-    : pluriel(creations, "entreprise a été créée", "entreprises ont été créées");
-  const phraseFermetures = fermetures === 0 ? "aucune n'a fermé" : `${nombre.format(fermetures)} ${fermetures > 1 ? "ont" : "a"} fermé`;
-  const phraseSolde = solde > 0 ? `il y a donc eu ${pluriel(solde, "création", "créations")} de plus que de fermetures`
-    : solde < 0 ? `il y a donc eu ${pluriel(-solde, "fermeture", "fermetures")} de plus que de créations`
-    : "créations et fermetures s'équilibrent";
-
-  return `${nomZone} : le secteur compte ${pluriel(actives, "entreprise active", "entreprises actives")} `
-    + `fin ${dernier.annee}, ${phraseEvolution}${comparaison}. `
-    + `En ${dernier.annee}, ${phraseCreations} et ${phraseFermetures} : ${phraseSolde}.`;
-}
+// --- Affichage de la page du secteur ------------------------------------------------------
 
 function afficher() {
   if (!etat.chiffres) return;
-  const infos = etat.infos;
   const code = etat.chiffres.code_naf;
   const libelle = etat.secteurs[code].libelle_naf;
   const zone = etat.zones[etat.zone];
-  const ind = indicateursZone(etat.zone);
-  const premier = ind[0];
-  const dernier = ind[ind.length - 1];
-  const evo = evolution(ind);
+  const historique = indicateursZone(etat.chiffres, etat.zone);
+  const periode = periodePrincipale(historique);
+  const premier = periode[0];
+  const dernier = periode[periode.length - 1];
 
   // L'adresse de la page garde le choix : on peut la copier et la partager
-  history.replaceState(null, "", `?naf=${encodeURIComponent(code)}&zone=${etat.zone}`);
+  const adresse = new URL(location.href);
+  adresse.searchParams.set("naf", code);
+  adresse.searchParams.set("zone", etat.zone);
+  history.replaceState(null, "", adresse);
 
   $("message-erreur").hidden = true;
   $("contenu").hidden = false;
   $("titre").textContent = `${libelle} — ${zone.nom}`;
-  $("sous-titre").textContent = `Code NAF ${code} · années ${premier.annee} à ${dernier.annee} `
+  $("sous-titre").textContent = `Code NAF ${code} · tendance de fin ${premier.annee} à fin ${dernier.annee} `
     + `· ce code regroupe plusieurs activités proches.`;
   document.title = `${libelle} — ${zone.nom} · BizCheck`;
 
-  // Avertissement petit effectif
   const alerte = $("alerte-petit-effectif");
-  alerte.hidden = dernier.entreprises_actives_fin_annee >= infos.seuil_petit_effectif;
-  alerte.textContent = `Attention : moins de ${infos.seuil_petit_effectif} entreprises de ce secteur dans `
+  alerte.hidden = dernier.entreprises_actives_fin_annee >= etat.infos.seuil_petit_effectif;
+  alerte.textContent = `Attention : moins de ${etat.infos.seuil_petit_effectif} entreprises de ce secteur dans `
     + `cette zone. Quelques créations ou fermetures suffisent à faire varier fortement les chiffres : `
     + `ils sont à prendre avec prudence.`;
 
-  // Verdict
+  afficherTuiles(code, zone, periode);
+  afficherCommentaire(zone, periode);
+  dessinerEvolution(historique);
+  afficherTableau(historique);
+  afficherSurvieEtPortrait();
+  afficherSaison();
+  colorer(etat.chiffres, etat.zones, etat.zone, etat.infos);
+  mettreAJourVille(code, etat.zones, etat.chiffres);
+  afficherSources();
+}
+
+// --- Chiffres clés -----------------------------------------------------------------------
+
+function tuile(libelle, valeur, details = []) {
+  const bloc = element("div", "tuile");
+  bloc.append(element("p", "tuile-libelle", libelle));
+  if (valeur instanceof Node) bloc.append(valeur);
+  else bloc.append(element("p", "tuile-valeur", valeur));
+  for (const detail of details.filter(Boolean)) bloc.append(element("p", "tuile-detail", detail));
+  return bloc;
+}
+
+function afficherTuiles(code, zone, periode) {
+  const premier = periode[0];
+  const dernier = periode[periode.length - 1];
+  const evo = evolution(periode);
+  const brut = etat.chiffres.zones[etat.zone] || {};
+  const brutTous = etat.tous.zones[etat.zone] || {};
+  const zoneVide = periode.every((r) => r.entreprises_actives_fin_annee === 0 && r.creations === 0 && r.fermetures === 0);
+
+  // Tendance
   let tendance = { texte: "Stable", classe: "stable", icone: "→" };
   if (evo !== null && evo >= SEUIL_TENDANCE_PCT) tendance = { texte: "En croissance", classe: "hausse", icone: "↗" };
   if (evo !== null && evo <= -SEUIL_TENDANCE_PCT) tendance = { texte: "En déclin", classe: "baisse", icone: "↘" };
-  $("verdict").innerHTML = `<span class="icone-verdict ${tendance.classe}" aria-hidden="true">${tendance.icone}</span>`
-    + tendance.texte;
-  $("verdict-detail").textContent = `${pourcent(evo)} d'entreprises actives entre fin ${premier.annee} `
-    + `et fin ${dernier.annee} (stable = entre −${SEUIL_TENDANCE_PCT} % et +${SEUIL_TENDANCE_PCT} %)`;
+  if (zoneVide) tendance = { texte: "Aucune entreprise", classe: "stable", icone: "–" };
+  const verdict = element("p", "verdict");
+  const icone = element("span", `icone-verdict ${tendance.classe}`, tendance.icone);
+  icone.setAttribute("aria-hidden", "true");
+  verdict.append(icone, tendance.texte);
 
-  // Tuiles
-  $("libelle-actives").textContent = `Entreprises actives fin ${dernier.annee}`;
-  $("valeur-actives").textContent = nombre.format(dernier.entreprises_actives_fin_annee);
-  $("detail-actives").textContent = `${signe(dernier.entreprises_actives_fin_annee - premier.entreprises_actives_fin_annee)} `
-    + `depuis fin ${premier.annee}`;
-  $("libelle-creations").textContent = `Créations en ${dernier.annee}`;
-  $("valeur-creations").textContent = nombre.format(dernier.creations);
-  $("detail-creations").textContent = `Taux de création : ${pourcent(dernier.taux_creation_pct, false)}`;
-  $("libelle-fermetures").textContent = `Fermetures en ${dernier.annee}`;
-  $("valeur-fermetures").textContent = nombre.format(dernier.fermetures);
-  $("detail-fermetures").textContent = `Taux de fermeture : ${pourcent(dernier.taux_fermeture_pct, false)}`;
+  const rang = etat.classement[code];
+  const texteRang = rang?.rang
+    ? `Classement national : ${rang.rang}e sur ${rang.nb_classes} secteurs `
+      + `(mieux que ${Math.round((100 * (rang.nb_classes - rang.rang)) / rang.nb_classes)} %)`
+    : null;
+  const evoTous = evolution(periodePrincipale(indicateursZone(etat.tous, etat.zone)));
 
-  // Zone sans aucune entreprise du secteur sur toute la période
-  const zoneVide = ind.every((r) => r.entreprises_actives_fin_annee === 0 && r.creations === 0 && r.fermetures === 0);
+  // Survie à 3 ans
+  const cohorte3 = brut.survie?.["3"]?.[0] ?? 0;
+  const survie3 = cohorte3 >= etat.infos.seuil_petit_effectif ? tauxSurvie(brut.survie, 3) : null;
+
+  // Densité : établissements pour 10 000 habitants
+  const densiteZone = densite(brut.etablissements || 0, zone.population);
+  const densiteFrance = densite(etat.chiffres.zones.FR?.etablissements || 0, etat.zones.FR.population);
+
+  const tuiles = $("tuiles");
+  tuiles.innerHTML = "";
+  tuiles.append(
+    tuile("Tendance", verdict, zoneVide ? ["Pas de tendance calculable dans cette zone."] : [
+      `${pourcent(evo)} d'entreprises actives entre fin ${premier.annee} et fin ${dernier.annee} `
+        + `(toutes activités : ${pourcent(evoTous)})`,
+      texteRang,
+    ]),
+    tuile(`Entreprises actives fin ${dernier.annee}`, nombre.format(dernier.entreprises_actives_fin_annee), [
+      `${signe(dernier.entreprises_actives_fin_annee - premier.entreprises_actives_fin_annee)} depuis fin ${premier.annee}`,
+    ]),
+    tuile(`Créations en ${dernier.annee}`, nombre.format(dernier.creations), [
+      `Taux de création : ${pourcent(dernier.taux_creation_pct, false)}`,
+    ]),
+    tuile(`Fermetures en ${dernier.annee}`, nombre.format(dernier.fermetures), [
+      `Taux de fermeture : ${pourcent(dernier.taux_fermeture_pct, false)}`,
+    ]),
+    tuile("Toujours actives 3 ans après", survie3 === null ? "—" : pourcent(survie3, false, 0), [
+      survie3 === null ? "Trop peu de créations pour un taux fiable."
+        : `Toutes activités : ${pourcent(tauxSurvie(brutTous.survie, 3), false, 0)}`,
+    ]),
+    tuile("Établissements pour 10 000 habitants", decimal(densiteZone), [
+      `${pluriel(brut.etablissements || 0, "établissement actif", "établissements actifs")}`,
+      etat.zone === "FR" ? null : `France : ${decimal(densiteFrance)}`,
+    ]),
+  );
+  // La tuile tendance garde son style particulier
+  tuiles.firstElementChild.classList.add("tuile-verdict");
+}
+
+// Phrase de résumé, accordée selon les nombres
+function afficherCommentaire(zone, periode) {
+  const premier = periode[0];
+  const dernier = periode[periode.length - 1];
+  const zoneVide = periode.every((r) => r.entreprises_actives_fin_annee === 0 && r.creations === 0 && r.fermetures === 0);
   if (zoneVide) {
-    $("verdict").innerHTML = `<span class="icone-verdict stable" aria-hidden="true">–</span>Aucune entreprise`;
-    $("verdict-detail").textContent = "Pas de tendance calculable dans cette zone.";
+    $("commentaire").textContent = `${zone.nom} : aucune entreprise de ce secteur n'y a son siège `
+      + `entre ${premier.annee} et ${dernier.annee}.`;
+    return;
   }
+  const evo = evolution(periode);
+  const actives = dernier.entreprises_actives_fin_annee;
+  const phraseEvolution = evo === null
+    ? `alors qu'il n'y en avait aucune fin ${premier.annee}`
+    : `soit ${pourcent(evo)} par rapport à fin ${premier.annee}`;
+  const comparaison = etat.zone === "FR" ? ""
+    : ` (France entière : ${pourcent(evolution(periodePrincipale(indicateursZone(etat.chiffres, "FR"))))})`;
 
-  $("commentaire").textContent = zoneVide
-    ? `${zone.nom} : aucune entreprise de ce secteur n'y a son siège entre ${premier.annee} et ${dernier.annee}.`
-    : commentaire(zone.nom, premier, dernier, evo);
+  const { creations, fermetures, solde_net: solde } = dernier;
+  const phraseCreations = creations === 0 ? "aucune entreprise n'a été créée"
+    : pluriel(creations, "entreprise a été créée", "entreprises ont été créées");
+  const phraseFermetures = fermetures === 0 ? "aucune n'a fermé"
+    : `${nombre.format(fermetures)} ${fermetures > 1 ? "ont" : "a"} fermé`;
+  const phraseSolde = solde > 0 ? `il y a donc eu ${pluriel(solde, "création", "créations")} de plus que de fermetures`
+    : solde < 0 ? `il y a donc eu ${pluriel(-solde, "fermeture", "fermetures")} de plus que de créations`
+      : "créations et fermetures s'équilibrent";
 
-  // Tableau
-  $("tableau").innerHTML = ind.map((r) => `<tr>
+  $("commentaire").textContent = `${zone.nom} : le secteur compte `
+    + `${pluriel(actives, "entreprise active", "entreprises actives")} fin ${dernier.annee}, `
+    + `${phraseEvolution}${comparaison}. En ${dernier.annee}, ${phraseCreations} et ${phraseFermetures} : `
+    + `${phraseSolde}.`;
+}
+
+function afficherTableau(historique) {
+  $("tableau").innerHTML = [...historique].reverse().map((r) => `<tr>
       <td>${r.annee}</td>
       <td>${nombre.format(r.entreprises_actives_fin_annee)}</td>
       <td>${nombre.format(r.creations)}</td>
@@ -379,133 +431,130 @@ function afficher() {
       <td>${pourcent(r.taux_creation_pct, false)}</td>
       <td>${pourcent(r.taux_fermeture_pct, false)}</td>
     </tr>`).join("");
-
-  afficherSources(infos);
-  dessinerGraphiques(ind);
 }
 
-function afficherSources(infos) {
-  const sirene = infos.sources[0];
-  const dateSirene = formaterDate(sirene.date_actualisation);
-  const debutNote = `Source : INSEE, base Sirene (fichier du ${dateSirene}).`;
-  document.querySelector('[data-limite="actives"]').textContent = `${debutNote} Limite : une entreprise est `
-    + `comptée dans son activité et le département de son siège actuels, pour toutes les années.`;
-  document.querySelector('[data-limite="flux"]').textContent = `${debutNote} Limite : seules les fermetures `
-    + `déclarées sont comptées ; une entreprise sans activité mais non radiée reste « active ».`;
+// --- Survie et portrait ------------------------------------------------------------------
+
+const PORTRAIT = [
+  {
+    cle: "taille", titre: "Taille (salariés)",
+    parts: ["Aucun salarié", "1 à 9", "10 à 49", "50 à 249", "250 et plus"],
+    couleurs: ["--seq-2", "--seq-3", "--seq-4", "--seq-5", "--seq-6"],
+  },
+  {
+    cle: "forme", titre: "Forme juridique",
+    parts: ["Entreprise individuelle", "SARL / EURL", "SAS / SASU", "Autre société", "Association, autre"],
+    couleurs: ["--serie-1", "--serie-2", "--serie-3", "--serie-4", "--serie-5"],
+  },
+  {
+    cle: "age", titre: "Âge",
+    parts: ["Moins de 3 ans", "3 à 10 ans", "Plus de 10 ans"],
+    couleurs: ["--seq-2", "--seq-4", "--seq-6"],
+  },
+];
+
+function barreEmpilee(valeurs, couleurs, libelles) {
+  const total = valeurs.reduce((a, b) => a + b, 0);
+  const barre = element("div", "barre-empilee");
+  barre.setAttribute("role", "img");
+  barre.setAttribute("aria-label", libelles.map((l, i) => `${l} : ${pourcent(total ? (100 * valeurs[i]) / total : 0, false, 0)}`).join(", "));
+  const legende = element("ul", "legende-empilee");
+  valeurs.forEach((valeur, i) => {
+    const part = total ? (100 * valeur) / total : 0;
+    if (part > 0) {
+      const morceau = element("span");
+      morceau.style.flexGrow = String(part);
+      morceau.style.background = `var(${couleurs[i]})`;
+      morceau.title = `${libelles[i]} : ${pourcent(part, false, 0)}`;
+      barre.append(morceau);
+    }
+    const item = element("li");
+    const pastille = element("span", "pastille");
+    pastille.style.background = `var(${couleurs[i]})`;
+    item.append(pastille, `${libelles[i]} `, element("strong", null, pourcent(part, false, 0)));
+    legende.append(item);
+  });
+  return [barre, legende];
+}
+
+function afficherSurvieEtPortrait() {
+  const brut = etat.chiffres.zones[etat.zone] || {};
+  const brutTous = etat.tous.zones[etat.zone] || {};
+  const durees = etat.infos.durees_survie;
+  const derniere = etat.infos.annees[etat.infos.annees.length - 1];
+
+  $("intro-survie").textContent = "Part des entreprises toujours immatriculées 1, 3 et 5 ans après leur création "
+    + `(créées en ${durees.map((d) => derniere - d).join(", ")}).`;
+  dessinerSurvie(durees, brut.survie, brutTous.survie);
+
+  const portrait = $("portrait");
+  portrait.innerHTML = "";
+  const actives = brut.actives_aujourdhui || 0;
+  if (!actives) {
+    portrait.append(element("p", "secondaire", "Aucune entreprise active de ce secteur dans cette zone."));
+    return;
+  }
+  for (const { cle, titre, parts, couleurs } of PORTRAIT) {
+    const groupe = element("div");
+    groupe.append(element("p", "portrait-titre", titre), ...barreEmpilee(brut[cle], couleurs, parts));
+    portrait.append(groupe);
+  }
+  const partReseaux = (100 * (brut.plusieurs_etablissements || 0)) / actives;
+  const partReseauxTous = (100 * (brutTous.plusieurs_etablissements || 0)) / (brutTous.actives_aujourdhui || 1);
+  portrait.append(element("p", "portrait-phrase",
+    `${pourcent(partReseaux, false, 0)} des entreprises ont plusieurs établissements (réseaux, chaînes, `
+    + `boutiques multiples…) — toutes activités : ${pourcent(partReseauxTous, false, 0)}.`));
+}
+
+// --- Saisonnalité -------------------------------------------------------------------------
+
+function afficherSaison() {
+  const annees = etat.infos.annees;
+  const derniere = annees[annees.length - 1];
+  const premiere = derniere - etat.infos.nb_annees_saisonnalite + 1;
+  $("titre-graphique-saison").textContent = `Part des créations de l'année, mois par mois — France entière, `
+    + `${premiere} à ${derniere}`;
+  dessinerSaison(etat.chiffres.zones.FR?.creations_par_mois, etat.tous.zones.FR?.creations_par_mois);
+}
+
+// --- Sources, limites et notes sous les graphiques -------------------------------------
+
+function afficherSources() {
+  const infos = etat.infos;
+  const dateSirene = formaterDate(infos.sources[0].date_actualisation);
+  const source = `Source : INSEE, base Sirene (fichier du ${dateSirene}).`;
+  const notes = {
+    actives: `${source} Limite : une entreprise est comptée dans son activité et le département de son siège `
+      + `actuels, pour toutes les années ; l'historique ancien est approximatif.`,
+    flux: `${source} Limite : seules les fermetures déclarées sont comptées ; une entreprise sans activité `
+      + `mais non radiée reste « active ».`,
+    survie: `${source} Limite : il s'agit de survie administrative (entreprise non radiée). Les micro-entreprises `
+      + `inactives sont radiées d'office au bout de 2 ans, d'autres restent inscrites sans activité.`,
+    portrait: `${source} Entreprises actives à cette date. La taille vient de la déclaration d'effectif la plus `
+      + `récente ; les entrepreneurs individuels et micro-entrepreneurs sont dans « Entreprise individuelle ».`,
+    saison: `${source} Date de création déclarée ; le 1er janvier est souvent choisi par convention, ce qui `
+      + `gonfle janvier.`,
+    carte: `${source} Évolution : entreprises selon leur siège. Densité : établissements actifs du secteur à `
+      + `leur adresse, rapportés à la population légale (INSEE). Cliquez sur un département pour l'afficher.`,
+    ville: `${source} Établissements actifs dont l'activité principale est ce code NAF, à leur adresse dans la `
+      + `commune (arrondissements de Paris, Lyon et Marseille regroupés).`,
+  };
+  for (const [cle, texte] of Object.entries(notes)) {
+    document.querySelector(`[data-note="${cle}"]`).textContent = texte;
+  }
 
   $("liste-sources").innerHTML = "";
-  for (const source of infos.sources) {
-    const li = document.createElement("li");
-    const lien = document.createElement("a");
-    lien.href = source.lien;
-    lien.textContent = source.nom;
-    li.append(lien, ` — version du ${formaterDate(source.date_actualisation)}`);
+  for (const s of infos.sources) {
+    const li = element("li");
+    const lien = element("a", null, s.nom);
+    lien.href = s.lien;
+    li.append(lien, ` — version du ${formaterDate(s.date_actualisation)}`);
     $("liste-sources").append(li);
   }
   $("liste-limites").innerHTML = "";
-  for (const limite of infos.limites) {
-    const li = document.createElement("li");
-    li.textContent = limite;
-    $("liste-limites").append(li);
-  }
+  for (const limite of infos.limites) $("liste-limites").append(element("li", null, limite));
   const [jour, heure] = infos.date_calcul.split(" ");
   $("date-calcul").textContent = `Chiffres calculés le ${formaterDate(jour)} à ${heure}.`;
-}
-
-// --- Graphiques (Chart.js) ----------------------------------------------------
-
-// Affiche la valeur au-dessus de la dernière colonne de chaque série seulement
-const etiquetteDerniereColonne = {
-  id: "etiquetteDerniereColonne",
-  afterDatasetsDraw(graphique) {
-    const ctx = graphique.ctx;
-    ctx.save();
-    ctx.font = "600 12px system-ui, -apple-system, 'Segoe UI', sans-serif";
-    ctx.fillStyle = couleur("--texte");
-    ctx.textAlign = "center";
-    ctx.textBaseline = "bottom";
-    graphique.data.datasets.forEach((serie, i) => {
-      const barres = graphique.getDatasetMeta(i).data;
-      const derniere = barres[barres.length - 1];
-      if (derniere) ctx.fillText(nombre.format(serie.data[serie.data.length - 1]), derniere.x, derniere.y - 4);
-    });
-    ctx.restore();
-  },
-};
-
-function optionsCommunes() {
-  return {
-    responsive: true,
-    maintainAspectRatio: false,
-    layout: { padding: { top: 20 } },
-    interaction: { mode: "index", intersect: false },
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: couleur("--fond-carte"),
-        titleColor: couleur("--texte"),
-        bodyColor: couleur("--texte"),
-        borderColor: couleur("--axe"),
-        borderWidth: 1,
-        padding: 10,
-        boxPadding: 4,
-        callbacks: { label: (c) => ` ${c.dataset.label} : ${nombre.format(c.parsed.y)}` },
-      },
-    },
-    scales: {
-      x: {
-        grid: { display: false },
-        border: { color: couleur("--axe") },
-        ticks: { color: couleur("--texte-discret") },
-      },
-      y: {
-        beginAtZero: true,
-        grid: { color: couleur("--grille") },
-        border: { display: false },
-        ticks: { color: couleur("--texte-discret"), callback: (v) => nombre.format(v), maxTicksLimit: 5 },
-      },
-    },
-  };
-}
-
-function serie(libelle, donnees, variableCouleur) {
-  return {
-    label: libelle,
-    data: donnees,
-    backgroundColor: couleur(variableCouleur),
-    maxBarThickness: 24,
-    borderRadius: { topLeft: 4, topRight: 4 },
-    borderSkipped: "start",
-  };
-}
-
-function dessinerGraphiques(ind) {
-  etat.graphiques.forEach((g) => g.destroy());
-  const annees = ind.map((r) => String(r.annee));
-
-  etat.graphiques = [
-    new Chart($("graphique-actives"), {
-      type: "bar",
-      data: {
-        labels: annees,
-        datasets: [serie("Entreprises actives", ind.map((r) => r.entreprises_actives_fin_annee), "--serie-1")],
-      },
-      options: optionsCommunes(),
-      plugins: [etiquetteDerniereColonne],
-    }),
-    new Chart($("graphique-flux"), {
-      type: "bar",
-      data: {
-        labels: annees,
-        datasets: [
-          serie("Créations", ind.map((r) => r.creations), "--serie-1"),
-          serie("Fermetures", ind.map((r) => r.fermetures), "--serie-2"),
-        ],
-      },
-      options: { ...optionsCommunes(), datasets: { bar: { categoryPercentage: 0.5, barPercentage: 0.9 } } },
-      plugins: [etiquetteDerniereColonne],
-    }),
-  ];
 }
 
 demarrer();

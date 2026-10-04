@@ -2,3661 +2,5857 @@
   {
     "code_naf": "01.11Z",
     "libelle_naf": "Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses",
-    "entreprises_actives": 150232
+    "entreprises_actives": 150232,
+    "evolution_pct": -0.9,
+    "rang": 390,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.12Z",
     "libelle_naf": "Culture du riz",
-    "entreprises_actives": 117
+    "entreprises_actives": 117,
+    "evolution_pct": 1.7,
+    "rang": 239,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.13Z",
     "libelle_naf": "Culture de légumes, de melons, de racines et de tubercules",
-    "entreprises_actives": 34449
+    "entreprises_actives": 34449,
+    "evolution_pct": 2.1,
+    "rang": 228,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.14Z",
     "libelle_naf": "Culture de la canne à sucre",
-    "entreprises_actives": 6038
+    "entreprises_actives": 6038,
+    "evolution_pct": -2.5,
+    "rang": 477,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.15Z",
     "libelle_naf": "Culture du tabac",
-    "entreprises_actives": 164
+    "entreprises_actives": 164,
+    "evolution_pct": -3.0,
+    "rang": 501,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.16Z",
     "libelle_naf": "Culture de plantes à fibres",
-    "entreprises_actives": 414
+    "entreprises_actives": 414,
+    "evolution_pct": 20.0,
+    "rang": 14,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.19Z",
     "libelle_naf": "Autres cultures non permanentes",
-    "entreprises_actives": 10201
+    "entreprises_actives": 10201,
+    "evolution_pct": 1.2,
+    "rang": 267,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.21Z",
     "libelle_naf": "Culture de la vigne",
-    "entreprises_actives": 121519
+    "entreprises_actives": 121519,
+    "evolution_pct": 0.4,
+    "rang": 313,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.22Z",
     "libelle_naf": "Culture de fruits tropicaux et subtropicaux",
-    "entreprises_actives": 6699
+    "entreprises_actives": 6699,
+    "evolution_pct": 5.0,
+    "rang": 136,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.23Z",
     "libelle_naf": "Culture d'agrumes",
-    "entreprises_actives": 616
+    "entreprises_actives": 616,
+    "evolution_pct": 10.2,
+    "rang": 49,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.24Z",
     "libelle_naf": "Culture de fruits à pépins et à noyau",
-    "entreprises_actives": 15894
+    "entreprises_actives": 15894,
+    "evolution_pct": -0.1,
+    "rang": 349,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.25Z",
     "libelle_naf": "Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque",
-    "entreprises_actives": 4938
+    "entreprises_actives": 4938,
+    "evolution_pct": 3.3,
+    "rang": 190,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.26Z",
     "libelle_naf": "Culture de fruits oléagineux",
-    "entreprises_actives": 2683
+    "entreprises_actives": 2683,
+    "evolution_pct": 5.5,
+    "rang": 121,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.27Z",
     "libelle_naf": "Culture de plantes à boissons",
-    "entreprises_actives": 147
+    "entreprises_actives": 147,
+    "evolution_pct": 8.9,
+    "rang": 66,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.28Z",
     "libelle_naf": "Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques",
-    "entreprises_actives": 6023
+    "entreprises_actives": 6023,
+    "evolution_pct": 5.6,
+    "rang": 119,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.29Z",
     "libelle_naf": "Autres cultures permanentes",
-    "entreprises_actives": 2835
+    "entreprises_actives": 2835,
+    "evolution_pct": 18.6,
+    "rang": 20,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.30Z",
     "libelle_naf": "Reproduction de plantes",
-    "entreprises_actives": 6027
+    "entreprises_actives": 6027,
+    "evolution_pct": 3.3,
+    "rang": 191,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.41Z",
     "libelle_naf": "Élevage de vaches laitières",
-    "entreprises_actives": 52391
+    "entreprises_actives": 52391,
+    "evolution_pct": -2.6,
+    "rang": 482,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.42Z",
     "libelle_naf": "Élevage d'autres bovins et de buffles",
-    "entreprises_actives": 79455
+    "entreprises_actives": 79455,
+    "evolution_pct": -1.4,
+    "rang": 416,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.43Z",
     "libelle_naf": "Élevage de chevaux et d'autres équidés",
-    "entreprises_actives": 23223
+    "entreprises_actives": 23223,
+    "evolution_pct": 1.9,
+    "rang": 234,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.44Z",
     "libelle_naf": "Élevage de chameaux et d'autres camélidés",
-    "entreprises_actives": 164
+    "entreprises_actives": 164,
+    "evolution_pct": 5.1,
+    "rang": 134,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.45Z",
     "libelle_naf": "Élevage d'ovins et de caprins",
-    "entreprises_actives": 30685
+    "entreprises_actives": 30685,
+    "evolution_pct": 1.4,
+    "rang": 250,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.46Z",
     "libelle_naf": "Élevage de porcins",
-    "entreprises_actives": 6847
+    "entreprises_actives": 6847,
+    "evolution_pct": -1.6,
+    "rang": 428,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.47Z",
     "libelle_naf": "Élevage de volailles",
-    "entreprises_actives": 14793
+    "entreprises_actives": 14793,
+    "evolution_pct": -0.1,
+    "rang": 350,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.49Z",
     "libelle_naf": "Élevage d'autres animaux",
-    "entreprises_actives": 76531
+    "entreprises_actives": 76531,
+    "evolution_pct": 3.1,
+    "rang": 198,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.50Z",
     "libelle_naf": "Culture et élevage associés",
-    "entreprises_actives": 58669
+    "entreprises_actives": 58669,
+    "evolution_pct": 1.1,
+    "rang": 271,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.61Z",
     "libelle_naf": "Activités de soutien aux cultures",
-    "entreprises_actives": 31387
+    "entreprises_actives": 31387,
+    "evolution_pct": 4.7,
+    "rang": 143,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.62Z",
     "libelle_naf": "Activités de soutien à la production animale",
-    "entreprises_actives": 8646
+    "entreprises_actives": 8646,
+    "evolution_pct": 5.0,
+    "rang": 137,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.63Z",
     "libelle_naf": "Traitement primaire des récoltes",
-    "entreprises_actives": 99
+    "entreprises_actives": 99,
+    "evolution_pct": 2.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.64Z",
     "libelle_naf": "Traitement des semences",
-    "entreprises_actives": 53
+    "entreprises_actives": 53,
+    "evolution_pct": 6.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "01.70Z",
     "libelle_naf": "Chasse, piégeage et services annexes",
-    "entreprises_actives": 464
+    "entreprises_actives": 464,
+    "evolution_pct": -1.5,
+    "rang": 421,
+    "nb_classes": 642
   },
   {
     "code_naf": "02.10Z",
     "libelle_naf": "Sylviculture et autres activités forestières",
-    "entreprises_actives": 36463
+    "entreprises_actives": 36463,
+    "evolution_pct": 4.7,
+    "rang": 144,
+    "nb_classes": 642
   },
   {
     "code_naf": "02.20Z",
     "libelle_naf": "Exploitation forestière",
-    "entreprises_actives": 15063
+    "entreprises_actives": 15063,
+    "evolution_pct": -0.6,
+    "rang": 370,
+    "nb_classes": 642
   },
   {
     "code_naf": "02.30Z",
     "libelle_naf": "Récolte de produits forestiers non ligneux poussant à l'état sauvage",
-    "entreprises_actives": 377
+    "entreprises_actives": 377,
+    "evolution_pct": 1.1,
+    "rang": 272,
+    "nb_classes": 642
   },
   {
     "code_naf": "02.40Z",
     "libelle_naf": "Services de soutien à l'exploitation forestière",
-    "entreprises_actives": 12838
+    "entreprises_actives": 12838,
+    "evolution_pct": 5.0,
+    "rang": 138,
+    "nb_classes": 642
   },
   {
     "code_naf": "03.11Z",
     "libelle_naf": "Pêche en mer",
-    "entreprises_actives": 10076
+    "entreprises_actives": 10076,
+    "evolution_pct": 0.4,
+    "rang": 314,
+    "nb_classes": 642
   },
   {
     "code_naf": "03.12Z",
     "libelle_naf": "Pêche en eau douce",
-    "entreprises_actives": 503
+    "entreprises_actives": 503,
+    "evolution_pct": -0.4,
+    "rang": 364,
+    "nb_classes": 642
   },
   {
     "code_naf": "03.21Z",
     "libelle_naf": "Aquaculture en mer",
-    "entreprises_actives": 3917
+    "entreprises_actives": 3917,
+    "evolution_pct": -2.1,
+    "rang": 453,
+    "nb_classes": 642
   },
   {
     "code_naf": "03.22Z",
     "libelle_naf": "Aquaculture en eau douce",
-    "entreprises_actives": 1472
+    "entreprises_actives": 1472,
+    "evolution_pct": -0.9,
+    "rang": 391,
+    "nb_classes": 642
   },
   {
     "code_naf": "05.10Z",
     "libelle_naf": "Extraction de houille",
-    "entreprises_actives": 8
+    "entreprises_actives": 8,
+    "evolution_pct": -11.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "05.20Z",
     "libelle_naf": "Extraction de lignite",
-    "entreprises_actives": 0
+    "entreprises_actives": 0,
+    "evolution_pct": null,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "06.10Z",
     "libelle_naf": "Extraction de pétrole brut",
-    "entreprises_actives": 135
+    "entreprises_actives": 135,
+    "evolution_pct": 1.5,
+    "rang": 246,
+    "nb_classes": 642
   },
   {
     "code_naf": "06.20Z",
     "libelle_naf": "Extraction de gaz naturel",
-    "entreprises_actives": 9
+    "entreprises_actives": 9,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "07.10Z",
     "libelle_naf": "Extraction de minerais de fer",
-    "entreprises_actives": 15
+    "entreprises_actives": 15,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "07.21Z",
     "libelle_naf": "Extraction de minerais d'uranium et de thorium",
-    "entreprises_actives": 4
+    "entreprises_actives": 4,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "07.29Z",
     "libelle_naf": "Extraction d'autres minerais de métaux non ferreux",
-    "entreprises_actives": 255
+    "entreprises_actives": 255,
+    "evolution_pct": -3.8,
+    "rang": 541,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.11Z",
     "libelle_naf": "Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise",
-    "entreprises_actives": 476
+    "entreprises_actives": 476,
+    "evolution_pct": -3.3,
+    "rang": 516,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.12Z",
     "libelle_naf": "Exploitation de gravières et sablières, extraction d'argiles et de kaolin",
-    "entreprises_actives": 992
+    "entreprises_actives": 992,
+    "evolution_pct": -1.6,
+    "rang": 429,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.91Z",
     "libelle_naf": "Extraction des minéraux chimiques et d'engrais minéraux",
-    "entreprises_actives": 35
+    "entreprises_actives": 35,
+    "evolution_pct": -5.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.92Z",
     "libelle_naf": "Extraction de tourbe",
-    "entreprises_actives": 9
+    "entreprises_actives": 9,
+    "evolution_pct": -10.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.93Z",
     "libelle_naf": "Production de sel",
-    "entreprises_actives": 736
+    "entreprises_actives": 736,
+    "evolution_pct": 0.4,
+    "rang": 315,
+    "nb_classes": 642
   },
   {
     "code_naf": "08.99Z",
     "libelle_naf": "Autres activités extractives n.c.a.",
-    "entreprises_actives": 80
+    "entreprises_actives": 80,
+    "evolution_pct": -4.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "09.10Z",
     "libelle_naf": "Activités de soutien à l'extraction d'hydrocarbures",
-    "entreprises_actives": 79
+    "entreprises_actives": 79,
+    "evolution_pct": 5.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "09.90Z",
     "libelle_naf": "Activités de soutien aux autres industries extractives",
-    "entreprises_actives": 79
+    "entreprises_actives": 79,
+    "evolution_pct": 11.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.11Z",
     "libelle_naf": "Transformation et conservation de la viande de boucherie",
-    "entreprises_actives": 2838
+    "entreprises_actives": 2838,
+    "evolution_pct": -4.8,
+    "rang": 576,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.12Z",
     "libelle_naf": "Transformation et conservation de la viande de volaille",
-    "entreprises_actives": 476
+    "entreprises_actives": 476,
+    "evolution_pct": -3.6,
+    "rang": 532,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.13A",
     "libelle_naf": "Préparation industrielle de produits à base de viande",
-    "entreprises_actives": 968
+    "entreprises_actives": 968,
+    "evolution_pct": -4.3,
+    "rang": 554,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.13B",
     "libelle_naf": "Charcuterie",
-    "entreprises_actives": 3133
+    "entreprises_actives": 3133,
+    "evolution_pct": -6.5,
+    "rang": 613,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.20Z",
     "libelle_naf": "Transformation et conservation de poisson, de crustacés et de mollusques",
-    "entreprises_actives": 723
+    "entreprises_actives": 723,
+    "evolution_pct": -0.7,
+    "rang": 376,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.31Z",
     "libelle_naf": "Transformation et conservation de pommes de terre",
-    "entreprises_actives": 169
+    "entreprises_actives": 169,
+    "evolution_pct": 1.2,
+    "rang": 268,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.32Z",
     "libelle_naf": "Préparation de jus de fruits et légumes",
-    "entreprises_actives": 586
+    "entreprises_actives": 586,
+    "evolution_pct": 0.9,
+    "rang": 284,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.39A",
     "libelle_naf": "Autre transformation et conservation de légumes",
-    "entreprises_actives": 774
+    "entreprises_actives": 774,
+    "evolution_pct": -3.5,
+    "rang": 529,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.39B",
     "libelle_naf": "Transformation et conservation de fruits",
-    "entreprises_actives": 1954
+    "entreprises_actives": 1954,
+    "evolution_pct": -0.8,
+    "rang": 384,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.41A",
     "libelle_naf": "Fabrication d'huiles et graisses brutes",
-    "entreprises_actives": 290
+    "entreprises_actives": 290,
+    "evolution_pct": 2.5,
+    "rang": 216,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.41B",
     "libelle_naf": "Fabrication d'huiles et graisses raffinées",
-    "entreprises_actives": 132
+    "entreprises_actives": 132,
+    "evolution_pct": 3.1,
+    "rang": 199,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.42Z",
     "libelle_naf": "Fabrication de margarine et graisses comestibles similaires",
-    "entreprises_actives": 12
+    "entreprises_actives": 12,
+    "evolution_pct": 20.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.51A",
     "libelle_naf": "Fabrication de lait liquide et de produits frais",
-    "entreprises_actives": 255
+    "entreprises_actives": 255,
+    "evolution_pct": -1.5,
+    "rang": 422,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.51B",
     "libelle_naf": "Fabrication de beurre",
-    "entreprises_actives": 20
+    "entreprises_actives": 20,
+    "evolution_pct": -4.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.51C",
     "libelle_naf": "Fabrication de fromage",
-    "entreprises_actives": 941
+    "entreprises_actives": 941,
+    "evolution_pct": -0.1,
+    "rang": 351,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.51D",
     "libelle_naf": "Fabrication d'autres produits laitiers",
-    "entreprises_actives": 119
+    "entreprises_actives": 119,
+    "evolution_pct": 0.8,
+    "rang": 289,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.52Z",
     "libelle_naf": "Fabrication de glaces et sorbets",
-    "entreprises_actives": 889
+    "entreprises_actives": 889,
+    "evolution_pct": 4.1,
+    "rang": 161,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.61A",
     "libelle_naf": "Meunerie",
-    "entreprises_actives": 456
+    "entreprises_actives": 456,
+    "evolution_pct": -3.4,
+    "rang": 521,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.61B",
     "libelle_naf": "Autres activités du travail des grains",
-    "entreprises_actives": 129
+    "entreprises_actives": 129,
+    "evolution_pct": -4.4,
+    "rang": 558,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.62Z",
     "libelle_naf": "Fabrication de produits amylacés",
-    "entreprises_actives": 22
+    "entreprises_actives": 22,
+    "evolution_pct": -4.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.71A",
     "libelle_naf": "Fabrication industrielle de pain et de pâtisserie fraîche",
-    "entreprises_actives": 1104
+    "entreprises_actives": 1104,
+    "evolution_pct": 1.1,
+    "rang": 273,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.71B",
     "libelle_naf": "Cuisson de produits de boulangerie",
-    "entreprises_actives": 3205
+    "entreprises_actives": 3205,
+    "evolution_pct": -7.6,
+    "rang": 624,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.71C",
     "libelle_naf": "Boulangerie et boulangerie-pâtisserie",
-    "entreprises_actives": 40463
+    "entreprises_actives": 40463,
+    "evolution_pct": 1.1,
+    "rang": 274,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.71D",
     "libelle_naf": "Pâtisserie",
-    "entreprises_actives": 10477
+    "entreprises_actives": 10477,
+    "evolution_pct": 9.3,
+    "rang": 58,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.72Z",
     "libelle_naf": "Fabrication de biscuits, biscottes et pâtisseries de conservation",
-    "entreprises_actives": 5479
+    "entreprises_actives": 5479,
+    "evolution_pct": 16.7,
+    "rang": 24,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.73Z",
     "libelle_naf": "Fabrication de pâtes alimentaires",
-    "entreprises_actives": 494
+    "entreprises_actives": 494,
+    "evolution_pct": -2.0,
+    "rang": 449,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.81Z",
     "libelle_naf": "Fabrication de sucre",
-    "entreprises_actives": 46
+    "entreprises_actives": 46,
+    "evolution_pct": -6.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.82Z",
     "libelle_naf": "Fabrication de cacao, chocolat et de produits de confiserie",
-    "entreprises_actives": 2372
+    "entreprises_actives": 2372,
+    "evolution_pct": 1.4,
+    "rang": 251,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.83Z",
     "libelle_naf": "Transformation du thé et du café",
-    "entreprises_actives": 1384
+    "entreprises_actives": 1384,
+    "evolution_pct": 8.5,
+    "rang": 73,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.84Z",
     "libelle_naf": "Fabrication de condiments et assaisonnements",
-    "entreprises_actives": 528
+    "entreprises_actives": 528,
+    "evolution_pct": 6.9,
+    "rang": 90,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.85Z",
     "libelle_naf": "Fabrication de plats préparés",
-    "entreprises_actives": 2794
+    "entreprises_actives": 2794,
+    "evolution_pct": 1.4,
+    "rang": 252,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.86Z",
     "libelle_naf": "Fabrication d'aliments homogénéisés et diététiques",
-    "entreprises_actives": 225
+    "entreprises_actives": 225,
+    "evolution_pct": -10.0,
+    "rang": 634,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.89Z",
     "libelle_naf": "Fabrication d'autres produits alimentaires n.c.a.",
-    "entreprises_actives": 2329
+    "entreprises_actives": 2329,
+    "evolution_pct": 3.4,
+    "rang": 187,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.91Z",
     "libelle_naf": "Fabrication d'aliments pour animaux de ferme",
-    "entreprises_actives": 397
+    "entreprises_actives": 397,
+    "evolution_pct": -1.0,
+    "rang": 397,
+    "nb_classes": 642
   },
   {
     "code_naf": "10.92Z",
     "libelle_naf": "Fabrication d'aliments pour animaux de compagnie",
-    "entreprises_actives": 288
+    "entreprises_actives": 288,
+    "evolution_pct": 2.9,
+    "rang": 206,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.01Z",
     "libelle_naf": "Production de boissons alcooliques distillées",
-    "entreprises_actives": 1936
+    "entreprises_actives": 1936,
+    "evolution_pct": 4.3,
+    "rang": 155,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.02A",
     "libelle_naf": "Fabrication de vins effervescents",
-    "entreprises_actives": 412
+    "entreprises_actives": 412,
+    "evolution_pct": -1.7,
+    "rang": 434,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.02B",
     "libelle_naf": "Vinification",
-    "entreprises_actives": 1326
+    "entreprises_actives": 1326,
+    "evolution_pct": 2.2,
+    "rang": 226,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.03Z",
     "libelle_naf": "Fabrication de cidre et de vins de fruits",
-    "entreprises_actives": 265
+    "entreprises_actives": 265,
+    "evolution_pct": 3.5,
+    "rang": 184,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.04Z",
     "libelle_naf": "Production d'autres boissons fermentées non distillées",
-    "entreprises_actives": 175
+    "entreprises_actives": 175,
+    "evolution_pct": 5.4,
+    "rang": 124,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.05Z",
     "libelle_naf": "Fabrication de bière",
-    "entreprises_actives": 3184
+    "entreprises_actives": 3184,
+    "evolution_pct": -4.8,
+    "rang": 577,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.06Z",
     "libelle_naf": "Fabrication de malt",
-    "entreprises_actives": 29
+    "entreprises_actives": 29,
+    "evolution_pct": 11.5,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.07A",
     "libelle_naf": "Industrie des eaux de table",
-    "entreprises_actives": 137
+    "entreprises_actives": 137,
+    "evolution_pct": -1.4,
+    "rang": 417,
+    "nb_classes": 642
   },
   {
     "code_naf": "11.07B",
     "libelle_naf": "Production de boissons rafraîchissantes",
-    "entreprises_actives": 601
+    "entreprises_actives": 601,
+    "evolution_pct": 11.1,
+    "rang": 42,
+    "nb_classes": 642
   },
   {
     "code_naf": "12.00Z",
     "libelle_naf": "Fabrication de produits à base de tabac",
-    "entreprises_actives": 38
+    "entreprises_actives": 38,
+    "evolution_pct": -7.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.10Z",
     "libelle_naf": "Préparation de fibres textiles et filature",
-    "entreprises_actives": 495
+    "entreprises_actives": 495,
+    "evolution_pct": -2.8,
+    "rang": 490,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.20Z",
     "libelle_naf": "Tissage",
-    "entreprises_actives": 650
+    "entreprises_actives": 650,
+    "evolution_pct": -5.1,
+    "rang": 586,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.30Z",
     "libelle_naf": "Ennoblissement textile",
-    "entreprises_actives": 2489
+    "entreprises_actives": 2489,
+    "evolution_pct": 9.9,
+    "rang": 51,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.91Z",
     "libelle_naf": "Fabrication d'étoffes à mailles",
-    "entreprises_actives": 795
+    "entreprises_actives": 795,
+    "evolution_pct": 21.6,
+    "rang": 11,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.92Z",
     "libelle_naf": "Fabrication d'articles textiles, sauf habillement",
-    "entreprises_actives": 11707
+    "entreprises_actives": 11707,
+    "evolution_pct": -0.1,
+    "rang": 352,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.93Z",
     "libelle_naf": "Fabrication de tapis et moquettes",
-    "entreprises_actives": 264
+    "entreprises_actives": 264,
+    "evolution_pct": 20.0,
+    "rang": 15,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.94Z",
     "libelle_naf": "Fabrication de ficelles, cordes et filets",
-    "entreprises_actives": 194
+    "entreprises_actives": 194,
+    "evolution_pct": -0.5,
+    "rang": 367,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.95Z",
     "libelle_naf": "Fabrication de non-tissés, sauf habillement",
-    "entreprises_actives": 58
+    "entreprises_actives": 58,
+    "evolution_pct": -10.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.96Z",
     "libelle_naf": "Fabrication d'autres textiles techniques et industriels",
-    "entreprises_actives": 345
+    "entreprises_actives": 345,
+    "evolution_pct": -8.7,
+    "rang": 630,
+    "nb_classes": 642
   },
   {
     "code_naf": "13.99Z",
     "libelle_naf": "Fabrication d'autres textiles n.c.a.",
-    "entreprises_actives": 3087
+    "entreprises_actives": 3087,
+    "evolution_pct": -2.7,
+    "rang": 485,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.11Z",
     "libelle_naf": "Fabrication de vêtements en cuir",
-    "entreprises_actives": 183
+    "entreprises_actives": 183,
+    "evolution_pct": -3.2,
+    "rang": 511,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.12Z",
     "libelle_naf": "Fabrication de vêtements de travail",
-    "entreprises_actives": 116
+    "entreprises_actives": 116,
+    "evolution_pct": -4.1,
+    "rang": 550,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.13Z",
     "libelle_naf": "Fabrication de vêtements de dessus",
-    "entreprises_actives": 26293
+    "entreprises_actives": 26293,
+    "evolution_pct": -1.6,
+    "rang": 430,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.14Z",
     "libelle_naf": "Fabrication de vêtements de dessous",
-    "entreprises_actives": 492
+    "entreprises_actives": 492,
+    "evolution_pct": -4.5,
+    "rang": 560,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.19Z",
     "libelle_naf": "Fabrication d'autres vêtements et accessoires",
-    "entreprises_actives": 11623
+    "entreprises_actives": 11623,
+    "evolution_pct": -1.1,
+    "rang": 407,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.20Z",
     "libelle_naf": "Fabrication d'articles en fourrure",
-    "entreprises_actives": 88
+    "entreprises_actives": 88,
+    "evolution_pct": -9.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.31Z",
     "libelle_naf": "Fabrication d'articles chaussants à mailles",
-    "entreprises_actives": 47
+    "entreprises_actives": 47,
+    "evolution_pct": -19.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "14.39Z",
     "libelle_naf": "Fabrication d'autres articles à mailles",
-    "entreprises_actives": 3148
+    "entreprises_actives": 3148,
+    "evolution_pct": 39.7,
+    "rang": 1,
+    "nb_classes": 642
   },
   {
     "code_naf": "15.11Z",
     "libelle_naf": "Apprêt et tannage des cuirs ; préparation et teinture des fourrures",
-    "entreprises_actives": 153
+    "entreprises_actives": 153,
+    "evolution_pct": -1.3,
+    "rang": 414,
+    "nb_classes": 642
   },
   {
     "code_naf": "15.12Z",
     "libelle_naf": "Fabrication d'articles de voyage, de maroquinerie et de sellerie",
-    "entreprises_actives": 6725
+    "entreprises_actives": 6725,
+    "evolution_pct": 0.8,
+    "rang": 290,
+    "nb_classes": 642
   },
   {
     "code_naf": "15.20Z",
     "libelle_naf": "Fabrication de chaussures",
-    "entreprises_actives": 649
+    "entreprises_actives": 649,
+    "evolution_pct": -5.1,
+    "rang": 587,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.10A",
     "libelle_naf": "Sciage et rabotage du bois, hors imprégnation",
-    "entreprises_actives": 3373
+    "entreprises_actives": 3373,
+    "evolution_pct": -2.4,
+    "rang": 467,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.10B",
     "libelle_naf": "Imprégnation du bois",
-    "entreprises_actives": 922
+    "entreprises_actives": 922,
+    "evolution_pct": -2.8,
+    "rang": 491,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.21Z",
     "libelle_naf": "Fabrication de placage et de panneaux de bois",
-    "entreprises_actives": 215
+    "entreprises_actives": 215,
+    "evolution_pct": -0.9,
+    "rang": 392,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.22Z",
     "libelle_naf": "Fabrication de parquets assemblés",
-    "entreprises_actives": 42
+    "entreprises_actives": 42,
+    "evolution_pct": 7.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.23Z",
     "libelle_naf": "Fabrication de charpentes et d'autres menuiseries",
-    "entreprises_actives": 4480
+    "entreprises_actives": 4480,
+    "evolution_pct": -2.4,
+    "rang": 468,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.24Z",
     "libelle_naf": "Fabrication d'emballages en bois",
-    "entreprises_actives": 1071
+    "entreprises_actives": 1071,
+    "evolution_pct": -2.7,
+    "rang": 486,
+    "nb_classes": 642
   },
   {
     "code_naf": "16.29Z",
     "libelle_naf": "Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie",
-    "entreprises_actives": 13385
+    "entreprises_actives": 13385,
+    "evolution_pct": 4.1,
+    "rang": 162,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.11Z",
     "libelle_naf": "Fabrication de pâte à papier",
-    "entreprises_actives": 25
+    "entreprises_actives": 25,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.12Z",
     "libelle_naf": "Fabrication de papier et de carton",
-    "entreprises_actives": 302
+    "entreprises_actives": 302,
+    "evolution_pct": -2.3,
+    "rang": 459,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.21A",
     "libelle_naf": "Fabrication de carton ondulé",
-    "entreprises_actives": 190
+    "entreprises_actives": 190,
+    "evolution_pct": -6.4,
+    "rang": 610,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.21B",
     "libelle_naf": "Fabrication de cartonnages",
-    "entreprises_actives": 485
+    "entreprises_actives": 485,
+    "evolution_pct": -3.2,
+    "rang": 512,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.21C",
     "libelle_naf": "Fabrication d'emballages en papier",
-    "entreprises_actives": 128
+    "entreprises_actives": 128,
+    "evolution_pct": -4.5,
+    "rang": 561,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.22Z",
     "libelle_naf": "Fabrication d'articles en papier à usage sanitaire ou domestique",
-    "entreprises_actives": 107
+    "entreprises_actives": 107,
+    "evolution_pct": -13.0,
+    "rang": 640,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.23Z",
     "libelle_naf": "Fabrication d'articles de papeterie",
-    "entreprises_actives": 1740
+    "entreprises_actives": 1740,
+    "evolution_pct": 17.2,
+    "rang": 22,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.24Z",
     "libelle_naf": "Fabrication de papiers peints",
-    "entreprises_actives": 49
+    "entreprises_actives": 49,
+    "evolution_pct": -3.9,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "17.29Z",
     "libelle_naf": "Fabrication d'autres articles en papier ou en carton",
-    "entreprises_actives": 1820
+    "entreprises_actives": 1820,
+    "evolution_pct": 1.3,
+    "rang": 259,
+    "nb_classes": 642
   },
   {
     "code_naf": "18.11Z",
     "libelle_naf": "Imprimerie de journaux",
-    "entreprises_actives": 165
+    "entreprises_actives": 165,
+    "evolution_pct": -2.9,
+    "rang": 495,
+    "nb_classes": 642
   },
   {
     "code_naf": "18.12Z",
     "libelle_naf": "Autre imprimerie (labeur)",
-    "entreprises_actives": 10110
+    "entreprises_actives": 10110,
+    "evolution_pct": 3.4,
+    "rang": 188,
+    "nb_classes": 642
   },
   {
     "code_naf": "18.13Z",
     "libelle_naf": "Activités de pré-presse",
-    "entreprises_actives": 16867
+    "entreprises_actives": 16867,
+    "evolution_pct": -2.9,
+    "rang": 496,
+    "nb_classes": 642
   },
   {
     "code_naf": "18.14Z",
     "libelle_naf": "Reliure et activités connexes",
-    "entreprises_actives": 914
+    "entreprises_actives": 914,
+    "evolution_pct": -3.7,
+    "rang": 535,
+    "nb_classes": 642
   },
   {
     "code_naf": "18.20Z",
     "libelle_naf": "Reproduction d'enregistrements",
-    "entreprises_actives": 538
+    "entreprises_actives": 538,
+    "evolution_pct": -9.3,
+    "rang": 632,
+    "nb_classes": 642
   },
   {
     "code_naf": "19.10Z",
     "libelle_naf": "Cokéfaction",
-    "entreprises_actives": 1
+    "entreprises_actives": 1,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "19.20Z",
     "libelle_naf": "Raffinage du pétrole",
-    "entreprises_actives": 81
+    "entreprises_actives": 81,
+    "evolution_pct": -2.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.11Z",
     "libelle_naf": "Fabrication de gaz industriels",
-    "entreprises_actives": 99
+    "entreprises_actives": 99,
+    "evolution_pct": 2.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.12Z",
     "libelle_naf": "Fabrication de colorants et de pigments",
-    "entreprises_actives": 87
+    "entreprises_actives": 87,
+    "evolution_pct": 1.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.13A",
     "libelle_naf": "Enrichissement et retraitement de matières nucléaires",
-    "entreprises_actives": 7
+    "entreprises_actives": 7,
+    "evolution_pct": 16.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.13B",
     "libelle_naf": "Fabrication d'autres produits chimiques inorganiques de base n.c.a.",
-    "entreprises_actives": 103
+    "entreprises_actives": 103,
+    "evolution_pct": -3.7,
+    "rang": 536,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.14Z",
     "libelle_naf": "Fabrication d'autres produits chimiques organiques de base",
-    "entreprises_actives": 404
+    "entreprises_actives": 404,
+    "evolution_pct": -2.2,
+    "rang": 457,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.15Z",
     "libelle_naf": "Fabrication de produits azotés et d'engrais",
-    "entreprises_actives": 197
+    "entreprises_actives": 197,
+    "evolution_pct": 0.0,
+    "rang": 336,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.16Z",
     "libelle_naf": "Fabrication de matières plastiques de base",
-    "entreprises_actives": 413
+    "entreprises_actives": 413,
+    "evolution_pct": -4.8,
+    "rang": 578,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.17Z",
     "libelle_naf": "Fabrication de caoutchouc synthétique",
-    "entreprises_actives": 33
+    "entreprises_actives": 33,
+    "evolution_pct": -2.9,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.20Z",
     "libelle_naf": "Fabrication de pesticides et d'autres produits agrochimiques",
-    "entreprises_actives": 137
+    "entreprises_actives": 137,
+    "evolution_pct": 3.8,
+    "rang": 172,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.30Z",
     "libelle_naf": "Fabrication de peintures, vernis, encres et mastics",
-    "entreprises_actives": 421
+    "entreprises_actives": 421,
+    "evolution_pct": -3.0,
+    "rang": 502,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.41Z",
     "libelle_naf": "Fabrication de savons, détergents et produits d'entretien",
-    "entreprises_actives": 1416
+    "entreprises_actives": 1416,
+    "evolution_pct": -4.3,
+    "rang": 555,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.42Z",
     "libelle_naf": "Fabrication de parfums et de produits pour la toilette",
-    "entreprises_actives": 3514
+    "entreprises_actives": 3514,
+    "evolution_pct": 6.3,
+    "rang": 100,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.51Z",
     "libelle_naf": "Fabrication de produits explosifs",
-    "entreprises_actives": 24
+    "entreprises_actives": 24,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.52Z",
     "libelle_naf": "Fabrication de colles",
-    "entreprises_actives": 60
+    "entreprises_actives": 60,
+    "evolution_pct": -4.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.53Z",
     "libelle_naf": "Fabrication d'huiles essentielles",
-    "entreprises_actives": 400
+    "entreprises_actives": 400,
+    "evolution_pct": -1.0,
+    "rang": 398,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.59Z",
     "libelle_naf": "Fabrication d'autres produits chimiques n.c.a.",
-    "entreprises_actives": 607
+    "entreprises_actives": 607,
+    "evolution_pct": 6.3,
+    "rang": 101,
+    "nb_classes": 642
   },
   {
     "code_naf": "20.60Z",
     "libelle_naf": "Fabrication de fibres artificielles ou synthétiques",
-    "entreprises_actives": 31
+    "entreprises_actives": 31,
+    "evolution_pct": -11.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "21.10Z",
     "libelle_naf": "Fabrication de produits pharmaceutiques de base",
-    "entreprises_actives": 223
+    "entreprises_actives": 223,
+    "evolution_pct": 6.7,
+    "rang": 97,
+    "nb_classes": 642
   },
   {
     "code_naf": "21.20Z",
     "libelle_naf": "Fabrication de préparations pharmaceutiques",
-    "entreprises_actives": 563
+    "entreprises_actives": 563,
+    "evolution_pct": 5.4,
+    "rang": 125,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.11Z",
     "libelle_naf": "Fabrication et rechapage de pneumatiques",
-    "entreprises_actives": 90
+    "entreprises_actives": 90,
+    "evolution_pct": 4.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.19Z",
     "libelle_naf": "Fabrication d'autres articles en caoutchouc",
-    "entreprises_actives": 469
+    "entreprises_actives": 469,
+    "evolution_pct": -2.3,
+    "rang": 460,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.21Z",
     "libelle_naf": "Fabrication de plaques, feuilles, tubes et profilés en matières plastiques",
-    "entreprises_actives": 438
+    "entreprises_actives": 438,
+    "evolution_pct": -4.6,
+    "rang": 567,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.22Z",
     "libelle_naf": "Fabrication d'emballages en matières plastiques",
-    "entreprises_actives": 713
+    "entreprises_actives": 713,
+    "evolution_pct": -2.5,
+    "rang": 478,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.23Z",
     "libelle_naf": "Fabrication d'éléments en matières plastiques pour la construction",
-    "entreprises_actives": 813
+    "entreprises_actives": 813,
+    "evolution_pct": -4.5,
+    "rang": 562,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.29A",
     "libelle_naf": "Fabrication de pièces techniques à base de matières plastiques",
-    "entreprises_actives": 2131
+    "entreprises_actives": 2131,
+    "evolution_pct": 3.0,
+    "rang": 201,
+    "nb_classes": 642
   },
   {
     "code_naf": "22.29B",
     "libelle_naf": "Fabrication de produits de consommation courante en matières plastiques",
-    "entreprises_actives": 2637
+    "entreprises_actives": 2637,
+    "evolution_pct": 26.6,
+    "rang": 8,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.11Z",
     "libelle_naf": "Fabrication de verre plat",
-    "entreprises_actives": 46
+    "entreprises_actives": 46,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.12Z",
     "libelle_naf": "Façonnage et transformation du verre plat",
-    "entreprises_actives": 509
+    "entreprises_actives": 509,
+    "evolution_pct": -1.4,
+    "rang": 418,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.13Z",
     "libelle_naf": "Fabrication de verre creux",
-    "entreprises_actives": 782
+    "entreprises_actives": 782,
+    "evolution_pct": -3.0,
+    "rang": 503,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.14Z",
     "libelle_naf": "Fabrication de fibres de verre",
-    "entreprises_actives": 32
+    "entreprises_actives": 32,
+    "evolution_pct": 3.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.19Z",
     "libelle_naf": "Fabrication et façonnage d'autres articles en verre, y compris verre technique",
-    "entreprises_actives": 1570
+    "entreprises_actives": 1570,
+    "evolution_pct": 5.2,
+    "rang": 130,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.20Z",
     "libelle_naf": "Fabrication de produits réfractaires",
-    "entreprises_actives": 130
+    "entreprises_actives": 130,
+    "evolution_pct": -0.8,
+    "rang": 385,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.31Z",
     "libelle_naf": "Fabrication de carreaux en céramique",
-    "entreprises_actives": 138
+    "entreprises_actives": 138,
+    "evolution_pct": -0.7,
+    "rang": 377,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.32Z",
     "libelle_naf": "Fabrication de briques, tuiles et produits de construction, en terre cuite",
-    "entreprises_actives": 163
+    "entreprises_actives": 163,
+    "evolution_pct": -4.7,
+    "rang": 573,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.41Z",
     "libelle_naf": "Fabrication d'articles céramiques à usage domestique ou ornemental",
-    "entreprises_actives": 8985
+    "entreprises_actives": 8985,
+    "evolution_pct": 10.7,
+    "rang": 43,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.42Z",
     "libelle_naf": "Fabrication d'appareils sanitaires en céramique",
-    "entreprises_actives": 25
+    "entreprises_actives": 25,
+    "evolution_pct": 4.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.43Z",
     "libelle_naf": "Fabrication d'isolateurs et pièces isolantes en céramique",
-    "entreprises_actives": 10
+    "entreprises_actives": 10,
+    "evolution_pct": -9.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.44Z",
     "libelle_naf": "Fabrication d'autres produits céramiques à usage technique",
-    "entreprises_actives": 32
+    "entreprises_actives": 32,
+    "evolution_pct": 6.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.49Z",
     "libelle_naf": "Fabrication d'autres produits céramiques",
-    "entreprises_actives": 449
+    "entreprises_actives": 449,
+    "evolution_pct": 0.7,
+    "rang": 296,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.51Z",
     "libelle_naf": "Fabrication de ciment",
-    "entreprises_actives": 46
+    "entreprises_actives": 46,
+    "evolution_pct": -2.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.52Z",
     "libelle_naf": "Fabrication de chaux et plâtre",
-    "entreprises_actives": 39
+    "entreprises_actives": 39,
+    "evolution_pct": 2.6,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.61Z",
     "libelle_naf": "Fabrication d'éléments en béton pour la construction",
-    "entreprises_actives": 782
+    "entreprises_actives": 782,
+    "evolution_pct": -0.6,
+    "rang": 371,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.62Z",
     "libelle_naf": "Fabrication d'éléments en plâtre pour la construction",
-    "entreprises_actives": 37
+    "entreprises_actives": 37,
+    "evolution_pct": -5.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.63Z",
     "libelle_naf": "Fabrication de béton prêt à l'emploi",
-    "entreprises_actives": 629
+    "entreprises_actives": 629,
+    "evolution_pct": 7.2,
+    "rang": 88,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.64Z",
     "libelle_naf": "Fabrication de mortiers et bétons secs",
-    "entreprises_actives": 46
+    "entreprises_actives": 46,
+    "evolution_pct": -4.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.65Z",
     "libelle_naf": "Fabrication d'ouvrages en fibre-ciment",
-    "entreprises_actives": 20
+    "entreprises_actives": 20,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.69Z",
     "libelle_naf": "Fabrication d'autres ouvrages en béton, en ciment ou en plâtre",
-    "entreprises_actives": 636
+    "entreprises_actives": 636,
+    "evolution_pct": -5.1,
+    "rang": 588,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.70Z",
     "libelle_naf": "Taille, façonnage et finissage de pierres",
-    "entreprises_actives": 4197
+    "entreprises_actives": 4197,
+    "evolution_pct": -2.6,
+    "rang": 483,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.91Z",
     "libelle_naf": "Fabrication de produits abrasifs",
-    "entreprises_actives": 41
+    "entreprises_actives": 41,
+    "evolution_pct": -2.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "23.99Z",
     "libelle_naf": "Fabrication d'autres produits minéraux non métalliques n.c.a.",
-    "entreprises_actives": 531
+    "entreprises_actives": 531,
+    "evolution_pct": 0.0,
+    "rang": 337,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.10Z",
     "libelle_naf": "Sidérurgie",
-    "entreprises_actives": 185
+    "entreprises_actives": 185,
+    "evolution_pct": -1.1,
+    "rang": 408,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.20Z",
     "libelle_naf": "Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier",
-    "entreprises_actives": 402
+    "entreprises_actives": 402,
+    "evolution_pct": 0.0,
+    "rang": 338,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.31Z",
     "libelle_naf": "Étirage à froid de barres",
-    "entreprises_actives": 18
+    "entreprises_actives": 18,
+    "evolution_pct": 5.9,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.32Z",
     "libelle_naf": "Laminage à froid de feuillards",
-    "entreprises_actives": 12
+    "entreprises_actives": 12,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.33Z",
     "libelle_naf": "Profilage à froid par formage ou pliage",
-    "entreprises_actives": 234
+    "entreprises_actives": 234,
+    "evolution_pct": 5.9,
+    "rang": 111,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.34Z",
     "libelle_naf": "Tréfilage à froid",
-    "entreprises_actives": 24
+    "entreprises_actives": 24,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.41Z",
     "libelle_naf": "Production de métaux précieux",
-    "entreprises_actives": 37
+    "entreprises_actives": 37,
+    "evolution_pct": -9.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.42Z",
     "libelle_naf": "Métallurgie de l'aluminium",
-    "entreprises_actives": 184
+    "entreprises_actives": 184,
+    "evolution_pct": 1.1,
+    "rang": 275,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.43Z",
     "libelle_naf": "Métallurgie du plomb, du zinc ou de l'étain",
-    "entreprises_actives": 47
+    "entreprises_actives": 47,
+    "evolution_pct": -13.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.44Z",
     "libelle_naf": "Métallurgie du cuivre",
-    "entreprises_actives": 33
+    "entreprises_actives": 33,
+    "evolution_pct": -5.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.45Z",
     "libelle_naf": "Métallurgie des autres métaux non ferreux",
-    "entreprises_actives": 206
+    "entreprises_actives": 206,
+    "evolution_pct": 6.2,
+    "rang": 102,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.46Z",
     "libelle_naf": "Élaboration et transformation de matières nucléaires",
-    "entreprises_actives": 15
+    "entreprises_actives": 15,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.51Z",
     "libelle_naf": "Fonderie de fonte",
-    "entreprises_actives": 97
+    "entreprises_actives": 97,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.52Z",
     "libelle_naf": "Fonderie d'acier",
-    "entreprises_actives": 76
+    "entreprises_actives": 76,
+    "evolution_pct": -3.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.53Z",
     "libelle_naf": "Fonderie de métaux légers",
-    "entreprises_actives": 208
+    "entreprises_actives": 208,
+    "evolution_pct": -3.3,
+    "rang": 517,
+    "nb_classes": 642
   },
   {
     "code_naf": "24.54Z",
     "libelle_naf": "Fonderie d'autres métaux non ferreux",
-    "entreprises_actives": 203
+    "entreprises_actives": 203,
+    "evolution_pct": -3.3,
+    "rang": 518,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.11Z",
     "libelle_naf": "Fabrication de structures métalliques et de parties de structures",
-    "entreprises_actives": 6438
+    "entreprises_actives": 6438,
+    "evolution_pct": -0.0,
+    "rang": 339,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.12Z",
     "libelle_naf": "Fabrication de portes et fenêtres en métal",
-    "entreprises_actives": 2512
+    "entreprises_actives": 2512,
+    "evolution_pct": -3.8,
+    "rang": 542,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.21Z",
     "libelle_naf": "Fabrication de radiateurs et de chaudières pour le chauffage central",
-    "entreprises_actives": 86
+    "entreprises_actives": 86,
+    "evolution_pct": -6.5,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.29Z",
     "libelle_naf": "Fabrication d'autres réservoirs, citernes et conteneurs métalliques",
-    "entreprises_actives": 156
+    "entreprises_actives": 156,
+    "evolution_pct": -2.5,
+    "rang": 479,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.30Z",
     "libelle_naf": "Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central",
-    "entreprises_actives": 71
+    "entreprises_actives": 71,
+    "evolution_pct": -5.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.40Z",
     "libelle_naf": "Fabrication d'armes et de munitions",
-    "entreprises_actives": 213
+    "entreprises_actives": 213,
+    "evolution_pct": 1.4,
+    "rang": 253,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.50A",
     "libelle_naf": "Forge, estampage, matriçage ; métallurgie des poudres",
-    "entreprises_actives": 2018
+    "entreprises_actives": 2018,
+    "evolution_pct": -4.9,
+    "rang": 581,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.50B",
     "libelle_naf": "Découpage, emboutissage",
-    "entreprises_actives": 1478
+    "entreprises_actives": 1478,
+    "evolution_pct": 0.5,
+    "rang": 308,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.61Z",
     "libelle_naf": "Traitement et revêtement des métaux",
-    "entreprises_actives": 3061
+    "entreprises_actives": 3061,
+    "evolution_pct": -0.6,
+    "rang": 372,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.62A",
     "libelle_naf": "Décolletage",
-    "entreprises_actives": 532
+    "entreprises_actives": 532,
+    "evolution_pct": -4.3,
+    "rang": 556,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.62B",
     "libelle_naf": "Mécanique industrielle",
-    "entreprises_actives": 8503
+    "entreprises_actives": 8503,
+    "evolution_pct": -1.6,
+    "rang": 431,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.71Z",
     "libelle_naf": "Fabrication de coutellerie",
-    "entreprises_actives": 1591
+    "entreprises_actives": 1591,
+    "evolution_pct": 6.2,
+    "rang": 103,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.72Z",
     "libelle_naf": "Fabrication de serrures et de ferrures",
-    "entreprises_actives": 510
+    "entreprises_actives": 510,
+    "evolution_pct": -2.1,
+    "rang": 454,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.73A",
     "libelle_naf": "Fabrication de moules et modèles",
-    "entreprises_actives": 670
+    "entreprises_actives": 670,
+    "evolution_pct": -5.9,
+    "rang": 604,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.73B",
     "libelle_naf": "Fabrication d'autres outillages",
-    "entreprises_actives": 713
+    "entreprises_actives": 713,
+    "evolution_pct": -2.1,
+    "rang": 455,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.91Z",
     "libelle_naf": "Fabrication de fûts et emballages métalliques similaires",
-    "entreprises_actives": 16
+    "entreprises_actives": 16,
+    "evolution_pct": -11.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.92Z",
     "libelle_naf": "Fabrication d'emballages métalliques légers",
-    "entreprises_actives": 76
+    "entreprises_actives": 76,
+    "evolution_pct": -1.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.93Z",
     "libelle_naf": "Fabrication d'articles en fils métalliques, de chaînes et de ressorts",
-    "entreprises_actives": 426
+    "entreprises_actives": 426,
+    "evolution_pct": -2.3,
+    "rang": 461,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.94Z",
     "libelle_naf": "Fabrication de vis et de boulons",
-    "entreprises_actives": 132
+    "entreprises_actives": 132,
+    "evolution_pct": -1.5,
+    "rang": 423,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.99A",
     "libelle_naf": "Fabrication d'articles métalliques ménagers",
-    "entreprises_actives": 233
+    "entreprises_actives": 233,
+    "evolution_pct": -4.9,
+    "rang": 582,
+    "nb_classes": 642
   },
   {
     "code_naf": "25.99B",
     "libelle_naf": "Fabrication d'autres articles métalliques",
-    "entreprises_actives": 2828
+    "entreprises_actives": 2828,
+    "evolution_pct": 3.4,
+    "rang": 189,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.11Z",
     "libelle_naf": "Fabrication de composants électroniques",
-    "entreprises_actives": 734
+    "entreprises_actives": 734,
+    "evolution_pct": 2.8,
+    "rang": 209,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.12Z",
     "libelle_naf": "Fabrication de cartes électroniques assemblées",
-    "entreprises_actives": 688
+    "entreprises_actives": 688,
+    "evolution_pct": -0.6,
+    "rang": 373,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.20Z",
     "libelle_naf": "Fabrication d'ordinateurs et d'équipements périphériques",
-    "entreprises_actives": 527
+    "entreprises_actives": 527,
+    "evolution_pct": 2.1,
+    "rang": 229,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.30Z",
     "libelle_naf": "Fabrication d'équipements de communication",
-    "entreprises_actives": 550
+    "entreprises_actives": 550,
+    "evolution_pct": -2.8,
+    "rang": 492,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.40Z",
     "libelle_naf": "Fabrication de produits électroniques grand public",
-    "entreprises_actives": 772
+    "entreprises_actives": 772,
+    "evolution_pct": 8.9,
+    "rang": 67,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.51A",
     "libelle_naf": "Fabrication d'équipements d'aide à la navigation",
-    "entreprises_actives": 143
+    "entreprises_actives": 143,
+    "evolution_pct": -3.4,
+    "rang": 522,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.51B",
     "libelle_naf": "Fabrication d'instrumentation scientifique et technique",
-    "entreprises_actives": 995
+    "entreprises_actives": 995,
+    "evolution_pct": -0.9,
+    "rang": 393,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.52Z",
     "libelle_naf": "Horlogerie",
-    "entreprises_actives": 466
+    "entreprises_actives": 466,
+    "evolution_pct": 3.3,
+    "rang": 192,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.60Z",
     "libelle_naf": "Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques",
-    "entreprises_actives": 205
+    "entreprises_actives": 205,
+    "evolution_pct": 6.2,
+    "rang": 104,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.70Z",
     "libelle_naf": "Fabrication de matériels optique et photographique",
-    "entreprises_actives": 287
+    "entreprises_actives": 287,
+    "evolution_pct": 1.4,
+    "rang": 254,
+    "nb_classes": 642
   },
   {
     "code_naf": "26.80Z",
     "libelle_naf": "Fabrication de supports magnétiques et optiques",
-    "entreprises_actives": 27
+    "entreprises_actives": 27,
+    "evolution_pct": 3.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.11Z",
     "libelle_naf": "Fabrication de moteurs, génératrices et transformateurs électriques",
-    "entreprises_actives": 295
+    "entreprises_actives": 295,
+    "evolution_pct": -1.0,
+    "rang": 399,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.12Z",
     "libelle_naf": "Fabrication de matériel de distribution et de commande électrique",
-    "entreprises_actives": 626
+    "entreprises_actives": 626,
+    "evolution_pct": 1.3,
+    "rang": 260,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.20Z",
     "libelle_naf": "Fabrication de piles et d'accumulateurs électriques",
-    "entreprises_actives": 152
+    "entreprises_actives": 152,
+    "evolution_pct": 16.0,
+    "rang": 26,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.31Z",
     "libelle_naf": "Fabrication de câbles de fibres optiques",
-    "entreprises_actives": 56
+    "entreprises_actives": 56,
+    "evolution_pct": -9.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.32Z",
     "libelle_naf": "Fabrication d'autres fils et câbles électroniques ou électriques",
-    "entreprises_actives": 178
+    "entreprises_actives": 178,
+    "evolution_pct": -4.8,
+    "rang": 579,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.33Z",
     "libelle_naf": "Fabrication de matériel d'installation électrique",
-    "entreprises_actives": 235
+    "entreprises_actives": 235,
+    "evolution_pct": 0.4,
+    "rang": 316,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.40Z",
     "libelle_naf": "Fabrication d'appareils d'éclairage électrique",
-    "entreprises_actives": 1976
+    "entreprises_actives": 1976,
+    "evolution_pct": -2.3,
+    "rang": 462,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.51Z",
     "libelle_naf": "Fabrication d'appareils électroménagers",
-    "entreprises_actives": 175
+    "entreprises_actives": 175,
+    "evolution_pct": 1.7,
+    "rang": 240,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.52Z",
     "libelle_naf": "Fabrication d'appareils ménagers non électriques",
-    "entreprises_actives": 123
+    "entreprises_actives": 123,
+    "evolution_pct": -0.8,
+    "rang": 386,
+    "nb_classes": 642
   },
   {
     "code_naf": "27.90Z",
     "libelle_naf": "Fabrication d'autres matériels électriques",
-    "entreprises_actives": 811
+    "entreprises_actives": 811,
+    "evolution_pct": 1.4,
+    "rang": 255,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.11Z",
     "libelle_naf": "Fabrication de moteurs et turbines, à l'exception des moteurs d'avions et de véhicules",
-    "entreprises_actives": 178
+    "entreprises_actives": 178,
+    "evolution_pct": 3.5,
+    "rang": 185,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.12Z",
     "libelle_naf": "Fabrication d'équipements hydrauliques et pneumatiques",
-    "entreprises_actives": 428
+    "entreprises_actives": 428,
+    "evolution_pct": 5.2,
+    "rang": 131,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.13Z",
     "libelle_naf": "Fabrication d'autres pompes et compresseurs",
-    "entreprises_actives": 228
+    "entreprises_actives": 228,
+    "evolution_pct": 3.2,
+    "rang": 195,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.14Z",
     "libelle_naf": "Fabrication d'autres articles de robinetterie",
-    "entreprises_actives": 179
+    "entreprises_actives": 179,
+    "evolution_pct": 0.6,
+    "rang": 303,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.15Z",
     "libelle_naf": "Fabrication d'engrenages et d'organes mécaniques de transmission",
-    "entreprises_actives": 143
+    "entreprises_actives": 143,
+    "evolution_pct": 1.4,
+    "rang": 256,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.21Z",
     "libelle_naf": "Fabrication de fours et brûleurs",
-    "entreprises_actives": 150
+    "entreprises_actives": 150,
+    "evolution_pct": 1.4,
+    "rang": 257,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.22Z",
     "libelle_naf": "Fabrication de matériel de levage et de manutention",
-    "entreprises_actives": 772
+    "entreprises_actives": 772,
+    "evolution_pct": -0.1,
+    "rang": 353,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.23Z",
     "libelle_naf": "Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques)",
-    "entreprises_actives": 46
+    "entreprises_actives": 46,
+    "evolution_pct": -2.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.24Z",
     "libelle_naf": "Fabrication d'outillage portatif à moteur incorporé",
-    "entreprises_actives": 19
+    "entreprises_actives": 19,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.25Z",
     "libelle_naf": "Fabrication d'équipements aérauliques et frigorifiques industriels",
-    "entreprises_actives": 1119
+    "entreprises_actives": 1119,
+    "evolution_pct": -2.7,
+    "rang": 487,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.29A",
     "libelle_naf": "Fabrication d'équipements d'emballage, de conditionnement et de pesage",
-    "entreprises_actives": 257
+    "entreprises_actives": 257,
+    "evolution_pct": -0.8,
+    "rang": 387,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.29B",
     "libelle_naf": "Fabrication d'autres machines d'usage général",
-    "entreprises_actives": 817
+    "entreprises_actives": 817,
+    "evolution_pct": 0.2,
+    "rang": 328,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.30Z",
     "libelle_naf": "Fabrication de machines agricoles et forestières",
-    "entreprises_actives": 769
+    "entreprises_actives": 769,
+    "evolution_pct": -1.2,
+    "rang": 412,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.41Z",
     "libelle_naf": "Fabrication de machines-outils pour le travail des métaux",
-    "entreprises_actives": 290
+    "entreprises_actives": 290,
+    "evolution_pct": -0.7,
+    "rang": 378,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.49Z",
     "libelle_naf": "Fabrication d'autres machines-outils",
-    "entreprises_actives": 236
+    "entreprises_actives": 236,
+    "evolution_pct": 1.7,
+    "rang": 241,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.91Z",
     "libelle_naf": "Fabrication de machines pour la métallurgie",
-    "entreprises_actives": 64
+    "entreprises_actives": 64,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.92Z",
     "libelle_naf": "Fabrication de machines pour l'extraction ou la construction",
-    "entreprises_actives": 151
+    "entreprises_actives": 151,
+    "evolution_pct": 0.7,
+    "rang": 297,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.93Z",
     "libelle_naf": "Fabrication de machines pour l'industrie agro-alimentaire",
-    "entreprises_actives": 529
+    "entreprises_actives": 529,
+    "evolution_pct": -1.7,
+    "rang": 435,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.94Z",
     "libelle_naf": "Fabrication de machines pour les industries textiles",
-    "entreprises_actives": 100
+    "entreprises_actives": 100,
+    "evolution_pct": -5.7,
+    "rang": 599,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.95Z",
     "libelle_naf": "Fabrication de machines pour les industries du papier et du carton",
-    "entreprises_actives": 63
+    "entreprises_actives": 63,
+    "evolution_pct": 1.6,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.96Z",
     "libelle_naf": "Fabrication de machines pour le travail du caoutchouc ou des plastiques",
-    "entreprises_actives": 98
+    "entreprises_actives": 98,
+    "evolution_pct": 16.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.99A",
     "libelle_naf": "Fabrication de machines d'imprimerie",
-    "entreprises_actives": 65
+    "entreprises_actives": 65,
+    "evolution_pct": 1.6,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "28.99B",
     "libelle_naf": "Fabrication d'autres machines spécialisées",
-    "entreprises_actives": 1385
+    "entreprises_actives": 1385,
+    "evolution_pct": 9.2,
+    "rang": 60,
+    "nb_classes": 642
   },
   {
     "code_naf": "29.10Z",
     "libelle_naf": "Construction de véhicules automobiles",
-    "entreprises_actives": 499
+    "entreprises_actives": 499,
+    "evolution_pct": 1.6,
+    "rang": 242,
+    "nb_classes": 642
   },
   {
     "code_naf": "29.20Z",
     "libelle_naf": "Fabrication de carrosseries et remorques",
-    "entreprises_actives": 2117
+    "entreprises_actives": 2117,
+    "evolution_pct": 1.2,
+    "rang": 269,
+    "nb_classes": 642
   },
   {
     "code_naf": "29.31Z",
     "libelle_naf": "Fabrication d'équipements électriques et électroniques automobiles",
-    "entreprises_actives": 187
+    "entreprises_actives": 187,
+    "evolution_pct": 6.9,
+    "rang": 91,
+    "nb_classes": 642
   },
   {
     "code_naf": "29.32Z",
     "libelle_naf": "Fabrication d'autres équipements automobiles",
-    "entreprises_actives": 1088
+    "entreprises_actives": 1088,
+    "evolution_pct": 4.6,
+    "rang": 148,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.11Z",
     "libelle_naf": "Construction de navires et de structures flottantes",
-    "entreprises_actives": 425
+    "entreprises_actives": 425,
+    "evolution_pct": 1.0,
+    "rang": 277,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.12Z",
     "libelle_naf": "Construction de bateaux de plaisance",
-    "entreprises_actives": 720
+    "entreprises_actives": 720,
+    "evolution_pct": -1.9,
+    "rang": 443,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.20Z",
     "libelle_naf": "Construction de locomotives et d'autre matériel ferroviaire roulant",
-    "entreprises_actives": 85
+    "entreprises_actives": 85,
+    "evolution_pct": 3.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.30Z",
     "libelle_naf": "Construction aéronautique et spatiale",
-    "entreprises_actives": 527
+    "entreprises_actives": 527,
+    "evolution_pct": 5.2,
+    "rang": 132,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.40Z",
     "libelle_naf": "Construction de véhicules militaires de combat",
-    "entreprises_actives": 7
+    "entreprises_actives": 7,
+    "evolution_pct": 16.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.91Z",
     "libelle_naf": "Fabrication de motocycles",
-    "entreprises_actives": 190
+    "entreprises_actives": 190,
+    "evolution_pct": -1.0,
+    "rang": 400,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.92Z",
     "libelle_naf": "Fabrication de bicyclettes et de véhicules pour invalides",
-    "entreprises_actives": 385
+    "entreprises_actives": 385,
+    "evolution_pct": 0.5,
+    "rang": 309,
+    "nb_classes": 642
   },
   {
     "code_naf": "30.99Z",
     "libelle_naf": "Fabrication d'autres équipements de transport n.c.a.",
-    "entreprises_actives": 63
+    "entreprises_actives": 63,
+    "evolution_pct": -7.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "31.01Z",
     "libelle_naf": "Fabrication de meubles de bureau et de magasin",
-    "entreprises_actives": 1124
+    "entreprises_actives": 1124,
+    "evolution_pct": -5.0,
+    "rang": 585,
+    "nb_classes": 642
   },
   {
     "code_naf": "31.02Z",
     "libelle_naf": "Fabrication de meubles de cuisine",
-    "entreprises_actives": 1141
+    "entreprises_actives": 1141,
+    "evolution_pct": -4.7,
+    "rang": 574,
+    "nb_classes": 642
   },
   {
     "code_naf": "31.03Z",
     "libelle_naf": "Fabrication de matelas",
-    "entreprises_actives": 227
+    "entreprises_actives": 227,
+    "evolution_pct": -5.4,
+    "rang": 594,
+    "nb_classes": 642
   },
   {
     "code_naf": "31.09A",
     "libelle_naf": "Fabrication de sièges d'ameublement d'intérieur",
-    "entreprises_actives": 1010
+    "entreprises_actives": 1010,
+    "evolution_pct": -6.7,
+    "rang": 615,
+    "nb_classes": 642
   },
   {
     "code_naf": "31.09B",
     "libelle_naf": "Fabrication d'autres meubles et industries connexes de l'ameublement",
-    "entreprises_actives": 16007
+    "entreprises_actives": 16007,
+    "evolution_pct": -6.0,
+    "rang": 606,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.11Z",
     "libelle_naf": "Frappe de monnaie",
-    "entreprises_actives": 9
+    "entreprises_actives": 9,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.12Z",
     "libelle_naf": "Fabrication d'articles de joaillerie et bijouterie",
-    "entreprises_actives": 5338
+    "entreprises_actives": 5338,
+    "evolution_pct": 1.3,
+    "rang": 261,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.13Z",
     "libelle_naf": "Fabrication d'articles de bijouterie fantaisie et articles similaires",
-    "entreprises_actives": 26181
+    "entreprises_actives": 26181,
+    "evolution_pct": 4.8,
+    "rang": 142,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.20Z",
     "libelle_naf": "Fabrication d'instruments de musique",
-    "entreprises_actives": 2336
+    "entreprises_actives": 2336,
+    "evolution_pct": 0.8,
+    "rang": 291,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.30Z",
     "libelle_naf": "Fabrication d'articles de sport",
-    "entreprises_actives": 1395
+    "entreprises_actives": 1395,
+    "evolution_pct": 1.0,
+    "rang": 278,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.40Z",
     "libelle_naf": "Fabrication de jeux et jouets",
-    "entreprises_actives": 2605
+    "entreprises_actives": 2605,
+    "evolution_pct": 8.5,
+    "rang": 74,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.50A",
     "libelle_naf": "Fabrication de matériel médico-chirurgical et dentaire",
-    "entreprises_actives": 7773
+    "entreprises_actives": 7773,
+    "evolution_pct": -2.0,
+    "rang": 450,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.50B",
     "libelle_naf": "Fabrication de lunettes",
-    "entreprises_actives": 614
+    "entreprises_actives": 614,
+    "evolution_pct": 5.1,
+    "rang": 135,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.91Z",
     "libelle_naf": "Fabrication d'articles de brosserie",
-    "entreprises_actives": 53
+    "entreprises_actives": 53,
+    "evolution_pct": -8.6,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "32.99Z",
     "libelle_naf": "Autres activités manufacturières n.c.a.",
-    "entreprises_actives": 26282
+    "entreprises_actives": 26282,
+    "evolution_pct": 15.4,
+    "rang": 29,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.11Z",
     "libelle_naf": "Réparation d'ouvrages en métaux",
-    "entreprises_actives": 1979
+    "entreprises_actives": 1979,
+    "evolution_pct": 3.6,
+    "rang": 179,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.12Z",
     "libelle_naf": "Réparation de machines et équipements mécaniques",
-    "entreprises_actives": 13818
+    "entreprises_actives": 13818,
+    "evolution_pct": 2.2,
+    "rang": 227,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.13Z",
     "libelle_naf": "Réparation de matériels électroniques et optiques",
-    "entreprises_actives": 852
+    "entreprises_actives": 852,
+    "evolution_pct": -2.3,
+    "rang": 463,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.14Z",
     "libelle_naf": "Réparation d'équipements électriques",
-    "entreprises_actives": 1769
+    "entreprises_actives": 1769,
+    "evolution_pct": 1.2,
+    "rang": 270,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.15Z",
     "libelle_naf": "Réparation et maintenance navale",
-    "entreprises_actives": 5033
+    "entreprises_actives": 5033,
+    "evolution_pct": -1.0,
+    "rang": 401,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.16Z",
     "libelle_naf": "Réparation et maintenance d'aéronefs et d'engins spatiaux",
-    "entreprises_actives": 1057
+    "entreprises_actives": 1057,
+    "evolution_pct": 5.0,
+    "rang": 139,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.17Z",
     "libelle_naf": "Réparation et maintenance d'autres équipements de transport",
-    "entreprises_actives": 156
+    "entreprises_actives": 156,
+    "evolution_pct": -1.9,
+    "rang": 444,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.19Z",
     "libelle_naf": "Réparation d'autres équipements",
-    "entreprises_actives": 1028
+    "entreprises_actives": 1028,
+    "evolution_pct": -1.0,
+    "rang": 402,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.20A",
     "libelle_naf": "Installation de structures métalliques, chaudronnées et de tuyauterie",
-    "entreprises_actives": 8412
+    "entreprises_actives": 8412,
+    "evolution_pct": -0.7,
+    "rang": 379,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.20B",
     "libelle_naf": "Installation de machines et équipements mécaniques",
-    "entreprises_actives": 3591
+    "entreprises_actives": 3591,
+    "evolution_pct": 4.0,
+    "rang": 166,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.20C",
     "libelle_naf": "Conception d'ensemble et assemblage sur site industriel d'équipements de contrôle des processus industriels",
-    "entreprises_actives": 1287
+    "entreprises_actives": 1287,
+    "evolution_pct": -4.6,
+    "rang": 568,
+    "nb_classes": 642
   },
   {
     "code_naf": "33.20D",
     "libelle_naf": "Installation d'équipements électriques, de matériels électroniques et optiques ou d'autres matériels",
-    "entreprises_actives": 3090
+    "entreprises_actives": 3090,
+    "evolution_pct": 2.6,
+    "rang": 215,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.11Z",
     "libelle_naf": "Production d'électricité",
-    "entreprises_actives": 133173
+    "entreprises_actives": 133173,
+    "evolution_pct": 37.2,
+    "rang": 2,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.12Z",
     "libelle_naf": "Transport d'électricité",
-    "entreprises_actives": 8
+    "entreprises_actives": 8,
+    "evolution_pct": 14.3,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.13Z",
     "libelle_naf": "Distribution d'électricité",
-    "entreprises_actives": 281
+    "entreprises_actives": 281,
+    "evolution_pct": 0.7,
+    "rang": 298,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.14Z",
     "libelle_naf": "Commerce d'électricité",
-    "entreprises_actives": 1608
+    "entreprises_actives": 1608,
+    "evolution_pct": 8.9,
+    "rang": 68,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.21Z",
     "libelle_naf": "Production de combustibles gazeux",
-    "entreprises_actives": 1002
+    "entreprises_actives": 1002,
+    "evolution_pct": 12.6,
+    "rang": 38,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.22Z",
     "libelle_naf": "Distribution de combustibles gazeux par conduites",
-    "entreprises_actives": 39
+    "entreprises_actives": 39,
+    "evolution_pct": 14.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.23Z",
     "libelle_naf": "Commerce de combustibles gazeux par conduites",
-    "entreprises_actives": 76
+    "entreprises_actives": 76,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "35.30Z",
     "libelle_naf": "Production et distribution de vapeur et d'air conditionné",
-    "entreprises_actives": 743
+    "entreprises_actives": 743,
+    "evolution_pct": 9.1,
+    "rang": 63,
+    "nb_classes": 642
   },
   {
     "code_naf": "36.00Z",
     "libelle_naf": "Captage, traitement et distribution d'eau",
-    "entreprises_actives": 2453
+    "entreprises_actives": 2453,
+    "evolution_pct": -2.7,
+    "rang": 488,
+    "nb_classes": 642
   },
   {
     "code_naf": "37.00Z",
     "libelle_naf": "Collecte et traitement des eaux usées",
-    "entreprises_actives": 2375
+    "entreprises_actives": 2375,
+    "evolution_pct": 6.8,
+    "rang": 93,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.11Z",
     "libelle_naf": "Collecte des déchets non dangereux",
-    "entreprises_actives": 4635
+    "entreprises_actives": 4635,
+    "evolution_pct": 6.4,
+    "rang": 98,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.12Z",
     "libelle_naf": "Collecte des déchets dangereux",
-    "entreprises_actives": 334
+    "entreprises_actives": 334,
+    "evolution_pct": 0.6,
+    "rang": 304,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.21Z",
     "libelle_naf": "Traitement et élimination des déchets non dangereux",
-    "entreprises_actives": 1482
+    "entreprises_actives": 1482,
+    "evolution_pct": 6.1,
+    "rang": 106,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.22Z",
     "libelle_naf": "Traitement et élimination des déchets dangereux",
-    "entreprises_actives": 195
+    "entreprises_actives": 195,
+    "evolution_pct": -3.0,
+    "rang": 504,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.31Z",
     "libelle_naf": "Démantèlement d'épaves",
-    "entreprises_actives": 855
+    "entreprises_actives": 855,
+    "evolution_pct": -7.3,
+    "rang": 621,
+    "nb_classes": 642
   },
   {
     "code_naf": "38.32Z",
     "libelle_naf": "Récupération de déchets triés",
-    "entreprises_actives": 10977
+    "entreprises_actives": 10977,
+    "evolution_pct": -5.5,
+    "rang": 595,
+    "nb_classes": 642
   },
   {
     "code_naf": "39.00Z",
     "libelle_naf": "Dépollution et autres services de gestion des déchets",
-    "entreprises_actives": 1035
+    "entreprises_actives": 1035,
+    "evolution_pct": 13.0,
+    "rang": 36,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.10A",
     "libelle_naf": "Promotion immobilière de logements",
-    "entreprises_actives": 20726
+    "entreprises_actives": 20726,
+    "evolution_pct": 0.8,
+    "rang": 292,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.10B",
     "libelle_naf": "Promotion immobilière de bureaux",
-    "entreprises_actives": 1938
+    "entreprises_actives": 1938,
+    "evolution_pct": 5.8,
+    "rang": 114,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.10C",
     "libelle_naf": "Promotion immobilière d'autres bâtiments",
-    "entreprises_actives": 5073
+    "entreprises_actives": 5073,
+    "evolution_pct": 21.1,
+    "rang": 12,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.10D",
     "libelle_naf": "Supports juridiques de programmes",
-    "entreprises_actives": 56272
+    "entreprises_actives": 56272,
+    "evolution_pct": -3.4,
+    "rang": 523,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.20A",
     "libelle_naf": "Construction de maisons individuelles",
-    "entreprises_actives": 46941
+    "entreprises_actives": 46941,
+    "evolution_pct": -1.5,
+    "rang": 424,
+    "nb_classes": 642
   },
   {
     "code_naf": "41.20B",
     "libelle_naf": "Construction d'autres bâtiments",
-    "entreprises_actives": 21048
+    "entreprises_actives": 21048,
+    "evolution_pct": -0.7,
+    "rang": 380,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.11Z",
     "libelle_naf": "Construction de routes et autoroutes",
-    "entreprises_actives": 2154
+    "entreprises_actives": 2154,
+    "evolution_pct": -1.1,
+    "rang": 409,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.12Z",
     "libelle_naf": "Construction de voies ferrées de surface et souterraines",
-    "entreprises_actives": 283
+    "entreprises_actives": 283,
+    "evolution_pct": 8.4,
+    "rang": 77,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.13A",
     "libelle_naf": "Construction d'ouvrages d'art",
-    "entreprises_actives": 156
+    "entreprises_actives": 156,
+    "evolution_pct": -3.1,
+    "rang": 507,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.13B",
     "libelle_naf": "Construction et entretien de tunnels",
-    "entreprises_actives": 39
+    "entreprises_actives": 39,
+    "evolution_pct": -15.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.21Z",
     "libelle_naf": "Construction de réseaux pour fluides",
-    "entreprises_actives": 1286
+    "entreprises_actives": 1286,
+    "evolution_pct": -0.8,
+    "rang": 388,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.22Z",
     "libelle_naf": "Construction de réseaux électriques et de télécommunications",
-    "entreprises_actives": 1915
+    "entreprises_actives": 1915,
+    "evolution_pct": -2.4,
+    "rang": 469,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.91Z",
     "libelle_naf": "Construction d'ouvrages maritimes et fluviaux",
-    "entreprises_actives": 470
+    "entreprises_actives": 470,
+    "evolution_pct": 0.2,
+    "rang": 329,
+    "nb_classes": 642
   },
   {
     "code_naf": "42.99Z",
     "libelle_naf": "Construction d'autres ouvrages de génie civil n.c.a.",
-    "entreprises_actives": 14079
+    "entreprises_actives": 14079,
+    "evolution_pct": -3.4,
+    "rang": 524,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.11Z",
     "libelle_naf": "Travaux de démolition",
-    "entreprises_actives": 2898
+    "entreprises_actives": 2898,
+    "evolution_pct": -0.5,
+    "rang": 368,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.12A",
     "libelle_naf": "Travaux de terrassement courants et travaux préparatoires",
-    "entreprises_actives": 36032
+    "entreprises_actives": 36032,
+    "evolution_pct": -0.7,
+    "rang": 381,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.12B",
     "libelle_naf": "Travaux de terrassement spécialisés ou de grande masse",
-    "entreprises_actives": 2113
+    "entreprises_actives": 2113,
+    "evolution_pct": -6.3,
+    "rang": 609,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.13Z",
     "libelle_naf": "Forages et sondages",
-    "entreprises_actives": 778
+    "entreprises_actives": 778,
+    "evolution_pct": 2.8,
+    "rang": 210,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.21A",
     "libelle_naf": "Travaux d'installation électrique dans tous locaux",
-    "entreprises_actives": 124152
+    "entreprises_actives": 124152,
+    "evolution_pct": -1.4,
+    "rang": 419,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.21B",
     "libelle_naf": "Travaux d'installation électrique sur la voie publique",
-    "entreprises_actives": 361
+    "entreprises_actives": 361,
+    "evolution_pct": -8.1,
+    "rang": 627,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.22A",
     "libelle_naf": "Travaux d'installation d'eau et de gaz en tous locaux",
-    "entreprises_actives": 69998
+    "entreprises_actives": 69998,
+    "evolution_pct": -0.7,
+    "rang": 382,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.22B",
     "libelle_naf": "Travaux d'installation d'équipements thermiques et de climatisation",
-    "entreprises_actives": 41500
+    "entreprises_actives": 41500,
+    "evolution_pct": 3.7,
+    "rang": 175,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.29A",
     "libelle_naf": "Travaux d'isolation",
-    "entreprises_actives": 10847
+    "entreprises_actives": 10847,
+    "evolution_pct": 1.5,
+    "rang": 247,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.29B",
     "libelle_naf": "Autres travaux d'installation n.c.a.",
-    "entreprises_actives": 7118
+    "entreprises_actives": 7118,
+    "evolution_pct": -0.1,
+    "rang": 354,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.31Z",
     "libelle_naf": "Travaux de plâtrerie",
-    "entreprises_actives": 52348
+    "entreprises_actives": 52348,
+    "evolution_pct": -3.4,
+    "rang": 525,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.32A",
     "libelle_naf": "Travaux de menuiserie bois et PVC",
-    "entreprises_actives": 78785
+    "entreprises_actives": 78785,
+    "evolution_pct": -2.8,
+    "rang": 493,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.32B",
     "libelle_naf": "Travaux de menuiserie métallique et serrurerie",
-    "entreprises_actives": 25901
+    "entreprises_actives": 25901,
+    "evolution_pct": -0.9,
+    "rang": 394,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.32C",
     "libelle_naf": "Agencement de lieux de vente",
-    "entreprises_actives": 5433
+    "entreprises_actives": 5433,
+    "evolution_pct": -2.4,
+    "rang": 470,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.33Z",
     "libelle_naf": "Travaux de revêtement des sols et des murs",
-    "entreprises_actives": 43697
+    "entreprises_actives": 43697,
+    "evolution_pct": -2.4,
+    "rang": 471,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.34Z",
     "libelle_naf": "Travaux de peinture et vitrerie",
-    "entreprises_actives": 103941
+    "entreprises_actives": 103941,
+    "evolution_pct": -3.7,
+    "rang": 537,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.39Z",
     "libelle_naf": "Autres travaux de finition",
-    "entreprises_actives": 30650
+    "entreprises_actives": 30650,
+    "evolution_pct": 0.5,
+    "rang": 310,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.91A",
     "libelle_naf": "Travaux de charpente",
-    "entreprises_actives": 18514
+    "entreprises_actives": 18514,
+    "evolution_pct": 0.1,
+    "rang": 331,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.91B",
     "libelle_naf": "Travaux de couverture par éléments",
-    "entreprises_actives": 38759
+    "entreprises_actives": 38759,
+    "evolution_pct": 3.6,
+    "rang": 180,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.99A",
     "libelle_naf": "Travaux d'étanchéification",
-    "entreprises_actives": 9318
+    "entreprises_actives": 9318,
+    "evolution_pct": 1.3,
+    "rang": 262,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.99B",
     "libelle_naf": "Travaux de montage de structures métalliques",
-    "entreprises_actives": 5304
+    "entreprises_actives": 5304,
+    "evolution_pct": 5.7,
+    "rang": 116,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.99C",
     "libelle_naf": "Travaux de maçonnerie générale et gros œuvre de bâtiment",
-    "entreprises_actives": 163986
+    "entreprises_actives": 163986,
+    "evolution_pct": -3.3,
+    "rang": 519,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.99D",
     "libelle_naf": "Autres travaux spécialisés de construction",
-    "entreprises_actives": 15793
+    "entreprises_actives": 15793,
+    "evolution_pct": -0.1,
+    "rang": 355,
+    "nb_classes": 642
   },
   {
     "code_naf": "43.99E",
     "libelle_naf": "Location avec opérateur de matériel de construction",
-    "entreprises_actives": 1847
+    "entreprises_actives": 1847,
+    "evolution_pct": 6.0,
+    "rang": 110,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.11Z",
     "libelle_naf": "Commerce de voitures et de véhicules automobiles légers",
-    "entreprises_actives": 93155
+    "entreprises_actives": 93155,
+    "evolution_pct": 2.0,
+    "rang": 232,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.19Z",
     "libelle_naf": "Commerce d'autres véhicules automobiles",
-    "entreprises_actives": 2088
+    "entreprises_actives": 2088,
+    "evolution_pct": -2.1,
+    "rang": 456,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.20A",
     "libelle_naf": "Entretien et réparation de véhicules automobiles légers",
-    "entreprises_actives": 105204
+    "entreprises_actives": 105204,
+    "evolution_pct": 7.9,
+    "rang": 82,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.20B",
     "libelle_naf": "Entretien et réparation d'autres véhicules automobiles",
-    "entreprises_actives": 3493
+    "entreprises_actives": 3493,
+    "evolution_pct": 0.1,
+    "rang": 332,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.31Z",
     "libelle_naf": "Commerce de gros d'équipements automobiles",
-    "entreprises_actives": 5810
+    "entreprises_actives": 5810,
+    "evolution_pct": 2.3,
+    "rang": 223,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.32Z",
     "libelle_naf": "Commerce de détail d'équipements automobiles",
-    "entreprises_actives": 11728
+    "entreprises_actives": 11728,
+    "evolution_pct": 0.4,
+    "rang": 317,
+    "nb_classes": 642
   },
   {
     "code_naf": "45.40Z",
     "libelle_naf": "Commerce et réparation de motocycles",
-    "entreprises_actives": 9449
+    "entreprises_actives": 9449,
+    "evolution_pct": -2.4,
+    "rang": 472,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.11Z",
     "libelle_naf": "Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis",
-    "entreprises_actives": 1325
+    "entreprises_actives": 1325,
+    "evolution_pct": -6.4,
+    "rang": 611,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.12A",
     "libelle_naf": "Centrales d'achat de carburant",
-    "entreprises_actives": 16
+    "entreprises_actives": 16,
+    "evolution_pct": -5.9,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.12B",
     "libelle_naf": "Autres intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques",
-    "entreprises_actives": 697
+    "entreprises_actives": 697,
+    "evolution_pct": -6.2,
+    "rang": 607,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.13Z",
     "libelle_naf": "Intermédiaires du commerce en bois et matériaux de construction",
-    "entreprises_actives": 2455
+    "entreprises_actives": 2455,
+    "evolution_pct": -2.4,
+    "rang": 473,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.14Z",
     "libelle_naf": "Intermédiaires du commerce en machines, équipements industriels, navires et avions",
-    "entreprises_actives": 2051
+    "entreprises_actives": 2051,
+    "evolution_pct": 2.4,
+    "rang": 217,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.15Z",
     "libelle_naf": "Intermédiaires du commerce en meubles, articles de ménage et quincaillerie",
-    "entreprises_actives": 1157
+    "entreprises_actives": 1157,
+    "evolution_pct": -5.3,
+    "rang": 593,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.16Z",
     "libelle_naf": "Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir",
-    "entreprises_actives": 1888
+    "entreprises_actives": 1888,
+    "evolution_pct": -5.1,
+    "rang": 589,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.17A",
     "libelle_naf": "Centrales d'achat alimentaires",
-    "entreprises_actives": 578
+    "entreprises_actives": 578,
+    "evolution_pct": -3.2,
+    "rang": 513,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.17B",
     "libelle_naf": "Autres intermédiaires du commerce en denrées, boissons et tabac",
-    "entreprises_actives": 3870
+    "entreprises_actives": 3870,
+    "evolution_pct": -3.9,
+    "rang": 546,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.18Z",
     "libelle_naf": "Intermédiaires spécialisés dans le commerce d'autres produits spécifiques",
-    "entreprises_actives": 13448
+    "entreprises_actives": 13448,
+    "evolution_pct": -4.9,
+    "rang": 583,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.19A",
     "libelle_naf": "Centrales d'achat non alimentaires",
-    "entreprises_actives": 1035
+    "entreprises_actives": 1035,
+    "evolution_pct": -2.9,
+    "rang": 497,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.19B",
     "libelle_naf": "Autres intermédiaires du commerce en produits divers",
-    "entreprises_actives": 73575
+    "entreprises_actives": 73575,
+    "evolution_pct": -13.2,
+    "rang": 641,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.21Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail",
-    "entreprises_actives": 3041
+    "entreprises_actives": 3041,
+    "evolution_pct": -0.6,
+    "rang": 374,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.22Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de fleurs et plantes",
-    "entreprises_actives": 1542
+    "entreprises_actives": 1542,
+    "evolution_pct": -4.9,
+    "rang": 584,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.23Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'animaux vivants",
-    "entreprises_actives": 2680
+    "entreprises_actives": 2680,
+    "evolution_pct": -1.0,
+    "rang": 403,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.24Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de cuirs et peaux",
-    "entreprises_actives": 166
+    "entreprises_actives": 166,
+    "evolution_pct": -5.1,
+    "rang": 590,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.31Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de fruits et légumes",
-    "entreprises_actives": 5798
+    "entreprises_actives": 5798,
+    "evolution_pct": -2.4,
+    "rang": 474,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.32A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de viandes de boucherie",
-    "entreprises_actives": 1217
+    "entreprises_actives": 1217,
+    "evolution_pct": -3.5,
+    "rang": 530,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.32B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits à base de viande",
-    "entreprises_actives": 383
+    "entreprises_actives": 383,
+    "evolution_pct": -1.8,
+    "rang": 441,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.32C",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de volailles et gibier",
-    "entreprises_actives": 319
+    "entreprises_actives": 319,
+    "evolution_pct": -4.5,
+    "rang": 563,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.33Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits laitiers, œufs, huiles et matières grasses comestibles",
-    "entreprises_actives": 1097
+    "entreprises_actives": 1097,
+    "evolution_pct": 0.8,
+    "rang": 293,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.34Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de boissons",
-    "entreprises_actives": 13046
+    "entreprises_actives": 13046,
+    "evolution_pct": 1.0,
+    "rang": 279,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.35Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits à base de tabac",
-    "entreprises_actives": 98
+    "entreprises_actives": 98,
+    "evolution_pct": -4.9,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.36Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de sucre, chocolat et confiserie",
-    "entreprises_actives": 642
+    "entreprises_actives": 642,
+    "evolution_pct": -3.6,
+    "rang": 533,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.37Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de café, thé, cacao et épices",
-    "entreprises_actives": 977
+    "entreprises_actives": 977,
+    "evolution_pct": 8.0,
+    "rang": 81,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.38A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de poissons, crustacés et mollusques",
-    "entreprises_actives": 1617
+    "entreprises_actives": 1617,
+    "evolution_pct": -4.0,
+    "rang": 548,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.38B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) alimentaire spécialisé divers",
-    "entreprises_actives": 5248
+    "entreprises_actives": 5248,
+    "evolution_pct": -1.0,
+    "rang": 404,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.39A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits surgelés",
-    "entreprises_actives": 644
+    "entreprises_actives": 644,
+    "evolution_pct": -1.5,
+    "rang": 425,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.39B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) alimentaire non spécialisé",
-    "entreprises_actives": 8022
+    "entreprises_actives": 8022,
+    "evolution_pct": 4.3,
+    "rang": 156,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.41Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de textiles",
-    "entreprises_actives": 4209
+    "entreprises_actives": 4209,
+    "evolution_pct": -3.2,
+    "rang": 514,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.42Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'habillement et de chaussures",
-    "entreprises_actives": 15633
+    "entreprises_actives": 15633,
+    "evolution_pct": -6.6,
+    "rang": 614,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.43Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'appareils électroménagers",
-    "entreprises_actives": 2272
+    "entreprises_actives": 2272,
+    "evolution_pct": -2.3,
+    "rang": 464,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.44Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de vaisselle, verrerie et produits d'entretien",
-    "entreprises_actives": 1655
+    "entreprises_actives": 1655,
+    "evolution_pct": -4.8,
+    "rang": 580,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.45Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de parfumerie et de produits de beauté",
-    "entreprises_actives": 6332
+    "entreprises_actives": 6332,
+    "evolution_pct": 1.0,
+    "rang": 280,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.46Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits pharmaceutiques",
-    "entreprises_actives": 5873
+    "entreprises_actives": 5873,
+    "evolution_pct": 0.8,
+    "rang": 294,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.47Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de meubles, de tapis et d'appareils d'éclairage",
-    "entreprises_actives": 3109
+    "entreprises_actives": 3109,
+    "evolution_pct": 4.5,
+    "rang": 150,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.48Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'articles d'horlogerie et de bijouterie",
-    "entreprises_actives": 1190
+    "entreprises_actives": 1190,
+    "evolution_pct": 0.7,
+    "rang": 299,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.49Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'autres biens domestiques",
-    "entreprises_actives": 19486
+    "entreprises_actives": 19486,
+    "evolution_pct": -4.5,
+    "rang": 564,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.51Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'ordinateurs, d'équipements informatiques périphériques et de logiciels",
-    "entreprises_actives": 8463
+    "entreprises_actives": 8463,
+    "evolution_pct": -3.1,
+    "rang": 508,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.52Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de composants et d'équipements électroniques et de télécommunication",
-    "entreprises_actives": 5874
+    "entreprises_actives": 5874,
+    "evolution_pct": -0.0,
+    "rang": 340,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.61Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de matériel agricole",
-    "entreprises_actives": 4276
+    "entreprises_actives": 4276,
+    "evolution_pct": -0.0,
+    "rang": 341,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.62Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de machines-outils",
-    "entreprises_actives": 1247
+    "entreprises_actives": 1247,
+    "evolution_pct": -0.2,
+    "rang": 358,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.63Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de machines pour l'extraction, la construction et le génie civil",
-    "entreprises_actives": 2174
+    "entreprises_actives": 2174,
+    "evolution_pct": 0.0,
+    "rang": 342,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.64Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de machines pour l'industrie textile et l'habillement",
-    "entreprises_actives": 142
+    "entreprises_actives": 142,
+    "evolution_pct": -8.4,
+    "rang": 629,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.65Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de mobilier de bureau",
-    "entreprises_actives": 743
+    "entreprises_actives": 743,
+    "evolution_pct": -2.9,
+    "rang": 498,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.66Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'autres machines et équipements de bureau",
-    "entreprises_actives": 1273
+    "entreprises_actives": 1273,
+    "evolution_pct": -4.6,
+    "rang": 569,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.69A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de matériel électrique",
-    "entreprises_actives": 3603
+    "entreprises_actives": 3603,
+    "evolution_pct": 1.4,
+    "rang": 258,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.69B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de fournitures et équipements industriels divers",
-    "entreprises_actives": 14012
+    "entreprises_actives": 14012,
+    "evolution_pct": 0.5,
+    "rang": 311,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.69C",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de fournitures et équipements divers pour le commerce et les services",
-    "entreprises_actives": 6457
+    "entreprises_actives": 6457,
+    "evolution_pct": -1.2,
+    "rang": 413,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.71Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de combustibles et de produits annexes",
-    "entreprises_actives": 2508
+    "entreprises_actives": 2508,
+    "evolution_pct": 4.1,
+    "rang": 163,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.72Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de minerais et métaux",
-    "entreprises_actives": 2744
+    "entreprises_actives": 2744,
+    "evolution_pct": 1.5,
+    "rang": 248,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.73A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de bois et de matériaux de construction",
-    "entreprises_actives": 14577
+    "entreprises_actives": 14577,
+    "evolution_pct": 0.7,
+    "rang": 300,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.73B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'appareils sanitaires et de produits de décoration",
-    "entreprises_actives": 2510
+    "entreprises_actives": 2510,
+    "evolution_pct": -1.9,
+    "rang": 445,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.74A",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de quincaillerie",
-    "entreprises_actives": 1841
+    "entreprises_actives": 1841,
+    "evolution_pct": 0.8,
+    "rang": 295,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.74B",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de fournitures pour la plomberie et le chauffage",
-    "entreprises_actives": 2178
+    "entreprises_actives": 2178,
+    "evolution_pct": -1.6,
+    "rang": 432,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.75Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de produits chimiques",
-    "entreprises_actives": 2850
+    "entreprises_actives": 2850,
+    "evolution_pct": -0.5,
+    "rang": 369,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.76Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) d'autres produits intermédiaires",
-    "entreprises_actives": 3103
+    "entreprises_actives": 3103,
+    "evolution_pct": 0.3,
+    "rang": 321,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.77Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) de déchets et débris",
-    "entreprises_actives": 1939
+    "entreprises_actives": 1939,
+    "evolution_pct": -6.4,
+    "rang": 612,
+    "nb_classes": 642
   },
   {
     "code_naf": "46.90Z",
     "libelle_naf": "Commerce de gros (commerce interentreprises) non spécialisé",
-    "entreprises_actives": 39033
+    "entreprises_actives": 39033,
+    "evolution_pct": -0.4,
+    "rang": 365,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11A",
     "libelle_naf": "Commerce de détail de produits surgelés",
-    "entreprises_actives": 314
+    "entreprises_actives": 314,
+    "evolution_pct": 4.7,
+    "rang": 145,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11B",
     "libelle_naf": "Commerce d'alimentation générale",
-    "entreprises_actives": 43045
+    "entreprises_actives": 43045,
+    "evolution_pct": 2.4,
+    "rang": 218,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11C",
     "libelle_naf": "Supérettes",
-    "entreprises_actives": 6712
+    "entreprises_actives": 6712,
+    "evolution_pct": 4.0,
+    "rang": 167,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11D",
     "libelle_naf": "Supermarchés",
-    "entreprises_actives": 9499
+    "entreprises_actives": 9499,
+    "evolution_pct": 9.0,
+    "rang": 64,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11E",
     "libelle_naf": "Magasins multi-commerces",
-    "entreprises_actives": 108
+    "entreprises_actives": 108,
+    "evolution_pct": -1.8,
+    "rang": 442,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.11F",
     "libelle_naf": "Hypermarchés",
-    "entreprises_actives": 1509
+    "entreprises_actives": 1509,
+    "evolution_pct": 4.3,
+    "rang": 157,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.19A",
     "libelle_naf": "Grands magasins",
-    "entreprises_actives": 73
+    "entreprises_actives": 73,
+    "evolution_pct": 1.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.19B",
     "libelle_naf": "Autres commerces de détail en magasin non spécialisé",
-    "entreprises_actives": 12838
+    "entreprises_actives": 12838,
+    "evolution_pct": -1.0,
+    "rang": 405,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.21Z",
     "libelle_naf": "Commerce de détail de fruits et légumes en magasin spécialisé",
-    "entreprises_actives": 8190
+    "entreprises_actives": 8190,
+    "evolution_pct": -4.7,
+    "rang": 575,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.22Z",
     "libelle_naf": "Commerce de détail de viandes et de produits à base de viande en magasin spécialisé",
-    "entreprises_actives": 18264
+    "entreprises_actives": 18264,
+    "evolution_pct": 0.1,
+    "rang": 333,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.23Z",
     "libelle_naf": "Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé",
-    "entreprises_actives": 2875
+    "entreprises_actives": 2875,
+    "evolution_pct": -4.1,
+    "rang": 551,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.24Z",
     "libelle_naf": "Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé",
-    "entreprises_actives": 5202
+    "entreprises_actives": 5202,
+    "evolution_pct": 0.6,
+    "rang": 305,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.25Z",
     "libelle_naf": "Commerce de détail de boissons en magasin spécialisé",
-    "entreprises_actives": 9538
+    "entreprises_actives": 9538,
+    "evolution_pct": -2.3,
+    "rang": 465,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.26Z",
     "libelle_naf": "Commerce de détail de produits à base de tabac en magasin spécialisé",
-    "entreprises_actives": 8265
+    "entreprises_actives": 8265,
+    "evolution_pct": 0.4,
+    "rang": 318,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.29Z",
     "libelle_naf": "Autres commerces de détail alimentaires en magasin spécialisé",
-    "entreprises_actives": 15996
+    "entreprises_actives": 15996,
+    "evolution_pct": -1.9,
+    "rang": 446,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.30Z",
     "libelle_naf": "Commerce de détail de carburants en magasin spécialisé",
-    "entreprises_actives": 4530
+    "entreprises_actives": 4530,
+    "evolution_pct": 0.1,
+    "rang": 334,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.41Z",
     "libelle_naf": "Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé",
-    "entreprises_actives": 7017
+    "entreprises_actives": 7017,
+    "evolution_pct": -7.0,
+    "rang": 619,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.42Z",
     "libelle_naf": "Commerce de détail de matériels de télécommunication en magasin spécialisé",
-    "entreprises_actives": 4714
+    "entreprises_actives": 4714,
+    "evolution_pct": 3.7,
+    "rang": 176,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.43Z",
     "libelle_naf": "Commerce de détail de matériels audio et vidéo en magasin spécialisé",
-    "entreprises_actives": 1489
+    "entreprises_actives": 1489,
+    "evolution_pct": -5.8,
+    "rang": 600,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.51Z",
     "libelle_naf": "Commerce de détail de textiles en magasin spécialisé",
-    "entreprises_actives": 5175
+    "entreprises_actives": 5175,
+    "evolution_pct": -7.4,
+    "rang": 623,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.52A",
     "libelle_naf": "Commerce de détail de quincaillerie, peintures et verres en petites surfaces (moins de 400 m²)",
-    "entreprises_actives": 7682
+    "entreprises_actives": 7682,
+    "evolution_pct": -3.2,
+    "rang": 515,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.52B",
     "libelle_naf": "Commerce de détail de quincaillerie, peintures et verres en grandes surfaces (400 m² et plus)",
-    "entreprises_actives": 3200
+    "entreprises_actives": 3200,
+    "evolution_pct": -3.0,
+    "rang": 505,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.53Z",
     "libelle_naf": "Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé",
-    "entreprises_actives": 1125
+    "entreprises_actives": 1125,
+    "evolution_pct": -1.9,
+    "rang": 447,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.54Z",
     "libelle_naf": "Commerce de détail d'appareils électroménagers en magasin spécialisé",
-    "entreprises_actives": 4517
+    "entreprises_actives": 4517,
+    "evolution_pct": -4.2,
+    "rang": 553,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.59A",
     "libelle_naf": "Commerce de détail de meubles",
-    "entreprises_actives": 14453
+    "entreprises_actives": 14453,
+    "evolution_pct": -1.7,
+    "rang": 436,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.59B",
     "libelle_naf": "Commerce de détail d'autres équipements du foyer",
-    "entreprises_actives": 11541
+    "entreprises_actives": 11541,
+    "evolution_pct": -5.6,
+    "rang": 598,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.61Z",
     "libelle_naf": "Commerce de détail de livres en magasin spécialisé",
-    "entreprises_actives": 4968
+    "entreprises_actives": 4968,
+    "evolution_pct": 0.7,
+    "rang": 301,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.62Z",
     "libelle_naf": "Commerce de détail de journaux et papeterie en magasin spécialisé",
-    "entreprises_actives": 10235
+    "entreprises_actives": 10235,
+    "evolution_pct": -4.5,
+    "rang": 565,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.63Z",
     "libelle_naf": "Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé",
-    "entreprises_actives": 608
+    "entreprises_actives": 608,
+    "evolution_pct": -3.9,
+    "rang": 547,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.64Z",
     "libelle_naf": "Commerce de détail d'articles de sport en magasin spécialisé",
-    "entreprises_actives": 12525
+    "entreprises_actives": 12525,
+    "evolution_pct": -2.0,
+    "rang": 451,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.65Z",
     "libelle_naf": "Commerce de détail de jeux et jouets en magasin spécialisé",
-    "entreprises_actives": 3040
+    "entreprises_actives": 3040,
+    "evolution_pct": 1.0,
+    "rang": 281,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.71Z",
     "libelle_naf": "Commerce de détail d'habillement en magasin spécialisé",
-    "entreprises_actives": 52589
+    "entreprises_actives": 52589,
+    "evolution_pct": -6.7,
+    "rang": 616,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.72A",
     "libelle_naf": "Commerce de détail de la chaussure",
-    "entreprises_actives": 5682
+    "entreprises_actives": 5682,
+    "evolution_pct": -8.3,
+    "rang": 628,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.72B",
     "libelle_naf": "Commerce de détail de maroquinerie et d'articles de voyage",
-    "entreprises_actives": 2018
+    "entreprises_actives": 2018,
+    "evolution_pct": -8.7,
+    "rang": 631,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.73Z",
     "libelle_naf": "Commerce de détail de produits pharmaceutiques en magasin spécialisé",
-    "entreprises_actives": 25593
+    "entreprises_actives": 25593,
+    "evolution_pct": 0.3,
+    "rang": 322,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.74Z",
     "libelle_naf": "Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé",
-    "entreprises_actives": 6572
+    "entreprises_actives": 6572,
+    "evolution_pct": 9.4,
+    "rang": 57,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.75Z",
     "libelle_naf": "Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé",
-    "entreprises_actives": 9935
+    "entreprises_actives": 9935,
+    "evolution_pct": 0.5,
+    "rang": 312,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.76Z",
     "libelle_naf": "Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé",
-    "entreprises_actives": 20420
+    "entreprises_actives": 20420,
+    "evolution_pct": -1.3,
+    "rang": 415,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.77Z",
     "libelle_naf": "Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé",
-    "entreprises_actives": 6329
+    "entreprises_actives": 6329,
+    "evolution_pct": -2.9,
+    "rang": 499,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.78A",
     "libelle_naf": "Commerces de détail d'optique",
-    "entreprises_actives": 15059
+    "entreprises_actives": 15059,
+    "evolution_pct": 4.6,
+    "rang": 149,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.78B",
     "libelle_naf": "Commerces de détail de charbons et combustibles",
-    "entreprises_actives": 3846
+    "entreprises_actives": 3846,
+    "evolution_pct": -4.6,
+    "rang": 570,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.78C",
     "libelle_naf": "Autres commerces de détail spécialisés divers",
-    "entreprises_actives": 46241
+    "entreprises_actives": 46241,
+    "evolution_pct": -4.4,
+    "rang": 559,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.79Z",
     "libelle_naf": "Commerce de détail de biens d'occasion en magasin",
-    "entreprises_actives": 17452
+    "entreprises_actives": 17452,
+    "evolution_pct": -5.8,
+    "rang": 601,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.81Z",
     "libelle_naf": "Commerce de détail alimentaire sur éventaires et marchés",
-    "entreprises_actives": 42442
+    "entreprises_actives": 42442,
+    "evolution_pct": -2.4,
+    "rang": 475,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.82Z",
     "libelle_naf": "Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés",
-    "entreprises_actives": 24101
+    "entreprises_actives": 24101,
+    "evolution_pct": -7.3,
+    "rang": 622,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.89Z",
     "libelle_naf": "Autres commerces de détail sur éventaires et marchés",
-    "entreprises_actives": 86345
+    "entreprises_actives": 86345,
+    "evolution_pct": -3.7,
+    "rang": 538,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.91A",
     "libelle_naf": "Vente à distance sur catalogue général",
-    "entreprises_actives": 150893
+    "entreprises_actives": 150893,
+    "evolution_pct": 6.1,
+    "rang": 107,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.91B",
     "libelle_naf": "Vente à distance sur catalogue spécialisé",
-    "entreprises_actives": 139200
+    "entreprises_actives": 139200,
+    "evolution_pct": 24.7,
+    "rang": 10,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.99A",
     "libelle_naf": "Vente à domicile",
-    "entreprises_actives": 265114
+    "entreprises_actives": 265114,
+    "evolution_pct": 7.4,
+    "rang": 87,
+    "nb_classes": 642
   },
   {
     "code_naf": "47.99B",
     "libelle_naf": "Vente par automates et autres commerces de détail hors magasin, éventaires ou marchés n.c.a.",
-    "entreprises_actives": 10177
+    "entreprises_actives": 10177,
+    "evolution_pct": -1.7,
+    "rang": 437,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.10Z",
     "libelle_naf": "Transport ferroviaire interurbain de voyageurs",
-    "entreprises_actives": 65
+    "entreprises_actives": 65,
+    "evolution_pct": 10.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.20Z",
     "libelle_naf": "Transports ferroviaires de fret",
-    "entreprises_actives": 85
+    "entreprises_actives": 85,
+    "evolution_pct": 2.4,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.31Z",
     "libelle_naf": "Transports urbains et suburbains de voyageurs",
-    "entreprises_actives": 2616
+    "entreprises_actives": 2616,
+    "evolution_pct": -3.7,
+    "rang": 539,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.32Z",
     "libelle_naf": "Transports de voyageurs par taxis",
-    "entreprises_actives": 128437
+    "entreprises_actives": 128437,
+    "evolution_pct": 3.0,
+    "rang": 202,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.39A",
     "libelle_naf": "Transports routiers réguliers de voyageurs",
-    "entreprises_actives": 3353
+    "entreprises_actives": 3353,
+    "evolution_pct": -3.1,
+    "rang": 509,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.39B",
     "libelle_naf": "Autres transports routiers de voyageurs",
-    "entreprises_actives": 6278
+    "entreprises_actives": 6278,
+    "evolution_pct": -3.3,
+    "rang": 520,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.39C",
     "libelle_naf": "Téléphériques et remontées mécaniques",
-    "entreprises_actives": 205
+    "entreprises_actives": 205,
+    "evolution_pct": 1.0,
+    "rang": 282,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.41A",
     "libelle_naf": "Transports routiers de fret interurbains",
-    "entreprises_actives": 45371
+    "entreprises_actives": 45371,
+    "evolution_pct": 9.6,
+    "rang": 55,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.41B",
     "libelle_naf": "Transports routiers de fret de proximité",
-    "entreprises_actives": 36119
+    "entreprises_actives": 36119,
+    "evolution_pct": -1.1,
+    "rang": 410,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.41C",
     "libelle_naf": "Location de camions avec chauffeur",
-    "entreprises_actives": 1132
+    "entreprises_actives": 1132,
+    "evolution_pct": -5.5,
+    "rang": 596,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.42Z",
     "libelle_naf": "Services de déménagement",
-    "entreprises_actives": 3813
+    "entreprises_actives": 3813,
+    "evolution_pct": 0.3,
+    "rang": 323,
+    "nb_classes": 642
   },
   {
     "code_naf": "49.50Z",
     "libelle_naf": "Transports par conduites",
-    "entreprises_actives": 104
+    "entreprises_actives": 104,
+    "evolution_pct": 0.0,
+    "rang": 343,
+    "nb_classes": 642
   },
   {
     "code_naf": "50.10Z",
     "libelle_naf": "Transports maritimes et côtiers de passagers",
-    "entreprises_actives": 2505
+    "entreprises_actives": 2505,
+    "evolution_pct": 6.1,
+    "rang": 108,
+    "nb_classes": 642
   },
   {
     "code_naf": "50.20Z",
     "libelle_naf": "Transports maritimes et côtiers de fret",
-    "entreprises_actives": 492
+    "entreprises_actives": 492,
+    "evolution_pct": 3.8,
+    "rang": 173,
+    "nb_classes": 642
   },
   {
     "code_naf": "50.30Z",
     "libelle_naf": "Transports fluviaux de passagers",
-    "entreprises_actives": 554
+    "entreprises_actives": 554,
+    "evolution_pct": 5.9,
+    "rang": 112,
+    "nb_classes": 642
   },
   {
     "code_naf": "50.40Z",
     "libelle_naf": "Transports fluviaux de fret",
-    "entreprises_actives": 935
+    "entreprises_actives": 935,
+    "evolution_pct": -3.8,
+    "rang": 543,
+    "nb_classes": 642
   },
   {
     "code_naf": "51.10Z",
     "libelle_naf": "Transports aériens de passagers",
-    "entreprises_actives": 1762
+    "entreprises_actives": 1762,
+    "evolution_pct": -4.6,
+    "rang": 571,
+    "nb_classes": 642
   },
   {
     "code_naf": "51.21Z",
     "libelle_naf": "Transports aériens de fret",
-    "entreprises_actives": 155
+    "entreprises_actives": 155,
+    "evolution_pct": -3.7,
+    "rang": 540,
+    "nb_classes": 642
   },
   {
     "code_naf": "51.22Z",
     "libelle_naf": "Transports spatiaux",
-    "entreprises_actives": 6
+    "entreprises_actives": 6,
+    "evolution_pct": 20.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.10A",
     "libelle_naf": "Entreposage et stockage frigorifique",
-    "entreprises_actives": 454
+    "entreprises_actives": 454,
+    "evolution_pct": 2.3,
+    "rang": 224,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.10B",
     "libelle_naf": "Entreposage et stockage non frigorifique",
-    "entreprises_actives": 4119
+    "entreprises_actives": 4119,
+    "evolution_pct": 9.7,
+    "rang": 52,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.21Z",
     "libelle_naf": "Services auxiliaires des transports terrestres",
-    "entreprises_actives": 4909
+    "entreprises_actives": 4909,
+    "evolution_pct": 0.3,
+    "rang": 324,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.22Z",
     "libelle_naf": "Services auxiliaires des transports par eau",
-    "entreprises_actives": 792
+    "entreprises_actives": 792,
+    "evolution_pct": 1.3,
+    "rang": 263,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.23Z",
     "libelle_naf": "Services auxiliaires des transports aériens",
-    "entreprises_actives": 865
+    "entreprises_actives": 865,
+    "evolution_pct": 8.8,
+    "rang": 69,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.24A",
     "libelle_naf": "Manutention portuaire",
-    "entreprises_actives": 304
+    "entreprises_actives": 304,
+    "evolution_pct": 0.3,
+    "rang": 325,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.24B",
     "libelle_naf": "Manutention non portuaire",
-    "entreprises_actives": 2865
+    "entreprises_actives": 2865,
+    "evolution_pct": 30.2,
+    "rang": 6,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.29A",
     "libelle_naf": "Messagerie, fret express",
-    "entreprises_actives": 1188
+    "entreprises_actives": 1188,
+    "evolution_pct": -3.4,
+    "rang": 526,
+    "nb_classes": 642
   },
   {
     "code_naf": "52.29B",
     "libelle_naf": "Affrètement et organisation des transports",
-    "entreprises_actives": 6657
+    "entreprises_actives": 6657,
+    "evolution_pct": 3.3,
+    "rang": 193,
+    "nb_classes": 642
   },
   {
     "code_naf": "53.10Z",
     "libelle_naf": "Activités de poste dans le cadre d'une obligation de service universel",
-    "entreprises_actives": 33
+    "entreprises_actives": 33,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "53.20Z",
     "libelle_naf": "Autres activités de poste et de courrier",
-    "entreprises_actives": 209915
+    "entreprises_actives": 209915,
+    "evolution_pct": -5.8,
+    "rang": 602,
+    "nb_classes": 642
   },
   {
     "code_naf": "55.10Z",
     "libelle_naf": "Hôtels et hébergement similaire",
-    "entreprises_actives": 36071
+    "entreprises_actives": 36071,
+    "evolution_pct": 1.3,
+    "rang": 264,
+    "nb_classes": 642
   },
   {
     "code_naf": "55.20Z",
     "libelle_naf": "Hébergement touristique et autre hébergement de courte durée",
-    "entreprises_actives": 116521
+    "entreprises_actives": 116521,
+    "evolution_pct": 19.9,
+    "rang": 16,
+    "nb_classes": 642
   },
   {
     "code_naf": "55.30Z",
     "libelle_naf": "Terrains de camping et parcs pour caravanes ou véhicules de loisirs",
-    "entreprises_actives": 7003
+    "entreprises_actives": 7003,
+    "evolution_pct": 0.6,
+    "rang": 306,
+    "nb_classes": 642
   },
   {
     "code_naf": "55.90Z",
     "libelle_naf": "Autres hébergements",
-    "entreprises_actives": 1077
+    "entreprises_actives": 1077,
+    "evolution_pct": 3.2,
+    "rang": 196,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.10A",
     "libelle_naf": "Restauration traditionnelle",
-    "entreprises_actives": 158251
+    "entreprises_actives": 158251,
+    "evolution_pct": 1.3,
+    "rang": 265,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.10B",
     "libelle_naf": "Cafétérias et autres libres-services",
-    "entreprises_actives": 489
+    "entreprises_actives": 489,
+    "evolution_pct": -10.3,
+    "rang": 636,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.10C",
     "libelle_naf": "Restauration de type rapide",
-    "entreprises_actives": 165446
+    "entreprises_actives": 165446,
+    "evolution_pct": 3.0,
+    "rang": 203,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.21Z",
     "libelle_naf": "Services des traiteurs",
-    "entreprises_actives": 36775
+    "entreprises_actives": 36775,
+    "evolution_pct": 6.8,
+    "rang": 94,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.29A",
     "libelle_naf": "Restauration collective sous contrat",
-    "entreprises_actives": 561
+    "entreprises_actives": 561,
+    "evolution_pct": 1.6,
+    "rang": 243,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.29B",
     "libelle_naf": "Autres services de restauration n.c.a.",
-    "entreprises_actives": 4536
+    "entreprises_actives": 4536,
+    "evolution_pct": -0.2,
+    "rang": 359,
+    "nb_classes": 642
   },
   {
     "code_naf": "56.30Z",
     "libelle_naf": "Débits de boissons",
-    "entreprises_actives": 55947
+    "entreprises_actives": 55947,
+    "evolution_pct": 1.8,
+    "rang": 238,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.11Z",
     "libelle_naf": "Édition de livres",
-    "entreprises_actives": 13065
+    "entreprises_actives": 13065,
+    "evolution_pct": 4.2,
+    "rang": 158,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.12Z",
     "libelle_naf": "Édition de répertoires et de fichiers d'adresses",
-    "entreprises_actives": 151
+    "entreprises_actives": 151,
+    "evolution_pct": -12.2,
+    "rang": 639,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.13Z",
     "libelle_naf": "Édition de journaux",
-    "entreprises_actives": 8239
+    "entreprises_actives": 8239,
+    "evolution_pct": -0.7,
+    "rang": 383,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.14Z",
     "libelle_naf": "Édition de revues et périodiques",
-    "entreprises_actives": 28759
+    "entreprises_actives": 28759,
+    "evolution_pct": 5.5,
+    "rang": 122,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.19Z",
     "libelle_naf": "Autres activités d'édition",
-    "entreprises_actives": 3598
+    "entreprises_actives": 3598,
+    "evolution_pct": 2.9,
+    "rang": 207,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.21Z",
     "libelle_naf": "Édition de jeux électroniques",
-    "entreprises_actives": 2212
+    "entreprises_actives": 2212,
+    "evolution_pct": 35.1,
+    "rang": 3,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.29A",
     "libelle_naf": "Édition de logiciels système et de réseau",
-    "entreprises_actives": 1109
+    "entreprises_actives": 1109,
+    "evolution_pct": -3.8,
+    "rang": 544,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.29B",
     "libelle_naf": "Édition de logiciels outils de développement et de langages",
-    "entreprises_actives": 356
+    "entreprises_actives": 356,
+    "evolution_pct": -3.8,
+    "rang": 545,
+    "nb_classes": 642
   },
   {
     "code_naf": "58.29C",
     "libelle_naf": "Édition de logiciels applicatifs",
-    "entreprises_actives": 11599
+    "entreprises_actives": 11599,
+    "evolution_pct": 15.6,
+    "rang": 28,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.11A",
     "libelle_naf": "Production de films et de programmes pour la télévision",
-    "entreprises_actives": 24182
+    "entreprises_actives": 24182,
+    "evolution_pct": 10.4,
+    "rang": 46,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.11B",
     "libelle_naf": "Production de films institutionnels et publicitaires",
-    "entreprises_actives": 27733
+    "entreprises_actives": 27733,
+    "evolution_pct": 18.9,
+    "rang": 19,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.11C",
     "libelle_naf": "Production de films pour le cinéma",
-    "entreprises_actives": 10489
+    "entreprises_actives": 10489,
+    "evolution_pct": 8.5,
+    "rang": 75,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.12Z",
     "libelle_naf": "Post-production de films cinématographiques, de vidéo et de programmes de télévision",
-    "entreprises_actives": 11822
+    "entreprises_actives": 11822,
+    "evolution_pct": 15.7,
+    "rang": 27,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.13A",
     "libelle_naf": "Distribution de films cinématographiques",
-    "entreprises_actives": 617
+    "entreprises_actives": 617,
+    "evolution_pct": 4.0,
+    "rang": 168,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.13B",
     "libelle_naf": "Édition et distribution vidéo",
-    "entreprises_actives": 1418
+    "entreprises_actives": 1418,
+    "evolution_pct": 12.7,
+    "rang": 37,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.14Z",
     "libelle_naf": "Projection de films cinématographiques",
-    "entreprises_actives": 2040
+    "entreprises_actives": 2040,
+    "evolution_pct": 5.3,
+    "rang": 128,
+    "nb_classes": 642
   },
   {
     "code_naf": "59.20Z",
     "libelle_naf": "Enregistrement sonore et édition musicale",
-    "entreprises_actives": 21242
+    "entreprises_actives": 21242,
+    "evolution_pct": 8.5,
+    "rang": 76,
+    "nb_classes": 642
   },
   {
     "code_naf": "60.10Z",
     "libelle_naf": "Édition et diffusion de programmes radio",
-    "entreprises_actives": 2909
+    "entreprises_actives": 2909,
+    "evolution_pct": 4.5,
+    "rang": 151,
+    "nb_classes": 642
   },
   {
     "code_naf": "60.20A",
     "libelle_naf": "Édition de chaînes généralistes",
-    "entreprises_actives": 109
+    "entreprises_actives": 109,
+    "evolution_pct": 0.9,
+    "rang": 285,
+    "nb_classes": 642
   },
   {
     "code_naf": "60.20B",
     "libelle_naf": "Édition de chaînes thématiques",
-    "entreprises_actives": 340
+    "entreprises_actives": 340,
+    "evolution_pct": 0.6,
+    "rang": 307,
+    "nb_classes": 642
   },
   {
     "code_naf": "61.10Z",
     "libelle_naf": "Télécommunications filaires",
-    "entreprises_actives": 2160
+    "entreprises_actives": 2160,
+    "evolution_pct": -6.2,
+    "rang": 608,
+    "nb_classes": 642
   },
   {
     "code_naf": "61.20Z",
     "libelle_naf": "Télécommunications sans fil",
-    "entreprises_actives": 457
+    "entreprises_actives": 457,
+    "evolution_pct": -2.8,
+    "rang": 494,
+    "nb_classes": 642
   },
   {
     "code_naf": "61.30Z",
     "libelle_naf": "Télécommunications par satellite",
-    "entreprises_actives": 114
+    "entreprises_actives": 114,
+    "evolution_pct": 2.7,
+    "rang": 213,
+    "nb_classes": 642
   },
   {
     "code_naf": "61.90Z",
     "libelle_naf": "Autres activités de télécommunication",
-    "entreprises_actives": 5418
+    "entreprises_actives": 5418,
+    "evolution_pct": -4.6,
+    "rang": 572,
+    "nb_classes": 642
   },
   {
     "code_naf": "62.01Z",
     "libelle_naf": "Programmation informatique",
-    "entreprises_actives": 125832
+    "entreprises_actives": 125832,
+    "evolution_pct": 5.3,
+    "rang": 129,
+    "nb_classes": 642
   },
   {
     "code_naf": "62.02A",
     "libelle_naf": "Conseil en systèmes et logiciels informatiques",
-    "entreprises_actives": 99833
+    "entreprises_actives": 99833,
+    "evolution_pct": 7.2,
+    "rang": 89,
+    "nb_classes": 642
   },
   {
     "code_naf": "62.02B",
     "libelle_naf": "Tierce maintenance de systèmes et d'applications informatiques",
-    "entreprises_actives": 6167
+    "entreprises_actives": 6167,
+    "evolution_pct": -9.3,
+    "rang": 633,
+    "nb_classes": 642
   },
   {
     "code_naf": "62.03Z",
     "libelle_naf": "Gestion d'installations informatiques",
-    "entreprises_actives": 3001
+    "entreprises_actives": 3001,
+    "evolution_pct": 6.8,
+    "rang": 95,
+    "nb_classes": 642
   },
   {
     "code_naf": "62.09Z",
     "libelle_naf": "Autres activités informatiques",
-    "entreprises_actives": 8660
+    "entreprises_actives": 8660,
+    "evolution_pct": -2.0,
+    "rang": 452,
+    "nb_classes": 642
   },
   {
     "code_naf": "63.11Z",
     "libelle_naf": "Traitement de données, hébergement et activités connexes",
-    "entreprises_actives": 10210
+    "entreprises_actives": 10210,
+    "evolution_pct": 7.5,
+    "rang": 86,
+    "nb_classes": 642
   },
   {
     "code_naf": "63.12Z",
     "libelle_naf": "Portails Internet",
-    "entreprises_actives": 10978
+    "entreprises_actives": 10978,
+    "evolution_pct": 0.7,
+    "rang": 302,
+    "nb_classes": 642
   },
   {
     "code_naf": "63.91Z",
     "libelle_naf": "Activités des agences de presse",
-    "entreprises_actives": 3346
+    "entreprises_actives": 3346,
+    "evolution_pct": -2.6,
+    "rang": 484,
+    "nb_classes": 642
   },
   {
     "code_naf": "63.99Z",
     "libelle_naf": "Autres services d'information n.c.a.",
-    "entreprises_actives": 1625
+    "entreprises_actives": 1625,
+    "evolution_pct": 5.7,
+    "rang": 117,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.11Z",
     "libelle_naf": "Activités de banque centrale",
-    "entreprises_actives": 33
+    "entreprises_actives": 33,
+    "evolution_pct": 0.0,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.19Z",
     "libelle_naf": "Autres intermédiations monétaires",
-    "entreprises_actives": 5738
+    "entreprises_actives": 5738,
+    "evolution_pct": -3.4,
+    "rang": 527,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.20Z",
     "libelle_naf": "Activités des sociétés holding",
-    "entreprises_actives": 157021
+    "entreprises_actives": 157021,
+    "evolution_pct": 3.1,
+    "rang": 200,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.30Z",
     "libelle_naf": "Fonds de placement et entités financières similaires",
-    "entreprises_actives": 29614
+    "entreprises_actives": 29614,
+    "evolution_pct": 11.6,
+    "rang": 39,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.91Z",
     "libelle_naf": "Crédit-bail",
-    "entreprises_actives": 467
+    "entreprises_actives": 467,
+    "evolution_pct": -10.0,
+    "rang": 635,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.92Z",
     "libelle_naf": "Autre distribution de crédit",
-    "entreprises_actives": 1099
+    "entreprises_actives": 1099,
+    "evolution_pct": -11.0,
+    "rang": 638,
+    "nb_classes": 642
   },
   {
     "code_naf": "64.99Z",
     "libelle_naf": "Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.",
-    "entreprises_actives": 3707
+    "entreprises_actives": 3707,
+    "evolution_pct": 15.3,
+    "rang": 30,
+    "nb_classes": 642
   },
   {
     "code_naf": "65.11Z",
     "libelle_naf": "Assurance vie",
-    "entreprises_actives": 275
+    "entreprises_actives": 275,
+    "evolution_pct": -2.5,
+    "rang": 480,
+    "nb_classes": 642
   },
   {
     "code_naf": "65.12Z",
     "libelle_naf": "Autres assurances",
-    "entreprises_actives": 3531
+    "entreprises_actives": 3531,
+    "evolution_pct": -1.7,
+    "rang": 438,
+    "nb_classes": 642
   },
   {
     "code_naf": "65.20Z",
     "libelle_naf": "Réassurance",
-    "entreprises_actives": 111
+    "entreprises_actives": 111,
+    "evolution_pct": 8.8,
+    "rang": 70,
+    "nb_classes": 642
   },
   {
     "code_naf": "65.30Z",
     "libelle_naf": "Caisses de retraite",
-    "entreprises_actives": 57
+    "entreprises_actives": 57,
+    "evolution_pct": 1.8,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.11Z",
     "libelle_naf": "Administration de marchés financiers",
-    "entreprises_actives": 156
+    "entreprises_actives": 156,
+    "evolution_pct": -5.5,
+    "rang": 597,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.12Z",
     "libelle_naf": "Courtage de valeurs mobilières et de marchandises",
-    "entreprises_actives": 1913
+    "entreprises_actives": 1913,
+    "evolution_pct": -6.7,
+    "rang": 617,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.19A",
     "libelle_naf": "Supports juridiques de gestion de patrimoine mobilier",
-    "entreprises_actives": 34717
+    "entreprises_actives": 34717,
+    "evolution_pct": 2.8,
+    "rang": 211,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.19B",
     "libelle_naf": "Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite, n.c.a.",
-    "entreprises_actives": 22943
+    "entreprises_actives": 22943,
+    "evolution_pct": -1.7,
+    "rang": 439,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.21Z",
     "libelle_naf": "Évaluation des risques et dommages",
-    "entreprises_actives": 2575
+    "entreprises_actives": 2575,
+    "evolution_pct": 1.6,
+    "rang": 244,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.22Z",
     "libelle_naf": "Activités des agents et courtiers d'assurances",
-    "entreprises_actives": 46837
+    "entreprises_actives": 46837,
+    "evolution_pct": 2.1,
+    "rang": 230,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.29Z",
     "libelle_naf": "Autres activités auxiliaires d'assurance et de caisses de retraite",
-    "entreprises_actives": 556
+    "entreprises_actives": 556,
+    "evolution_pct": -7.9,
+    "rang": 625,
+    "nb_classes": 642
   },
   {
     "code_naf": "66.30Z",
     "libelle_naf": "Gestion de fonds",
-    "entreprises_actives": 111628
+    "entreprises_actives": 111628,
+    "evolution_pct": 34.2,
+    "rang": 4,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.10Z",
     "libelle_naf": "Activités des marchands de biens immobiliers",
-    "entreprises_actives": 58558
+    "entreprises_actives": 58558,
+    "evolution_pct": 3.0,
+    "rang": 204,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.20A",
     "libelle_naf": "Location de logements",
-    "entreprises_actives": 1198287
+    "entreprises_actives": 1198287,
+    "evolution_pct": 9.6,
+    "rang": 56,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.20B",
     "libelle_naf": "Location de terrains et d'autres biens immobiliers",
-    "entreprises_actives": 2115389
+    "entreprises_actives": 2115389,
+    "evolution_pct": 5.4,
+    "rang": 126,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.31Z",
     "libelle_naf": "Agences immobilières",
-    "entreprises_actives": 155275
+    "entreprises_actives": 155275,
+    "evolution_pct": -4.5,
+    "rang": 566,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.32A",
     "libelle_naf": "Administration d'immeubles et autres biens immobiliers",
-    "entreprises_actives": 56397
+    "entreprises_actives": 56397,
+    "evolution_pct": 0.9,
+    "rang": 286,
+    "nb_classes": 642
   },
   {
     "code_naf": "68.32B",
     "libelle_naf": "Supports juridiques de gestion de patrimoine immobilier",
-    "entreprises_actives": 19755
+    "entreprises_actives": 19755,
+    "evolution_pct": 4.2,
+    "rang": 159,
+    "nb_classes": 642
   },
   {
     "code_naf": "69.10Z",
     "libelle_naf": "Activités juridiques",
-    "entreprises_actives": 119127
+    "entreprises_actives": 119127,
+    "evolution_pct": 3.6,
+    "rang": 181,
+    "nb_classes": 642
   },
   {
     "code_naf": "69.20Z",
     "libelle_naf": "Activités comptables",
-    "entreprises_actives": 34063
+    "entreprises_actives": 34063,
+    "evolution_pct": 6.2,
+    "rang": 105,
+    "nb_classes": 642
   },
   {
     "code_naf": "70.10Z",
     "libelle_naf": "Activités des sièges sociaux",
-    "entreprises_actives": 120686
+    "entreprises_actives": 120686,
+    "evolution_pct": -5.9,
+    "rang": 605,
+    "nb_classes": 642
   },
   {
     "code_naf": "70.21Z",
     "libelle_naf": "Conseil en relations publiques et communication",
-    "entreprises_actives": 84800
+    "entreprises_actives": 84800,
+    "evolution_pct": -4.1,
+    "rang": 552,
+    "nb_classes": 642
   },
   {
     "code_naf": "70.22Z",
     "libelle_naf": "Conseil pour les affaires et autres conseils de gestion",
-    "entreprises_actives": 400393
+    "entreprises_actives": 400393,
+    "evolution_pct": -2.7,
+    "rang": 489,
+    "nb_classes": 642
   },
   {
     "code_naf": "71.11Z",
     "libelle_naf": "Activités d'architecture",
-    "entreprises_actives": 46852
+    "entreprises_actives": 46852,
+    "evolution_pct": -3.0,
+    "rang": 506,
+    "nb_classes": 642
   },
   {
     "code_naf": "71.12A",
     "libelle_naf": "Activité des géomètres",
-    "entreprises_actives": 3027
+    "entreprises_actives": 3027,
+    "evolution_pct": 0.3,
+    "rang": 326,
+    "nb_classes": 642
   },
   {
     "code_naf": "71.12B",
     "libelle_naf": "Ingénierie, études techniques",
-    "entreprises_actives": 95586
+    "entreprises_actives": 95586,
+    "evolution_pct": -0.2,
+    "rang": 360,
+    "nb_classes": 642
   },
   {
     "code_naf": "71.20A",
     "libelle_naf": "Contrôle technique automobile",
-    "entreprises_actives": 6484
+    "entreprises_actives": 6484,
+    "evolution_pct": 3.7,
+    "rang": 177,
+    "nb_classes": 642
   },
   {
     "code_naf": "71.20B",
     "libelle_naf": "Analyses, essais et inspections techniques",
-    "entreprises_actives": 15057
+    "entreprises_actives": 15057,
+    "evolution_pct": 4.1,
+    "rang": 164,
+    "nb_classes": 642
   },
   {
     "code_naf": "72.11Z",
     "libelle_naf": "Recherche-développement en biotechnologie",
-    "entreprises_actives": 2465
+    "entreprises_actives": 2465,
+    "evolution_pct": 9.0,
+    "rang": 65,
+    "nb_classes": 642
   },
   {
     "code_naf": "72.19Z",
     "libelle_naf": "Recherche-développement en autres sciences physiques et naturelles",
-    "entreprises_actives": 9592
+    "entreprises_actives": 9592,
+    "evolution_pct": -3.5,
+    "rang": 531,
+    "nb_classes": 642
   },
   {
     "code_naf": "72.20Z",
     "libelle_naf": "Recherche-développement en sciences humaines et sociales",
-    "entreprises_actives": 4791
+    "entreprises_actives": 4791,
+    "evolution_pct": -10.8,
+    "rang": 637,
+    "nb_classes": 642
   },
   {
     "code_naf": "73.11Z",
     "libelle_naf": "Activités des agences de publicité",
-    "entreprises_actives": 44026
+    "entreprises_actives": 44026,
+    "evolution_pct": 8.3,
+    "rang": 79,
+    "nb_classes": 642
   },
   {
     "code_naf": "73.12Z",
     "libelle_naf": "Régie publicitaire de médias",
-    "entreprises_actives": 5653
+    "entreprises_actives": 5653,
+    "evolution_pct": -4.3,
+    "rang": 557,
+    "nb_classes": 642
   },
   {
     "code_naf": "73.20Z",
     "libelle_naf": "Études de marché et sondages",
-    "entreprises_actives": 6304
+    "entreprises_actives": 6304,
+    "evolution_pct": -0.0,
+    "rang": 344,
+    "nb_classes": 642
   },
   {
     "code_naf": "74.10Z",
     "libelle_naf": "Activités spécialisées de design",
-    "entreprises_actives": 113403
+    "entreprises_actives": 113403,
+    "evolution_pct": -0.1,
+    "rang": 356,
+    "nb_classes": 642
   },
   {
     "code_naf": "74.20Z",
     "libelle_naf": "Activités photographiques",
-    "entreprises_actives": 72068
+    "entreprises_actives": 72068,
+    "evolution_pct": 5.0,
+    "rang": 140,
+    "nb_classes": 642
   },
   {
     "code_naf": "74.30Z",
     "libelle_naf": "Traduction et interprétation",
-    "entreprises_actives": 29610
+    "entreprises_actives": 29610,
+    "evolution_pct": -5.1,
+    "rang": 591,
+    "nb_classes": 642
   },
   {
     "code_naf": "74.90A",
     "libelle_naf": "Activité des économistes de la construction",
-    "entreprises_actives": 13170
+    "entreprises_actives": 13170,
+    "evolution_pct": -1.0,
+    "rang": 406,
+    "nb_classes": 642
   },
   {
     "code_naf": "74.90B",
     "libelle_naf": "Activités spécialisées, scientifiques et techniques diverses",
-    "entreprises_actives": 56037
+    "entreprises_actives": 56037,
+    "evolution_pct": 0.4,
+    "rang": 319,
+    "nb_classes": 642
   },
   {
     "code_naf": "75.00Z",
     "libelle_naf": "Activités vétérinaires",
-    "entreprises_actives": 14812
+    "entreprises_actives": 14812,
+    "evolution_pct": -0.3,
+    "rang": 361,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.11A",
     "libelle_naf": "Location de courte durée de voitures et de véhicules automobiles légers",
-    "entreprises_actives": 18152
+    "entreprises_actives": 18152,
+    "evolution_pct": 10.5,
+    "rang": 44,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.11B",
     "libelle_naf": "Location de longue durée de voitures et de véhicules automobiles légers",
-    "entreprises_actives": 3227
+    "entreprises_actives": 3227,
+    "evolution_pct": 8.4,
+    "rang": 78,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.12Z",
     "libelle_naf": "Location et location-bail de camions",
-    "entreprises_actives": 3234
+    "entreprises_actives": 3234,
+    "evolution_pct": -0.8,
+    "rang": 389,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.21Z",
     "libelle_naf": "Location et location-bail d'articles de loisirs et de sport",
-    "entreprises_actives": 7851
+    "entreprises_actives": 7851,
+    "evolution_pct": 5.4,
+    "rang": 127,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.22Z",
     "libelle_naf": "Location de vidéocassettes et disques vidéo",
-    "entreprises_actives": 525
+    "entreprises_actives": 525,
+    "evolution_pct": -2.4,
+    "rang": 476,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.29Z",
     "libelle_naf": "Location et location-bail d'autres biens personnels et domestiques",
-    "entreprises_actives": 9382
+    "entreprises_actives": 9382,
+    "evolution_pct": 13.1,
+    "rang": 35,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.31Z",
     "libelle_naf": "Location et location-bail de machines et équipements agricoles",
-    "entreprises_actives": 6555
+    "entreprises_actives": 6555,
+    "evolution_pct": -1.7,
+    "rang": 440,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.32Z",
     "libelle_naf": "Location et location-bail de machines et équipements pour la construction",
-    "entreprises_actives": 5120
+    "entreprises_actives": 5120,
+    "evolution_pct": 4.7,
+    "rang": 146,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.33Z",
     "libelle_naf": "Location et location-bail de machines de bureau et de matériel informatique",
-    "entreprises_actives": 478
+    "entreprises_actives": 478,
+    "evolution_pct": 3.9,
+    "rang": 170,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.34Z",
     "libelle_naf": "Location et location-bail de matériels de transport par eau",
-    "entreprises_actives": 1932
+    "entreprises_actives": 1932,
+    "evolution_pct": 3.7,
+    "rang": 178,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.35Z",
     "libelle_naf": "Location et location-bail de matériels de transport aérien",
-    "entreprises_actives": 1189
+    "entreprises_actives": 1189,
+    "evolution_pct": -0.3,
+    "rang": 362,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.39Z",
     "libelle_naf": "Location et location-bail d'autres machines, équipements et biens matériels n.c.a.",
-    "entreprises_actives": 48794
+    "entreprises_actives": 48794,
+    "evolution_pct": 14.8,
+    "rang": 31,
+    "nb_classes": 642
   },
   {
     "code_naf": "77.40Z",
     "libelle_naf": "Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright",
-    "entreprises_actives": 4200
+    "entreprises_actives": 4200,
+    "evolution_pct": 8.6,
+    "rang": 71,
+    "nb_classes": 642
   },
   {
     "code_naf": "78.10Z",
     "libelle_naf": "Activités des agences de placement de main-d'œuvre",
-    "entreprises_actives": 4036
+    "entreprises_actives": 4036,
+    "evolution_pct": 19.7,
+    "rang": 17,
+    "nb_classes": 642
   },
   {
     "code_naf": "78.20Z",
     "libelle_naf": "Activités des agences de travail temporaire",
-    "entreprises_actives": 7136
+    "entreprises_actives": 7136,
+    "evolution_pct": 1.9,
+    "rang": 235,
+    "nb_classes": 642
   },
   {
     "code_naf": "78.30Z",
     "libelle_naf": "Autre mise à disposition de ressources humaines",
-    "entreprises_actives": 12822
+    "entreprises_actives": 12822,
+    "evolution_pct": 2.7,
+    "rang": 214,
+    "nb_classes": 642
   },
   {
     "code_naf": "79.11Z",
     "libelle_naf": "Activités des agences de voyage",
-    "entreprises_actives": 7758
+    "entreprises_actives": 7758,
+    "evolution_pct": 2.4,
+    "rang": 219,
+    "nb_classes": 642
   },
   {
     "code_naf": "79.12Z",
     "libelle_naf": "Activités des voyagistes",
-    "entreprises_actives": 3302
+    "entreprises_actives": 3302,
+    "evolution_pct": 17.1,
+    "rang": 23,
+    "nb_classes": 642
   },
   {
     "code_naf": "79.90Z",
     "libelle_naf": "Autres services de réservation et activités connexes",
-    "entreprises_actives": 14666
+    "entreprises_actives": 14666,
+    "evolution_pct": 8.2,
+    "rang": 80,
+    "nb_classes": 642
   },
   {
     "code_naf": "80.10Z",
     "libelle_naf": "Activités de sécurité privée",
-    "entreprises_actives": 19581
+    "entreprises_actives": 19581,
+    "evolution_pct": 5.2,
+    "rang": 133,
+    "nb_classes": 642
   },
   {
     "code_naf": "80.20Z",
     "libelle_naf": "Activités liées aux systèmes de sécurité",
-    "entreprises_actives": 5379
+    "entreprises_actives": 5379,
+    "evolution_pct": 11.2,
+    "rang": 41,
+    "nb_classes": 642
   },
   {
     "code_naf": "80.30Z",
     "libelle_naf": "Activités d'enquête",
-    "entreprises_actives": 1457
+    "entreprises_actives": 1457,
+    "evolution_pct": 13.3,
+    "rang": 33,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.10Z",
     "libelle_naf": "Activités combinées de soutien lié aux bâtiments",
-    "entreprises_actives": 161736
+    "entreprises_actives": 161736,
+    "evolution_pct": 0.2,
+    "rang": 330,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.21Z",
     "libelle_naf": "Nettoyage courant des bâtiments",
-    "entreprises_actives": 214340
+    "entreprises_actives": 214340,
+    "evolution_pct": 16.6,
+    "rang": 25,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.22Z",
     "libelle_naf": "Autres activités de nettoyage des bâtiments et nettoyage industriel",
-    "entreprises_actives": 19359
+    "entreprises_actives": 19359,
+    "evolution_pct": 7.9,
+    "rang": 83,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.29A",
     "libelle_naf": "Désinfection, désinsectisation, dératisation",
-    "entreprises_actives": 6587
+    "entreprises_actives": 6587,
+    "evolution_pct": 10.5,
+    "rang": 45,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.29B",
     "libelle_naf": "Autres activités de nettoyage n.c.a.",
-    "entreprises_actives": 7082
+    "entreprises_actives": 7082,
+    "evolution_pct": 7.8,
+    "rang": 85,
+    "nb_classes": 642
   },
   {
     "code_naf": "81.30Z",
     "libelle_naf": "Services d'aménagement paysager",
-    "entreprises_actives": 65011
+    "entreprises_actives": 65011,
+    "evolution_pct": 10.4,
+    "rang": 47,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.11Z",
     "libelle_naf": "Services administratifs combinés de bureau",
-    "entreprises_actives": 74299
+    "entreprises_actives": 74299,
+    "evolution_pct": 20.8,
+    "rang": 13,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.19Z",
     "libelle_naf": "Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau",
-    "entreprises_actives": 40439
+    "entreprises_actives": 40439,
+    "evolution_pct": -5.1,
+    "rang": 592,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.20Z",
     "libelle_naf": "Activités de centres d'appels",
-    "entreprises_actives": 5626
+    "entreprises_actives": 5626,
+    "evolution_pct": 9.7,
+    "rang": 53,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.30Z",
     "libelle_naf": "Organisation de foires, salons professionnels et congrès",
-    "entreprises_actives": 31094
+    "entreprises_actives": 31094,
+    "evolution_pct": 9.2,
+    "rang": 61,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.91Z",
     "libelle_naf": "Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle",
-    "entreprises_actives": 920
+    "entreprises_actives": 920,
+    "evolution_pct": 1.9,
+    "rang": 236,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.92Z",
     "libelle_naf": "Activités de conditionnement",
-    "entreprises_actives": 2189
+    "entreprises_actives": 2189,
+    "evolution_pct": -0.1,
+    "rang": 357,
+    "nb_classes": 642
   },
   {
     "code_naf": "82.99Z",
     "libelle_naf": "Autres activités de soutien aux entreprises n.c.a.",
-    "entreprises_actives": 78234
+    "entreprises_actives": 78234,
+    "evolution_pct": 10.3,
+    "rang": 48,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.11Z",
     "libelle_naf": "Administration publique générale",
-    "entreprises_actives": 41008
+    "entreprises_actives": 41008,
+    "evolution_pct": -0.4,
+    "rang": 366,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.12Z",
     "libelle_naf": "Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale",
-    "entreprises_actives": 3400
+    "entreprises_actives": 3400,
+    "evolution_pct": -2.3,
+    "rang": 466,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.13Z",
     "libelle_naf": "Administration publique (tutelle) des activités économiques",
-    "entreprises_actives": 2361
+    "entreprises_actives": 2361,
+    "evolution_pct": -1.1,
+    "rang": 411,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.21Z",
     "libelle_naf": "Affaires étrangères",
-    "entreprises_actives": 221
+    "entreprises_actives": 221,
+    "evolution_pct": 0.0,
+    "rang": 345,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.22Z",
     "libelle_naf": "Défense",
-    "entreprises_actives": 7
+    "entreprises_actives": 7,
+    "evolution_pct": -22.2,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.23Z",
     "libelle_naf": "Justice",
-    "entreprises_actives": 359
+    "entreprises_actives": 359,
+    "evolution_pct": 2.3,
+    "rang": 225,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.24Z",
     "libelle_naf": "Activités d'ordre public et de sécurité",
-    "entreprises_actives": 193
+    "entreprises_actives": 193,
+    "evolution_pct": -21.2,
+    "rang": 642,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.25Z",
     "libelle_naf": "Services du feu et de secours",
-    "entreprises_actives": 527
+    "entreprises_actives": 527,
+    "evolution_pct": 14.1,
+    "rang": 32,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.30A",
     "libelle_naf": "Activités générales de sécurité sociale",
-    "entreprises_actives": 475
+    "entreprises_actives": 475,
+    "evolution_pct": -0.6,
+    "rang": 375,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.30B",
     "libelle_naf": "Gestion des retraites complémentaires",
-    "entreprises_actives": 428
+    "entreprises_actives": 428,
+    "evolution_pct": -2.9,
+    "rang": 500,
+    "nb_classes": 642
   },
   {
     "code_naf": "84.30C",
     "libelle_naf": "Distribution sociale de revenus",
-    "entreprises_actives": 169
+    "entreprises_actives": 169,
+    "evolution_pct": 0.0,
+    "rang": 346,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.10Z",
     "libelle_naf": "Enseignement pré-primaire",
-    "entreprises_actives": 228
+    "entreprises_actives": 228,
+    "evolution_pct": -0.9,
+    "rang": 395,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.20Z",
     "libelle_naf": "Enseignement primaire",
-    "entreprises_actives": 4799
+    "entreprises_actives": 4799,
+    "evolution_pct": 0.0,
+    "rang": 347,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.31Z",
     "libelle_naf": "Enseignement secondaire général",
-    "entreprises_actives": 9340
+    "entreprises_actives": 9340,
+    "evolution_pct": 0.4,
+    "rang": 320,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.32Z",
     "libelle_naf": "Enseignement secondaire technique ou professionnel",
-    "entreprises_actives": 5502
+    "entreprises_actives": 5502,
+    "evolution_pct": -7.9,
+    "rang": 626,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.41Z",
     "libelle_naf": "Enseignement post-secondaire non supérieur",
-    "entreprises_actives": 114
+    "entreprises_actives": 114,
+    "evolution_pct": -5.8,
+    "rang": 603,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.42Z",
     "libelle_naf": "Enseignement supérieur",
-    "entreprises_actives": 13178
+    "entreprises_actives": 13178,
+    "evolution_pct": -7.0,
+    "rang": 620,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.51Z",
     "libelle_naf": "Enseignement de disciplines sportives et d'activités de loisirs",
-    "entreprises_actives": 121966
+    "entreprises_actives": 121966,
+    "evolution_pct": 6.8,
+    "rang": 96,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.52Z",
     "libelle_naf": "Enseignement culturel",
-    "entreprises_actives": 57810
+    "entreprises_actives": 57810,
+    "evolution_pct": 3.8,
+    "rang": 174,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.53Z",
     "libelle_naf": "Enseignement de la conduite",
-    "entreprises_actives": 18818
+    "entreprises_actives": 18818,
+    "evolution_pct": 1.0,
+    "rang": 283,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.59A",
     "libelle_naf": "Formation continue d'adultes",
-    "entreprises_actives": 90585
+    "entreprises_actives": 90585,
+    "evolution_pct": 3.6,
+    "rang": 182,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.59B",
     "libelle_naf": "Autres enseignements",
-    "entreprises_actives": 111236
+    "entreprises_actives": 111236,
+    "evolution_pct": 4.7,
+    "rang": 147,
+    "nb_classes": 642
   },
   {
     "code_naf": "85.60Z",
     "libelle_naf": "Activités de soutien à l'enseignement",
-    "entreprises_actives": 11574
+    "entreprises_actives": 11574,
+    "evolution_pct": 19.1,
+    "rang": 18,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.10Z",
     "libelle_naf": "Activités hospitalières",
-    "entreprises_actives": 3675
+    "entreprises_actives": 3675,
+    "evolution_pct": 4.1,
+    "rang": 165,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.21Z",
     "libelle_naf": "Activité des médecins généralistes",
-    "entreprises_actives": 100162
+    "entreprises_actives": 100162,
+    "evolution_pct": 1.3,
+    "rang": 266,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.22A",
     "libelle_naf": "Activités de radiodiagnostic et de radiothérapie",
-    "entreprises_actives": 6024
+    "entreprises_actives": 6024,
+    "evolution_pct": -1.4,
+    "rang": 420,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.22B",
     "libelle_naf": "Activités chirurgicales",
-    "entreprises_actives": 6858
+    "entreprises_actives": 6858,
+    "evolution_pct": 4.4,
+    "rang": 153,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.22C",
     "libelle_naf": "Autres activités des médecins spécialistes",
-    "entreprises_actives": 57898
+    "entreprises_actives": 57898,
+    "evolution_pct": 5.6,
+    "rang": 120,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.23Z",
     "libelle_naf": "Pratique dentaire",
-    "entreprises_actives": 48506
+    "entreprises_actives": 48506,
+    "evolution_pct": 2.4,
+    "rang": 220,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90A",
     "libelle_naf": "Ambulances",
-    "entreprises_actives": 6331
+    "entreprises_actives": 6331,
+    "evolution_pct": -2.2,
+    "rang": 458,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90B",
     "libelle_naf": "Laboratoires d'analyses médicales",
-    "entreprises_actives": 3420
+    "entreprises_actives": 3420,
+    "evolution_pct": -0.9,
+    "rang": 396,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90C",
     "libelle_naf": "Centres de collecte et banques d'organes",
-    "entreprises_actives": 158
+    "entreprises_actives": 158,
+    "evolution_pct": 0.0,
+    "rang": 348,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90D",
     "libelle_naf": "Activités des infirmiers et des sages-femmes",
-    "entreprises_actives": 147626
+    "entreprises_actives": 147626,
+    "evolution_pct": -0.3,
+    "rang": 363,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90E",
     "libelle_naf": "Activités des professionnels de la rééducation, de l'appareillage et des pédicures-podologues",
-    "entreprises_actives": 173896
+    "entreprises_actives": 173896,
+    "evolution_pct": 6.1,
+    "rang": 109,
+    "nb_classes": 642
   },
   {
     "code_naf": "86.90F",
     "libelle_naf": "Activités de santé humaine non classées ailleurs",
-    "entreprises_actives": 117376
+    "entreprises_actives": 117376,
+    "evolution_pct": -1.5,
+    "rang": 426,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.10A",
     "libelle_naf": "Hébergement médicalisé pour personnes âgées",
-    "entreprises_actives": 3219
+    "entreprises_actives": 3219,
+    "evolution_pct": -1.6,
+    "rang": 433,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.10B",
     "libelle_naf": "Hébergement médicalisé pour enfants handicapés",
-    "entreprises_actives": 327
+    "entreprises_actives": 327,
+    "evolution_pct": 0.9,
+    "rang": 287,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.10C",
     "libelle_naf": "Hébergement médicalisé pour adultes handicapés et autre hébergement médicalisé",
-    "entreprises_actives": 168
+    "entreprises_actives": 168,
+    "evolution_pct": 2.4,
+    "rang": 221,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.20A",
     "libelle_naf": "Hébergement social pour handicapés mentaux et malades mentaux",
-    "entreprises_actives": 657
+    "entreprises_actives": 657,
+    "evolution_pct": -1.5,
+    "rang": 427,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.20B",
     "libelle_naf": "Hébergement social pour toxicomanes",
-    "entreprises_actives": 62
+    "entreprises_actives": 62,
+    "evolution_pct": -3.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.30A",
     "libelle_naf": "Hébergement social pour personnes âgées",
-    "entreprises_actives": 1907
+    "entreprises_actives": 1907,
+    "evolution_pct": 3.2,
+    "rang": 197,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.30B",
     "libelle_naf": "Hébergement social pour handicapés physiques",
-    "entreprises_actives": 94
+    "entreprises_actives": 94,
+    "evolution_pct": -2.1,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.90A",
     "libelle_naf": "Hébergement social pour enfants en difficultés",
-    "entreprises_actives": 1653
+    "entreprises_actives": 1653,
+    "evolution_pct": 9.2,
+    "rang": 62,
+    "nb_classes": 642
   },
   {
     "code_naf": "87.90B",
     "libelle_naf": "Hébergement social pour adultes et familles en difficultés et autre hébergement social",
-    "entreprises_actives": 1572
+    "entreprises_actives": 1572,
+    "evolution_pct": 2.0,
+    "rang": 233,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.10A",
     "libelle_naf": "Aide à domicile",
-    "entreprises_actives": 22494
+    "entreprises_actives": 22494,
+    "evolution_pct": 2.8,
+    "rang": 212,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.10B",
     "libelle_naf": "Accueil ou accompagnement sans hébergement d'adultes handicapés ou de personnes âgées",
-    "entreprises_actives": 1921
+    "entreprises_actives": 1921,
+    "evolution_pct": 25.6,
+    "rang": 9,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.10C",
     "libelle_naf": "Aide par le travail",
-    "entreprises_actives": 1090
+    "entreprises_actives": 1090,
+    "evolution_pct": -1.9,
+    "rang": 448,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.91A",
     "libelle_naf": "Accueil de jeunes enfants",
-    "entreprises_actives": 20741
+    "entreprises_actives": 20741,
+    "evolution_pct": 10.2,
+    "rang": 50,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.91B",
     "libelle_naf": "Accueil ou accompagnement sans hébergement d'enfants handicapés",
-    "entreprises_actives": 875
+    "entreprises_actives": 875,
+    "evolution_pct": 28.1,
+    "rang": 7,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.99A",
     "libelle_naf": "Autre accueil ou accompagnement sans hébergement d'enfants et d'adolescents",
-    "entreprises_actives": 4556
+    "entreprises_actives": 4556,
+    "evolution_pct": 4.5,
+    "rang": 152,
+    "nb_classes": 642
   },
   {
     "code_naf": "88.99B",
     "libelle_naf": "Action sociale sans hébergement n.c.a.",
-    "entreprises_actives": 73588
+    "entreprises_actives": 73588,
+    "evolution_pct": 6.9,
+    "rang": 92,
+    "nb_classes": 642
   },
   {
     "code_naf": "90.01Z",
     "libelle_naf": "Arts du spectacle vivant",
-    "entreprises_actives": 166188
+    "entreprises_actives": 166188,
+    "evolution_pct": 8.6,
+    "rang": 72,
+    "nb_classes": 642
   },
   {
     "code_naf": "90.02Z",
     "libelle_naf": "Activités de soutien au spectacle vivant",
-    "entreprises_actives": 34793
+    "entreprises_actives": 34793,
+    "evolution_pct": 5.7,
+    "rang": 118,
+    "nb_classes": 642
   },
   {
     "code_naf": "90.03A",
     "libelle_naf": "Création artistique relevant des arts plastiques",
-    "entreprises_actives": 135251
+    "entreprises_actives": 135251,
+    "evolution_pct": 5.5,
+    "rang": 123,
+    "nb_classes": 642
   },
   {
     "code_naf": "90.03B",
     "libelle_naf": "Autre création artistique",
-    "entreprises_actives": 87076
+    "entreprises_actives": 87076,
+    "evolution_pct": 5.0,
+    "rang": 141,
+    "nb_classes": 642
   },
   {
     "code_naf": "90.04Z",
     "libelle_naf": "Gestion de salles de spectacles",
-    "entreprises_actives": 3471
+    "entreprises_actives": 3471,
+    "evolution_pct": 0.3,
+    "rang": 327,
+    "nb_classes": 642
   },
   {
     "code_naf": "91.01Z",
     "libelle_naf": "Gestion des bibliothèques et des archives",
-    "entreprises_actives": 1781
+    "entreprises_actives": 1781,
+    "evolution_pct": 2.1,
+    "rang": 231,
+    "nb_classes": 642
   },
   {
     "code_naf": "91.02Z",
     "libelle_naf": "Gestion des musées",
-    "entreprises_actives": 1988
+    "entreprises_actives": 1988,
+    "evolution_pct": 11.6,
+    "rang": 40,
+    "nb_classes": 642
   },
   {
     "code_naf": "91.03Z",
     "libelle_naf": "Gestion des sites et monuments historiques et des attractions touristiques similaires",
-    "entreprises_actives": 5159
+    "entreprises_actives": 5159,
+    "evolution_pct": 4.2,
+    "rang": 160,
+    "nb_classes": 642
   },
   {
     "code_naf": "91.04Z",
     "libelle_naf": "Gestion des jardins botaniques et zoologiques et des réserves naturelles",
-    "entreprises_actives": 1049
+    "entreprises_actives": 1049,
+    "evolution_pct": 1.1,
+    "rang": 276,
+    "nb_classes": 642
   },
   {
     "code_naf": "92.00Z",
     "libelle_naf": "Organisation de jeux de hasard et d'argent",
-    "entreprises_actives": 1087
+    "entreprises_actives": 1087,
+    "evolution_pct": -3.4,
+    "rang": 528,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.11Z",
     "libelle_naf": "Gestion d'installations sportives",
-    "entreprises_actives": 6932
+    "entreprises_actives": 6932,
+    "evolution_pct": 6.4,
+    "rang": 99,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.12Z",
     "libelle_naf": "Activités de clubs de sports",
-    "entreprises_actives": 190798
+    "entreprises_actives": 190798,
+    "evolution_pct": 5.9,
+    "rang": 113,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.13Z",
     "libelle_naf": "Activités des centres de culture physique",
-    "entreprises_actives": 5578
+    "entreprises_actives": 5578,
+    "evolution_pct": 13.3,
+    "rang": 34,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.19Z",
     "libelle_naf": "Autres activités liées au sport",
-    "entreprises_actives": 47359
+    "entreprises_actives": 47359,
+    "evolution_pct": 4.0,
+    "rang": 169,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.21Z",
     "libelle_naf": "Activités des parcs d'attractions et parcs à thèmes",
-    "entreprises_actives": 6573
+    "entreprises_actives": 6573,
+    "evolution_pct": 2.4,
+    "rang": 222,
+    "nb_classes": 642
   },
   {
     "code_naf": "93.29Z",
     "libelle_naf": "Autres activités récréatives et de loisirs",
-    "entreprises_actives": 121465
+    "entreprises_actives": 121465,
+    "evolution_pct": 3.3,
+    "rang": 194,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.11Z",
     "libelle_naf": "Activités des organisations patronales et consulaires",
-    "entreprises_actives": 9600
+    "entreprises_actives": 9600,
+    "evolution_pct": 3.0,
+    "rang": 205,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.12Z",
     "libelle_naf": "Activités des organisations professionnelles",
-    "entreprises_actives": 11896
+    "entreprises_actives": 11896,
+    "evolution_pct": 9.7,
+    "rang": 54,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.20Z",
     "libelle_naf": "Activités des syndicats de salariés",
-    "entreprises_actives": 13294
+    "entreprises_actives": 13294,
+    "evolution_pct": 3.5,
+    "rang": 186,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.91Z",
     "libelle_naf": "Activités des organisations religieuses",
-    "entreprises_actives": 21995
+    "entreprises_actives": 21995,
+    "evolution_pct": 2.9,
+    "rang": 208,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.92Z",
     "libelle_naf": "Activités des organisations politiques",
-    "entreprises_actives": 3426
+    "entreprises_actives": 3426,
+    "evolution_pct": 17.5,
+    "rang": 21,
+    "nb_classes": 642
   },
   {
     "code_naf": "94.99Z",
     "libelle_naf": "Autres organisations fonctionnant par adhésion volontaire",
-    "entreprises_actives": 577681
+    "entreprises_actives": 577681,
+    "evolution_pct": 3.9,
+    "rang": 171,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.11Z",
     "libelle_naf": "Réparation d'ordinateurs et d'équipements périphériques",
-    "entreprises_actives": 14521
+    "entreprises_actives": 14521,
+    "evolution_pct": -3.1,
+    "rang": 510,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.12Z",
     "libelle_naf": "Réparation d'équipements de communication",
-    "entreprises_actives": 3845
+    "entreprises_actives": 3845,
+    "evolution_pct": 33.1,
+    "rang": 5,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.21Z",
     "libelle_naf": "Réparation de produits électroniques grand public",
-    "entreprises_actives": 2472
+    "entreprises_actives": 2472,
+    "evolution_pct": 0.1,
+    "rang": 335,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.22Z",
     "libelle_naf": "Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin",
-    "entreprises_actives": 4239
+    "entreprises_actives": 4239,
+    "evolution_pct": 1.6,
+    "rang": 245,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.23Z",
     "libelle_naf": "Réparation de chaussures et d'articles en cuir",
-    "entreprises_actives": 3316
+    "entreprises_actives": 3316,
+    "evolution_pct": -4.0,
+    "rang": 549,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.24Z",
     "libelle_naf": "Réparation de meubles et d'équipements du foyer",
-    "entreprises_actives": 5716
+    "entreprises_actives": 5716,
+    "evolution_pct": -3.6,
+    "rang": 534,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.25Z",
     "libelle_naf": "Réparation d'articles d'horlogerie et de bijouterie",
-    "entreprises_actives": 1049
+    "entreprises_actives": 1049,
+    "evolution_pct": -2.5,
+    "rang": 481,
+    "nb_classes": 642
   },
   {
     "code_naf": "95.29Z",
     "libelle_naf": "Réparation d'autres biens personnels et domestiques",
-    "entreprises_actives": 28040
+    "entreprises_actives": 28040,
+    "evolution_pct": -6.9,
+    "rang": 618,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.01A",
     "libelle_naf": "Blanchisserie-teinturerie de gros",
-    "entreprises_actives": 817
+    "entreprises_actives": 817,
+    "evolution_pct": 0.9,
+    "rang": 288,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.01B",
     "libelle_naf": "Blanchisserie-teinturerie de détail",
-    "entreprises_actives": 11038
+    "entreprises_actives": 11038,
+    "evolution_pct": 4.4,
+    "rang": 154,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.02A",
     "libelle_naf": "Coiffure",
-    "entreprises_actives": 110078
+    "entreprises_actives": 110078,
+    "evolution_pct": 1.9,
+    "rang": 237,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.02B",
     "libelle_naf": "Soins de beauté",
-    "entreprises_actives": 111312
+    "entreprises_actives": 111312,
+    "evolution_pct": 9.3,
+    "rang": 59,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.03Z",
     "libelle_naf": "Services funéraires",
-    "entreprises_actives": 6689
+    "entreprises_actives": 6689,
+    "evolution_pct": 7.9,
+    "rang": 84,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.04Z",
     "libelle_naf": "Entretien corporel",
-    "entreprises_actives": 42990
+    "entreprises_actives": 42990,
+    "evolution_pct": 3.6,
+    "rang": 183,
+    "nb_classes": 642
   },
   {
     "code_naf": "96.09Z",
     "libelle_naf": "Autres services personnels n.c.a.",
-    "entreprises_actives": 247570
+    "entreprises_actives": 247570,
+    "evolution_pct": 5.8,
+    "rang": 115,
+    "nb_classes": 642
   },
   {
     "code_naf": "97.00Z",
     "libelle_naf": "Activités des ménages en tant qu'employeurs de personnel domestique",
-    "entreprises_actives": 28
+    "entreprises_actives": 28,
+    "evolution_pct": 7.7,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "98.10Z",
     "libelle_naf": "Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre",
-    "entreprises_actives": 0
+    "entreprises_actives": 0,
+    "evolution_pct": null,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "98.20Z",
     "libelle_naf": "Activités indifférenciées des ménages en tant que producteurs de services pour usage propre",
-    "entreprises_actives": 1
+    "entreprises_actives": 1,
+    "evolution_pct": null,
+    "rang": null,
+    "nb_classes": 642
   },
   {
     "code_naf": "99.00Z",
     "libelle_naf": "Activités des organisations et organismes extraterritoriaux",
-    "entreprises_actives": 678
+    "entreprises_actives": 678,
+    "evolution_pct": 1.5,
+    "rang": 249,
+    "nb_classes": 642
   }
 ]

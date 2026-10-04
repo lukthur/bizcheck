@@ -1,583 +1,703 @@
 {
   "FR": {
     "type": "france",
-    "nom": "France"
+    "nom": "France",
+    "population": 68350798
   },
   "R01": {
     "type": "region",
-    "nom": "Guadeloupe"
+    "nom": "Guadeloupe",
+    "population": 384160
   },
   "R02": {
     "type": "region",
-    "nom": "Martinique"
+    "nom": "Martinique",
+    "population": 360630
   },
   "R03": {
     "type": "region",
-    "nom": "Guyane"
+    "nom": "Guyane",
+    "population": 293996
   },
   "R04": {
     "type": "region",
-    "nom": "La Réunion"
+    "nom": "La Réunion",
+    "population": 889679
   },
   "R06": {
     "type": "region",
-    "nom": "Mayotte"
+    "nom": "Mayotte",
+    "population": 256518
   },
   "R11": {
     "type": "region",
-    "nom": "Île-de-France"
+    "nom": "Île-de-France",
+    "population": 12463067
   },
   "R24": {
     "type": "region",
-    "nom": "Centre-Val de Loire"
+    "nom": "Centre-Val de Loire",
+    "population": 2587031
   },
   "R27": {
     "type": "region",
-    "nom": "Bourgogne-Franche-Comté"
+    "nom": "Bourgogne-Franche-Comté",
+    "population": 2802670
   },
   "R28": {
     "type": "region",
-    "nom": "Normandie"
+    "nom": "Normandie",
+    "population": 3345842
   },
   "R32": {
     "type": "region",
-    "nom": "Hauts-de-France"
+    "nom": "Hauts-de-France",
+    "population": 5992194
   },
   "R44": {
     "type": "region",
-    "nom": "Grand Est"
+    "nom": "Grand Est",
+    "population": 5563378
   },
   "R52": {
     "type": "region",
-    "nom": "Pays de la Loire"
+    "nom": "Pays de la Loire",
+    "population": 3907156
   },
   "R53": {
     "type": "region",
-    "nom": "Bretagne"
+    "nom": "Bretagne",
+    "population": 3449370
   },
   "R75": {
     "type": "region",
-    "nom": "Nouvelle-Aquitaine"
+    "nom": "Nouvelle-Aquitaine",
+    "population": 6150451
   },
   "R76": {
     "type": "region",
-    "nom": "Occitanie"
+    "nom": "Occitanie",
+    "population": 6124653
   },
   "R84": {
     "type": "region",
-    "nom": "Auvergne-Rhône-Alpes"
+    "nom": "Auvergne-Rhône-Alpes",
+    "population": 8205557
   },
   "R93": {
     "type": "region",
-    "nom": "Provence-Alpes-Côte d'Azur"
+    "nom": "Provence-Alpes-Côte d'Azur",
+    "population": 5218960
   },
   "R94": {
     "type": "region",
-    "nom": "Corse"
+    "nom": "Corse",
+    "population": 355486
   },
   "D01": {
     "type": "departement",
     "nom": "Ain",
-    "region": "R84"
+    "region": "R84",
+    "population": 679344
   },
   "D02": {
     "type": "departement",
     "nom": "Aisne",
-    "region": "R32"
+    "region": "R32",
+    "population": 523342
   },
   "D03": {
     "type": "departement",
     "nom": "Allier",
-    "region": "R84"
+    "region": "R84",
+    "population": 333298
   },
   "D04": {
     "type": "departement",
     "nom": "Alpes-de-Haute-Provence",
-    "region": "R93"
+    "region": "R93",
+    "population": 168054
   },
   "D05": {
     "type": "departement",
     "nom": "Hautes-Alpes",
-    "region": "R93"
+    "region": "R93",
+    "population": 143467
   },
   "D06": {
     "type": "departement",
     "nom": "Alpes-Maritimes",
-    "region": "R93"
+    "region": "R93",
+    "population": 1128418
   },
   "D07": {
     "type": "departement",
     "nom": "Ardèche",
-    "region": "R84"
+    "region": "R84",
+    "population": 334231
   },
   "D08": {
     "type": "departement",
     "nom": "Ardennes",
-    "region": "R44"
+    "region": "R44",
+    "population": 265893
   },
   "D09": {
     "type": "departement",
     "nom": "Ariège",
-    "region": "R76"
+    "region": "R76",
+    "population": 155722
   },
   "D10": {
     "type": "departement",
     "nom": "Aube",
-    "region": "R44"
+    "region": "R44",
+    "population": 310447
   },
   "D11": {
     "type": "departement",
     "nom": "Aude",
-    "region": "R76"
+    "region": "R76",
+    "population": 379648
   },
   "D12": {
     "type": "departement",
     "nom": "Aveyron",
-    "region": "R76"
+    "region": "R76",
+    "population": 279609
   },
   "D13": {
     "type": "departement",
     "nom": "Bouches-du-Rhône",
-    "region": "R93"
+    "region": "R93",
+    "population": 2087658
   },
   "D14": {
     "type": "departement",
     "nom": "Calvados",
-    "region": "R28"
+    "region": "R28",
+    "population": 709441
   },
   "D15": {
     "type": "departement",
     "nom": "Cantal",
-    "region": "R84"
+    "region": "R84",
+    "population": 144196
   },
   "D16": {
     "type": "departement",
     "nom": "Charente",
-    "region": "R75"
+    "region": "R75",
+    "population": 352683
   },
   "D17": {
     "type": "departement",
     "nom": "Charente-Maritime",
-    "region": "R75"
+    "region": "R75",
+    "population": 672279
   },
   "D18": {
     "type": "departement",
     "nom": "Cher",
-    "region": "R24"
+    "region": "R24",
+    "population": 298660
   },
   "D19": {
     "type": "departement",
     "nom": "Corrèze",
-    "region": "R75"
+    "region": "R75",
+    "population": 240826
   },
   "D21": {
     "type": "departement",
     "nom": "Côte-d'Or",
-    "region": "R27"
+    "region": "R27",
+    "population": 540100
   },
   "D22": {
     "type": "departement",
     "nom": "Côtes-d'Armor",
-    "region": "R53"
+    "region": "R53",
+    "population": 611859
   },
   "D23": {
     "type": "departement",
     "nom": "Creuse",
-    "region": "R75"
+    "region": "R75",
+    "population": 115527
   },
   "D24": {
     "type": "departement",
     "nom": "Dordogne",
-    "region": "R75"
+    "region": "R75",
+    "population": 417614
   },
   "D25": {
     "type": "departement",
     "nom": "Doubs",
-    "region": "R27"
+    "region": "R27",
+    "population": 547163
   },
   "D26": {
     "type": "departement",
     "nom": "Drôme",
-    "region": "R84"
+    "region": "R84",
+    "population": 524207
   },
   "D27": {
     "type": "departement",
     "nom": "Eure",
-    "region": "R28"
+    "region": "R28",
+    "population": 602714
   },
   "D28": {
     "type": "departement",
     "nom": "Eure-et-Loir",
-    "region": "R24"
+    "region": "R24",
+    "population": 433129
   },
   "D29": {
     "type": "departement",
     "nom": "Finistère",
-    "region": "R53"
+    "region": "R53",
+    "population": 933455
   },
   "D2A": {
     "type": "departement",
     "nom": "Corse-du-Sud",
-    "region": "R94"
+    "region": "R94",
+    "population": 168306
   },
   "D2B": {
     "type": "departement",
     "nom": "Haute-Corse",
-    "region": "R94"
+    "region": "R94",
+    "population": 187180
   },
   "D30": {
     "type": "departement",
     "nom": "Gard",
-    "region": "R76"
+    "region": "R76",
+    "population": 770940
   },
   "D31": {
     "type": "departement",
     "nom": "Haute-Garonne",
-    "region": "R76"
+    "region": "R76",
+    "population": 1471468
   },
   "D32": {
     "type": "departement",
     "nom": "Gers",
-    "region": "R76"
+    "region": "R76",
+    "population": 192645
   },
   "D33": {
     "type": "departement",
     "nom": "Gironde",
-    "region": "R75"
+    "region": "R75",
+    "population": 1690493
   },
   "D34": {
     "type": "departement",
     "nom": "Hérault",
-    "region": "R76"
+    "region": "R76",
+    "population": 1230289
   },
   "D35": {
     "type": "departement",
     "nom": "Ille-et-Vilaine",
-    "region": "R53"
+    "region": "R53",
+    "population": 1120666
   },
   "D36": {
     "type": "departement",
     "nom": "Indre",
-    "region": "R24"
+    "region": "R24",
+    "population": 216069
   },
   "D37": {
     "type": "departement",
     "nom": "Indre-et-Loire",
-    "region": "R24"
+    "region": "R24",
+    "population": 619362
   },
   "D38": {
     "type": "departement",
     "nom": "Isère",
-    "region": "R84"
+    "region": "R84",
+    "population": 1298990
   },
   "D39": {
     "type": "departement",
     "nom": "Jura",
-    "region": "R27"
+    "region": "R27",
+    "population": 257973
   },
   "D40": {
     "type": "departement",
     "nom": "Landes",
-    "region": "R75"
+    "region": "R75",
+    "population": 433570
   },
   "D41": {
     "type": "departement",
     "nom": "Loir-et-Cher",
-    "region": "R24"
+    "region": "R24",
+    "population": 328543
   },
   "D42": {
     "type": "departement",
     "nom": "Loire",
-    "region": "R84"
+    "region": "R84",
+    "population": 774133
   },
   "D43": {
     "type": "departement",
     "nom": "Haute-Loire",
-    "region": "R84"
+    "region": "R84",
+    "population": 228654
   },
   "D44": {
     "type": "departement",
     "nom": "Loire-Atlantique",
-    "region": "R52"
+    "region": "R52",
+    "population": 1487570
   },
   "D45": {
     "type": "departement",
     "nom": "Loiret",
-    "region": "R24"
+    "region": "R24",
+    "population": 691268
   },
   "D46": {
     "type": "departement",
     "nom": "Lot",
-    "region": "R76"
+    "region": "R76",
+    "population": 176473
   },
   "D47": {
     "type": "departement",
     "nom": "Lot-et-Garonne",
-    "region": "R75"
+    "region": "R75",
+    "population": 333602
   },
   "D48": {
     "type": "departement",
     "nom": "Lozère",
-    "region": "R76"
+    "region": "R76",
+    "population": 76486
   },
   "D49": {
     "type": "departement",
     "nom": "Maine-et-Loire",
-    "region": "R52"
+    "region": "R52",
+    "population": 833776
   },
   "D50": {
     "type": "departement",
     "nom": "Manche",
-    "region": "R28"
+    "region": "R28",
+    "population": 497522
   },
   "D51": {
     "type": "departement",
     "nom": "Marne",
-    "region": "R44"
+    "region": "R44",
+    "population": 563076
   },
   "D52": {
     "type": "departement",
     "nom": "Haute-Marne",
-    "region": "R44"
+    "region": "R44",
+    "population": 168331
   },
   "D53": {
     "type": "departement",
     "nom": "Mayenne",
-    "region": "R52"
+    "region": "R52",
+    "population": 305468
   },
   "D54": {
     "type": "departement",
     "nom": "Meurthe-et-Moselle",
-    "region": "R44"
+    "region": "R44",
+    "population": 732236
   },
   "D55": {
     "type": "departement",
     "nom": "Meuse",
-    "region": "R44"
+    "region": "R44",
+    "population": 180290
   },
   "D56": {
     "type": "departement",
     "nom": "Morbihan",
-    "region": "R53"
+    "region": "R53",
+    "population": 783390
   },
   "D57": {
     "type": "departement",
     "nom": "Moselle",
-    "region": "R44"
+    "region": "R44",
+    "population": 1051309
   },
   "D58": {
     "type": "departement",
     "nom": "Nièvre",
-    "region": "R27"
+    "region": "R27",
+    "population": 201417
   },
   "D59": {
     "type": "departement",
     "nom": "Nord",
-    "region": "R32"
+    "region": "R32",
+    "population": 2615635
   },
   "D60": {
     "type": "departement",
     "nom": "Oise",
-    "region": "R32"
+    "region": "R32",
+    "population": 829899
   },
   "D61": {
     "type": "departement",
     "nom": "Orne",
-    "region": "R28"
+    "region": "R28",
+    "population": 275201
   },
   "D62": {
     "type": "departement",
     "nom": "Pas-de-Calais",
-    "region": "R32"
+    "region": "R32",
+    "population": 1457905
   },
   "D63": {
     "type": "departement",
     "nom": "Puy-de-Dôme",
-    "region": "R84"
+    "region": "R84",
+    "population": 664453
   },
   "D64": {
     "type": "departement",
     "nom": "Pyrénées-Atlantiques",
-    "region": "R75"
+    "region": "R75",
+    "population": 706564
   },
   "D65": {
     "type": "departement",
     "nom": "Hautes-Pyrénées",
-    "region": "R76"
+    "region": "R76",
+    "population": 231349
   },
   "D66": {
     "type": "departement",
     "nom": "Pyrénées-Orientales",
-    "region": "R76"
+    "region": "R76",
+    "population": 496855
   },
   "D67": {
     "type": "departement",
     "nom": "Bas-Rhin",
-    "region": "R44"
+    "region": "R44",
+    "population": 1163810
   },
   "D68": {
     "type": "departement",
     "nom": "Haut-Rhin",
-    "region": "R44"
+    "region": "R44",
+    "population": 770738
   },
   "D69": {
     "type": "departement",
     "nom": "Rhône",
-    "region": "R84"
+    "region": "R84",
+    "population": 1914667
   },
   "D70": {
     "type": "departement",
     "nom": "Haute-Saône",
-    "region": "R27"
+    "region": "R27",
+    "population": 233185
   },
   "D71": {
     "type": "departement",
     "nom": "Saône-et-Loire",
-    "region": "R27"
+    "region": "R27",
+    "population": 550310
   },
   "D72": {
     "type": "departement",
     "nom": "Sarthe",
-    "region": "R52"
+    "region": "R52",
+    "population": 566733
   },
   "D73": {
     "type": "departement",
     "nom": "Savoie",
-    "region": "R84"
+    "region": "R84",
+    "population": 448226
   },
   "D74": {
     "type": "departement",
     "nom": "Haute-Savoie",
-    "region": "R84"
+    "region": "R84",
+    "population": 861158
   },
   "D75": {
     "type": "departement",
     "nom": "Paris",
-    "region": "R11"
+    "region": "R11",
+    "population": 2103778
   },
   "D76": {
     "type": "departement",
     "nom": "Seine-Maritime",
-    "region": "R28"
+    "region": "R28",
+    "population": 1260964
   },
   "D77": {
     "type": "departement",
     "nom": "Seine-et-Marne",
-    "region": "R11"
+    "region": "R11",
+    "population": 1468108
   },
   "D78": {
     "type": "departement",
     "nom": "Yvelines",
-    "region": "R11"
+    "region": "R11",
+    "population": 1485086
   },
   "D79": {
     "type": "departement",
     "nom": "Deux-Sèvres",
-    "region": "R75"
+    "region": "R75",
+    "population": 375229
   },
   "D80": {
     "type": "departement",
     "nom": "Somme",
-    "region": "R32"
+    "region": "R32",
+    "population": 565413
   },
   "D81": {
     "type": "departement",
     "nom": "Tarn",
-    "region": "R76"
+    "region": "R76",
+    "population": 397352
   },
   "D82": {
     "type": "departement",
     "nom": "Tarn-et-Garonne",
-    "region": "R76"
+    "region": "R76",
+    "population": 265817
   },
   "D83": {
     "type": "departement",
     "nom": "Var",
-    "region": "R93"
+    "region": "R93",
+    "population": 1119307
   },
   "D84": {
     "type": "departement",
     "nom": "Vaucluse",
-    "region": "R93"
+    "region": "R93",
+    "population": 572056
   },
   "D85": {
     "type": "departement",
     "nom": "Vendée",
-    "region": "R52"
+    "region": "R52",
+    "population": 713609
   },
   "D86": {
     "type": "departement",
     "nom": "Vienne",
-    "region": "R75"
+    "region": "R75",
+    "population": 438897
   },
   "D87": {
     "type": "departement",
     "nom": "Haute-Vienne",
-    "region": "R75"
+    "region": "R75",
+    "population": 373167
   },
   "D88": {
     "type": "departement",
     "nom": "Vosges",
-    "region": "R44"
+    "region": "R44",
+    "population": 357248
   },
   "D89": {
     "type": "departement",
     "nom": "Yonne",
-    "region": "R27"
+    "region": "R27",
+    "population": 332267
   },
   "D90": {
     "type": "departement",
     "nom": "Territoire de Belfort",
-    "region": "R27"
+    "region": "R27",
+    "population": 140255
   },
   "D91": {
     "type": "departement",
     "nom": "Essonne",
-    "region": "R11"
+    "region": "R11",
+    "population": 1338485
   },
   "D92": {
     "type": "departement",
     "nom": "Hauts-de-Seine",
-    "region": "R11"
+    "region": "R11",
+    "population": 1654712
   },
   "D93": {
     "type": "departement",
     "nom": "Seine-Saint-Denis",
-    "region": "R11"
+    "region": "R11",
+    "population": 1704316
   },
   "D94": {
     "type": "departement",
     "nom": "Val-de-Marne",
-    "region": "R11"
+    "region": "R11",
+    "population": 1426929
   },
   "D95": {
     "type": "departement",
     "nom": "Val-d'Oise",
-    "region": "R11"
+    "region": "R11",
+    "population": 1281653
   },
   "D971": {
     "type": "departement",
     "nom": "Guadeloupe",
-    "region": "R01"
+    "region": "R01",
+    "population": 384160
   },
   "D972": {
     "type": "departement",
     "nom": "Martinique",
-    "region": "R02"
+    "region": "R02",
+    "population": 360630
   },
   "D973": {
     "type": "departement",
     "nom": "Guyane",
-    "region": "R03"
+    "region": "R03",
+    "population": 293996
   },
   "D974": {
     "type": "departement",
     "nom": "La Réunion",
-    "region": "R04"
+    "region": "R04",
+    "population": 889679
   },
   "D976": {
     "type": "departement",
     "nom": "Mayotte",
-    "region": "R06"
+    "region": "R06",
+    "population": 256518
   }
 }

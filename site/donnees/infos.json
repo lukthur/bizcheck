@@ -1,11 +1,27 @@
 {
   "annees": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
     2023,
     2024,
     2025
   ],
+  "nb_annees_principales": 3,
+  "durees_survie": [
+    1,
+    3,
+    5
+  ],
+  "nb_annees_saisonnalite": 5,
+  "date_reference": "2026-10-01",
   "seuil_petit_effectif": 20,
-  "date_calcul": "2026-10-04 14:19",
+  "seuil_classement": 100,
+  "date_calcul": "2026-10-04 16:03",
   "sources": [
     {
       "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
@@ -13,7 +29,7 @@
       "date_actualisation": "2026-10-01"
     },
     {
-      "nom": "Base Sirene des entreprises (INSEE) — fichier StockEtablissement (commune du siège)",
+      "nom": "Base Sirene des entreprises (INSEE) — fichier StockEtablissement",
       "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073823/stock-stocketablissement-parquet.parquet",
       "date_actualisation": "2026-10-01"
     },
@@ -26,6 +42,16 @@
       "nom": "Nomenclature d'activités française NAF rév. 2 (INSEE)",
       "lien": "https://www.insee.fr/fr/information/2120875",
       "date_actualisation": "2008-01-01"
+    },
+    {
+      "nom": "Populations légales des communes (INSEE), via l'API Découpage administratif",
+      "lien": "https://geo.api.gouv.fr/decoupage-administratif",
+      "date_actualisation": "2026-10-04"
+    },
+    {
+      "nom": "Contours des départements (IGN Admin Express, licence ouverte), via france-geojson",
+      "lien": "https://github.com/gregoiredavid/france-geojson",
+      "date_actualisation": "2018-01-01"
     }
   ],
   "limites": [
@@ -33,8 +59,11 @@
     "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
     "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
     "Seules les fermetures déclarées sont comptées : une entreprise sans activité mais non radiée reste comptée comme active.",
+    "Les micro-entreprises sans chiffre d'affaires pendant 2 ans sont radiées d'office : elles comptent comme des fermetures, ce qui fait baisser les taux de survie.",
     "Les entreprises encore codées dans une ancienne nomenclature (NAF 1993, NAP…), environ 3 % des entreprises actives, ne sont rattachées à aucun secteur.",
     "L'entreprise est placée dans la région et le département de son siège actuel (ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
-    "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement."
+    "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement.",
+    "Les établissements (boutiques, agences, ateliers…) sont comptés selon leur propre activité, à l'adresse où ils se trouvent : ils mesurent la présence locale, pas le nombre d'entreprises.",
+    "Plus on remonte dans le temps, plus l'historique est approximatif (changements d'activité et entreprises disparues avant leur recodage en NAF rév. 2)."
   ]
 }
