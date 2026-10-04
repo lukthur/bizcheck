@@ -144,6 +144,33 @@
         </div>
       </section>
 
+      <!-- 2 bis. Emploi, défaillances, rentabilité -->
+      <section class="bloc" aria-labelledby="titre-economie">
+        <h2 id="titre-economie" class="titre-bloc">Emploi, défaillances et rentabilité</h2>
+        <div class="graphiques">
+          <figure class="carte">
+            <figcaption><h3>Salariés du secteur au 31 décembre</h3></figcaption>
+            <dl id="chiffres-emploi" class="mini-chiffres"></dl>
+            <div class="zone-graphique zone-basse"><canvas id="graphique-emploi" role="img"
+              aria-label="Nombre de salariés du secteur privé au 31 décembre, par année"></canvas></div>
+            <p class="note-source" data-note="emploi"></p>
+          </figure>
+          <figure class="carte">
+            <figcaption><h3>Défaillances d'entreprises</h3></figcaption>
+            <dl id="chiffres-defaillances" class="mini-chiffres"></dl>
+            <div class="zone-graphique zone-basse"><canvas id="graphique-defaillances" role="img"
+              aria-label="Nombre d'entreprises en redressement ou liquidation judiciaire, par année"></canvas></div>
+            <p class="note-source" data-note="defaillances"></p>
+          </figure>
+        </div>
+        <div class="carte">
+          <h3 id="titre-comptes"></h3>
+          <p class="secondaire petit" id="intro-comptes"></p>
+          <dl id="chiffres-comptes" class="comparaison-ville"></dl>
+          <p class="note-source" data-note="comptes"></p>
+        </div>
+      </section>
+
       <!-- 3. Saisonnalité -->
       <section class="bloc" aria-labelledby="titre-saison">
         <h2 id="titre-saison" class="titre-bloc">Quand se créent les entreprises&nbsp;?</h2>
@@ -178,6 +205,16 @@
           </div>
           <p class="note-source" data-note="carte"></p>
         </figure>
+      </section>
+
+      <!-- 4 bis. Le territoire -->
+      <section class="bloc" aria-labelledby="titre-territoire">
+        <h2 id="titre-territoire" class="titre-bloc">Le territoire</h2>
+        <div class="carte">
+          <p class="secondaire petit" id="intro-territoire"></p>
+          <dl id="chiffres-territoire" class="comparaison-ville"></dl>
+          <p class="note-source" data-note="territoire"></p>
+        </div>
       </section>
 
       <!-- 5. Dans ma ville -->

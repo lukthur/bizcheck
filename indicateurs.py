@@ -20,8 +20,8 @@ Règles (fichiers stock = situation actuelle de chaque entreprise) :
 import duckdb
 
 from parametres import (
-    ANNEES, DERNIERE_ANNEE, DUREES_SURVIE, FICHIER_DEPARTEMENTS, FICHIER_ETABLISSEMENTS,
-    FICHIER_UNITES_LEGALES, NB_ANNEES_SAISONNALITE,
+    ANNEES, DERNIERE_ANNEE, DUREES_SURVIE, FICHIER_BODACC, FICHIER_DEPARTEMENTS, FICHIER_ETABLISSEMENTS,
+    FICHIER_RATIOS, FICHIER_UNITES_LEGALES, FICHIER_URSSAF_EFFECTIFS, NB_ANNEES_SAISONNALITE,
 )
 
 # Département à partir du code commune ; arrondissements de Paris, Lyon, Marseille → commune
@@ -191,6 +191,116 @@ WHERE commune IS NOT NULL
 GROUP BY naf, commune
 """
 
+def table_emploi():
+    """Effectifs salariés (URSSAF) par code APE et commune, une colonne par année."""
+    colonnes = ", ".join(f"COALESCE(effectifs_salaries_{a}, 0) AS effectifs_{a}" for a in ANNEES)
+    return f"""
+CREATE TEMP TABLE emploi AS
+SELECT
+    SUBSTR(u.code_ape, 1, 2) || '.' || SUBSTR(u.code_ape, 3) AS naf,
+    {COMMUNE.format(c="u.code_commune")} AS commune,
+    d.DEP AS dep,
+    d.REG AS reg,
+    {colonnes},
+    COALESCE(u.nombre_d_etablissements_{DERNIERE_ANNEE}, 0) AS employeurs
+FROM read_parquet($urssaf) u
+LEFT JOIN read_csv($departements, all_varchar = true) d ON d.DEP = u.code_departement
+"""
+
+
+def requete_emploi_zones():
+    sommes = ", ".join(f"SUM(effectifs_{a}) AS effectifs_{a}" for a in ANNEES)
+    return f"""
+SELECT {NAF_ET_ZONE}, {sommes}, SUM(employeurs) AS employeurs
+FROM emploi
+GROUP BY {niveaux()}
+HAVING zone IS NOT NULL
+"""
+
+
+REQUETE_EMPLOI_COMMUNES = f"""
+SELECT naf, commune, SUM(effectifs_{DERNIERE_ANNEE}) AS effectifs
+FROM emploi
+WHERE commune IS NOT NULL
+GROUP BY naf, commune
+"""
+
+# Défaillances : une entreprise comptée une fois par an (premier jugement d'ouverture de
+# redressement ou de liquidation judiciaire), rattachée à son secteur et à son siège via Sirene
+TABLE_DEFAILLANCES = r"""
+CREATE TEMP TABLE defaillances AS
+SELECT DISTINCT
+    regexp_extract(registre, '(\d{9})', 1) AS siren,
+    YEAR(COALESCE(TRY_CAST(json_extract_string(jugement, '$.date') AS DATE), dateparution)) AS annee
+FROM read_parquet($bodacc)
+"""
+
+REQUETE_DEFAILLANCES = f"""
+SELECT {NAF_ET_ZONE}, f.annee, COUNT(*) AS defaillances
+FROM defaillances f
+JOIN entreprises USING (siren)
+WHERE f.annee BETWEEN $premiere_annee AND $derniere_annee
+GROUP BY {niveaux("f.annee")}
+HAVING zone IS NOT NULL
+"""
+
+# Comptes annuels (ratios Banque de France / INPI) : un exercice par entreprise et par année,
+# comptes complets ou simplifiés (pas les comptes consolidés de groupes), chiffre d'affaires > 0
+TABLE_COMPTES = """
+CREATE TEMP TABLE comptes AS
+SELECT
+    r.siren,
+    YEAR(CAST(r.date_cloture_exercice AS DATE)) AS annee,
+    r.chiffre_d_affaires AS ca,
+    r.marge_ebe,
+    r.resultat_net,
+    r.credit_clients_jours,
+    e.naf, e.dep, e.reg
+FROM read_parquet($ratios) r
+JOIN entreprises e USING (siren)
+WHERE r.chiffre_d_affaires > 0
+  AND r.type_bilan IN ('C', 'S')
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY r.siren, YEAR(CAST(r.date_cloture_exercice AS DATE))
+    ORDER BY r.date_cloture_exercice DESC) = 1
+"""
+
+REQUETE_ANNEES_COMPTES = "SELECT annee, COUNT(*) AS nombre FROM comptes GROUP BY annee ORDER BY annee"
+
+REQUETE_COMPTES = f"""
+SELECT {NAF_ET_ZONE},
+    COUNT(*) AS nombre,
+    MEDIAN(ca) AS ca_median,
+    MEDIAN(marge_ebe) AS marge_ebe_mediane,
+    MEDIAN(100.0 * resultat_net / ca) AS marge_nette_mediane,
+    100.0 * AVG(CASE WHEN resultat_net < 0 THEN 1 ELSE 0 END) AS part_deficitaires,
+    MEDIAN(credit_clients_jours) AS delai_clients_median
+FROM comptes
+WHERE annee = $annee
+GROUP BY {niveaux()}
+HAVING zone IS NOT NULL
+"""
+
+INDICATEURS_COMPTES = ["nombre", "ca_median", "marge_ebe_mediane", "marge_nette_mediane",
+                       "part_deficitaires", "delai_clients_median"]
+
+
+def calculer_comptes(executer, zone_de):
+    """Médianes financières par secteur et zone, pour la dernière année assez complète."""
+    executer(TABLE_COMPTES, ratios=str(FICHIER_RATIOS))
+    nombres = {ligne["annee"]: ligne["nombre"] for ligne in executer(REQUETE_ANNEES_COMPTES)}
+    # les comptes arrivent avec 6 à 18 mois de retard : on prend la dernière année qui a au
+    # moins 80 % des comptes de l'année d'avant (une année encore incomplète en a bien moins)
+    annee = max(a for a, n in nombres.items()
+                if a <= DERNIERE_ANNEE and n >= 0.8 * nombres.get(a - 1, float("inf")))
+    print(f"    exercices {annee} : {nombres[annee]:,} comptes".replace(",", " "))
+    for ligne in executer(REQUETE_COMPTES, annee=annee):
+        zone = zone_de(ligne)
+        if zone is not None:
+            zone["comptes"] = [None if ligne[k] is None else round(ligne[k], 1) for k in INDICATEURS_COMPTES]
+    return annee
+
+
 PORTRAIT = {
     "taille": ["taille_0", "taille_1_9", "taille_10_49", "taille_50_249", "taille_250"],
     "forme": ["forme_individuelle", "forme_sarl", "forme_sas", "forme_autre_societe", "forme_association_autre"],
@@ -200,9 +310,10 @@ PORTRAIT = {
 
 def calculer(codes_naf, date_reference):
     """
-    Renvoie (resultats, communes) :
+    Renvoie (resultats, communes, annee_comptes) :
       resultats = {code NAF ou 'TOUS': {code zone: {indicateur: valeur}}}
-      communes  = {code NAF: {code commune: nombre d'établissements actifs}}
+      communes  = {code NAF: {code commune: [établissements actifs, salariés]}}
+      annee_comptes = année des comptes utilisés pour les indicateurs financiers
     """
     connexion = duckdb.connect()
     parametres_communs = {
@@ -267,9 +378,31 @@ def calculer(codes_naf, date_reference):
         zone = zone_de(ligne)
         if zone is not None:
             zone["etablissements"] = ligne["etablissements"]
+    # communes[naf][commune] = [établissements actifs (Sirene), salariés (URSSAF)]
     communes = {code: {} for code in codes_naf}
     for ligne in executer(REQUETE_ETABLISSEMENTS_COMMUNES):
         if ligne["naf"] in communes:
-            communes[ligne["naf"]][ligne["commune"]] = ligne["etablissements"]
+            communes[ligne["naf"]][ligne["commune"]] = [ligne["etablissements"], 0]
 
-    return resultats, communes
+    print("  Emploi salarié (URSSAF)...")
+    executer(table_emploi(), urssaf=str(FICHIER_URSSAF_EFFECTIFS))
+    for ligne in executer(requete_emploi_zones()):
+        zone = zone_de(ligne)
+        if zone is not None:
+            zone["effectifs"] = [ligne[f"effectifs_{a}"] for a in ANNEES]
+            zone["employeurs"] = ligne["employeurs"]
+    for ligne in executer(REQUETE_EMPLOI_COMMUNES):
+        if ligne["naf"] in communes and ligne["effectifs"]:
+            communes[ligne["naf"]].setdefault(ligne["commune"], [0, 0])[1] = ligne["effectifs"]
+
+    print("  Défaillances (BODACC)...")
+    executer(TABLE_DEFAILLANCES, bodacc=str(FICHIER_BODACC))
+    for ligne in executer(REQUETE_DEFAILLANCES, premiere_annee=ANNEES[0], derniere_annee=DERNIERE_ANNEE):
+        zone = zone_de(ligne)
+        if zone is not None:
+            zone.setdefault("defaillances", [0] * len(ANNEES))[ANNEES.index(ligne["annee"])] = ligne["defaillances"]
+
+    print("  Comptes des entreprises (ratios financiers)...")
+    annee_comptes = calculer_comptes(executer, zone_de)
+
+    return resultats, communes, annee_comptes

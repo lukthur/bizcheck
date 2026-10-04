@@ -35,3 +35,11 @@ FICHIER_NAF = DOSSIER_DATA / "naf_rev2_niveau5.xls"
 FICHIER_POPULATION = DOSSIER_DATA / "communes_population.json"
 FICHIER_INFOS_POPULATION = DOSSIER_DATA / "communes_population.infos.json"
 FICHIER_CONTOURS = DOSSIER_DATA / "departements-avec-outre-mer.geojson"
+
+# Lot 2 : emploi, salaires, comptes, défaillances, revenus, population
+FICHIER_URSSAF_EFFECTIFS = DOSSIER_DATA / "urssaf_effectifs_commune_ape.parquet"
+FICHIER_URSSAF_SALAIRES = DOSSIER_DATA / "urssaf_salaires_na88.parquet"
+FICHIER_RATIOS = DOSSIER_DATA / "ratios_financiers.parquet"
+FICHIER_BODACC = DOSSIER_DATA / "bodacc_defaillances.parquet"
+FICHIER_FILOSOFI = DOSSIER_DATA / "insee_filosofi.zip"
+FICHIER_POPULATIONS_HISTORIQUES = DOSSIER_DATA / "insee_populations_historiques.zip"

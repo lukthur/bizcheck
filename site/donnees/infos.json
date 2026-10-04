@@ -18,10 +18,16 @@
     5
   ],
   "nb_annees_saisonnalite": 5,
+  "annee_comptes": 2024,
+  "annees_population": [
+    2017,
+    2023
+  ],
+  "annee_revenus": 2023,
   "date_reference": "2026-10-01",
   "seuil_petit_effectif": 20,
   "seuil_classement": 100,
-  "date_calcul": "2026-10-04 16:03",
+  "date_calcul": "2026-10-04 16:28",
   "sources": [
     {
       "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
@@ -52,6 +58,36 @@
       "nom": "Contours des départements (IGN Admin Express, licence ouverte), via france-geojson",
       "lien": "https://github.com/gregoiredavid/france-geojson",
       "date_actualisation": "2018-01-01"
+    },
+    {
+      "nom": "URSSAF effectifs",
+      "lien": "x",
+      "date_actualisation": "2026-05-29"
+    },
+    {
+      "nom": "Salaires NA88 (URSSAF)",
+      "lien": "x",
+      "date_actualisation": "2026-08-28"
+    },
+    {
+      "nom": "Ratios financiers des entreprises (Banque de France / INPI)",
+      "lien": "https://data.economie.gouv.fr/explore/dataset/ratios_inpi_bce/",
+      "date_actualisation": "2026-09-15"
+    },
+    {
+      "nom": "BODACC",
+      "lien": "x",
+      "date_actualisation": "2026-10-02"
+    },
+    {
+      "nom": "Filosofi",
+      "lien": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_FILOSOFI_CC",
+      "date_actualisation": "2026-08-06"
+    },
+    {
+      "nom": "Pop hist",
+      "lien": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_POPULATIONS_HISTORIQUES",
+      "date_actualisation": "2025-12-18"
     }
   ],
   "limites": [
@@ -64,6 +100,10 @@
     "L'entreprise est placée dans la région et le département de son siège actuel (ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
     "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement.",
     "Les établissements (boutiques, agences, ateliers…) sont comptés selon leur propre activité, à l'adresse où ils se trouvent : ils mesurent la présence locale, pas le nombre d'entreprises.",
-    "Plus on remonte dans le temps, plus l'historique est approximatif (changements d'activité et entreprises disparues avant leur recodage en NAF rév. 2)."
+    "Plus on remonte dans le temps, plus l'historique est approximatif (changements d'activité et entreprises disparues avant leur recodage en NAF rév. 2).",
+    "Emploi : salariés du secteur privé au 31 décembre (URSSAF), dans les établissements employeurs. Les indépendants, les micro-entrepreneurs et la fonction publique ne sont pas comptés.",
+    "Salaire moyen : brut annuel par salarié (temps partiels compris), pour la grande famille de secteurs (2 premiers chiffres du code NAF), France entière.",
+    "Comptes : seulement les sociétés qui déposent des comptes publics (ni les entrepreneurs individuels, ni les micro-entreprises, ni les comptes confidentiels). Ce sont des médianes : la moitié des entreprises fait plus, l'autre moitié moins.",
+    "Défaillances : ouvertures de redressement ou de liquidation judiciaire publiées au BODACC, une fois par entreprise et par an. Une défaillance ne veut pas toujours dire disparition (un redressement peut réussir)."
   ]
 }

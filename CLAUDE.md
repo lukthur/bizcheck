@@ -24,6 +24,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── parametres.py  ← années (10 ans d'historique, 3 ans de tendance), seuils, chemins
 ├── sources.py     ← téléchargements : Sirene, COG, NAF, population (geo.api.gouv.fr), contours (france-geojson)
 ├── indicateurs.py ← requêtes DuckDB (GROUPING SETS France/région/département + « TOUS » = toutes activités)
+├── territoires.py ← contexte local (INSEE Melodi) + salaires moyens (URSSAF NA88)
 ├── carte.py       ← contours GeoJSON → tracés SVG (DOM en encadrés, zoom Paris + petite couronne)
 ├── recherche.py   ← notes INSEE (SPARQL rdf.insee.fr) + synonymes → recherche.json
 ├── synonymes.csv  ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
@@ -48,6 +49,15 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
   clic = zone) ; « Et dans ma ville ? » (établissements de la commune, densité vs département et France).
 - Densité et ville = établissements actifs selon LEUR activité et LEUR adresse ; le reste = entreprises (siège).
 - Survie = administrative (non radiée), plus haute que la survie économique des études INSEE : toujours le dire.
+- Lot 2 (economie.js) : salariés 10 ans + employeurs (URSSAF commune × APE), salaire moyen brut
+  (URSSAF NA88, division = 2 premiers chiffres du NAF, France), défaillances 10 ans + taux (BODACC :
+  jugements d'ouverture RJ/LJ, 1 par SIREN et par an — ≈ 66 700 en 2024, cohérent Banque de France),
+  comptes médians (ratios BdF/INPI : CA, marge EBE, marge nette, % en perte, délai clients ; comptes
+  C/S publics, année = dernière ayant ≥ 80 % des comptes de l'année d'avant, seuil 20 comptes),
+  « Le territoire » (population 2017→2023, niveau de vie médian et pauvreté Filosofi 2023, via INSEE
+  Melodi) ; la ville affiche aussi salariés, niveau de vie, évolution de la population.
+- Fichiers lot 2 dans data/ : urssaf_*.parquet, ratios_financiers.parquet (230 Mo), bodacc_defaillances.parquet,
+  insee_*.zip ; territoires.py = contexte local + salaires ; communes/<code>.json = [établissements, salariés].
 
 ## Recherche par activité (fonction la plus importante)
 - Fait (sem. 4) : recherche/recherche.js, tout dans le navigateur. Poids : synonyme 10, libellé 4,
@@ -86,5 +96,5 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Sem. 3 : site avec graphiques et filtres géographiques ← fait (filtres zone ; sélecteur de secteur provisoire)
 - Sem. 4 : recherche par mots-clés ← fait (tous les codes NAF calculés, synonymes à enrichir)
 - Lot 1 d'infos supplémentaires ← fait (voir « Contenu d'une page secteur »)
-- Lot 2 : emploi et salaire (URSSAF), CA / marge (Esane), défaillances (BODACC), contexte local
+- Lot 2 : emploi, salaires, comptes, défaillances, territoire ← fait
 - Sem. 5–6 : export PDF, direction artistique, mise en ligne

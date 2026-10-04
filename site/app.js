@@ -2,9 +2,11 @@
 // Aucune donnée n'est écrite à la main ici.
 //
 // Les autres fichiers : recherche.js (moteur de recherche), graphiques.js (Chart.js),
-// carte.js (carte des départements), ville.js (« Et dans ma ville ? »), outils.js (mise en forme).
+// carte.js (carte des départements), ville.js (« Et dans ma ville ? »), economie.js (emploi,
+// défaillances, comptes, territoire), outils.js (mise en forme).
 
 import { colorer, preparerCarte } from "./carte.js";
+import { afficherEconomie, afficherTerritoire } from "./economie.js";
 import { dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie } from "./graphiques.js";
 import {
   $, decimal, densite, element, formaterDate, lireJson, nombre, pluriel, pourcent, signe,
@@ -20,6 +22,7 @@ const etat = {
   secteurs: {},       // recherche.json, par code NAF : libellé, notes INSEE
   classement: {},     // secteurs.json, par code NAF : évolution et rang national
   tous: null,         // naf/TOUS.json : toutes activités confondues (point de comparaison)
+  salaires: null,     // salaires.json : salaire moyen par famille de secteurs
   index: null,        // index du moteur de recherche
   chiffres: null,     // naf/<code>.json du secteur affiché
   zone: "FR",
@@ -76,13 +79,14 @@ async function demarrer() {
   let classement;
   let fondDeCarte;
   try {
-    [etat.infos, etat.zones, listeSecteurs, classement, etat.tous, fondDeCarte] = await Promise.all([
+    [etat.infos, etat.zones, listeSecteurs, classement, etat.tous, fondDeCarte, etat.salaires] = await Promise.all([
       lireJson("donnees/infos.json"),
       lireJson("donnees/zones.json"),
       lireJson("donnees/recherche.json"),
       lireJson("donnees/secteurs.json"),
       lireJson("donnees/naf/TOUS.json"),
       lireJson("donnees/carte.json"),
+      lireJson("donnees/salaires.json"),
     ]);
   } catch (erreur) {
     afficherErreur("Impossible de lire les données. Le site doit être ouvert via le serveur local "
@@ -308,6 +312,8 @@ function afficher() {
   dessinerEvolution(historique);
   afficherTableau(historique);
   afficherSurvieEtPortrait();
+  afficherEconomie({ ...etat, zone: etat.zone, codeNaf: code });
+  afficherTerritoire({ infos: etat.infos, zones: etat.zones, zone: etat.zone });
   afficherSaison();
   colorer(etat.chiffres, etat.zones, etat.zone, etat.infos);
   mettreAJourVille(code, etat.zones, etat.chiffres);
@@ -537,7 +543,19 @@ function afficherSources() {
     carte: `${source} Évolution : entreprises selon leur siège. Densité : établissements actifs du secteur à `
       + `leur adresse, rapportés à la population légale (INSEE). Cliquez sur un département pour l'afficher.`,
     ville: `${source} Établissements actifs dont l'activité principale est ce code NAF, à leur adresse dans la `
-      + `commune (arrondissements de Paris, Lyon et Marseille regroupés).`,
+      + `commune (arrondissements de Paris, Lyon et Marseille regroupés). Salariés : URSSAF. Niveau de vie : `
+      + `INSEE Filosofi (non publié pour les plus petites communes).`,
+    emploi: `Source : URSSAF, salariés du secteur privé au 31 décembre, dans les établissements de ce secteur `
+      + `situés dans la zone. Limite : indépendants, micro-entrepreneurs et fonction publique non comptés. `
+      + `Salaire : moyenne brute annuelle par salarié (temps partiels compris) de la famille de secteurs.`,
+    defaillances: `Source : BODACC, jugements d'ouverture de redressement ou de liquidation judiciaire, une fois `
+      + `par entreprise et par an, rattachés au secteur et au siège via Sirene. Limite : un redressement peut `
+      + `réussir ; taux = défaillances / entreprises actives au 1er janvier.`,
+    comptes: `Source : ratios financiers Banque de France / INPI. Limite : seulement les sociétés qui publient `
+      + `leurs comptes (ni entrepreneurs individuels, ni micro-entreprises, ni comptes confidentiels) ; les `
+      + `comptes arrivent avec un an de décalage.`,
+    territoire: `Sources : INSEE, populations municipales (recensement) et Filosofi (niveau de vie par unité de `
+      + `consommation, après impôts et prestations). Limite : Filosofi ne couvre pas Mayotte.`,
   };
   for (const [cle, texte] of Object.entries(notes)) {
     document.querySelector(`[data-note="${cle}"]`).textContent = texte;

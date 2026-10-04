@@ -19,7 +19,7 @@
   /* échelle bleue (peu → beaucoup) */
   --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf; --seq-6: #104281;
   /* échelle baisse (rouge) ↔ hausse (bleu), gris au milieu */
-  --div-baisse-forte: #d03b3b; --div-baisse: #f2a7a5; --div-stable: #e1e0d9; --div-hausse: #9ec5f4; --div-hausse-forte: #2a78d6;
+  --div-baisse-forte: #d03b3b; --div-baisse: #f2a7a5; --div-stable: #c9c7bf; --vide: #f3f2ee; --div-hausse: #9ec5f4; --div-hausse-forte: #2a78d6;
   --hausse: #0ca30c;
   --baisse: #d03b3b;
   --stable: #898781;
@@ -45,7 +45,7 @@
     --serie-5: #d55181;
     --neutre: #6b6a64;
     --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
-    --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #383835; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
+    --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #55544f; --vide: #242422; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
     --alerte-fond: #2e2410;
   }
 }
@@ -67,7 +67,7 @@
   --serie-5: #d55181;
   --neutre: #6b6a64;
   --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
-  --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #383835; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
+  --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #55544f; --vide: #242422; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
   --alerte-fond: #2e2410;
 }
 
@@ -335,3 +335,9 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 .comparaison-ville dt { font-size: 0.8rem; color: var(--texte-secondaire); }
 .comparaison-ville dd { margin: 2px 0 0; font-size: 1.3rem; font-weight: 600; }
 .comparaison-ville dd small { display: block; font-size: 0.8rem; font-weight: 400; color: var(--texte-secondaire); }
+
+/* Petits chiffres au-dessus d'un graphique */
+.mini-chiffres { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 8px 0 12px; }
+.mini-chiffres dt { font-size: 0.8rem; color: var(--texte-secondaire); }
+.mini-chiffres dd { margin: 0; font-size: 1.15rem; font-weight: 600; }
+.mini-chiffres dd small { font-size: 0.8rem; font-weight: 400; color: var(--texte-secondaire); }

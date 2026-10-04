@@ -1,13 +1,16 @@
 // BizCheck — « Et dans ma ville ? » : établissements du secteur dans une commune.
 
 import { normaliser } from "./recherche.js";
-import { $, decimal, densite, element, lireJson, nombre, pluriel } from "./outils.js";
+import { $, decimal, densite, element, lireJson, nombre, pluriel, pourcent } from "./outils.js";
+
+const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
 
 const SEUIL_PETITE_COMMUNE = 2000; // habitants : en dessous, la densité varie beaucoup
 
-let communes = null;               // [code, nom, département, population, codes postaux], chargées au besoin
+// [code, nom, département, population, codes postaux, niveau de vie médian, évolution population %]
+let communes = null;               // chargées au premier usage
 let communesNormalisees = null;
-const parSecteur = {};             // cache : code NAF → { code commune: établissements }
+const parSecteur = {};             // cache : code NAF → { code commune: [établissements, salariés] }
 let suggestions = [];
 let active = -1;
 let communeChoisie = null;
@@ -132,8 +135,8 @@ async function afficherVille() {
   if (!parSecteur[codeNaf]) parSecteur[codeNaf] = await lireJson(`donnees/communes/${codeNaf}.json`);
   if (contexte.codeNaf !== codeNaf) return; // le secteur a changé entre-temps
 
-  const [code, nom, departement, population] = communeChoisie;
-  const etablissements = parSecteur[codeNaf][code] || 0;
+  const [code, nom, departement, population, , revenuMedian, evolutionPopulation] = communeChoisie;
+  const [etablissements, salaries] = parSecteur[codeNaf][code] || [0, 0];
   const zoneDepartement = zones[`D${departement}`];
   const densiteVille = densite(etablissements, population);
   const densiteDepartement = zoneDepartement
@@ -168,6 +171,10 @@ async function afficherVille() {
   ajouter("Pour 10 000 habitants", decimal(densiteVille), nom);
   if (zoneDepartement) ajouter("Département", decimal(densiteDepartement), zoneDepartement.nom);
   ajouter("France", decimal(densiteFrance), "pour 10 000 habitants");
+  ajouter("Salariés du secteur", nombre.format(salaries), "dans la commune (URSSAF)");
+  ajouter("Évolution de la population", pourcent(evolutionPopulation), "entre 2017 et 2023");
+  ajouter("Niveau de vie médian", revenuMedian ? euros.format(revenuMedian) : "non publié",
+    zoneDepartement?.revenu_median ? `${zoneDepartement.nom} : ${euros.format(zoneDepartement.revenu_median)}` : null);
   bloc.append(tableau);
 
   if (population < SEUIL_PETITE_COMMUNE) {

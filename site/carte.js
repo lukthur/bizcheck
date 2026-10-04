@@ -95,7 +95,7 @@ export function colorer(chiffres, zones, zoneChoisie, infos) {
   }
 
   const classes = indicateur === "evolution" ? CLASSES_EVOLUTION : classesDensite();
-  const couleurVide = couleur("--grille");
+  const couleurVide = couleur("--vide");
   const departementsChoisis = new Set(
     zoneChoisie.startsWith("D") ? [zoneChoisie.slice(1)]
       : zoneChoisie.startsWith("R")

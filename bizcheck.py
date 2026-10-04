@@ -9,6 +9,7 @@ France, chaque région et chaque département :
   - portrait des entreprises actives : taille, forme juridique, âge, réseaux
   - saisonnalité des créations (France)
   - établissements actifs par zone et par commune (concurrence locale)
+  - emploi salarié (URSSAF), défaillances (BODACC), médianes financières (comptes annuels)
 puis prépare la recherche par activité et le fond de carte.
 
 Les calculs sont dans indicateurs.py, les téléchargements dans sources.py,
@@ -19,7 +20,8 @@ Fichiers écrits dans site/donnees/ :
   - zones.json       : France, régions, départements (noms, population)
   - secteurs.json    : liste des secteurs (effectif, évolution, rang)
   - recherche.json   : libellés, notes INSEE et synonymes pour la barre de recherche
-  - communes.json    : liste des communes (nom, département, population)
+  - communes.json    : liste des communes (nom, département, population, revenu, évolution)
+  - salaires.json    : salaire moyen par famille de secteurs (URSSAF)
   - carte.json       : tracés des départements
   - naf/<code>.json  : chiffres d'un secteur pour chaque zone (naf/TOUS.json : tous secteurs)
   - communes/<code>.json : établissements actifs d'un secteur par commune
@@ -36,6 +38,7 @@ from datetime import date, datetime
 import carte
 import indicateurs
 import sources
+import territoires
 from parametres import (
     ANNEES, DERNIERE_ANNEE, DOSSIER_COMMUNES, DOSSIER_PROJET, DOSSIER_SECTEURS, DOSSIER_SORTIES,
     DUREES_SURVIE, NB_ANNEES_PRINCIPALES, NB_ANNEES_SAISONNALITE, SEUIL_PETIT_EFFECTIF,
@@ -132,7 +135,8 @@ def vider_sorties():
         ancien.unlink()
 
 
-def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources):
+def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources,
+                contexte, salaires, annee_comptes):
     vider_sorties()
 
     for naf, chiffres_zones in resultats.items():
@@ -146,12 +150,19 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
     ecrire_json(DOSSIER_SORTIES / "secteurs.json", secteurs, lisible=True)
     ecrire_json(DOSSIER_SORTIES / "zones.json", zones, lisible=True)
     ecrire_json(DOSSIER_SORTIES / "carte.json", carte.construire_carte())
+    ecrire_json(DOSSIER_SORTIES / "salaires.json", salaires, lisible=True)
 
-    # Communes, de la plus peuplée à la moins peuplée (ordre utile pour la recherche de ville)
-    ecrire_json(DOSSIER_SORTIES / "communes.json", [
-        [c["code"], c["nom"], c["codeDepartement"], c.get("population", 0), " ".join(c.get("codesPostaux") or [])]
-        for c in sorted(communes, key=lambda c: (-c.get("population", 0), c["code"]))
-    ])
+    # Communes, de la plus peuplée à la moins peuplée (ordre utile pour la recherche de ville) :
+    # [code, nom, département, population, codes postaux, niveau de vie médian, évolution de la population en %]
+    def ligne_commune(c):
+        local = contexte.get(f"C{c['code']}", {})
+        debut, fin = local.get("population_debut"), local.get("population_fin")
+        evolution = round(100 * (fin / debut - 1), 1) if debut and fin else None
+        return [c["code"], c["nom"], c["codeDepartement"], c.get("population", 0),
+                " ".join(c.get("codesPostaux") or []), local.get("revenu_median"), evolution]
+
+    ecrire_json(DOSSIER_SORTIES / "communes.json",
+                [ligne_commune(c) for c in sorted(communes, key=lambda c: (-c.get("population", 0), c["code"]))])
 
     ul, etab, cog, population = (infos_sources[k] for k in ("ul", "etab", "cog", "population"))
     ecrire_json(DOSSIER_SORTIES / "infos.json", {
@@ -159,6 +170,9 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
         "nb_annees_principales": NB_ANNEES_PRINCIPALES,
         "durees_survie": DUREES_SURVIE,
         "nb_annees_saisonnalite": NB_ANNEES_SAISONNALITE,
+        "annee_comptes": annee_comptes,
+        "annees_population": [territoires.ANNEE_POPULATION_DEBUT, territoires.ANNEE_POPULATION_FIN],
+        "annee_revenus": 2023,
         "date_reference": ul["date_mise_a_jour"],
         "seuil_petit_effectif": SEUIL_PETIT_EFFECTIF,
         "seuil_classement": SEUIL_CLASSEMENT,
@@ -194,6 +208,10 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
                 "lien": sources.PAGE_CONTOURS,
                 "date_actualisation": "2018-01-01",
             },
+        ] + [
+            {"nom": infos_sources[cle]["nom"], "lien": infos_sources[cle]["url"],
+             "date_actualisation": infos_sources[cle]["date_mise_a_jour"]}
+            for cle in ("effectifs", "salaires", "comptes", "defaillances", "revenus", "population_historique")
         ],
         "limites": [
             "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise "
@@ -214,6 +232,16 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
             "à l'adresse où ils se trouvent : ils mesurent la présence locale, pas le nombre d'entreprises.",
             "Plus on remonte dans le temps, plus l'historique est approximatif (changements "
             "d'activité et entreprises disparues avant leur recodage en NAF rév. 2).",
+            "Emploi : salariés du secteur privé au 31 décembre (URSSAF), dans les établissements employeurs. "
+            "Les indépendants, les micro-entrepreneurs et la fonction publique ne sont pas comptés.",
+            "Salaire moyen : brut annuel par salarié (temps partiels compris), pour la grande famille de "
+            "secteurs (2 premiers chiffres du code NAF), France entière.",
+            "Comptes : seulement les sociétés qui déposent des comptes publics (ni les entrepreneurs "
+            "individuels, ni les micro-entreprises, ni les comptes confidentiels). Ce sont des médianes : "
+            "la moitié des entreprises fait plus, l'autre moitié moins.",
+            "Défaillances : ouvertures de redressement ou de liquidation judiciaire publiées au BODACC, "
+            "une fois par entreprise et par an. Une défaillance ne veut pas toujours dire disparition "
+            "(un redressement peut réussir).",
         ],
     }, lisible=True)
 
@@ -227,6 +255,7 @@ if __name__ == "__main__":
         "etab": sources.telecharger_sirene("StockEtablissement"),
         "cog": sources.telecharger_cog(),
         "population": sources.telecharger_population(),
+        **sources.telecharger_lot2(),
     }
     sources.telecharger_naf()
     sources.telecharger_contours()
@@ -236,15 +265,20 @@ if __name__ == "__main__":
     communes = sources.lire_communes()
     for code, population in populations_par_zone(communes, zones).items():
         zones[code]["population"] = population
+    contexte = territoires.contexte_local()
+    for code, zone in zones.items():
+        zone.update(contexte.get(code, {}))
+    salaires = territoires.salaires_par_division()
 
     print(f"\nCalcul des indicateurs : {len(libelles_naf)} secteurs × {len(zones)} zones, "
           f"années {ANNEES[0]} à {ANNEES[-1]}...")
     date_reference = date.fromisoformat(infos_sources["ul"]["date_mise_a_jour"])
-    resultats, communes_par_naf = indicateurs.calculer(libelles_naf, date_reference)
+    resultats, communes_par_naf, annee_comptes = indicateurs.calculer(libelles_naf, date_reference)
 
     secteurs = classement(resultats, libelles_naf)
     afficher(resultats, libelles_naf, secteurs)
-    enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources)
+    enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources,
+                contexte, salaires, annee_comptes)
     print()
     preparer_recherche(libelles_naf, {s["code_naf"]: s["entreprises_actives"] for s in secteurs},
                        DOSSIER_SORTIES / "recherche.json")

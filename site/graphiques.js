@@ -194,3 +194,44 @@ export function dessinerSaison(creationsSecteur, creationsTous) {
     options: options({ formatAxe: (v) => `${v} %`, formatInfobulle: (v) => pourcent(v, false) }),
   });
 }
+
+// --- Emploi et défaillances ----------------------------------------------------------
+
+export function dessinerEmploi(annees, effectifs) {
+  const bleu = couleur("--serie-1");
+  const dernier = annees.length - 1;
+  dessiner("graphique-emploi", {
+    type: "line",
+    data: {
+      labels: annees.map(String),
+      datasets: [{
+        label: "Salariés",
+        data: effectifs,
+        borderColor: bleu,
+        backgroundColor: `${bleu}1a`,
+        fill: true,
+        borderWidth: 2,
+        tension: 0.25,
+        pointRadius: (c) => (c.dataIndex === dernier ? 4 : 0),
+        pointHoverRadius: 5,
+        pointBackgroundColor: bleu,
+        pointBorderColor: couleur("--fond-carte"),
+        pointBorderWidth: 2,
+      }],
+    },
+    options: options({ axeZero: false }),
+    plugins: [etiquetteFinale((v) => nombre.format(v))],
+  });
+}
+
+export function dessinerDefaillances(annees, defaillances) {
+  dessiner("graphique-defaillances", {
+    type: "bar",
+    data: {
+      labels: annees.map(String),
+      datasets: [barres("Défaillances", defaillances, "--serie-2")],
+    },
+    options: options(),
+    plugins: [etiquetteFinale((v) => nombre.format(v))],
+  });
+}

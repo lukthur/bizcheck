@@ -2,27 +2,41 @@
   "FR": {
     "type": "france",
     "nom": "France",
-    "population": 68350798
+    "population": 68350798,
+    "taux_pauvrete": 15.9,
+    "revenu_median": 25920.0,
+    "population_debut": 66524339,
+    "population_fin": 68094280
   },
   "R01": {
     "type": "region",
     "nom": "Guadeloupe",
-    "population": 384160
+    "population": 384160,
+    "population_fin": 384160,
+    "population_debut": 390253
   },
   "R02": {
     "type": "region",
     "nom": "Martinique",
-    "population": 360630
+    "population": 360630,
+    "population_fin": 360630,
+    "population_debut": 372594
   },
   "R03": {
     "type": "region",
     "nom": "Guyane",
-    "population": 293996
+    "population": 293996,
+    "population_debut": 268700,
+    "population_fin": 293996
   },
   "R04": {
     "type": "region",
     "nom": "La Réunion",
-    "population": 889679
+    "population": 889679,
+    "revenu_median": 19110.0,
+    "taux_pauvrete": 36.4,
+    "population_fin": 889679,
+    "population_debut": 853659
   },
   "R06": {
     "type": "region",
@@ -32,667 +46,1113 @@
   "R11": {
     "type": "region",
     "nom": "Île-de-France",
-    "population": 12463067
+    "population": 12463067,
+    "taux_pauvrete": 17.3,
+    "revenu_median": 28210.0,
+    "population_debut": 12174880,
+    "population_fin": 12463067
   },
   "R24": {
     "type": "region",
     "nom": "Centre-Val de Loire",
-    "population": 2587031
+    "population": 2587031,
+    "taux_pauvrete": 14.5,
+    "revenu_median": 25490.0,
+    "population_fin": 2587031,
+    "population_debut": 2576252
   },
   "R27": {
     "type": "region",
     "nom": "Bourgogne-Franche-Comté",
-    "population": 2802670
+    "population": 2802670,
+    "taux_pauvrete": 14.2,
+    "revenu_median": 25640.0,
+    "population_fin": 2802670,
+    "population_debut": 2811423
   },
   "R28": {
     "type": "region",
     "nom": "Normandie",
-    "population": 3345842
+    "population": 3345842,
+    "revenu_median": 25200.0,
+    "taux_pauvrete": 14.7,
+    "population_debut": 3330478,
+    "population_fin": 3345842
   },
   "R32": {
     "type": "region",
     "nom": "Hauts-de-France",
-    "population": 5992194
+    "population": 5992194,
+    "taux_pauvrete": 19.0,
+    "revenu_median": 23950.0,
+    "population_fin": 5992194,
+    "population_debut": 6003815
   },
   "R44": {
     "type": "region",
     "nom": "Grand Est",
-    "population": 5563378
+    "population": 5563378,
+    "taux_pauvrete": 15.9,
+    "revenu_median": 25850.0,
+    "population_debut": 5549586,
+    "population_fin": 5563378
   },
   "R52": {
     "type": "region",
     "nom": "Pays de la Loire",
-    "population": 3907156
+    "population": 3907156,
+    "revenu_median": 26040.0,
+    "taux_pauvrete": 11.5,
+    "population_debut": 3757600,
+    "population_fin": 3907156
   },
   "R53": {
     "type": "region",
     "nom": "Bretagne",
-    "population": 3449370
+    "population": 3449370,
+    "taux_pauvrete": 11.6,
+    "revenu_median": 26240.0,
+    "population_fin": 3449370,
+    "population_debut": 3318904
   },
   "R75": {
     "type": "region",
     "nom": "Nouvelle-Aquitaine",
-    "population": 6150451
+    "population": 6150451,
+    "taux_pauvrete": 14.6,
+    "revenu_median": 25520.0,
+    "population_debut": 5956978,
+    "population_fin": 6150451
   },
   "R76": {
     "type": "region",
     "nom": "Occitanie",
-    "population": 6124653
+    "population": 6124653,
+    "revenu_median": 24650.0,
+    "taux_pauvrete": 18.6,
+    "population_debut": 5845102,
+    "population_fin": 6124653
   },
   "R84": {
     "type": "region",
     "nom": "Auvergne-Rhône-Alpes",
-    "population": 8205557
+    "population": 8205557,
+    "revenu_median": 26920.0,
+    "taux_pauvrete": 14.2,
+    "population_debut": 7948287,
+    "population_fin": 8205557
   },
   "R93": {
     "type": "region",
     "nom": "Provence-Alpes-Côte d'Azur",
-    "population": 5218960
+    "population": 5218960,
+    "taux_pauvrete": 18.9,
+    "revenu_median": 25560.0,
+    "population_fin": 5218960,
+    "population_debut": 5030890
   },
   "R94": {
     "type": "region",
     "nom": "Corse",
-    "population": 355486
+    "population": 355486,
+    "taux_pauvrete": 20.0,
+    "revenu_median": 25020.0,
+    "population_fin": 355486,
+    "population_debut": 334938
   },
   "D01": {
     "type": "departement",
     "nom": "Ain",
     "region": "R84",
-    "population": 679344
+    "population": 679344,
+    "revenu_median": 27990.0,
+    "taux_pauvrete": 12.2,
+    "population_debut": 643350,
+    "population_fin": 679344
   },
   "D02": {
     "type": "departement",
     "nom": "Aisne",
     "region": "R32",
-    "population": 523342
+    "population": 523342,
+    "revenu_median": 23360.0,
+    "taux_pauvrete": 19.4,
+    "population_debut": 534490,
+    "population_fin": 523342
   },
   "D03": {
     "type": "departement",
     "nom": "Allier",
     "region": "R84",
-    "population": 333298
+    "population": 333298,
+    "revenu_median": 24430.0,
+    "taux_pauvrete": 16.4,
+    "population_debut": 337988,
+    "population_fin": 333298
   },
   "D04": {
     "type": "departement",
     "nom": "Alpes-de-Haute-Provence",
     "region": "R93",
-    "population": 168054
+    "population": 168054,
+    "revenu_median": 24240.0,
+    "taux_pauvrete": 18.6,
+    "population_debut": 163915,
+    "population_fin": 168054
   },
   "D05": {
     "type": "departement",
     "nom": "Hautes-Alpes",
     "region": "R93",
-    "population": 143467
+    "population": 143467,
+    "revenu_median": 25060.0,
+    "taux_pauvrete": 14.3,
+    "population_debut": 141284,
+    "population_fin": 143467
   },
   "D06": {
     "type": "departement",
     "nom": "Alpes-Maritimes",
     "region": "R93",
-    "population": 1128418
+    "population": 1128418,
+    "revenu_median": 26380.0,
+    "taux_pauvrete": 17.7,
+    "population_fin": 1128418,
+    "population_debut": 1083310
   },
   "D07": {
     "type": "departement",
     "nom": "Ardèche",
     "region": "R84",
-    "population": 334231
+    "population": 334231,
+    "taux_pauvrete": 15.6,
+    "revenu_median": 24820.0,
+    "population_debut": 325712,
+    "population_fin": 334231
   },
   "D08": {
     "type": "departement",
     "nom": "Ardennes",
     "region": "R44",
-    "population": 265893
+    "population": 265893,
+    "revenu_median": 23500.0,
+    "taux_pauvrete": 19.9,
+    "population_fin": 265893,
+    "population_debut": 273579
   },
   "D09": {
     "type": "departement",
     "nom": "Ariège",
     "region": "R76",
-    "population": 155722
+    "population": 155722,
+    "revenu_median": 23360.0,
+    "taux_pauvrete": 20.0,
+    "population_fin": 155722,
+    "population_debut": 153153
   },
   "D10": {
     "type": "departement",
     "nom": "Aube",
     "region": "R44",
-    "population": 310447
+    "population": 310447,
+    "revenu_median": 24130.0,
+    "taux_pauvrete": 18.1,
+    "population_debut": 310020,
+    "population_fin": 310447
   },
   "D11": {
     "type": "departement",
     "nom": "Aude",
     "region": "R76",
-    "population": 379648
+    "population": 379648,
+    "taux_pauvrete": 21.2,
+    "revenu_median": 23060.0,
+    "population_debut": 370260,
+    "population_fin": 379648
   },
   "D12": {
     "type": "departement",
     "nom": "Aveyron",
     "region": "R76",
-    "population": 279609
+    "population": 279609,
+    "taux_pauvrete": 14.5,
+    "revenu_median": 24780.0,
+    "population_fin": 279609,
+    "population_debut": 279206
   },
   "D13": {
     "type": "departement",
     "nom": "Bouches-du-Rhône",
     "region": "R93",
-    "population": 2087658
+    "population": 2087658,
+    "taux_pauvrete": 20.3,
+    "revenu_median": 25610.0,
+    "population_debut": 2024162,
+    "population_fin": 2087658
   },
   "D14": {
     "type": "departement",
     "nom": "Calvados",
     "region": "R28",
-    "population": 709441
+    "population": 709441,
+    "taux_pauvrete": 13.5,
+    "revenu_median": 25600.0,
+    "population_fin": 709441,
+    "population_debut": 694002
   },
   "D15": {
     "type": "departement",
     "nom": "Cantal",
     "region": "R84",
-    "population": 144196
+    "population": 144196,
+    "taux_pauvrete": 13.7,
+    "revenu_median": 24820.0,
+    "population_debut": 145143,
+    "population_fin": 144196
   },
   "D16": {
     "type": "departement",
     "nom": "Charente",
     "region": "R75",
-    "population": 352683
+    "population": 352683,
+    "revenu_median": 24850.0,
+    "taux_pauvrete": 15.4,
+    "population_fin": 352683,
+    "population_debut": 352335
   },
   "D17": {
     "type": "departement",
     "nom": "Charente-Maritime",
     "region": "R75",
-    "population": 672279
+    "population": 672279,
+    "taux_pauvrete": 13.1,
+    "revenu_median": 25710.0,
+    "population_fin": 672279,
+    "population_debut": 644303
   },
   "D18": {
     "type": "departement",
     "nom": "Cher",
     "region": "R24",
-    "population": 298660
+    "population": 298660,
+    "revenu_median": 24730.0,
+    "taux_pauvrete": 15.9,
+    "population_fin": 298660,
+    "population_debut": 304256
   },
   "D19": {
     "type": "departement",
     "nom": "Corrèze",
     "region": "R75",
-    "population": 240826
+    "population": 240826,
+    "revenu_median": 24910.0,
+    "taux_pauvrete": 14.4,
+    "population_fin": 240826,
+    "population_debut": 241464
   },
   "D21": {
     "type": "departement",
     "nom": "Côte-d'Or",
     "region": "R27",
-    "population": 540100
+    "population": 540100,
+    "revenu_median": 26560.0,
+    "taux_pauvrete": 13.0,
+    "population_fin": 540100,
+    "population_debut": 533819
   },
   "D22": {
     "type": "departement",
     "nom": "Côtes-d'Armor",
     "region": "R53",
-    "population": 611859
+    "population": 611859,
+    "revenu_median": 25590.0,
+    "taux_pauvrete": 12.2,
+    "population_debut": 598814,
+    "population_fin": 611859
   },
   "D23": {
     "type": "departement",
     "nom": "Creuse",
     "region": "R75",
-    "population": 115527
+    "population": 115527,
+    "revenu_median": 23210.0,
+    "taux_pauvrete": 19.5,
+    "population_fin": 115527,
+    "population_debut": 118638
   },
   "D24": {
     "type": "departement",
     "nom": "Dordogne",
     "region": "R75",
-    "population": 417614
+    "population": 417614,
+    "taux_pauvrete": 17.1,
+    "revenu_median": 24150.0,
+    "population_fin": 417614,
+    "population_debut": 413606
   },
   "D25": {
     "type": "departement",
     "nom": "Doubs",
     "region": "R27",
-    "population": 547163
+    "population": 547163,
+    "taux_pauvrete": 13.4,
+    "revenu_median": 27190.0,
+    "population_fin": 547163,
+    "population_debut": 539067
   },
   "D26": {
     "type": "departement",
     "nom": "Drôme",
     "region": "R84",
-    "population": 524207
+    "population": 524207,
+    "revenu_median": 25210.0,
+    "taux_pauvrete": 16.0,
+    "population_fin": 524207,
+    "population_debut": 511553
   },
   "D27": {
     "type": "departement",
     "nom": "Eure",
     "region": "R28",
-    "population": 602714
+    "population": 602714,
+    "taux_pauvrete": 13.8,
+    "revenu_median": 25520.0,
+    "population_debut": 601843,
+    "population_fin": 602714
   },
   "D28": {
     "type": "departement",
     "nom": "Eure-et-Loir",
     "region": "R24",
-    "population": 433129
+    "population": 433129,
+    "taux_pauvrete": 13.3,
+    "revenu_median": 25980.0,
+    "population_fin": 433129,
+    "population_debut": 433233
   },
   "D29": {
     "type": "departement",
     "nom": "Finistère",
     "region": "R53",
-    "population": 933455
+    "population": 933455,
+    "taux_pauvrete": 11.4,
+    "revenu_median": 26210.0,
+    "population_fin": 933455,
+    "population_debut": 909028
   },
   "D2A": {
     "type": "departement",
     "nom": "Corse-du-Sud",
     "region": "R94",
-    "population": 168306
+    "population": 168306,
+    "taux_pauvrete": 17.9,
+    "revenu_median": 26050.0,
+    "population_fin": 168306,
+    "population_debut": 157249
   },
   "D2B": {
     "type": "departement",
     "nom": "Haute-Corse",
     "region": "R94",
-    "population": 187180
+    "population": 187180,
+    "revenu_median": 24200.0,
+    "taux_pauvrete": 21.8,
+    "population_debut": 177689,
+    "population_fin": 187180
   },
   "D30": {
     "type": "departement",
     "nom": "Gard",
     "region": "R76",
-    "population": 770940
+    "population": 770940,
+    "taux_pauvrete": 21.0,
+    "revenu_median": 23930.0,
+    "population_debut": 744178,
+    "population_fin": 770940
   },
   "D31": {
     "type": "departement",
     "nom": "Haute-Garonne",
     "region": "R76",
-    "population": 1471468
+    "population": 1471468,
+    "taux_pauvrete": 15.9,
+    "revenu_median": 27040.0,
+    "population_fin": 1471468,
+    "population_debut": 1362672
   },
   "D32": {
     "type": "departement",
     "nom": "Gers",
     "region": "R76",
-    "population": 192645
+    "population": 192645,
+    "revenu_median": 24770.0,
+    "taux_pauvrete": 15.6,
+    "population_fin": 192645,
+    "population_debut": 191091
   },
   "D33": {
     "type": "departement",
     "nom": "Gironde",
     "region": "R75",
-    "population": 1690493
+    "population": 1690493,
+    "revenu_median": 26820.0,
+    "taux_pauvrete": 14.2,
+    "population_fin": 1690493,
+    "population_debut": 1583384
   },
   "D34": {
     "type": "departement",
     "nom": "Hérault",
     "region": "R76",
-    "population": 1230289
+    "population": 1230289,
+    "revenu_median": 24280.0,
+    "taux_pauvrete": 21.0,
+    "population_debut": 1144892,
+    "population_fin": 1230289
   },
   "D35": {
     "type": "departement",
     "nom": "Ille-et-Vilaine",
     "region": "R53",
-    "population": 1120666
+    "population": 1120666,
+    "revenu_median": 26670.0,
+    "taux_pauvrete": 11.7,
+    "population_debut": 1060199,
+    "population_fin": 1120666
   },
   "D36": {
     "type": "departement",
     "nom": "Indre",
     "region": "R24",
-    "population": 216069
+    "population": 216069,
+    "taux_pauvrete": 15.8,
+    "revenu_median": 24020.0,
+    "population_fin": 216069,
+    "population_debut": 222232
   },
   "D37": {
     "type": "departement",
     "nom": "Indre-et-Loire",
     "region": "R24",
-    "population": 619362
+    "population": 619362,
+    "taux_pauvrete": 14.1,
+    "revenu_median": 25930.0,
+    "population_fin": 619362,
+    "population_debut": 606511
   },
   "D38": {
     "type": "departement",
     "nom": "Isère",
     "region": "R84",
-    "population": 1298990
+    "population": 1298990,
+    "taux_pauvrete": 13.0,
+    "revenu_median": 27290.0,
+    "population_debut": 1258722,
+    "population_fin": 1298990
   },
   "D39": {
     "type": "departement",
     "nom": "Jura",
     "region": "R27",
-    "population": 257973
+    "population": 257973,
+    "taux_pauvrete": 12.3,
+    "revenu_median": 26090.0,
+    "population_debut": 260188,
+    "population_fin": 257973
   },
   "D40": {
     "type": "departement",
     "nom": "Landes",
     "region": "R75",
-    "population": 433570
+    "population": 433570,
+    "revenu_median": 25650.0,
+    "taux_pauvrete": 12.1,
+    "population_fin": 433570,
+    "population_debut": 407444
   },
   "D41": {
     "type": "departement",
     "nom": "Loir-et-Cher",
     "region": "R24",
-    "population": 328543
+    "population": 328543,
+    "taux_pauvrete": 14.0,
+    "revenu_median": 25240.0,
+    "population_fin": 328543,
+    "population_debut": 331915
   },
   "D42": {
     "type": "departement",
     "nom": "Loire",
     "region": "R84",
-    "population": 774133
+    "population": 774133,
+    "taux_pauvrete": 16.8,
+    "revenu_median": 24800.0,
+    "population_debut": 762941,
+    "population_fin": 774133
   },
   "D43": {
     "type": "departement",
     "nom": "Haute-Loire",
     "region": "R84",
-    "population": 228654
+    "population": 228654,
+    "revenu_median": 25140.0,
+    "taux_pauvrete": 12.4,
+    "population_fin": 228654,
+    "population_debut": 227283
   },
   "D44": {
     "type": "departement",
     "nom": "Loire-Atlantique",
     "region": "R52",
-    "population": 1487570
+    "population": 1487570,
+    "revenu_median": 27150.0,
+    "taux_pauvrete": 11.5,
+    "population_fin": 1487570,
+    "population_debut": 1394909
   },
   "D45": {
     "type": "departement",
     "nom": "Loiret",
     "region": "R24",
-    "population": 691268
+    "population": 691268,
+    "taux_pauvrete": 15.0,
+    "revenu_median": 25800.0,
+    "population_fin": 691268,
+    "population_debut": 678105
   },
   "D46": {
     "type": "departement",
     "nom": "Lot",
     "region": "R76",
-    "population": 176473
+    "population": 176473,
+    "taux_pauvrete": 15.8,
+    "revenu_median": 24740.0,
+    "population_fin": 176473,
+    "population_debut": 173828
   },
   "D47": {
     "type": "departement",
     "nom": "Lot-et-Garonne",
     "region": "R75",
-    "population": 333602
+    "population": 333602,
+    "taux_pauvrete": 18.5,
+    "revenu_median": 23730.0,
+    "population_debut": 332842,
+    "population_fin": 333602
   },
   "D48": {
     "type": "departement",
     "nom": "Lozère",
     "region": "R76",
-    "population": 76486
+    "population": 76486,
+    "revenu_median": 24270.0,
+    "taux_pauvrete": 15.3,
+    "population_debut": 76601,
+    "population_fin": 76486
   },
   "D49": {
     "type": "departement",
     "nom": "Maine-et-Loire",
     "region": "R52",
-    "population": 833776
+    "population": 833776,
+    "taux_pauvrete": 11.8,
+    "revenu_median": 25550.0,
+    "population_debut": 813493,
+    "population_fin": 833776
   },
   "D50": {
     "type": "departement",
     "nom": "Manche",
     "region": "R28",
-    "population": 497522
+    "population": 497522,
+    "taux_pauvrete": 12.0,
+    "revenu_median": 25430.0,
+    "population_fin": 497522,
+    "population_debut": 496883
   },
   "D51": {
     "type": "departement",
     "nom": "Marne",
     "region": "R44",
-    "population": 563076
+    "population": 563076,
+    "taux_pauvrete": 15.8,
+    "revenu_median": 25700.0,
+    "population_debut": 568895,
+    "population_fin": 563076
   },
   "D52": {
     "type": "departement",
     "nom": "Haute-Marne",
     "region": "R44",
-    "population": 168331
+    "population": 168331,
+    "revenu_median": 23980.0,
+    "taux_pauvrete": 16.0,
+    "population_debut": 175640,
+    "population_fin": 168331
   },
   "D53": {
     "type": "departement",
     "nom": "Mayenne",
     "region": "R52",
-    "population": 305468
+    "population": 305468,
+    "revenu_median": 25140.0,
+    "taux_pauvrete": 11.6,
+    "population_debut": 307445,
+    "population_fin": 305468
   },
   "D54": {
     "type": "departement",
     "nom": "Meurthe-et-Moselle",
     "region": "R44",
-    "population": 732236
+    "population": 732236,
+    "taux_pauvrete": 16.1,
+    "revenu_median": 25910.0,
+    "population_fin": 732236,
+    "population_debut": 733481
   },
   "D55": {
     "type": "departement",
     "nom": "Meuse",
     "region": "R44",
-    "population": 180290
+    "population": 180290,
+    "revenu_median": 24740.0,
+    "taux_pauvrete": 15.0,
+    "population_fin": 180290,
+    "population_debut": 187187
   },
   "D56": {
     "type": "departement",
     "nom": "Morbihan",
     "region": "R53",
-    "population": 783390
+    "population": 783390,
+    "taux_pauvrete": 11.3,
+    "revenu_median": 26250.0,
+    "population_fin": 783390,
+    "population_debut": 750863
   },
   "D57": {
     "type": "departement",
     "nom": "Moselle",
     "region": "R44",
-    "population": 1051309
+    "population": 1051309,
+    "taux_pauvrete": 16.6,
+    "revenu_median": 26030.0,
+    "population_debut": 1043522,
+    "population_fin": 1051309
   },
   "D58": {
     "type": "departement",
     "nom": "Nièvre",
     "region": "R27",
-    "population": 201417
+    "population": 201417,
+    "taux_pauvrete": 17.3,
+    "revenu_median": 24010.0,
+    "population_debut": 207182,
+    "population_fin": 201417
   },
   "D59": {
     "type": "departement",
     "nom": "Nord",
     "region": "R32",
-    "population": 2615635
+    "population": 2615635,
+    "revenu_median": 23810.0,
+    "taux_pauvrete": 20.7,
+    "population_debut": 2604361,
+    "population_fin": 2615635
   },
   "D60": {
     "type": "departement",
     "nom": "Oise",
     "region": "R32",
-    "population": 829899
+    "population": 829899,
+    "taux_pauvrete": 14.5,
+    "revenu_median": 25970.0,
+    "population_fin": 829899,
+    "population_debut": 824503
   },
   "D61": {
     "type": "departement",
     "nom": "Orne",
     "region": "R28",
-    "population": 275201
+    "population": 275201,
+    "taux_pauvrete": 16.3,
+    "revenu_median": 24110.0,
+    "population_fin": 275201,
+    "population_debut": 283372
   },
   "D62": {
     "type": "departement",
     "nom": "Pas-de-Calais",
     "region": "R32",
-    "population": 1457905
+    "population": 1457905,
+    "revenu_median": 23260.0,
+    "taux_pauvrete": 19.1,
+    "population_debut": 1468018,
+    "population_fin": 1457905
   },
   "D63": {
     "type": "departement",
     "nom": "Puy-de-Dôme",
     "region": "R84",
-    "population": 664453
+    "population": 664453,
+    "revenu_median": 26040.0,
+    "taux_pauvrete": 14.8,
+    "population_fin": 664453,
+    "population_debut": 653742
   },
   "D64": {
     "type": "departement",
     "nom": "Pyrénées-Atlantiques",
     "region": "R75",
-    "population": 706564
+    "population": 706564,
+    "taux_pauvrete": 13.3,
+    "revenu_median": 26300.0,
+    "population_fin": 706564,
+    "population_debut": 677309
   },
   "D65": {
     "type": "departement",
     "nom": "Hautes-Pyrénées",
     "region": "R76",
-    "population": 231349
+    "population": 231349,
+    "revenu_median": 24320.0,
+    "taux_pauvrete": 16.6,
+    "population_fin": 231349,
+    "population_debut": 228530
   },
   "D66": {
     "type": "departement",
     "nom": "Pyrénées-Orientales",
     "region": "R76",
-    "population": 496855
+    "population": 496855,
+    "taux_pauvrete": 22.4,
+    "revenu_median": 23080.0,
+    "population_fin": 496855,
+    "population_debut": 474452
   },
   "D67": {
     "type": "departement",
     "nom": "Bas-Rhin",
     "region": "R44",
-    "population": 1163810
+    "population": 1163810,
+    "revenu_median": 26890.0,
+    "taux_pauvrete": 15.0,
+    "population_debut": 1125559,
+    "population_fin": 1163810
   },
   "D68": {
     "type": "departement",
     "nom": "Haut-Rhin",
     "region": "R44",
-    "population": 770738
+    "population": 770738,
+    "revenu_median": 27620.0,
+    "taux_pauvrete": 14.1,
+    "population_fin": 770738,
+    "population_debut": 764030
   },
   "D69": {
     "type": "departement",
     "nom": "Rhône",
     "region": "R84",
-    "population": 1914667
+    "population": 1914667,
+    "taux_pauvrete": 16.3,
+    "revenu_median": 27500.0,
+    "population_fin": 1914667,
+    "population_debut": 1843319
   },
   "D70": {
     "type": "departement",
     "nom": "Haute-Saône",
     "region": "R27",
-    "population": 233185
+    "population": 233185,
+    "taux_pauvrete": 13.8,
+    "revenu_median": 24750.0,
+    "population_fin": 233185,
+    "population_debut": 236659
   },
   "D71": {
     "type": "departement",
     "nom": "Saône-et-Loire",
     "region": "R27",
-    "population": 550310
+    "population": 550310,
+    "taux_pauvrete": 14.1,
+    "revenu_median": 24970.0,
+    "population_debut": 553595,
+    "population_fin": 550310
   },
   "D72": {
     "type": "departement",
     "nom": "Sarthe",
     "region": "R52",
-    "population": 566733
+    "population": 566733,
+    "revenu_median": 24990.0,
+    "taux_pauvrete": 14.1,
+    "population_debut": 566506,
+    "population_fin": 566733
   },
   "D73": {
     "type": "departement",
     "nom": "Savoie",
     "region": "R84",
-    "population": 448226
+    "population": 448226,
+    "revenu_median": 27910.0,
+    "taux_pauvrete": 11.1,
+    "population_debut": 431174,
+    "population_fin": 448226
   },
   "D74": {
     "type": "departement",
     "nom": "Haute-Savoie",
     "region": "R84",
-    "population": 861158
+    "population": 861158,
+    "taux_pauvrete": 10.2,
+    "revenu_median": 32180.0,
+    "population_fin": 861158,
+    "population_debut": 807360
   },
   "D75": {
     "type": "departement",
     "nom": "Paris",
     "region": "R11",
-    "population": 2103778
+    "population": 2103778,
+    "taux_pauvrete": 16.8,
+    "revenu_median": 33650.0,
+    "population_fin": 2103778,
+    "population_debut": 2187526
   },
   "D76": {
     "type": "departement",
     "nom": "Seine-Maritime",
     "region": "R28",
-    "population": 1260964
+    "population": 1260964,
+    "revenu_median": 24940.0,
+    "taux_pauvrete": 16.6,
+    "population_fin": 1260964,
+    "population_debut": 1254378
   },
   "D77": {
     "type": "departement",
     "nom": "Seine-et-Marne",
     "region": "R11",
-    "population": 1468108
+    "population": 1468108,
+    "taux_pauvrete": 13.6,
+    "revenu_median": 27480.0,
+    "population_debut": 1403997,
+    "population_fin": 1468108
   },
   "D78": {
     "type": "departement",
     "nom": "Yvelines",
     "region": "R11",
-    "population": 1485086
+    "population": 1485086,
+    "revenu_median": 31520.0,
+    "taux_pauvrete": 11.6,
+    "population_debut": 1438266,
+    "population_fin": 1485086
   },
   "D79": {
     "type": "departement",
     "nom": "Deux-Sèvres",
     "region": "R75",
-    "population": 375229
+    "population": 375229,
+    "taux_pauvrete": 12.7,
+    "revenu_median": 25080.0,
+    "population_fin": 375229,
+    "population_debut": 374351
   },
   "D80": {
     "type": "departement",
     "nom": "Somme",
     "region": "R32",
-    "population": 565413
+    "population": 565413,
+    "taux_pauvrete": 17.3,
+    "revenu_median": 24200.0,
+    "population_fin": 565413,
+    "population_debut": 572443
   },
   "D81": {
     "type": "departement",
     "nom": "Tarn",
     "region": "R76",
-    "population": 397352
+    "population": 397352,
+    "taux_pauvrete": 16.4,
+    "revenu_median": 24420.0,
+    "population_fin": 397352,
+    "population_debut": 387890
   },
   "D82": {
     "type": "departement",
     "nom": "Tarn-et-Garonne",
     "region": "R76",
-    "population": 265817
+    "population": 265817,
+    "revenu_median": 24350.0,
+    "taux_pauvrete": 17.0,
+    "population_debut": 258349,
+    "population_fin": 265817
   },
   "D83": {
     "type": "departement",
     "nom": "Var",
     "region": "R93",
-    "population": 1119307
+    "population": 1119307,
+    "revenu_median": 25940.0,
+    "taux_pauvrete": 16.8,
+    "population_debut": 1058740,
+    "population_fin": 1119307
   },
   "D84": {
     "type": "departement",
     "nom": "Vaucluse",
     "region": "R93",
-    "population": 572056
+    "population": 572056,
+    "revenu_median": 23840.0,
+    "taux_pauvrete": 21.4,
+    "population_fin": 572056,
+    "population_debut": 559479
   },
   "D85": {
     "type": "departement",
     "nom": "Vendée",
     "region": "R52",
-    "population": 713609
+    "population": 713609,
+    "taux_pauvrete": 9.2,
+    "revenu_median": 25850.0,
+    "population_fin": 713609,
+    "population_debut": 675247
   },
   "D86": {
     "type": "departement",
     "nom": "Vienne",
     "region": "R75",
-    "population": 438897
+    "population": 438897,
+    "revenu_median": 24940.0,
+    "taux_pauvrete": 15.5,
+    "population_fin": 438897,
+    "population_debut": 436876
   },
   "D87": {
     "type": "departement",
     "nom": "Haute-Vienne",
     "region": "R75",
-    "population": 373167
+    "population": 373167,
+    "taux_pauvrete": 17.1,
+    "revenu_median": 24740.0,
+    "population_fin": 373167,
+    "population_debut": 374426
   },
   "D88": {
     "type": "departement",
     "nom": "Vosges",
     "region": "R44",
-    "population": 357248
+    "population": 357248,
+    "taux_pauvrete": 15.8,
+    "revenu_median": 24320.0,
+    "population_fin": 357248,
+    "population_debut": 367673
   },
   "D89": {
     "type": "departement",
     "nom": "Yonne",
     "region": "R27",
-    "population": 332267
+    "population": 332267,
+    "revenu_median": 24590.0,
+    "taux_pauvrete": 16.0,
+    "population_fin": 332267,
+    "population_debut": 338291
   },
   "D90": {
     "type": "departement",
     "nom": "Territoire de Belfort",
     "region": "R27",
-    "population": 140255
+    "population": 140255,
+    "taux_pauvrete": 17.1,
+    "revenu_median": 25910.0,
+    "population_debut": 142622,
+    "population_fin": 140255
   },
   "D91": {
     "type": "departement",
     "nom": "Essonne",
     "region": "R11",
-    "population": 1338485
+    "population": 1338485,
+    "revenu_median": 27940.0,
+    "taux_pauvrete": 15.4,
+    "population_fin": 1338485,
+    "population_debut": 1296130
   },
   "D92": {
     "type": "departement",
     "nom": "Hauts-de-Seine",
     "region": "R11",
-    "population": 1654712
+    "population": 1654712,
+    "taux_pauvrete": 13.5,
+    "revenu_median": 33790.0,
+    "population_fin": 1654712,
+    "population_debut": 1609306
   },
   "D93": {
     "type": "departement",
     "nom": "Seine-Saint-Denis",
     "region": "R11",
-    "population": 1704316
+    "population": 1704316,
+    "taux_pauvrete": 29.5,
+    "revenu_median": 21250.0,
+    "population_debut": 1623111,
+    "population_fin": 1704316
   },
   "D94": {
     "type": "departement",
     "nom": "Val-de-Marne",
     "region": "R11",
-    "population": 1426929
+    "population": 1426929,
+    "revenu_median": 27250.0,
+    "taux_pauvrete": 18.4,
+    "population_debut": 1387926,
+    "population_fin": 1426929
   },
   "D95": {
     "type": "departement",
     "nom": "Val-d'Oise",
     "region": "R11",
-    "population": 1281653
+    "population": 1281653,
+    "revenu_median": 25890.0,
+    "taux_pauvrete": 19.4,
+    "population_fin": 1281653,
+    "population_debut": 1228618
   },
   "D971": {
     "type": "departement",
     "nom": "Guadeloupe",
     "region": "R01",
-    "population": 384160
+    "population": 384160,
+    "population_debut": 390253,
+    "population_fin": 384160
   },
   "D972": {
     "type": "departement",
     "nom": "Martinique",
     "region": "R02",
-    "population": 360630
+    "population": 360630,
+    "population_fin": 360630,
+    "population_debut": 372594
   },
   "D973": {
     "type": "departement",
     "nom": "Guyane",
     "region": "R03",
-    "population": 293996
+    "population": 293996,
+    "population_fin": 293996,
+    "population_debut": 268700
   },
   "D974": {
     "type": "departement",
     "nom": "La Réunion",
     "region": "R04",
-    "population": 889679
+    "population": 889679,
+    "taux_pauvrete": 36.4,
+    "revenu_median": 19110.0,
+    "population_debut": 853659,
+    "population_fin": 889679
   },
   "D976": {
     "type": "departement",
