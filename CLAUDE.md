@@ -45,7 +45,7 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Ce que regroupe le secteur (notes INSEE) ; 6 tuiles : tendance (±2 % sur 3 ans) + rang national
   (secteurs ≥ 100 entreprises), actives, créations, fermetures, survie à 3 ans, établissements / 10 000 hab.
 - Évolution 10 ans (actives, créations/fermetures, tableau) ; survie 1/3/5 ans vs toutes activités ;
-  portrait (taille, forme juridique, âge, réseaux) ; saisonnalité (France) ; carte (évolution / densité,
+  portrait (camemberts : taille, forme juridique, âge ; réseaux) ; saisonnalité (France) ; carte (évolution / densité,
   clic = zone) ; « Et dans ma ville ? » (établissements de la commune, densité vs département et France).
 - Densité et ville = établissements actifs selon LEUR activité et LEUR adresse ; le reste = entreprises (siège).
 - Survie = administrative (non radiée), plus haute que la survie économique des études INSEE : toujours le dire.

@@ -294,10 +294,6 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 /* Portrait : barres empilées à 100 % */
 .portrait { display: flex; flex-direction: column; gap: 18px; }
 .portrait-titre { font-size: 0.85rem; color: var(--texte-secondaire); margin: 0 0 6px; }
-.barre-empilee { display: flex; height: 14px; gap: 2px; }
-.barre-empilee span { display: block; height: 100%; min-width: 2px; }
-.barre-empilee span:first-child { border-radius: 4px 0 0 4px; }
-.barre-empilee span:last-child { border-radius: 0 4px 4px 0; }
 .legende-empilee { display: flex; flex-wrap: wrap; gap: 4px 14px; list-style: none; margin: 8px 0 0; padding: 0; font-size: 0.8rem; color: var(--texte-secondaire); }
 .legende-empilee li { display: flex; align-items: center; gap: 6px; }
 .legende-empilee strong { color: var(--texte); font-weight: 600; }
@@ -341,3 +337,9 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 .mini-chiffres dt { font-size: 0.8rem; color: var(--texte-secondaire); }
 .mini-chiffres dd { margin: 0; font-size: 1.15rem; font-weight: 600; }
 .mini-chiffres dd small { font-size: 0.8rem; font-weight: 400; color: var(--texte-secondaire); }
+
+/* Portrait : trois camemberts côte à côte (empilés sur téléphone) */
+.graphiques.pleine-largeur { grid-template-columns: 1fr; }
+.camemberts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.portrait-groupe { display: flex; flex-direction: column; }
+.zone-camembert { position: relative; height: 170px; margin: 4px 0 8px; }

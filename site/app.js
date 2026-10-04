@@ -7,7 +7,9 @@
 
 import { colorer, preparerCarte } from "./carte.js";
 import { afficherEconomie, afficherTerritoire } from "./economie.js";
-import { dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie } from "./graphiques.js";
+import {
+  dessinerCamembert, dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie,
+} from "./graphiques.js";
 import {
   $, decimal, densite, element, formaterDate, lireJson, nombre, pluriel, pourcent, signe,
 } from "./outils.js";
@@ -459,28 +461,28 @@ const PORTRAIT = [
   },
 ];
 
-function barreEmpilee(valeurs, couleurs, libelles) {
+// Un camembert + sa légende (pourcentages écrits en toutes lettres)
+function camembert(cle, titre, valeurs, couleurs, libelles) {
   const total = valeurs.reduce((a, b) => a + b, 0);
-  const barre = element("div", "barre-empilee");
-  barre.setAttribute("role", "img");
-  barre.setAttribute("aria-label", libelles.map((l, i) => `${l} : ${pourcent(total ? (100 * valeurs[i]) / total : 0, false, 0)}`).join(", "));
+  const groupe = element("div", "portrait-groupe");
+  groupe.append(element("p", "portrait-titre", titre));
+  const zone = element("div", "zone-camembert");
+  const canvas = element("canvas");
+  canvas.id = `camembert-${cle}`;
+  canvas.setAttribute("role", "img");
+  canvas.setAttribute("aria-label", `${titre} : ` + libelles
+    .map((l, i) => `${l} ${pourcent(total ? (100 * valeurs[i]) / total : 0, false, 0)}`).join(", "));
+  zone.append(canvas);
   const legende = element("ul", "legende-empilee");
   valeurs.forEach((valeur, i) => {
-    const part = total ? (100 * valeur) / total : 0;
-    if (part > 0) {
-      const morceau = element("span");
-      morceau.style.flexGrow = String(part);
-      morceau.style.background = `var(${couleurs[i]})`;
-      morceau.title = `${libelles[i]} : ${pourcent(part, false, 0)}`;
-      barre.append(morceau);
-    }
     const item = element("li");
     const pastille = element("span", "pastille");
     pastille.style.background = `var(${couleurs[i]})`;
-    item.append(pastille, `${libelles[i]} `, element("strong", null, pourcent(part, false, 0)));
+    item.append(pastille, `${libelles[i]} `, element("strong", null, pourcent(total ? (100 * valeur) / total : 0, false, 0)));
     legende.append(item);
   });
-  return [barre, legende];
+  groupe.append(zone, legende);
+  return groupe;
 }
 
 function afficherSurvieEtPortrait() {
@@ -500,10 +502,14 @@ function afficherSurvieEtPortrait() {
     portrait.append(element("p", "secondaire", "Aucune entreprise active de ce secteur dans cette zone."));
     return;
   }
+  const camemberts = element("div", "camemberts");
+  portrait.append(camemberts);
   for (const { cle, titre, parts, couleurs } of PORTRAIT) {
-    const groupe = element("div");
-    groupe.append(element("p", "portrait-titre", titre), ...barreEmpilee(brut[cle], couleurs, parts));
-    portrait.append(groupe);
+    camemberts.append(camembert(cle, titre, brut[cle], couleurs, parts));
+  }
+  // on dessine une fois les trois emplacements en place (sinon le premier prend toute la largeur)
+  for (const { cle, parts, couleurs } of PORTRAIT) {
+    dessinerCamembert(`camembert-${cle}`, brut[cle], couleurs, parts);
   }
   const partReseaux = (100 * (brut.plusieurs_etablissements || 0)) / actives;
   const partReseauxTous = (100 * (brutTous.plusieurs_etablissements || 0)) / (brutTous.actives_aujourdhui || 1);

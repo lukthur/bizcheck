@@ -235,3 +235,41 @@ export function dessinerDefaillances(annees, defaillances) {
     plugins: [etiquetteFinale((v) => nombre.format(v))],
   });
 }
+
+// --- Camemberts (portrait des entreprises) ------------------------------------------
+
+export function dessinerCamembert(idCanvas, valeurs, variablesCouleurs, libelles) {
+  const total = valeurs.reduce((a, b) => a + b, 0);
+  dessiner(idCanvas, {
+    type: "pie",
+    data: {
+      labels: libelles,
+      datasets: [{
+        data: valeurs,
+        backgroundColor: variablesCouleurs.map(couleur),
+        borderColor: couleur("--fond-carte"), // fin liseré entre les parts
+        borderWidth: 2,
+        hoverOffset: 4,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }, // légende en HTML, avec les pourcentages écrits
+        tooltip: {
+          backgroundColor: couleur("--fond-carte"),
+          titleColor: couleur("--texte"),
+          bodyColor: couleur("--texte"),
+          borderColor: couleur("--axe"),
+          borderWidth: 1,
+          padding: 10,
+          callbacks: {
+            label: (c) => ` ${c.label} : ${pourcent(total ? (100 * c.parsed) / total : 0, false, 0)}`
+              + ` (${nombre.format(c.parsed)})`,
+          },
+        },
+      },
+    },
+  });
+}
