@@ -38,6 +38,8 @@ from pathlib import Path
 import duckdb
 import xlrd  # lecture du fichier Excel (.xls) de la nomenclature NAF
 
+from recherche import preparer_recherche  # données de la barre de recherche (recherche.py)
+
 # Affiche correctement les accents dans le terminal Windows
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -396,3 +398,6 @@ if __name__ == "__main__":
     resultats = calculer_indicateurs(libelles_naf)
     afficher(resultats, libelles_naf)
     enregistrer(resultats, libelles_naf, zones, infos_ul, infos_etab, infos_cog)
+    print()
+    preparer_recherche(libelles_naf, {naf: actives_fin(resultats, naf)[-1] for naf in resultats},
+                       DOSSIER_SORTIES / "recherche.json")

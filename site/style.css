@@ -96,9 +96,11 @@ h3 { font-size: 0.9rem; margin: 16px 0 4px; color: var(--texte-secondaire); }
   gap: 12px 24px;
   margin: 24px 0;
 }
-.filtres label { display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; }
-.filtres span { font-size: 0.85rem; color: var(--texte-secondaire); }
-select {
+.champ { display: flex; flex-direction: column; gap: 4px; }
+.champ-recherche { flex: 2 1 320px; }
+.champ-zone { flex: 1 1 220px; }
+.champ label { font-size: 0.85rem; color: var(--texte-secondaire); }
+input[type="search"], select {
   font: inherit;
   padding: 8px 10px;
   border: 1px solid var(--axe);
@@ -107,6 +109,74 @@ select {
   color: var(--texte);
   width: 100%;
 }
+input[type="search"] { font-size: 1.05rem; padding: 10px 12px; border-color: var(--texte-discret); }
+input[type="search"]:focus, select:focus { outline: 2px solid var(--serie-1); outline-offset: 1px; }
+
+/* Suggestions de la recherche */
+.boite-recherche { position: relative; }
+.suggestions {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--fond-carte);
+  border: 1px solid var(--axe);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.suggestions li { padding: 8px 10px; border-radius: 6px; cursor: pointer; }
+.suggestions li[aria-selected="true"], .suggestions li:hover { background: var(--grille); }
+.suggestions li.vide { cursor: default; color: var(--texte-secondaire); }
+.suggestions li.vide:hover { background: none; }
+.sugg-ligne { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.sugg-libelle { font-weight: 600; }
+.sugg-code { font-size: 0.8rem; color: var(--texte-secondaire); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sugg-extrait, .sugg-nombre { display: block; font-size: 0.85rem; color: var(--texte-secondaire); }
+.sugg-extrait {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+/* Accueil */
+.accueil { padding: 24px 0 48px; max-width: 68ch; }
+.exemples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.exemple {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border: 1px solid var(--axe);
+  border-radius: 999px;
+  background: var(--fond-carte);
+  color: var(--texte);
+  cursor: pointer;
+}
+.exemple:hover { border-color: var(--serie-1); }
+
+/* Ce que regroupe le secteur */
+.perimetre { margin-bottom: 16px; }
+.perimetre ul { margin: 8px 0 0; padding-left: 20px; columns: 2 320px; column-gap: 32px; }
+.perimetre li { margin-bottom: 4px; break-inside: avoid; }
+.perimetre details { margin-top: 12px; }
+.perimetre summary { cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.perimetre .lien-code {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.petit { font-size: 0.85rem; margin-top: 4px; }
 
 .titre-secteur { margin-bottom: 16px; }
 

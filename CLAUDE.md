@@ -20,13 +20,17 @@ sur les 3 dernières années complètes, pour la France entière puis par régio
 BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le bureau)
 ├── CLAUDE.md
 ├── data/        ← fichiers téléchargés (parquet Sirene, COG) — ne pas versionner
-├── bizcheck.py  ← script : indicateurs France + régions + départements pour un code NAF
+├── bizcheck.py  ← script principal : indicateurs de tous les codes NAF × zones
+├── recherche.py ← appelé par bizcheck.py : notes INSEE (SPARQL rdf.insee.fr) + synonymes → recherche.json
+├── synonymes.csv ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
 ├── requirements.txt ← bibliothèques Python (pip install -r requirements.txt)
 ├── lancer_site.bat ← double-clic : serveur local + ouverture de http://localhost:8000
 └── site/        ← site statique (c'est ce dossier qu'on mettra en ligne)
-    ├── index.html, style.css, app.js  (Chart.js via CDN jsdelivr)
+    ├── index.html, style.css, app.js (module ES), recherche.js (moteur de recherche)
+    │   Chart.js via CDN jsdelivr
     └── donnees/ ← écrit par bizcheck.py (tous les codes NAF rév. 2 d'un coup, ~20 s) :
         infos.json (années, sources, limites, date de calcul), zones.json, secteurs.json,
+        recherche.json (libellé, synonymes, comprend / comprend_aussi / ne_comprend_pas + renvois),
         naf/<code>.json (nombres bruts par zone : actives_debut, actives_fin, creations, fermetures ;
         zone absente = 0 ; taux et solde calculés par le site)
 ```
@@ -35,6 +39,10 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si ≤ −2 %, sinon stable.
 
 ## Recherche par activité (fonction la plus importante)
+- Fait (sem. 4) : recherche/recherche.js, tout dans le navigateur. Poids : synonyme 10, libellé 4,
+  comprend 2, comprend aussi 1,5, renvoi 1,5 (texte d'un « ne comprend pas … cf. X » rangé avec X).
+  Tolère accents, pluriels, mots incomplets, fautes (Levenshtein 1 dès 4 lettres, 2 dès 8).
+  Pour corriger un mauvais résultat : ajouter une ligne dans synonymes.csv puis relancer bizcheck.py.
 - Libellés NAF officiels + notes explicatives INSEE, dictionnaire de synonymes, recherche tolérante aux fautes et accents.
 - Si plusieurs codes correspondent : proposer un choix.
 - Toujours afficher le secteur trouvé et ce qu'il regroupe (le code NAF est plus large que l'activité tapée).
@@ -65,5 +73,5 @@ Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si
 ## Planning
 - Sem. 1–2 : environnement + script Sirene ← fait
 - Sem. 3 : site avec graphiques et filtres géographiques ← fait (filtres zone ; sélecteur de secteur provisoire)
-- Sem. 4 : recherche par mots-clés ← prochaine étape (+ calcul de tous les codes NAF)
+- Sem. 4 : recherche par mots-clés ← fait (tous les codes NAF calculés, synonymes à enrichir)
 - Sem. 5–6 : CA, défaillances, export PDF, mise en ligne

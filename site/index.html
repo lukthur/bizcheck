@@ -7,7 +7,7 @@
   <meta name="description" content="Comment se porte un secteur d'activité en France, par région et département.">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js" defer></script>
+  <script type="module" src="app.js"></script>
 </head>
 <body>
   <header class="entete">
@@ -19,24 +19,54 @@
 
   <main class="conteneur">
     <!-- Filtres : sur une seule ligne, au-dessus des graphiques -->
-    <section class="filtres" aria-label="Choix du secteur et de la zone">
-      <label>
-        <span>Secteur</span>
-        <select id="choix-secteur"></select>
-      </label>
-      <label>
-        <span>Zone</span>
+    <section class="filtres" aria-label="Choix de l'activité et de la zone">
+      <div class="champ champ-recherche">
+        <label for="champ-recherche">Quelle activité ?</label>
+        <div class="boite-recherche">
+          <input id="champ-recherche" type="search" autocomplete="off" spellcheck="false"
+            placeholder="ex. escape game, boulangerie, plombier…"
+            role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions">
+          <ul id="suggestions" class="suggestions" role="listbox" aria-label="Secteurs trouvés" hidden></ul>
+        </div>
+      </div>
+      <div class="champ champ-zone">
+        <label for="choix-zone">Zone</label>
         <select id="choix-zone"></select>
-      </label>
+      </div>
     </section>
 
     <p id="message-erreur" class="erreur" hidden></p>
+
+    <section id="accueil" class="accueil" hidden>
+      <h1>Comment se porte votre secteur&nbsp;?</h1>
+      <p class="secondaire">Tapez une activité en langage courant : BizCheck trouve le secteur officiel
+        (code NAF) qui la contient et montre combien d'entreprises s'y créent et ferment, en France,
+        par région et par département.</p>
+      <p class="exemples">Exemples :
+        <button type="button" class="exemple">escape game</button>
+        <button type="button" class="exemple">boulangerie</button>
+        <button type="button" class="exemple">food truck</button>
+        <button type="button" class="exemple">plombier</button>
+        <button type="button" class="exemple">photographe</button>
+      </p>
+    </section>
 
     <section id="contenu" hidden>
       <div class="titre-secteur">
         <h1 id="titre"></h1>
         <p id="sous-titre" class="secondaire"></p>
       </div>
+
+      <section class="carte perimetre" aria-labelledby="titre-perimetre">
+        <h2 id="titre-perimetre">Ce que regroupe ce secteur</h2>
+        <p class="secondaire petit">Les chiffres ci-dessous portent sur tout le secteur officiel, pas seulement
+          sur l'activité recherchée. D'après l'INSEE, il comprend :</p>
+        <ul id="liste-comprend"></ul>
+        <details id="bloc-exclusions">
+          <summary>Ce qu'il ne comprend pas</summary>
+          <ul id="liste-exclusions"></ul>
+        </details>
+      </section>
 
       <div id="alerte-petit-effectif" class="alerte" role="note" hidden></div>
 

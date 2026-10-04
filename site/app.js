@@ -1,13 +1,18 @@
 // BizCheck — affichage d'un secteur à partir des fichiers JSON de donnees/
 // (produits par bizcheck.py). Aucune donnée n'est écrite à la main ici.
 
+import { creerIndex, rechercher } from "./recherche.js";
+
 const SEUIL_TENDANCE_PCT = 2; // au-delà de ±2 % sur la période : croissance ou déclin
 
 const nombre = new Intl.NumberFormat("fr-FR");
 const dateLongue = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 
 // infos, zones et secteurs sont lus une fois ; chiffres = fichier du secteur affiché
-const etat = { infos: null, zones: null, secteurs: {}, chiffres: null, zone: "FR", graphiques: [] };
+const etat = {
+  infos: null, zones: null, secteurs: {}, index: null, chiffres: null, zone: "FR", graphiques: [],
+  suggestions: [], suggestionActive: -1,
+};
 
 // --- Petits utilitaires -------------------------------------------------------
 
@@ -84,33 +89,33 @@ async function demarrer() {
     [etat.infos, etat.zones, listeSecteurs] = await Promise.all([
       lireJson("donnees/infos.json"),
       lireJson("donnees/zones.json"),
-      lireJson("donnees/secteurs.json"),
+      lireJson("donnees/recherche.json"),
     ]);
   } catch (erreur) {
     afficherErreur("Impossible de lire les données. Le site doit être ouvert via le serveur local "
       + "(lancer_site.bat), pas en double-cliquant sur index.html.");
     return;
   }
+  for (const s of listeSecteurs) etat.secteurs[s.code_naf] = s;
+  etat.index = creerIndex(listeSecteurs);
 
-  const choixSecteur = $("choix-secteur");
-  for (const s of listeSecteurs) {
-    etat.secteurs[s.code_naf] = s;
-    choixSecteur.add(new Option(`${s.code_naf} — ${s.libelle_naf}`, s.code_naf));
-  }
-  const codeDemande = parametres.get("naf");
-  choixSecteur.value = etat.secteurs[codeDemande] ? codeDemande : "93.29Z";
   etat.zone = etat.zones[parametres.get("zone")] ? parametres.get("zone") : "FR";
   remplirChoixZone();
-
-  choixSecteur.addEventListener("change", () => chargerSecteur(choixSecteur.value));
   $("choix-zone").addEventListener("change", (e) => {
     etat.zone = e.target.value;
     afficher();
   });
+  brancherRecherche();
   // Mode clair / sombre changé dans le système : on redessine avec les bonnes couleurs
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", afficher);
 
-  await chargerSecteur(choixSecteur.value);
+  const codeDemande = parametres.get("naf");
+  if (etat.secteurs[codeDemande]) {
+    await chargerSecteur(codeDemande);
+  } else {
+    $("accueil").hidden = false;
+    $("champ-recherche").focus();
+  }
 }
 
 async function chargerSecteur(code) {
@@ -120,7 +125,139 @@ async function chargerSecteur(code) {
     afficherErreur(`Les données du secteur ${code} sont introuvables.`);
     return;
   }
+  $("accueil").hidden = true;
+  $("champ-recherche").value = etat.secteurs[code].libelle_naf;
+  afficherPerimetre(etat.secteurs[code]);
   afficher();
+}
+
+// --- Recherche ----------------------------------------------------------------
+
+function brancherRecherche() {
+  const champ = $("champ-recherche");
+  champ.addEventListener("input", () => proposer(champ.value));
+  champ.addEventListener("focus", () => {
+    // un clic dans le champ sélectionne le texte : on peut taper directement une nouvelle recherche
+    if (etat.chiffres && champ.value === etat.secteurs[etat.chiffres.code_naf].libelle_naf) champ.select();
+  });
+  champ.addEventListener("keydown", (e) => {
+    const nombreSuggestions = etat.suggestions.length;
+    if (e.key === "ArrowDown" && nombreSuggestions) {
+      e.preventDefault();
+      surligner((etat.suggestionActive + 1) % nombreSuggestions);
+    } else if (e.key === "ArrowUp" && nombreSuggestions) {
+      e.preventDefault();
+      surligner((etat.suggestionActive - 1 + nombreSuggestions) % nombreSuggestions);
+    } else if (e.key === "Enter" && nombreSuggestions) {
+      e.preventDefault();
+      choisir(etat.suggestions[Math.max(0, etat.suggestionActive)].fiche.code_naf);
+    } else if (e.key === "Escape") {
+      fermerSuggestions();
+    }
+  });
+  champ.addEventListener("blur", () => setTimeout(fermerSuggestions, 150));
+
+  document.querySelectorAll(".exemple").forEach((bouton) => {
+    bouton.addEventListener("click", () => {
+      champ.value = bouton.textContent;
+      champ.focus();
+      proposer(champ.value);
+    });
+  });
+}
+
+function element(balise, classe, texte) {
+  const el = document.createElement(balise);
+  if (classe) el.className = classe;
+  if (texte !== undefined) el.textContent = texte;
+  return el;
+}
+
+function proposer(texte) {
+  const liste = $("suggestions");
+  etat.suggestions = rechercher(etat.index, texte);
+  etat.suggestionActive = -1;
+  liste.innerHTML = "";
+  if (texte.trim().length < 2) {
+    fermerSuggestions();
+    return;
+  }
+  if (etat.suggestions.length === 0) {
+    liste.append(element("li", "vide",
+      "Aucun secteur trouvé. Essayez un autre mot : le métier, le produit vendu ou le service rendu."));
+  }
+  etat.suggestions.forEach(({ fiche, extrait }, i) => {
+    const li = element("li");
+    li.id = `suggestion-${i}`;
+    li.setAttribute("role", "option");
+    li.setAttribute("aria-selected", "false");
+
+    const ligne = element("span", "sugg-ligne");
+    ligne.append(element("span", "sugg-libelle", fiche.libelle_naf), element("span", "sugg-code", fiche.code_naf));
+    li.append(ligne);
+    if (extrait) {
+      const debut = extrait.renvoi ? "Inclut, selon l'INSEE" : "Comprend";
+      li.append(element("span", "sugg-extrait", `${debut} : ${extrait.texte}`));
+    }
+    li.append(element("span", "sugg-nombre",
+      `${nombre.format(fiche.entreprises_actives)} entreprises actives en France`));
+
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault(); // garde le focus dans le champ jusqu'au choix
+      choisir(fiche.code_naf);
+    });
+    liste.append(li);
+  });
+  liste.hidden = false;
+  $("champ-recherche").setAttribute("aria-expanded", "true");
+}
+
+function surligner(position) {
+  etat.suggestionActive = position;
+  [...$("suggestions").children].forEach((li, i) => li.setAttribute("aria-selected", String(i === position)));
+  const active = $(`suggestion-${position}`);
+  $("champ-recherche").setAttribute("aria-activedescendant", active ? active.id : "");
+  active?.scrollIntoView({ block: "nearest" });
+}
+
+function fermerSuggestions() {
+  $("suggestions").hidden = true;
+  $("champ-recherche").setAttribute("aria-expanded", "false");
+  $("champ-recherche").removeAttribute("aria-activedescendant");
+}
+
+function choisir(code) {
+  fermerSuggestions();
+  $("champ-recherche").blur();
+  chargerSecteur(code);
+}
+
+// --- Ce que regroupe le secteur -----------------------------------------------
+
+function afficherPerimetre(fiche) {
+  const comprend = [...fiche.comprend, ...fiche.comprend_aussi];
+  const liste = $("liste-comprend");
+  liste.innerHTML = "";
+  for (const texte of comprend.length ? comprend : [fiche.libelle_naf]) liste.append(element("li", null, texte));
+
+  const exclusions = $("liste-exclusions");
+  exclusions.innerHTML = "";
+  $("bloc-exclusions").hidden = fiche.ne_comprend_pas.length === 0;
+  $("bloc-exclusions").open = false;
+  for (const { texte, voir } of fiche.ne_comprend_pas) {
+    const li = element("li", null, texte);
+    // lien direct vers le ou les secteurs indiqués par l'INSEE
+    voir.filter((code) => etat.secteurs[code]).forEach((code) => {
+      const bouton = element("button", "lien-code", `voir ${code}`);
+      bouton.type = "button";
+      bouton.addEventListener("click", () => {
+        chargerSecteur(code);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      li.append(" — ", bouton);
+    });
+    exclusions.append(li);
+  }
 }
 
 function remplirChoixZone() {
