@@ -21,8 +21,14 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── CLAUDE.md
 ├── data/        ← fichiers téléchargés (parquet Sirene, COG) — ne pas versionner
 ├── bizcheck.py  ← script : indicateurs France + régions + départements pour un code NAF
-└── sorties/     ← un JSON par code NAF (ex. 93.29Z.json), toutes les zones dedans
+├── lancer_site.bat ← double-clic : serveur local + ouverture de http://localhost:8000
+└── site/        ← site statique (c'est ce dossier qu'on mettra en ligne)
+    ├── index.html, style.css, app.js  (Chart.js via CDN jsdelivr)
+    └── donnees/ ← écrit par bizcheck.py : <NAF>.json (toutes les zones) + secteurs.json (liste)
 ```
+Le site lit les JSON avec fetch : il ne marche pas en double-cliquant index.html (file://),
+il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --directory site`).
+Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si ≤ −2 %, sinon stable.
 
 ## Recherche par activité (fonction la plus importante)
 - Libellés NAF officiels + notes explicatives INSEE, dictionnaire de synonymes, recherche tolérante aux fautes et accents.
@@ -52,6 +58,6 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 
 ## Planning
 - Sem. 1–2 : environnement + script Sirene ← fait
-- Sem. 3 : site avec graphiques et filtres géographiques ← en cours (calcul par zone fait)
-- Sem. 4 : recherche par mots-clés
+- Sem. 3 : site avec graphiques et filtres géographiques ← fait (filtres zone ; sélecteur de secteur provisoire)
+- Sem. 4 : recherche par mots-clés ← prochaine étape (+ calcul de tous les codes NAF)
 - Sem. 5–6 : CA, défaillances, export PDF, mise en ligne

@@ -33,7 +33,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 # --- Paramètres à modifier ---------------------------------------------------
 
-CODE_NAF = "93.29Z"  # Autres activités récréatives et de loisirs (dont escape game)
+CODE_NAF = "93.29Z"
+LIBELLE_NAF = "Autres activités récréatives et de loisirs"  # libellé INSEE (automatique en semaine 4)
 
 ANNEE_EN_COURS = date.today().year
 ANNEES = [ANNEE_EN_COURS - 3, ANNEE_EN_COURS - 2, ANNEE_EN_COURS - 1]
@@ -44,7 +45,7 @@ SEUIL_PETIT_EFFECTIF = 20  # en dessous : avertissement « chiffres peu fiables 
 
 DOSSIER_PROJET = Path(__file__).resolve().parent
 DOSSIER_DATA = DOSSIER_PROJET / "data"
-DOSSIER_SORTIES = DOSSIER_PROJET / "sorties"
+DOSSIER_SORTIES = DOSSIER_PROJET / "site" / "donnees"  # lu directement par le site
 
 FICHIER_DEPARTEMENTS = DOSSIER_DATA / "cog_departements.csv"
 FICHIER_REGIONS = DOSSIER_DATA / "cog_regions.csv"
@@ -297,9 +298,10 @@ def afficher(resultats):
 
 
 def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
-    DOSSIER_SORTIES.mkdir(exist_ok=True)
+    DOSSIER_SORTIES.mkdir(parents=True, exist_ok=True)
     sortie = {
         "code_naf": CODE_NAF,
+        "libelle_naf": LIBELLE_NAF,
         "annees": ANNEES,
         "seuil_petit_effectif": SEUIL_PETIT_EFFECTIF,
         "zones": resultats,
@@ -326,6 +328,8 @@ def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
             "qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
             "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
             "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
+            "Seules les fermetures déclarées sont comptées : une entreprise sans activité "
+            "mais non radiée reste comptée comme active.",
             "L'entreprise est placée dans la région et le département de son siège actuel "
             "(ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
             "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer "
@@ -335,6 +339,19 @@ def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
     fichier = DOSSIER_SORTIES / f"{CODE_NAF}.json"
     fichier.write_text(json.dumps(sortie, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nRésultats enregistrés dans : {fichier.relative_to(DOSSIER_PROJET)}")
+    mettre_a_jour_liste_secteurs()
+
+
+def mettre_a_jour_liste_secteurs():
+    """Écrit secteurs.json : la liste des secteurs déjà calculés, lue par le site."""
+    secteurs = []
+    for fichier in sorted(DOSSIER_SORTIES.glob("*.json")):
+        if fichier.name == "secteurs.json":
+            continue
+        donnees = json.loads(fichier.read_text(encoding="utf-8"))
+        secteurs.append({"code_naf": donnees["code_naf"], "libelle_naf": donnees.get("libelle_naf", "")})
+    (DOSSIER_SORTIES / "secteurs.json").write_text(
+        json.dumps(secteurs, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":

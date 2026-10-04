@@ -1,5 +1,6 @@
 {
   "code_naf": "93.29Z",
+  "libelle_naf": "Autres activités récréatives et de loisirs",
   "annees": [
     2023,
     2024,
@@ -4206,11 +4207,12 @@
       "date_actualisation": "2026-01-01"
     }
   ],
-  "date_calcul": "2026-10-04 13:32",
+  "date_calcul": "2026-10-04 13:43",
   "limites": [
     "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
     "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
     "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
+    "Seules les fermetures déclarées sont comptées : une entreprise sans activité mais non radiée reste comptée comme active.",
     "L'entreprise est placée dans la région et le département de son siège actuel (ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
     "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement."
   ]

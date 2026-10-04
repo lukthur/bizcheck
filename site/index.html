@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BizCheck</title>
+  <meta name="description" content="Comment se porte un secteur d'activité en France, par région et département.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur">
+      <p class="marque">BizCheck</p>
+      <p class="accroche">Comment se porte un secteur d'activité en France ?</p>
+    </div>
+  </header>
+
+  <main class="conteneur">
+    <!-- Filtres : sur une seule ligne, au-dessus des graphiques -->
+    <section class="filtres" aria-label="Choix du secteur et de la zone">
+      <label>
+        <span>Secteur</span>
+        <select id="choix-secteur"></select>
+      </label>
+      <label>
+        <span>Zone</span>
+        <select id="choix-zone"></select>
+      </label>
+    </section>
+
+    <p id="message-erreur" class="erreur" hidden></p>
+
+    <section id="contenu" hidden>
+      <div class="titre-secteur">
+        <h1 id="titre"></h1>
+        <p id="sous-titre" class="secondaire"></p>
+      </div>
+
+      <div id="alerte-petit-effectif" class="alerte" role="note" hidden></div>
+
+      <!-- Verdict + chiffres clés -->
+      <div class="tuiles">
+        <div class="tuile tuile-verdict">
+          <p class="tuile-libelle">Tendance</p>
+          <p id="verdict" class="verdict"></p>
+          <p id="verdict-detail" class="tuile-detail"></p>
+        </div>
+        <div class="tuile">
+          <p class="tuile-libelle" id="libelle-actives"></p>
+          <p id="valeur-actives" class="tuile-valeur"></p>
+          <p id="detail-actives" class="tuile-detail"></p>
+        </div>
+        <div class="tuile">
+          <p class="tuile-libelle" id="libelle-creations"></p>
+          <p id="valeur-creations" class="tuile-valeur"></p>
+          <p id="detail-creations" class="tuile-detail"></p>
+        </div>
+        <div class="tuile">
+          <p class="tuile-libelle" id="libelle-fermetures"></p>
+          <p id="valeur-fermetures" class="tuile-valeur"></p>
+          <p id="detail-fermetures" class="tuile-detail"></p>
+        </div>
+      </div>
+
+      <p id="commentaire" class="commentaire"></p>
+
+      <!-- Graphiques -->
+      <div class="graphiques">
+        <figure class="carte">
+          <figcaption>
+            <h2>Entreprises actives au 31 décembre</h2>
+          </figcaption>
+          <div class="zone-graphique"><canvas id="graphique-actives" role="img"
+            aria-label="Nombre d'entreprises actives au 31 décembre, par année"></canvas></div>
+          <p class="note-source" data-limite="actives"></p>
+        </figure>
+
+        <figure class="carte">
+          <figcaption>
+            <h2>Créations et fermetures par année</h2>
+            <ul class="legende">
+              <li><span class="pastille pastille-1"></span>Créations</li>
+              <li><span class="pastille pastille-2"></span>Fermetures</li>
+            </ul>
+          </figcaption>
+          <div class="zone-graphique"><canvas id="graphique-flux" role="img"
+            aria-label="Nombre de créations et de fermetures d'entreprises, par année"></canvas></div>
+          <p class="note-source" data-limite="flux"></p>
+        </figure>
+      </div>
+
+      <details class="carte tableau-details">
+        <summary>Voir les chiffres en tableau</summary>
+        <div class="tableau-defilant">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Année</th>
+                <th scope="col">Actives au 31/12</th>
+                <th scope="col">Créations</th>
+                <th scope="col">Fermetures</th>
+                <th scope="col">Solde net</th>
+                <th scope="col">Taux de création</th>
+                <th scope="col">Taux de fermeture</th>
+              </tr>
+            </thead>
+            <tbody id="tableau"></tbody>
+          </table>
+        </div>
+      </details>
+
+      <section class="carte sources" aria-labelledby="titre-sources">
+        <h2 id="titre-sources">Sources et limites</h2>
+        <h3>Sources</h3>
+        <ul id="liste-sources"></ul>
+        <h3>Ce que ces chiffres ne disent pas</h3>
+        <ul id="liste-limites"></ul>
+        <p id="date-calcul" class="secondaire"></p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
