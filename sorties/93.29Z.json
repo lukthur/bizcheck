@@ -1,0 +1,4217 @@
+{
+  "code_naf": "93.29Z",
+  "annees": [
+    2023,
+    2024,
+    2025
+  ],
+  "seuil_petit_effectif": 20,
+  "zones": {
+    "FR": {
+      "type": "france",
+      "nom": "France",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 117620,
+          "creations": 11825,
+          "fermetures": 6234,
+          "solde_net": 5591,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 119290,
+          "creations": 11367,
+          "fermetures": 9697,
+          "solde_net": 1670,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 8.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 121465,
+          "creations": 11540,
+          "fermetures": 9365,
+          "solde_net": 2175,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 7.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R01": {
+      "type": "region",
+      "nom": "Guadeloupe",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1087,
+          "creations": 99,
+          "fermetures": 57,
+          "solde_net": 42,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1130,
+          "creations": 105,
+          "fermetures": 62,
+          "solde_net": 43,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 5.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1164,
+          "creations": 105,
+          "fermetures": 71,
+          "solde_net": 34,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 6.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R02": {
+      "type": "region",
+      "nom": "Martinique",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 915,
+          "creations": 66,
+          "fermetures": 50,
+          "solde_net": 16,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 5.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 955,
+          "creations": 85,
+          "fermetures": 45,
+          "solde_net": 40,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 971,
+          "creations": 72,
+          "fermetures": 56,
+          "solde_net": 16,
+          "taux_creation_pct": 7.5,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R03": {
+      "type": "region",
+      "nom": "Guyane",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 418,
+          "creations": 56,
+          "fermetures": 21,
+          "solde_net": 35,
+          "taux_creation_pct": 14.6,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 444,
+          "creations": 43,
+          "fermetures": 17,
+          "solde_net": 26,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 4.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 484,
+          "creations": 66,
+          "fermetures": 26,
+          "solde_net": 40,
+          "taux_creation_pct": 14.9,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R04": {
+      "type": "region",
+      "nom": "La Réunion",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1628,
+          "creations": 165,
+          "fermetures": 92,
+          "solde_net": 73,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1705,
+          "creations": 173,
+          "fermetures": 96,
+          "solde_net": 77,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1778,
+          "creations": 186,
+          "fermetures": 113,
+          "solde_net": 73,
+          "taux_creation_pct": 10.9,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R06": {
+      "type": "region",
+      "nom": "Mayotte",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 198,
+          "creations": 28,
+          "fermetures": 7,
+          "solde_net": 21,
+          "taux_creation_pct": 15.8,
+          "taux_fermeture_pct": 4.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 219,
+          "creations": 24,
+          "fermetures": 3,
+          "solde_net": 21,
+          "taux_creation_pct": 12.1,
+          "taux_fermeture_pct": 1.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 238,
+          "creations": 22,
+          "fermetures": 3,
+          "solde_net": 19,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 1.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R11": {
+      "type": "region",
+      "nom": "Île-de-France",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 20607,
+          "creations": 2702,
+          "fermetures": 1566,
+          "solde_net": 1136,
+          "taux_creation_pct": 13.9,
+          "taux_fermeture_pct": 8.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 20796,
+          "creations": 2471,
+          "fermetures": 2282,
+          "solde_net": 189,
+          "taux_creation_pct": 12.0,
+          "taux_fermeture_pct": 11.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 21134,
+          "creations": 2547,
+          "fermetures": 2209,
+          "solde_net": 338,
+          "taux_creation_pct": 12.2,
+          "taux_fermeture_pct": 10.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R24": {
+      "type": "region",
+      "nom": "Centre-Val de Loire",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 4660,
+          "creations": 370,
+          "fermetures": 194,
+          "solde_net": 176,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 4665,
+          "creations": 324,
+          "fermetures": 319,
+          "solde_net": 5,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 4700,
+          "creations": 345,
+          "fermetures": 310,
+          "solde_net": 35,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R27": {
+      "type": "region",
+      "nom": "Bourgogne-Franche-Comté",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 4424,
+          "creations": 360,
+          "fermetures": 202,
+          "solde_net": 158,
+          "taux_creation_pct": 8.4,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 4518,
+          "creations": 396,
+          "fermetures": 302,
+          "solde_net": 94,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 4624,
+          "creations": 376,
+          "fermetures": 270,
+          "solde_net": 106,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 6.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R28": {
+      "type": "region",
+      "nom": "Normandie",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 4767,
+          "creations": 453,
+          "fermetures": 211,
+          "solde_net": 242,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 4832,
+          "creations": 428,
+          "fermetures": 363,
+          "solde_net": 65,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 4907,
+          "creations": 446,
+          "fermetures": 371,
+          "solde_net": 75,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 7.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R32": {
+      "type": "region",
+      "nom": "Hauts-de-France",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 8394,
+          "creations": 783,
+          "fermetures": 443,
+          "solde_net": 340,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 8547,
+          "creations": 804,
+          "fermetures": 651,
+          "solde_net": 153,
+          "taux_creation_pct": 9.6,
+          "taux_fermeture_pct": 7.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 8721,
+          "creations": 836,
+          "fermetures": 662,
+          "solde_net": 174,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 7.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R44": {
+      "type": "region",
+      "nom": "Grand Est",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 7471,
+          "creations": 730,
+          "fermetures": 355,
+          "solde_net": 375,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 5.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 7686,
+          "creations": 744,
+          "fermetures": 529,
+          "solde_net": 215,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 7932,
+          "creations": 771,
+          "fermetures": 525,
+          "solde_net": 246,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 6.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R52": {
+      "type": "region",
+      "nom": "Pays de la Loire",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 5512,
+          "creations": 601,
+          "fermetures": 301,
+          "solde_net": 300,
+          "taux_creation_pct": 11.5,
+          "taux_fermeture_pct": 5.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 5634,
+          "creations": 604,
+          "fermetures": 482,
+          "solde_net": 122,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 8.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 5773,
+          "creations": 603,
+          "fermetures": 464,
+          "solde_net": 139,
+          "taux_creation_pct": 10.7,
+          "taux_fermeture_pct": 8.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R53": {
+      "type": "region",
+      "nom": "Bretagne",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 4605,
+          "creations": 473,
+          "fermetures": 192,
+          "solde_net": 281,
+          "taux_creation_pct": 10.9,
+          "taux_fermeture_pct": 4.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 4731,
+          "creations": 453,
+          "fermetures": 327,
+          "solde_net": 126,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 4879,
+          "creations": 485,
+          "fermetures": 337,
+          "solde_net": 148,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 7.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R75": {
+      "type": "region",
+      "nom": "Nouvelle-Aquitaine",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 11567,
+          "creations": 1056,
+          "fermetures": 496,
+          "solde_net": 560,
+          "taux_creation_pct": 9.6,
+          "taux_fermeture_pct": 4.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 11732,
+          "creations": 1043,
+          "fermetures": 878,
+          "solde_net": 165,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 11958,
+          "creations": 1030,
+          "fermetures": 804,
+          "solde_net": 226,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R76": {
+      "type": "region",
+      "nom": "Occitanie",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 13282,
+          "creations": 1150,
+          "fermetures": 608,
+          "solde_net": 542,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 13360,
+          "creations": 1084,
+          "fermetures": 1006,
+          "solde_net": 78,
+          "taux_creation_pct": 8.2,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 13490,
+          "creations": 1068,
+          "fermetures": 938,
+          "solde_net": 130,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 7.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R84": {
+      "type": "region",
+      "nom": "Auvergne-Rhône-Alpes",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 15521,
+          "creations": 1483,
+          "fermetures": 779,
+          "solde_net": 704,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 15656,
+          "creations": 1410,
+          "fermetures": 1275,
+          "solde_net": 135,
+          "taux_creation_pct": 9.1,
+          "taux_fermeture_pct": 8.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 15876,
+          "creations": 1437,
+          "fermetures": 1217,
+          "solde_net": 220,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 7.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R93": {
+      "type": "region",
+      "nom": "Provence-Alpes-Côte d'Azur",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 11234,
+          "creations": 1139,
+          "fermetures": 602,
+          "solde_net": 537,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 11309,
+          "creations": 1057,
+          "fermetures": 982,
+          "solde_net": 75,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 8.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 11457,
+          "creations": 1052,
+          "fermetures": 904,
+          "solde_net": 148,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 8.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "R94": {
+      "type": "region",
+      "nom": "Corse",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 880,
+          "creations": 73,
+          "fermetures": 46,
+          "solde_net": 27,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 5.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 898,
+          "creations": 78,
+          "fermetures": 60,
+          "solde_net": 18,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 904,
+          "creations": 72,
+          "fermetures": 66,
+          "solde_net": 6,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 7.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D01": {
+      "type": "departement",
+      "nom": "Ain",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1125,
+          "creations": 99,
+          "fermetures": 57,
+          "solde_net": 42,
+          "taux_creation_pct": 9.1,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1115,
+          "creations": 105,
+          "fermetures": 115,
+          "solde_net": -10,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 10.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1152,
+          "creations": 107,
+          "fermetures": 70,
+          "solde_net": 37,
+          "taux_creation_pct": 9.6,
+          "taux_fermeture_pct": 6.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D02": {
+      "type": "departement",
+      "nom": "Aisne",
+      "region": "R32",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 703,
+          "creations": 61,
+          "fermetures": 21,
+          "solde_net": 40,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 3.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 729,
+          "creations": 61,
+          "fermetures": 35,
+          "solde_net": 26,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 5.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 745,
+          "creations": 66,
+          "fermetures": 50,
+          "solde_net": 16,
+          "taux_creation_pct": 9.1,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D03": {
+      "type": "departement",
+      "nom": "Allier",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 545,
+          "creations": 38,
+          "fermetures": 17,
+          "solde_net": 21,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 3.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 551,
+          "creations": 24,
+          "fermetures": 18,
+          "solde_net": 6,
+          "taux_creation_pct": 4.4,
+          "taux_fermeture_pct": 3.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 547,
+          "creations": 34,
+          "fermetures": 38,
+          "solde_net": -4,
+          "taux_creation_pct": 6.2,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D04": {
+      "type": "departement",
+      "nom": "Alpes-de-Haute-Provence",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 433,
+          "creations": 22,
+          "fermetures": 21,
+          "solde_net": 1,
+          "taux_creation_pct": 5.1,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 442,
+          "creations": 34,
+          "fermetures": 25,
+          "solde_net": 9,
+          "taux_creation_pct": 7.9,
+          "taux_fermeture_pct": 5.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 443,
+          "creations": 28,
+          "fermetures": 27,
+          "solde_net": 1,
+          "taux_creation_pct": 6.3,
+          "taux_fermeture_pct": 6.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D05": {
+      "type": "departement",
+      "nom": "Hautes-Alpes",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 530,
+          "creations": 33,
+          "fermetures": 22,
+          "solde_net": 11,
+          "taux_creation_pct": 6.4,
+          "taux_fermeture_pct": 4.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 527,
+          "creations": 35,
+          "fermetures": 38,
+          "solde_net": -3,
+          "taux_creation_pct": 6.6,
+          "taux_fermeture_pct": 7.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 525,
+          "creations": 30,
+          "fermetures": 32,
+          "solde_net": -2,
+          "taux_creation_pct": 5.7,
+          "taux_fermeture_pct": 6.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D06": {
+      "type": "departement",
+      "nom": "Alpes-Maritimes",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2670,
+          "creations": 319,
+          "fermetures": 173,
+          "solde_net": 146,
+          "taux_creation_pct": 12.6,
+          "taux_fermeture_pct": 6.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2692,
+          "creations": 261,
+          "fermetures": 239,
+          "solde_net": 22,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 9.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2704,
+          "creations": 250,
+          "fermetures": 238,
+          "solde_net": 12,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 8.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D07": {
+      "type": "departement",
+      "nom": "Ardèche",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 739,
+          "creations": 44,
+          "fermetures": 22,
+          "solde_net": 22,
+          "taux_creation_pct": 6.1,
+          "taux_fermeture_pct": 3.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 727,
+          "creations": 48,
+          "fermetures": 60,
+          "solde_net": -12,
+          "taux_creation_pct": 6.5,
+          "taux_fermeture_pct": 8.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 729,
+          "creations": 60,
+          "fermetures": 58,
+          "solde_net": 2,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 8.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D08": {
+      "type": "departement",
+      "nom": "Ardennes",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 409,
+          "creations": 38,
+          "fermetures": 17,
+          "solde_net": 21,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 4.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 423,
+          "creations": 45,
+          "fermetures": 31,
+          "solde_net": 14,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 435,
+          "creations": 35,
+          "fermetures": 23,
+          "solde_net": 12,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 5.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D09": {
+      "type": "departement",
+      "nom": "Ariège",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 374,
+          "creations": 31,
+          "fermetures": 15,
+          "solde_net": 16,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 4.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 384,
+          "creations": 28,
+          "fermetures": 18,
+          "solde_net": 10,
+          "taux_creation_pct": 7.5,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 377,
+          "creations": 20,
+          "fermetures": 27,
+          "solde_net": -7,
+          "taux_creation_pct": 5.2,
+          "taux_fermeture_pct": 7.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D10": {
+      "type": "departement",
+      "nom": "Aube",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 450,
+          "creations": 42,
+          "fermetures": 21,
+          "solde_net": 21,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 463,
+          "creations": 42,
+          "fermetures": 29,
+          "solde_net": 13,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 6.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 470,
+          "creations": 44,
+          "fermetures": 37,
+          "solde_net": 7,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 8.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D11": {
+      "type": "departement",
+      "nom": "Aude",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 858,
+          "creations": 67,
+          "fermetures": 38,
+          "solde_net": 29,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 4.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 853,
+          "creations": 54,
+          "fermetures": 59,
+          "solde_net": -5,
+          "taux_creation_pct": 6.3,
+          "taux_fermeture_pct": 6.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 857,
+          "creations": 53,
+          "fermetures": 49,
+          "solde_net": 4,
+          "taux_creation_pct": 6.2,
+          "taux_fermeture_pct": 5.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D12": {
+      "type": "departement",
+      "nom": "Aveyron",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 631,
+          "creations": 39,
+          "fermetures": 19,
+          "solde_net": 20,
+          "taux_creation_pct": 6.4,
+          "taux_fermeture_pct": 3.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 637,
+          "creations": 53,
+          "fermetures": 47,
+          "solde_net": 6,
+          "taux_creation_pct": 8.4,
+          "taux_fermeture_pct": 7.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 631,
+          "creations": 36,
+          "fermetures": 42,
+          "solde_net": -6,
+          "taux_creation_pct": 5.7,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D13": {
+      "type": "departement",
+      "nom": "Bouches-du-Rhône",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 4078,
+          "creations": 438,
+          "fermetures": 227,
+          "solde_net": 211,
+          "taux_creation_pct": 11.3,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 4065,
+          "creations": 385,
+          "fermetures": 398,
+          "solde_net": -13,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 9.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 4147,
+          "creations": 430,
+          "fermetures": 348,
+          "solde_net": 82,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 8.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D14": {
+      "type": "departement",
+      "nom": "Calvados",
+      "region": "R28",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1160,
+          "creations": 105,
+          "fermetures": 54,
+          "solde_net": 51,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1165,
+          "creations": 95,
+          "fermetures": 90,
+          "solde_net": 5,
+          "taux_creation_pct": 8.2,
+          "taux_fermeture_pct": 7.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1161,
+          "creations": 99,
+          "fermetures": 103,
+          "solde_net": -4,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 8.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D15": {
+      "type": "departement",
+      "nom": "Cantal",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 272,
+          "creations": 22,
+          "fermetures": 14,
+          "solde_net": 8,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 286,
+          "creations": 24,
+          "fermetures": 10,
+          "solde_net": 14,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 3.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 285,
+          "creations": 21,
+          "fermetures": 22,
+          "solde_net": -1,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 7.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D16": {
+      "type": "departement",
+      "nom": "Charente",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 580,
+          "creations": 46,
+          "fermetures": 23,
+          "solde_net": 23,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 4.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 593,
+          "creations": 49,
+          "fermetures": 36,
+          "solde_net": 13,
+          "taux_creation_pct": 8.4,
+          "taux_fermeture_pct": 6.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 597,
+          "creations": 45,
+          "fermetures": 41,
+          "solde_net": 4,
+          "taux_creation_pct": 7.6,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D17": {
+      "type": "departement",
+      "nom": "Charente-Maritime",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1206,
+          "creations": 120,
+          "fermetures": 61,
+          "solde_net": 59,
+          "taux_creation_pct": 10.5,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1228,
+          "creations": 118,
+          "fermetures": 96,
+          "solde_net": 22,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 8.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1231,
+          "creations": 88,
+          "fermetures": 85,
+          "solde_net": 3,
+          "taux_creation_pct": 7.2,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D18": {
+      "type": "departement",
+      "nom": "Cher",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 470,
+          "creations": 38,
+          "fermetures": 14,
+          "solde_net": 24,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 3.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 478,
+          "creations": 35,
+          "fermetures": 27,
+          "solde_net": 8,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 5.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 489,
+          "creations": 44,
+          "fermetures": 33,
+          "solde_net": 11,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D19": {
+      "type": "departement",
+      "nom": "Corrèze",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 453,
+          "creations": 24,
+          "fermetures": 11,
+          "solde_net": 13,
+          "taux_creation_pct": 5.5,
+          "taux_fermeture_pct": 2.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 456,
+          "creations": 28,
+          "fermetures": 25,
+          "solde_net": 3,
+          "taux_creation_pct": 6.2,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 467,
+          "creations": 28,
+          "fermetures": 17,
+          "solde_net": 11,
+          "taux_creation_pct": 6.1,
+          "taux_fermeture_pct": 3.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D21": {
+      "type": "departement",
+      "nom": "Côte-d'Or",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 900,
+          "creations": 75,
+          "fermetures": 47,
+          "solde_net": 28,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 5.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 932,
+          "creations": 107,
+          "fermetures": 75,
+          "solde_net": 32,
+          "taux_creation_pct": 11.9,
+          "taux_fermeture_pct": 8.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 974,
+          "creations": 87,
+          "fermetures": 45,
+          "solde_net": 42,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 4.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D22": {
+      "type": "departement",
+      "nom": "Côtes-d'Armor",
+      "region": "R53",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 877,
+          "creations": 93,
+          "fermetures": 37,
+          "solde_net": 56,
+          "taux_creation_pct": 11.3,
+          "taux_fermeture_pct": 4.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 902,
+          "creations": 87,
+          "fermetures": 62,
+          "solde_net": 25,
+          "taux_creation_pct": 9.9,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 925,
+          "creations": 85,
+          "fermetures": 62,
+          "solde_net": 23,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D23": {
+      "type": "departement",
+      "nom": "Creuse",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 237,
+          "creations": 18,
+          "fermetures": 3,
+          "solde_net": 15,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 1.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 241,
+          "creations": 16,
+          "fermetures": 12,
+          "solde_net": 4,
+          "taux_creation_pct": 6.8,
+          "taux_fermeture_pct": 5.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 246,
+          "creations": 14,
+          "fermetures": 9,
+          "solde_net": 5,
+          "taux_creation_pct": 5.8,
+          "taux_fermeture_pct": 3.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D24": {
+      "type": "departement",
+      "nom": "Dordogne",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 885,
+          "creations": 59,
+          "fermetures": 35,
+          "solde_net": 24,
+          "taux_creation_pct": 6.9,
+          "taux_fermeture_pct": 4.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 904,
+          "creations": 57,
+          "fermetures": 38,
+          "solde_net": 19,
+          "taux_creation_pct": 6.4,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 907,
+          "creations": 54,
+          "fermetures": 51,
+          "solde_net": 3,
+          "taux_creation_pct": 6.0,
+          "taux_fermeture_pct": 5.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D25": {
+      "type": "departement",
+      "nom": "Doubs",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 735,
+          "creations": 65,
+          "fermetures": 41,
+          "solde_net": 24,
+          "taux_creation_pct": 9.1,
+          "taux_fermeture_pct": 5.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 744,
+          "creations": 69,
+          "fermetures": 60,
+          "solde_net": 9,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 8.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 757,
+          "creations": 69,
+          "fermetures": 56,
+          "solde_net": 13,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 7.5
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D26": {
+      "type": "departement",
+      "nom": "Drôme",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1127,
+          "creations": 74,
+          "fermetures": 49,
+          "solde_net": 25,
+          "taux_creation_pct": 6.7,
+          "taux_fermeture_pct": 4.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1132,
+          "creations": 83,
+          "fermetures": 78,
+          "solde_net": 5,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 6.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1119,
+          "creations": 79,
+          "fermetures": 92,
+          "solde_net": -13,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 8.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D27": {
+      "type": "departement",
+      "nom": "Eure",
+      "region": "R28",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 921,
+          "creations": 85,
+          "fermetures": 33,
+          "solde_net": 52,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 3.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 925,
+          "creations": 61,
+          "fermetures": 57,
+          "solde_net": 4,
+          "taux_creation_pct": 6.6,
+          "taux_fermeture_pct": 6.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 939,
+          "creations": 79,
+          "fermetures": 65,
+          "solde_net": 14,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 7.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D28": {
+      "type": "departement",
+      "nom": "Eure-et-Loir",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 755,
+          "creations": 65,
+          "fermetures": 45,
+          "solde_net": 20,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 6.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 744,
+          "creations": 42,
+          "fermetures": 53,
+          "solde_net": -11,
+          "taux_creation_pct": 5.6,
+          "taux_fermeture_pct": 7.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 745,
+          "creations": 45,
+          "fermetures": 44,
+          "solde_net": 1,
+          "taux_creation_pct": 6.0,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D29": {
+      "type": "departement",
+      "nom": "Finistère",
+      "region": "R53",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1086,
+          "creations": 96,
+          "fermetures": 39,
+          "solde_net": 57,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 3.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1120,
+          "creations": 104,
+          "fermetures": 70,
+          "solde_net": 34,
+          "taux_creation_pct": 9.6,
+          "taux_fermeture_pct": 6.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1160,
+          "creations": 117,
+          "fermetures": 77,
+          "solde_net": 40,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D2A": {
+      "type": "departement",
+      "nom": "Corse-du-Sud",
+      "region": "R94",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 443,
+          "creations": 31,
+          "fermetures": 26,
+          "solde_net": 5,
+          "taux_creation_pct": 7.1,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 457,
+          "creations": 43,
+          "fermetures": 29,
+          "solde_net": 14,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 6.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 454,
+          "creations": 34,
+          "fermetures": 37,
+          "solde_net": -3,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 8.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D2B": {
+      "type": "departement",
+      "nom": "Haute-Corse",
+      "region": "R94",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 437,
+          "creations": 42,
+          "fermetures": 20,
+          "solde_net": 22,
+          "taux_creation_pct": 10.1,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 441,
+          "creations": 35,
+          "fermetures": 31,
+          "solde_net": 4,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 450,
+          "creations": 38,
+          "fermetures": 29,
+          "solde_net": 9,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D30": {
+      "type": "departement",
+      "nom": "Gard",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1680,
+          "creations": 151,
+          "fermetures": 77,
+          "solde_net": 74,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1698,
+          "creations": 143,
+          "fermetures": 125,
+          "solde_net": 18,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 7.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1716,
+          "creations": 137,
+          "fermetures": 119,
+          "solde_net": 18,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 7.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D31": {
+      "type": "departement",
+      "nom": "Haute-Garonne",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2772,
+          "creations": 276,
+          "fermetures": 159,
+          "solde_net": 117,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 6.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2767,
+          "creations": 264,
+          "fermetures": 269,
+          "solde_net": -5,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 9.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2831,
+          "creations": 286,
+          "fermetures": 222,
+          "solde_net": 64,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 8.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D32": {
+      "type": "departement",
+      "nom": "Gers",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 507,
+          "creations": 38,
+          "fermetures": 14,
+          "solde_net": 24,
+          "taux_creation_pct": 7.9,
+          "taux_fermeture_pct": 2.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 502,
+          "creations": 26,
+          "fermetures": 31,
+          "solde_net": -5,
+          "taux_creation_pct": 5.1,
+          "taux_fermeture_pct": 6.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 496,
+          "creations": 26,
+          "fermetures": 32,
+          "solde_net": -6,
+          "taux_creation_pct": 5.2,
+          "taux_fermeture_pct": 6.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D33": {
+      "type": "departement",
+      "nom": "Gironde",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 3354,
+          "creations": 398,
+          "fermetures": 187,
+          "solde_net": 211,
+          "taux_creation_pct": 12.7,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 3416,
+          "creations": 396,
+          "fermetures": 334,
+          "solde_net": 62,
+          "taux_creation_pct": 11.8,
+          "taux_fermeture_pct": 10.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 3507,
+          "creations": 395,
+          "fermetures": 304,
+          "solde_net": 91,
+          "taux_creation_pct": 11.6,
+          "taux_fermeture_pct": 8.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D34": {
+      "type": "departement",
+      "nom": "Hérault",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2730,
+          "creations": 275,
+          "fermetures": 142,
+          "solde_net": 133,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2800,
+          "creations": 268,
+          "fermetures": 198,
+          "solde_net": 70,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 7.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2851,
+          "creations": 257,
+          "fermetures": 206,
+          "solde_net": 51,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 7.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D35": {
+      "type": "departement",
+      "nom": "Ille-et-Vilaine",
+      "region": "R53",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1555,
+          "creations": 176,
+          "fermetures": 75,
+          "solde_net": 101,
+          "taux_creation_pct": 12.1,
+          "taux_fermeture_pct": 5.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1605,
+          "creations": 174,
+          "fermetures": 124,
+          "solde_net": 50,
+          "taux_creation_pct": 11.2,
+          "taux_fermeture_pct": 8.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1668,
+          "creations": 185,
+          "fermetures": 122,
+          "solde_net": 63,
+          "taux_creation_pct": 11.5,
+          "taux_fermeture_pct": 7.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D36": {
+      "type": "departement",
+      "nom": "Indre",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 466,
+          "creations": 28,
+          "fermetures": 14,
+          "solde_net": 14,
+          "taux_creation_pct": 6.2,
+          "taux_fermeture_pct": 3.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 468,
+          "creations": 24,
+          "fermetures": 22,
+          "solde_net": 2,
+          "taux_creation_pct": 5.2,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 462,
+          "creations": 20,
+          "fermetures": 26,
+          "solde_net": -6,
+          "taux_creation_pct": 4.3,
+          "taux_fermeture_pct": 5.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D37": {
+      "type": "departement",
+      "nom": "Indre-et-Loire",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1216,
+          "creations": 84,
+          "fermetures": 41,
+          "solde_net": 43,
+          "taux_creation_pct": 7.2,
+          "taux_fermeture_pct": 3.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1229,
+          "creations": 105,
+          "fermetures": 92,
+          "solde_net": 13,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1246,
+          "creations": 91,
+          "fermetures": 74,
+          "solde_net": 17,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 6.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D38": {
+      "type": "departement",
+      "nom": "Isère",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2284,
+          "creations": 275,
+          "fermetures": 109,
+          "solde_net": 166,
+          "taux_creation_pct": 13.0,
+          "taux_fermeture_pct": 5.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2344,
+          "creations": 246,
+          "fermetures": 186,
+          "solde_net": 60,
+          "taux_creation_pct": 10.8,
+          "taux_fermeture_pct": 8.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2413,
+          "creations": 254,
+          "fermetures": 185,
+          "solde_net": 69,
+          "taux_creation_pct": 10.8,
+          "taux_fermeture_pct": 7.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D39": {
+      "type": "departement",
+      "nom": "Jura",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 442,
+          "creations": 38,
+          "fermetures": 25,
+          "solde_net": 13,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 5.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 440,
+          "creations": 36,
+          "fermetures": 38,
+          "solde_net": -2,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 8.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 444,
+          "creations": 39,
+          "fermetures": 35,
+          "solde_net": 4,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 8.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D40": {
+      "type": "departement",
+      "nom": "Landes",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 937,
+          "creations": 67,
+          "fermetures": 43,
+          "solde_net": 24,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 920,
+          "creations": 67,
+          "fermetures": 84,
+          "solde_net": -17,
+          "taux_creation_pct": 7.2,
+          "taux_fermeture_pct": 9.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 924,
+          "creations": 63,
+          "fermetures": 59,
+          "solde_net": 4,
+          "taux_creation_pct": 6.8,
+          "taux_fermeture_pct": 6.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D41": {
+      "type": "departement",
+      "nom": "Loir-et-Cher",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 583,
+          "creations": 37,
+          "fermetures": 27,
+          "solde_net": 10,
+          "taux_creation_pct": 6.5,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 578,
+          "creations": 31,
+          "fermetures": 36,
+          "solde_net": -5,
+          "taux_creation_pct": 5.3,
+          "taux_fermeture_pct": 6.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 579,
+          "creations": 42,
+          "fermetures": 41,
+          "solde_net": 1,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 7.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D42": {
+      "type": "departement",
+      "nom": "Loire",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1449,
+          "creations": 120,
+          "fermetures": 68,
+          "solde_net": 52,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1438,
+          "creations": 93,
+          "fermetures": 104,
+          "solde_net": -11,
+          "taux_creation_pct": 6.4,
+          "taux_fermeture_pct": 7.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1454,
+          "creations": 103,
+          "fermetures": 87,
+          "solde_net": 16,
+          "taux_creation_pct": 7.2,
+          "taux_fermeture_pct": 6.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D43": {
+      "type": "departement",
+      "nom": "Haute-Loire",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 495,
+          "creations": 30,
+          "fermetures": 12,
+          "solde_net": 18,
+          "taux_creation_pct": 6.3,
+          "taux_fermeture_pct": 2.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 496,
+          "creations": 31,
+          "fermetures": 30,
+          "solde_net": 1,
+          "taux_creation_pct": 6.3,
+          "taux_fermeture_pct": 6.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 496,
+          "creations": 25,
+          "fermetures": 25,
+          "solde_net": 0,
+          "taux_creation_pct": 5.0,
+          "taux_fermeture_pct": 5.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D44": {
+      "type": "departement",
+      "nom": "Loire-Atlantique",
+      "region": "R52",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2184,
+          "creations": 254,
+          "fermetures": 154,
+          "solde_net": 100,
+          "taux_creation_pct": 12.2,
+          "taux_fermeture_pct": 7.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2235,
+          "creations": 252,
+          "fermetures": 201,
+          "solde_net": 51,
+          "taux_creation_pct": 11.5,
+          "taux_fermeture_pct": 9.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2298,
+          "creations": 261,
+          "fermetures": 198,
+          "solde_net": 63,
+          "taux_creation_pct": 11.7,
+          "taux_fermeture_pct": 8.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D45": {
+      "type": "departement",
+      "nom": "Loiret",
+      "region": "R24",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1170,
+          "creations": 118,
+          "fermetures": 53,
+          "solde_net": 65,
+          "taux_creation_pct": 10.7,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1168,
+          "creations": 87,
+          "fermetures": 89,
+          "solde_net": -2,
+          "taux_creation_pct": 7.4,
+          "taux_fermeture_pct": 7.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1179,
+          "creations": 103,
+          "fermetures": 92,
+          "solde_net": 11,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 7.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D46": {
+      "type": "departement",
+      "nom": "Lot",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 458,
+          "creations": 35,
+          "fermetures": 8,
+          "solde_net": 27,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 1.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 459,
+          "creations": 32,
+          "fermetures": 31,
+          "solde_net": 1,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 466,
+          "creations": 30,
+          "fermetures": 23,
+          "solde_net": 7,
+          "taux_creation_pct": 6.5,
+          "taux_fermeture_pct": 5.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D47": {
+      "type": "departement",
+      "nom": "Lot-et-Garonne",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 671,
+          "creations": 46,
+          "fermetures": 19,
+          "solde_net": 27,
+          "taux_creation_pct": 7.1,
+          "taux_fermeture_pct": 3.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 680,
+          "creations": 45,
+          "fermetures": 36,
+          "solde_net": 9,
+          "taux_creation_pct": 6.7,
+          "taux_fermeture_pct": 5.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 707,
+          "creations": 55,
+          "fermetures": 28,
+          "solde_net": 27,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 4.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D48": {
+      "type": "departement",
+      "nom": "Lozère",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 238,
+          "creations": 10,
+          "fermetures": 10,
+          "solde_net": 0,
+          "taux_creation_pct": 4.2,
+          "taux_fermeture_pct": 4.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 244,
+          "creations": 14,
+          "fermetures": 8,
+          "solde_net": 6,
+          "taux_creation_pct": 5.9,
+          "taux_fermeture_pct": 3.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 240,
+          "creations": 9,
+          "fermetures": 13,
+          "solde_net": -4,
+          "taux_creation_pct": 3.7,
+          "taux_fermeture_pct": 5.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D49": {
+      "type": "departement",
+      "nom": "Maine-et-Loire",
+      "region": "R52",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1170,
+          "creations": 121,
+          "fermetures": 55,
+          "solde_net": 66,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 5.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1176,
+          "creations": 124,
+          "fermetures": 118,
+          "solde_net": 6,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 10.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1211,
+          "creations": 126,
+          "fermetures": 91,
+          "solde_net": 35,
+          "taux_creation_pct": 10.7,
+          "taux_fermeture_pct": 7.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D50": {
+      "type": "departement",
+      "nom": "Manche",
+      "region": "R28",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 650,
+          "creations": 64,
+          "fermetures": 24,
+          "solde_net": 40,
+          "taux_creation_pct": 10.5,
+          "taux_fermeture_pct": 3.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 668,
+          "creations": 64,
+          "fermetures": 46,
+          "solde_net": 18,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 699,
+          "creations": 69,
+          "fermetures": 38,
+          "solde_net": 31,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 5.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D51": {
+      "type": "departement",
+      "nom": "Marne",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 852,
+          "creations": 81,
+          "fermetures": 43,
+          "solde_net": 38,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 869,
+          "creations": 74,
+          "fermetures": 57,
+          "solde_net": 17,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 6.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 900,
+          "creations": 90,
+          "fermetures": 59,
+          "solde_net": 31,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 6.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D52": {
+      "type": "departement",
+      "nom": "Haute-Marne",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 234,
+          "creations": 20,
+          "fermetures": 7,
+          "solde_net": 13,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 3.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 244,
+          "creations": 18,
+          "fermetures": 8,
+          "solde_net": 10,
+          "taux_creation_pct": 7.7,
+          "taux_fermeture_pct": 3.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 251,
+          "creations": 20,
+          "fermetures": 13,
+          "solde_net": 7,
+          "taux_creation_pct": 8.2,
+          "taux_fermeture_pct": 5.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D53": {
+      "type": "departement",
+      "nom": "Mayenne",
+      "region": "R52",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 369,
+          "creations": 40,
+          "fermetures": 16,
+          "solde_net": 24,
+          "taux_creation_pct": 11.6,
+          "taux_fermeture_pct": 4.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 386,
+          "creations": 41,
+          "fermetures": 24,
+          "solde_net": 17,
+          "taux_creation_pct": 11.1,
+          "taux_fermeture_pct": 6.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 385,
+          "creations": 31,
+          "fermetures": 32,
+          "solde_net": -1,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 8.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D54": {
+      "type": "departement",
+      "nom": "Meurthe-et-Moselle",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 971,
+          "creations": 118,
+          "fermetures": 40,
+          "solde_net": 78,
+          "taux_creation_pct": 13.2,
+          "taux_fermeture_pct": 4.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 983,
+          "creations": 83,
+          "fermetures": 71,
+          "solde_net": 12,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 7.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1023,
+          "creations": 98,
+          "fermetures": 58,
+          "solde_net": 40,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D55": {
+      "type": "departement",
+      "nom": "Meuse",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 253,
+          "creations": 22,
+          "fermetures": 13,
+          "solde_net": 9,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 250,
+          "creations": 10,
+          "fermetures": 13,
+          "solde_net": -3,
+          "taux_creation_pct": 4.0,
+          "taux_fermeture_pct": 5.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 256,
+          "creations": 22,
+          "fermetures": 16,
+          "solde_net": 6,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 6.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D56": {
+      "type": "departement",
+      "nom": "Morbihan",
+      "region": "R53",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1087,
+          "creations": 108,
+          "fermetures": 41,
+          "solde_net": 67,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 4.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1104,
+          "creations": 88,
+          "fermetures": 71,
+          "solde_net": 17,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 6.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1126,
+          "creations": 98,
+          "fermetures": 76,
+          "solde_net": 22,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 6.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D57": {
+      "type": "departement",
+      "nom": "Moselle",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1247,
+          "creations": 112,
+          "fermetures": 66,
+          "solde_net": 46,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1287,
+          "creations": 129,
+          "fermetures": 89,
+          "solde_net": 40,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 7.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1307,
+          "creations": 111,
+          "fermetures": 91,
+          "solde_net": 20,
+          "taux_creation_pct": 8.6,
+          "taux_fermeture_pct": 7.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D58": {
+      "type": "departement",
+      "nom": "Nièvre",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 347,
+          "creations": 23,
+          "fermetures": 13,
+          "solde_net": 10,
+          "taux_creation_pct": 6.8,
+          "taux_fermeture_pct": 3.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 357,
+          "creations": 19,
+          "fermetures": 9,
+          "solde_net": 10,
+          "taux_creation_pct": 5.5,
+          "taux_fermeture_pct": 2.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 368,
+          "creations": 29,
+          "fermetures": 18,
+          "solde_net": 11,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 5.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D59": {
+      "type": "departement",
+      "nom": "Nord",
+      "region": "R32",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 3635,
+          "creations": 363,
+          "fermetures": 225,
+          "solde_net": 138,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 6.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 3714,
+          "creations": 383,
+          "fermetures": 304,
+          "solde_net": 79,
+          "taux_creation_pct": 10.5,
+          "taux_fermeture_pct": 8.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 3820,
+          "creations": 417,
+          "fermetures": 311,
+          "solde_net": 106,
+          "taux_creation_pct": 11.2,
+          "taux_fermeture_pct": 8.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D60": {
+      "type": "departement",
+      "nom": "Oise",
+      "region": "R32",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1247,
+          "creations": 114,
+          "fermetures": 67,
+          "solde_net": 47,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 5.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1237,
+          "creations": 104,
+          "fermetures": 114,
+          "solde_net": -10,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 9.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1238,
+          "creations": 110,
+          "fermetures": 109,
+          "solde_net": 1,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 8.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D61": {
+      "type": "departement",
+      "nom": "Orne",
+      "region": "R28",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 383,
+          "creations": 36,
+          "fermetures": 15,
+          "solde_net": 21,
+          "taux_creation_pct": 9.9,
+          "taux_fermeture_pct": 4.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 386,
+          "creations": 27,
+          "fermetures": 24,
+          "solde_net": 3,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 6.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 389,
+          "creations": 31,
+          "fermetures": 28,
+          "solde_net": 3,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 7.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D62": {
+      "type": "departement",
+      "nom": "Pas-de-Calais",
+      "region": "R32",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1961,
+          "creations": 170,
+          "fermetures": 100,
+          "solde_net": 70,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 5.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1992,
+          "creations": 178,
+          "fermetures": 147,
+          "solde_net": 31,
+          "taux_creation_pct": 9.1,
+          "taux_fermeture_pct": 7.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2034,
+          "creations": 177,
+          "fermetures": 135,
+          "solde_net": 42,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 6.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D63": {
+      "type": "departement",
+      "nom": "Puy-de-Dôme",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1232,
+          "creations": 96,
+          "fermetures": 55,
+          "solde_net": 41,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 4.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1251,
+          "creations": 102,
+          "fermetures": 83,
+          "solde_net": 19,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 6.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1269,
+          "creations": 100,
+          "fermetures": 82,
+          "solde_net": 18,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D64": {
+      "type": "departement",
+      "nom": "Pyrénées-Atlantiques",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1412,
+          "creations": 125,
+          "fermetures": 52,
+          "solde_net": 73,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 3.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1419,
+          "creations": 109,
+          "fermetures": 102,
+          "solde_net": 7,
+          "taux_creation_pct": 7.7,
+          "taux_fermeture_pct": 7.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1456,
+          "creations": 134,
+          "fermetures": 97,
+          "solde_net": 37,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 6.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D65": {
+      "type": "departement",
+      "nom": "Hautes-Pyrénées",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 505,
+          "creations": 39,
+          "fermetures": 21,
+          "solde_net": 18,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 497,
+          "creations": 32,
+          "fermetures": 40,
+          "solde_net": -8,
+          "taux_creation_pct": 6.3,
+          "taux_fermeture_pct": 7.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 491,
+          "creations": 27,
+          "fermetures": 33,
+          "solde_net": -6,
+          "taux_creation_pct": 5.4,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D66": {
+      "type": "departement",
+      "nom": "Pyrénées-Orientales",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1123,
+          "creations": 87,
+          "fermetures": 48,
+          "solde_net": 39,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 4.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1112,
+          "creations": 78,
+          "fermetures": 89,
+          "solde_net": -11,
+          "taux_creation_pct": 6.9,
+          "taux_fermeture_pct": 7.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1119,
+          "creations": 87,
+          "fermetures": 80,
+          "solde_net": 7,
+          "taux_creation_pct": 7.8,
+          "taux_fermeture_pct": 7.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D67": {
+      "type": "departement",
+      "nom": "Bas-Rhin",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1550,
+          "creations": 164,
+          "fermetures": 74,
+          "solde_net": 90,
+          "taux_creation_pct": 11.2,
+          "taux_fermeture_pct": 5.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1586,
+          "creations": 179,
+          "fermetures": 143,
+          "solde_net": 36,
+          "taux_creation_pct": 11.5,
+          "taux_fermeture_pct": 9.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1668,
+          "creations": 203,
+          "fermetures": 121,
+          "solde_net": 82,
+          "taux_creation_pct": 12.8,
+          "taux_fermeture_pct": 7.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D68": {
+      "type": "departement",
+      "nom": "Haut-Rhin",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 963,
+          "creations": 102,
+          "fermetures": 55,
+          "solde_net": 47,
+          "taux_creation_pct": 11.1,
+          "taux_fermeture_pct": 6.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1018,
+          "creations": 117,
+          "fermetures": 62,
+          "solde_net": 55,
+          "taux_creation_pct": 12.1,
+          "taux_fermeture_pct": 6.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1052,
+          "creations": 112,
+          "fermetures": 78,
+          "solde_net": 34,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 7.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D69": {
+      "type": "departement",
+      "nom": "Rhône",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 3491,
+          "creations": 429,
+          "fermetures": 223,
+          "solde_net": 206,
+          "taux_creation_pct": 13.1,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 3534,
+          "creations": 383,
+          "fermetures": 340,
+          "solde_net": 43,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 9.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 3566,
+          "creations": 384,
+          "fermetures": 352,
+          "solde_net": 32,
+          "taux_creation_pct": 10.9,
+          "taux_fermeture_pct": 10.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D70": {
+      "type": "departement",
+      "nom": "Haute-Saône",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 343,
+          "creations": 23,
+          "fermetures": 14,
+          "solde_net": 9,
+          "taux_creation_pct": 6.9,
+          "taux_fermeture_pct": 4.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 352,
+          "creations": 25,
+          "fermetures": 16,
+          "solde_net": 9,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 363,
+          "creations": 22,
+          "fermetures": 11,
+          "solde_net": 11,
+          "taux_creation_pct": 6.2,
+          "taux_fermeture_pct": 3.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D71": {
+      "type": "departement",
+      "nom": "Saône-et-Loire",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 922,
+          "creations": 73,
+          "fermetures": 41,
+          "solde_net": 32,
+          "taux_creation_pct": 8.2,
+          "taux_fermeture_pct": 4.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 949,
+          "creations": 78,
+          "fermetures": 51,
+          "solde_net": 27,
+          "taux_creation_pct": 8.5,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 970,
+          "creations": 83,
+          "fermetures": 62,
+          "solde_net": 21,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 6.5
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D72": {
+      "type": "departement",
+      "nom": "Sarthe",
+      "region": "R52",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 744,
+          "creations": 78,
+          "fermetures": 30,
+          "solde_net": 48,
+          "taux_creation_pct": 11.2,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 767,
+          "creations": 90,
+          "fermetures": 67,
+          "solde_net": 23,
+          "taux_creation_pct": 12.1,
+          "taux_fermeture_pct": 9.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 803,
+          "creations": 91,
+          "fermetures": 55,
+          "solde_net": 36,
+          "taux_creation_pct": 11.9,
+          "taux_fermeture_pct": 7.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D73": {
+      "type": "departement",
+      "nom": "Savoie",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1056,
+          "creations": 95,
+          "fermetures": 47,
+          "solde_net": 48,
+          "taux_creation_pct": 9.4,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1049,
+          "creations": 100,
+          "fermetures": 107,
+          "solde_net": -7,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 10.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1070,
+          "creations": 91,
+          "fermetures": 70,
+          "solde_net": 21,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 6.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D74": {
+      "type": "departement",
+      "nom": "Haute-Savoie",
+      "region": "R84",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1706,
+          "creations": 161,
+          "fermetures": 106,
+          "solde_net": 55,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 6.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1733,
+          "creations": 171,
+          "fermetures": 144,
+          "solde_net": 27,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 8.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1776,
+          "creations": 179,
+          "fermetures": 136,
+          "solde_net": 43,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 7.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D75": {
+      "type": "departement",
+      "nom": "Paris",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 5622,
+          "creations": 808,
+          "fermetures": 380,
+          "solde_net": 428,
+          "taux_creation_pct": 15.6,
+          "taux_fermeture_pct": 7.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 5830,
+          "creations": 780,
+          "fermetures": 572,
+          "solde_net": 208,
+          "taux_creation_pct": 13.9,
+          "taux_fermeture_pct": 10.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 6114,
+          "creations": 888,
+          "fermetures": 604,
+          "solde_net": 284,
+          "taux_creation_pct": 15.2,
+          "taux_fermeture_pct": 10.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D76": {
+      "type": "departement",
+      "nom": "Seine-Maritime",
+      "region": "R28",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1653,
+          "creations": 163,
+          "fermetures": 85,
+          "solde_net": 78,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 5.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1688,
+          "creations": 181,
+          "fermetures": 146,
+          "solde_net": 35,
+          "taux_creation_pct": 10.9,
+          "taux_fermeture_pct": 8.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1719,
+          "creations": 168,
+          "fermetures": 137,
+          "solde_net": 31,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 8.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D77": {
+      "type": "departement",
+      "nom": "Seine-et-Marne",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2293,
+          "creations": 228,
+          "fermetures": 151,
+          "solde_net": 77,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 6.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2269,
+          "creations": 213,
+          "fermetures": 237,
+          "solde_net": -24,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 10.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2284,
+          "creations": 236,
+          "fermetures": 221,
+          "solde_net": 15,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 9.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D78": {
+      "type": "departement",
+      "nom": "Yvelines",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2032,
+          "creations": 249,
+          "fermetures": 150,
+          "solde_net": 99,
+          "taux_creation_pct": 12.9,
+          "taux_fermeture_pct": 7.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2038,
+          "creations": 218,
+          "fermetures": 212,
+          "solde_net": 6,
+          "taux_creation_pct": 10.7,
+          "taux_fermeture_pct": 10.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2051,
+          "creations": 229,
+          "fermetures": 216,
+          "solde_net": 13,
+          "taux_creation_pct": 11.2,
+          "taux_fermeture_pct": 10.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D79": {
+      "type": "departement",
+      "nom": "Deux-Sèvres",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 594,
+          "creations": 54,
+          "fermetures": 24,
+          "solde_net": 30,
+          "taux_creation_pct": 9.6,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 616,
+          "creations": 53,
+          "fermetures": 31,
+          "solde_net": 22,
+          "taux_creation_pct": 8.9,
+          "taux_fermeture_pct": 5.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 619,
+          "creations": 43,
+          "fermetures": 40,
+          "solde_net": 3,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 6.5
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D80": {
+      "type": "departement",
+      "nom": "Somme",
+      "region": "R32",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 848,
+          "creations": 75,
+          "fermetures": 30,
+          "solde_net": 45,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 3.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 875,
+          "creations": 78,
+          "fermetures": 51,
+          "solde_net": 27,
+          "taux_creation_pct": 9.2,
+          "taux_fermeture_pct": 6.0
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 884,
+          "creations": 66,
+          "fermetures": 57,
+          "solde_net": 9,
+          "taux_creation_pct": 7.5,
+          "taux_fermeture_pct": 6.5
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D81": {
+      "type": "departement",
+      "nom": "Tarn",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 855,
+          "creations": 60,
+          "fermetures": 36,
+          "solde_net": 24,
+          "taux_creation_pct": 7.2,
+          "taux_fermeture_pct": 4.3
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 845,
+          "creations": 47,
+          "fermetures": 57,
+          "solde_net": -10,
+          "taux_creation_pct": 5.5,
+          "taux_fermeture_pct": 6.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 847,
+          "creations": 59,
+          "fermetures": 57,
+          "solde_net": 2,
+          "taux_creation_pct": 7.0,
+          "taux_fermeture_pct": 6.7
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D82": {
+      "type": "departement",
+      "nom": "Tarn-et-Garonne",
+      "region": "R76",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 551,
+          "creations": 42,
+          "fermetures": 21,
+          "solde_net": 21,
+          "taux_creation_pct": 7.9,
+          "taux_fermeture_pct": 4.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 562,
+          "creations": 45,
+          "fermetures": 34,
+          "solde_net": 11,
+          "taux_creation_pct": 8.2,
+          "taux_fermeture_pct": 6.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 568,
+          "creations": 41,
+          "fermetures": 35,
+          "solde_net": 6,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 6.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D83": {
+      "type": "departement",
+      "nom": "Var",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2343,
+          "creations": 202,
+          "fermetures": 107,
+          "solde_net": 95,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2372,
+          "creations": 218,
+          "fermetures": 189,
+          "solde_net": 29,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 8.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2421,
+          "creations": 214,
+          "fermetures": 165,
+          "solde_net": 49,
+          "taux_creation_pct": 9.0,
+          "taux_fermeture_pct": 7.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D84": {
+      "type": "departement",
+      "nom": "Vaucluse",
+      "region": "R93",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1180,
+          "creations": 125,
+          "fermetures": 52,
+          "solde_net": 73,
+          "taux_creation_pct": 11.3,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1211,
+          "creations": 124,
+          "fermetures": 93,
+          "solde_net": 31,
+          "taux_creation_pct": 10.5,
+          "taux_fermeture_pct": 7.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1217,
+          "creations": 100,
+          "fermetures": 94,
+          "solde_net": 6,
+          "taux_creation_pct": 8.3,
+          "taux_fermeture_pct": 7.8
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D85": {
+      "type": "departement",
+      "nom": "Vendée",
+      "region": "R52",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1045,
+          "creations": 108,
+          "fermetures": 46,
+          "solde_net": 62,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 4.7
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1070,
+          "creations": 97,
+          "fermetures": 72,
+          "solde_net": 25,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 6.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1076,
+          "creations": 94,
+          "fermetures": 88,
+          "solde_net": 6,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 8.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D86": {
+      "type": "departement",
+      "nom": "Vienne",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 692,
+          "creations": 58,
+          "fermetures": 22,
+          "solde_net": 36,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 3.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 701,
+          "creations": 61,
+          "fermetures": 52,
+          "solde_net": 9,
+          "taux_creation_pct": 8.8,
+          "taux_fermeture_pct": 7.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 724,
+          "creations": 68,
+          "fermetures": 45,
+          "solde_net": 23,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 6.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D87": {
+      "type": "departement",
+      "nom": "Haute-Vienne",
+      "region": "R75",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 546,
+          "creations": 41,
+          "fermetures": 16,
+          "solde_net": 25,
+          "taux_creation_pct": 7.9,
+          "taux_fermeture_pct": 3.1
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 558,
+          "creations": 44,
+          "fermetures": 32,
+          "solde_net": 12,
+          "taux_creation_pct": 8.1,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 573,
+          "creations": 43,
+          "fermetures": 28,
+          "solde_net": 15,
+          "taux_creation_pct": 7.7,
+          "taux_fermeture_pct": 5.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D88": {
+      "type": "departement",
+      "nom": "Vosges",
+      "region": "R44",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 542,
+          "creations": 31,
+          "fermetures": 19,
+          "solde_net": 12,
+          "taux_creation_pct": 5.8,
+          "taux_fermeture_pct": 3.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 563,
+          "creations": 47,
+          "fermetures": 26,
+          "solde_net": 21,
+          "taux_creation_pct": 8.7,
+          "taux_fermeture_pct": 4.8
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 570,
+          "creations": 36,
+          "fermetures": 29,
+          "solde_net": 7,
+          "taux_creation_pct": 6.4,
+          "taux_fermeture_pct": 5.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D89": {
+      "type": "departement",
+      "nom": "Yonne",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 561,
+          "creations": 53,
+          "fermetures": 17,
+          "solde_net": 36,
+          "taux_creation_pct": 10.1,
+          "taux_fermeture_pct": 3.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 569,
+          "creations": 45,
+          "fermetures": 37,
+          "solde_net": 8,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 6.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 568,
+          "creations": 33,
+          "fermetures": 34,
+          "solde_net": -1,
+          "taux_creation_pct": 5.8,
+          "taux_fermeture_pct": 6.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D90": {
+      "type": "departement",
+      "nom": "Territoire de Belfort",
+      "region": "R27",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 174,
+          "creations": 10,
+          "fermetures": 4,
+          "solde_net": 6,
+          "taux_creation_pct": 6.0,
+          "taux_fermeture_pct": 2.4
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 175,
+          "creations": 17,
+          "fermetures": 16,
+          "solde_net": 1,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 9.2
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 180,
+          "creations": 14,
+          "fermetures": 9,
+          "solde_net": 5,
+          "taux_creation_pct": 8.0,
+          "taux_fermeture_pct": 5.1
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D91": {
+      "type": "departement",
+      "nom": "Essonne",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2027,
+          "creations": 222,
+          "fermetures": 158,
+          "solde_net": 64,
+          "taux_creation_pct": 11.3,
+          "taux_fermeture_pct": 8.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2013,
+          "creations": 196,
+          "fermetures": 210,
+          "solde_net": -14,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 10.4
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2031,
+          "creations": 198,
+          "fermetures": 180,
+          "solde_net": 18,
+          "taux_creation_pct": 9.8,
+          "taux_fermeture_pct": 8.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D92": {
+      "type": "departement",
+      "nom": "Hauts-de-Seine",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2534,
+          "creations": 333,
+          "fermetures": 185,
+          "solde_net": 148,
+          "taux_creation_pct": 14.0,
+          "taux_fermeture_pct": 7.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2547,
+          "creations": 308,
+          "fermetures": 295,
+          "solde_net": 13,
+          "taux_creation_pct": 12.2,
+          "taux_fermeture_pct": 11.6
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2627,
+          "creations": 341,
+          "fermetures": 261,
+          "solde_net": 80,
+          "taux_creation_pct": 13.4,
+          "taux_fermeture_pct": 10.2
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D93": {
+      "type": "departement",
+      "nom": "Seine-Saint-Denis",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 2274,
+          "creations": 402,
+          "fermetures": 235,
+          "solde_net": 167,
+          "taux_creation_pct": 19.1,
+          "taux_fermeture_pct": 11.2
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 2286,
+          "creations": 332,
+          "fermetures": 320,
+          "solde_net": 12,
+          "taux_creation_pct": 14.6,
+          "taux_fermeture_pct": 14.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 2211,
+          "creations": 251,
+          "fermetures": 326,
+          "solde_net": -75,
+          "taux_creation_pct": 11.0,
+          "taux_fermeture_pct": 14.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D94": {
+      "type": "departement",
+      "nom": "Val-de-Marne",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1972,
+          "creations": 248,
+          "fermetures": 169,
+          "solde_net": 79,
+          "taux_creation_pct": 13.1,
+          "taux_fermeture_pct": 8.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1981,
+          "creations": 231,
+          "fermetures": 222,
+          "solde_net": 9,
+          "taux_creation_pct": 11.7,
+          "taux_fermeture_pct": 11.3
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1986,
+          "creations": 223,
+          "fermetures": 218,
+          "solde_net": 5,
+          "taux_creation_pct": 11.3,
+          "taux_fermeture_pct": 11.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D95": {
+      "type": "departement",
+      "nom": "Val-d'Oise",
+      "region": "R11",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1853,
+          "creations": 212,
+          "fermetures": 138,
+          "solde_net": 74,
+          "taux_creation_pct": 11.9,
+          "taux_fermeture_pct": 7.8
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1832,
+          "creations": 193,
+          "fermetures": 214,
+          "solde_net": -21,
+          "taux_creation_pct": 10.4,
+          "taux_fermeture_pct": 11.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1830,
+          "creations": 181,
+          "fermetures": 183,
+          "solde_net": -2,
+          "taux_creation_pct": 9.9,
+          "taux_fermeture_pct": 10.0
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D971": {
+      "type": "departement",
+      "nom": "Guadeloupe",
+      "region": "R01",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1087,
+          "creations": 99,
+          "fermetures": 57,
+          "solde_net": 42,
+          "taux_creation_pct": 9.5,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1130,
+          "creations": 105,
+          "fermetures": 62,
+          "solde_net": 43,
+          "taux_creation_pct": 9.7,
+          "taux_fermeture_pct": 5.7
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1164,
+          "creations": 105,
+          "fermetures": 71,
+          "solde_net": 34,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 6.3
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D972": {
+      "type": "departement",
+      "nom": "Martinique",
+      "region": "R02",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 915,
+          "creations": 66,
+          "fermetures": 50,
+          "solde_net": 16,
+          "taux_creation_pct": 7.3,
+          "taux_fermeture_pct": 5.6
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 955,
+          "creations": 85,
+          "fermetures": 45,
+          "solde_net": 40,
+          "taux_creation_pct": 9.3,
+          "taux_fermeture_pct": 4.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 971,
+          "creations": 72,
+          "fermetures": 56,
+          "solde_net": 16,
+          "taux_creation_pct": 7.5,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D973": {
+      "type": "departement",
+      "nom": "Guyane",
+      "region": "R03",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 418,
+          "creations": 56,
+          "fermetures": 21,
+          "solde_net": 35,
+          "taux_creation_pct": 14.6,
+          "taux_fermeture_pct": 5.5
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 444,
+          "creations": 43,
+          "fermetures": 17,
+          "solde_net": 26,
+          "taux_creation_pct": 10.3,
+          "taux_fermeture_pct": 4.1
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 484,
+          "creations": 66,
+          "fermetures": 26,
+          "solde_net": 40,
+          "taux_creation_pct": 14.9,
+          "taux_fermeture_pct": 5.9
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D974": {
+      "type": "departement",
+      "nom": "La Réunion",
+      "region": "R04",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 1628,
+          "creations": 165,
+          "fermetures": 92,
+          "solde_net": 73,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 1705,
+          "creations": 173,
+          "fermetures": 96,
+          "solde_net": 77,
+          "taux_creation_pct": 10.6,
+          "taux_fermeture_pct": 5.9
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 1778,
+          "creations": 186,
+          "fermetures": 113,
+          "solde_net": 73,
+          "taux_creation_pct": 10.9,
+          "taux_fermeture_pct": 6.6
+        }
+      ],
+      "alerte_petit_effectif": false
+    },
+    "D976": {
+      "type": "departement",
+      "nom": "Mayotte",
+      "region": "R06",
+      "indicateurs": [
+        {
+          "annee": 2023,
+          "entreprises_actives_fin_annee": 198,
+          "creations": 28,
+          "fermetures": 7,
+          "solde_net": 21,
+          "taux_creation_pct": 15.8,
+          "taux_fermeture_pct": 4.0
+        },
+        {
+          "annee": 2024,
+          "entreprises_actives_fin_annee": 219,
+          "creations": 24,
+          "fermetures": 3,
+          "solde_net": 21,
+          "taux_creation_pct": 12.1,
+          "taux_fermeture_pct": 1.5
+        },
+        {
+          "annee": 2025,
+          "entreprises_actives_fin_annee": 238,
+          "creations": 22,
+          "fermetures": 3,
+          "solde_net": 19,
+          "taux_creation_pct": 10.0,
+          "taux_fermeture_pct": 1.4
+        }
+      ],
+      "alerte_petit_effectif": false
+    }
+  },
+  "sources": [
+    {
+      "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
+      "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073325/stock-stockunitelegale-parquet.parquet",
+      "date_actualisation": "2026-10-01"
+    },
+    {
+      "nom": "Base Sirene des entreprises (INSEE) — fichier StockEtablissement (commune du siège)",
+      "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073823/stock-stocketablissement-parquet.parquet",
+      "date_actualisation": "2026-10-01"
+    },
+    {
+      "nom": "Code officiel géographique (INSEE) — millésime 2026",
+      "lien": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_departement_2026.csv",
+      "date_actualisation": "2026-01-01"
+    }
+  ],
+  "date_calcul": "2026-10-04 13:32",
+  "limites": [
+    "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
+    "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
+    "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
+    "L'entreprise est placée dans la région et le département de son siège actuel (ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
+    "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement."
+  ]
+}

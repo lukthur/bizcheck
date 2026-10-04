@@ -19,9 +19,9 @@ sur les 3 dernières années complètes, pour la France entière puis par régio
 ```
 BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le bureau)
 ├── CLAUDE.md
-├── data/        ← fichiers téléchargés (parquet Sirene) — ne pas versionner
-├── bizcheck.py  ← script : indicateurs France entière pour un code NAF
-└── sorties/     ← JSON produits par les scripts
+├── data/        ← fichiers téléchargés (parquet Sirene, COG) — ne pas versionner
+├── bizcheck.py  ← script : indicateurs France + régions + départements pour un code NAF
+└── sorties/     ← un JSON par code NAF (ex. 93.29Z.json), toutes les zones dedans
 ```
 
 ## Recherche par activité (fonction la plus importante)
@@ -35,11 +35,15 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 - Comptes annuels (data.gouv.fr / API RNE INPI) pour le chiffre d'affaires.
 - BODACC pour les défaillances. Code officiel géographique (INSEE) pour commune → département → région.
 
-## Règles de calcul (StockUniteLegale)
+## Règles de calcul (StockUniteLegale + StockEtablissement)
 - Création = `dateCreationUniteLegale`.
 - Fermeture = `etatAdministratifUniteLegale = 'C'`, date = `dateDebut` (début de la dernière période).
 - Active au 31/12/A = créée au plus tard le 31/12/A et non fermée à cette date.
 - Taux de création / fermeture = rapportés aux entreprises actives au 1er janvier.
+- Lieu = commune du siège actuel (`etablissementSiege = true` dans StockEtablissement) ;
+  département = 2 premiers caractères du code commune (3 si 97x), région via le COG.
+- Codes de zone dans les JSON : `FR`, `R84` (région), `D69` (département).
+- Siège à l'étranger ou en collectivité d'outre-mer (975, 977, 978, 98x) : compté en France seulement.
 
 ## Transparence (obligatoire, site ET PDF)
 - Sous chaque graphique : source, date d'actualisation, limite de l'indicateur.
@@ -47,7 +51,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 - Avertissement si moins de 20 entreprises dans la zone.
 
 ## Planning
-- Sem. 1–2 : environnement + script Sirene ← en cours
-- Sem. 3 : site avec graphiques et filtres géographiques
+- Sem. 1–2 : environnement + script Sirene ← fait
+- Sem. 3 : site avec graphiques et filtres géographiques ← en cours (calcul par zone fait)
 - Sem. 4 : recherche par mots-clés
 - Sem. 5–6 : CA, défaillances, export PDF, mise en ligne
