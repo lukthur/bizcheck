@@ -32,7 +32,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── lancer_site.bat  ← double-clic : serveur local + ouverture de http://localhost:8000
 └── site/          ← site statique (c'est ce dossier qu'on mettra en ligne)
     ├── index.html, style.css
-    ├── app.js (page), recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
+    ├── app.js (page), aides.js (textes des bulles), economie.js, recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
     └── donnees/   ← écrit par bizcheck.py (~55 Mo) :
         infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json,
         communes.json, carte.json, naf/<code>.json (+ naf/TOUS.json = toutes activités),
@@ -48,6 +48,8 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
   portrait (camemberts : taille, forme juridique, âge ; réseaux) ; saisonnalité (France) ; carte (évolution / densité,
   clic = zone) ; « Et dans ma ville ? » (établissements de la commune, densité vs département et France).
 - Densité et ville = établissements actifs selon LEUR activité et LEUR adresse ; le reste = entreprises (siège).
+- Bulles « ? » à côté de chaque chiffre : textes dans site/aides.js (années auto), affichage dans
+  outils.js (installerBulles) ; titres de graphiques via l'attribut data-explication.
 - Survie = administrative (non radiée), plus haute que la survie économique des études INSEE : toujours le dire.
 - Lot 2 (economie.js) : salariés 10 ans + employeurs (URSSAF commune × APE), salaire moyen brut
   (URSSAF NA88, division = 2 premiers chiffres du NAF, France), défaillances 10 ans + taux (BODACC :

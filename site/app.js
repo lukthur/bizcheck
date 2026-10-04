@@ -6,12 +6,14 @@
 // défaillances, comptes, territoire), outils.js (mise en forme).
 
 import { colorer, preparerCarte } from "./carte.js";
+import { textesAide } from "./aides.js";
 import { afficherEconomie, afficherTerritoire } from "./economie.js";
 import {
   dessinerCamembert, dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie,
 } from "./graphiques.js";
 import {
-  $, decimal, densite, element, formaterDate, lireJson, nombre, pluriel, pourcent, signe,
+  $, boutonAide, decimal, densite, element, formaterDate, installerBulles, lireJson, nombre, pluriel,
+  poserAide, pourcent, signe,
 } from "./outils.js";
 import { creerIndex, rechercher } from "./recherche.js";
 import { brancherVille, mettreAJourVille } from "./ville.js";
@@ -28,6 +30,7 @@ const etat = {
   index: null,        // index du moteur de recherche
   chiffres: null,     // naf/<code>.json du secteur affiché
   zone: "FR",
+  aides: {},         // textes des bulles « ? » (aides.js)
   suggestions: [],
   suggestionActive: -1,
 };
@@ -103,6 +106,7 @@ async function demarrer() {
   remplirChoixZone();
   $("choix-zone").addEventListener("change", (e) => changerZone(e.target.value));
   brancherRecherche();
+  installerBulles();
   await preparerCarte(fondDeCarte, changerZone);
   brancherVille(parametres.get("ville"));
   // Mode clair / sombre changé dans le système : on redessine avec les bonnes couleurs
@@ -296,6 +300,8 @@ function afficher() {
   adresse.searchParams.set("zone", etat.zone);
   history.replaceState(null, "", adresse);
 
+  etat.aides = textesAide(etat.infos, { famillesalaire: etat.salaires.divisions[code.slice(0, 2)]?.libelle });
+
   $("message-erreur").hidden = true;
   $("contenu").hidden = false;
   $("titre").textContent = `${libelle} — ${zone.nom}`;
@@ -315,11 +321,14 @@ function afficher() {
   afficherTableau(historique);
   afficherSurvieEtPortrait();
   afficherEconomie({ ...etat, zone: etat.zone, codeNaf: code });
-  afficherTerritoire({ infos: etat.infos, zones: etat.zones, zone: etat.zone });
+  afficherTerritoire({ infos: etat.infos, zones: etat.zones, zone: etat.zone, aides: etat.aides });
   afficherSaison();
   colorer(etat.chiffres, etat.zones, etat.zone, etat.infos);
-  mettreAJourVille(code, etat.zones, etat.chiffres);
+  mettreAJourVille(code, etat.zones, etat.chiffres, etat.aides);
   afficherSources();
+  // bulles « ? » des titres de graphiques (attribut data-explication dans index.html)
+  document.querySelectorAll("[data-explication]")
+    .forEach((titre) => poserAide(titre, etat.aides[titre.dataset.explication]));
 }
 
 // --- Chiffres clés -----------------------------------------------------------------------
@@ -394,6 +403,10 @@ function afficherTuiles(code, zone, periode) {
   );
   // La tuile tendance garde son style particulier
   tuiles.firstElementChild.classList.add("tuile-verdict");
+  // Bulle « ? » à côté du titre de chaque tuile, dans l'ordre des tuiles
+  ["tendance", "actives", "creations", "fermetures", "survie3", "densite"].forEach((cle, i) => {
+    tuiles.children[i].querySelector(".tuile-libelle").append(boutonAide(etat.aides[cle]));
+  });
 }
 
 // Phrase de résumé, accordée selon les nombres
@@ -447,7 +460,7 @@ const PORTRAIT = [
   {
     cle: "taille", titre: "Taille (salariés)",
     parts: ["Aucun salarié", "1 à 9", "10 à 49", "50 à 249", "250 et plus"],
-    couleurs: ["--seq-2", "--seq-3", "--seq-4", "--seq-5", "--seq-6"],
+    couleurs: ["--neutre", "--serie-1", "--serie-2", "--serie-3", "--serie-5"],
   },
   {
     cle: "forme", titre: "Forme juridique",
@@ -457,7 +470,7 @@ const PORTRAIT = [
   {
     cle: "age", titre: "Âge",
     parts: ["Moins de 3 ans", "3 à 10 ans", "Plus de 10 ans"],
-    couleurs: ["--seq-2", "--seq-4", "--seq-6"],
+    couleurs: ["--serie-6", "--serie-7", "--serie-4"],
   },
 ];
 
@@ -465,7 +478,9 @@ const PORTRAIT = [
 function camembert(cle, titre, valeurs, couleurs, libelles) {
   const total = valeurs.reduce((a, b) => a + b, 0);
   const groupe = element("div", "portrait-groupe");
-  groupe.append(element("p", "portrait-titre", titre));
+  const enTete = element("p", "portrait-titre", titre);
+  enTete.append(boutonAide(etat.aides[cle]));
+  groupe.append(enTete);
   const zone = element("div", "zone-camembert");
   const canvas = element("canvas");
   canvas.id = `camembert-${cle}`;

@@ -1,7 +1,7 @@
 // BizCheck — « Et dans ma ville ? » : établissements du secteur dans une commune.
 
 import { normaliser } from "./recherche.js";
-import { $, decimal, densite, element, lireJson, nombre, pluriel, pourcent } from "./outils.js";
+import { $, boutonAide, decimal, densite, element, lireJson, nombre, pluriel, pourcent } from "./outils.js";
 
 const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
 
@@ -124,14 +124,14 @@ function choisir(commune) {
 }
 
 // Appelé à chaque changement de secteur
-export function mettreAJourVille(codeNaf, zones, chiffres) {
-  contexte = { codeNaf, zones, chiffres };
+export function mettreAJourVille(codeNaf, zones, chiffres, aides) {
+  contexte = { codeNaf, zones, chiffres, aides };
   if (communeChoisie) afficherVille();
 }
 
 async function afficherVille() {
   if (!contexte || !communeChoisie) return;
-  const { codeNaf, zones, chiffres } = contexte;
+  const { codeNaf, zones, chiffres, aides } = contexte;
   if (!parSecteur[codeNaf]) parSecteur[codeNaf] = await lireJson(`donnees/communes/${codeNaf}.json`);
   if (contexte.codeNaf !== codeNaf) return; // le secteur a changé entre-temps
 
@@ -160,21 +160,23 @@ async function afficherVille() {
   bloc.append(element("p", "portrait-phrase", phrase));
 
   const tableau = element("dl", "comparaison-ville");
-  const ajouter = (titre, valeur, detail) => {
+  const ajouter = (titre, valeur, detail, aide) => {
     const case_ = element("div");
     const dd = element("dd", null, valeur);
     if (detail) dd.append(element("small", null, detail));
-    case_.append(element("dt", null, titre), dd);
+    const dt = element("dt", null, titre);
+    if (aide) dt.append(boutonAide(aide));
+    case_.append(dt, dd);
     tableau.append(case_);
   };
-  ajouter("Établissements dans la commune", nombre.format(etablissements));
-  ajouter("Pour 10 000 habitants", decimal(densiteVille), nom);
-  if (zoneDepartement) ajouter("Département", decimal(densiteDepartement), zoneDepartement.nom);
-  ajouter("France", decimal(densiteFrance), "pour 10 000 habitants");
-  ajouter("Salariés du secteur", nombre.format(salaries), "dans la commune (URSSAF)");
-  ajouter("Évolution de la population", pourcent(evolutionPopulation), "entre 2017 et 2023");
+  ajouter("Établissements dans la commune", nombre.format(etablissements), null, aides.ville_etablissements);
+  ajouter("Pour 10 000 habitants", decimal(densiteVille), nom, aides.ville_densite);
+  if (zoneDepartement) ajouter("Département", decimal(densiteDepartement), zoneDepartement.nom, aides.departement_densite);
+  ajouter("France", decimal(densiteFrance), "pour 10 000 habitants", aides.france_densite);
+  ajouter("Salariés du secteur", nombre.format(salaries), "dans la commune (URSSAF)", aides.ville_salaries);
+  ajouter("Évolution de la population", pourcent(evolutionPopulation), "entre 2017 et 2023", aides.evolution_population);
   ajouter("Niveau de vie médian", revenuMedian ? euros.format(revenuMedian) : "non publié",
-    zoneDepartement?.revenu_median ? `${zoneDepartement.nom} : ${euros.format(zoneDepartement.revenu_median)}` : null);
+    zoneDepartement?.revenu_median ? `${zoneDepartement.nom} : ${euros.format(zoneDepartement.revenu_median)}` : null, aides.niveau_de_vie);
   bloc.append(tableau);
 
   if (population < SEUIL_PETITE_COMMUNE) {

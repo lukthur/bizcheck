@@ -1,7 +1,7 @@
 // BizCheck — emploi (URSSAF), défaillances (BODACC), comptes (ratios financiers) et territoire (INSEE).
 
 import { dessinerDefaillances, dessinerEmploi } from "./graphiques.js";
-import { $, decimal, element, nombre, pourcent } from "./outils.js";
+import { $, boutonAide, decimal, element, nombre, pourcent } from "./outils.js";
 
 const SEUIL_COMPTES = 20; // en dessous, pas de médiane affichée
 
@@ -19,17 +19,19 @@ function evolutionPct(debut, fin) {
   return debut ? 100 * (fin / debut - 1) : null;
 }
 
-// Remplit une liste <dl> de chiffres : [titre, valeur, détail]
-function remplir(idListe, lignes) {
+// Remplit une liste <dl> de chiffres : [titre, valeur, détail] ; explications = textes des bulles « ? »
+function remplir(idListe, lignes, explications = []) {
   const liste = $(idListe);
   liste.innerHTML = "";
-  for (const [titre, valeur, detail] of lignes) {
+  lignes.forEach(([titre, valeur, detail], i) => {
     const bloc = element("div");
     const dd = element("dd", null, valeur);
     if (detail) dd.append(element("small", null, ` ${detail}`));
-    bloc.append(element("dt", null, titre), dd);
+    const dt = element("dt", null, titre);
+    if (explications[i]) dt.append(boutonAide(explications[i]));
+    bloc.append(dt, dd);
     liste.append(bloc);
-  }
+  });
 }
 
 function message(idListe, texte) {
@@ -40,7 +42,7 @@ function message(idListe, texte) {
 
 // --- Emploi, défaillances, comptes ------------------------------------------------------
 
-export function afficherEconomie({ infos, chiffres, tous, salaires, zone, codeNaf }) {
+export function afficherEconomie({ infos, chiffres, tous, salaires, zone, codeNaf, aides }) {
   const annees = infos.annees;
   const n = annees.length;
   const nbPrincipales = infos.nb_annees_principales;
@@ -70,7 +72,7 @@ export function afficherEconomie({ infos, chiffres, tous, salaires, zone, codeNa
     message("chiffres-emploi", "Pas de salariés du secteur privé recensés par l'URSSAF pour ce secteur dans cette "
       + "zone (l'agriculture, l'administration publique et les entreprises sans salarié ne sont pas couvertes).");
   } else {
-    remplir("chiffres-emploi", lignesEmploi);
+    remplir("chiffres-emploi", lignesEmploi, [aides.salaries, aides.employeurs, aides.salaire]);
   }
   dessinerEmploi(annees, effectifs);
 
@@ -85,7 +87,7 @@ export function afficherEconomie({ infos, chiffres, tous, salaires, zone, codeNa
     [`Défaillances en ${derniere}`, nombre.format(defaillances[n - 1]),
       `${pourcent(evolutionPct(defaillances[n - 2], defaillances[n - 1]))} sur un an`],
     ["Taux de défaillance", pourcent(taux, false, 2), `toutes activités : ${pourcent(tauxTous, false, 2)}`],
-  ]);
+  ], [aides.defaillances, aides.taux_defaillance]);
   dessinerDefaillances(annees, defaillances);
 
   // Comptes : [nombre, CA médian, marge EBE, marge nette, % déficitaires, délai clients]
@@ -108,12 +110,12 @@ export function afficherEconomie({ infos, chiffres, tous, salaires, zone, codeNa
     ["Marge nette médiane", pourcent(margeNette, false), `toutes activités : ${pourcent(comptesTous[3], false)}`],
     ["Sociétés en perte", pourcent(deficitaires, false, 0), `toutes activités : ${pourcent(comptesTous[4], false, 0)}`],
     ["Délai de paiement des clients", jours(delai), `toutes activités : ${jours(comptesTous[5])}`],
-  ]);
+  ], [aides.ca, aides.marge_ebe, aides.marge_nette, aides.en_perte, aides.delai_clients]);
 }
 
 // --- Territoire ---------------------------------------------------------------------------
 
-export function afficherTerritoire({ infos, zones, zone }) {
+export function afficherTerritoire({ infos, zones, zone, aides }) {
   const z = zones[zone];
   const france = zones.FR;
   const [debut, fin] = infos.annees_population;
@@ -127,5 +129,5 @@ export function afficherTerritoire({ infos, zones, zone }) {
     [`Niveau de vie médian (${infos.annee_revenus})`, z.revenu_median ? euros.format(z.revenu_median) : "—",
       zone === "FR" ? "France métropolitaine, par an" : `France métropolitaine : ${euros.format(france.revenu_median)}`],
     ["Taux de pauvreté", pourcent(z.taux_pauvrete ?? null, false), comparaison(pourcent(france.taux_pauvrete, false))],
-  ]);
+  ], [aides.habitants, aides.evolution_population, aides.niveau_de_vie, aides.pauvrete]);
 }

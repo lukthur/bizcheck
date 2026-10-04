@@ -15,6 +15,8 @@
   --serie-3: #1baf7a;
   --serie-4: #eda100;
   --serie-5: #e87ba4;
+  --serie-6: #008300;
+  --serie-7: #4a3aa7;
   --neutre: #b4b2a9;       /* « toutes activités », comparaison */
   /* échelle bleue (peu → beaucoup) */
   --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #256abf; --seq-6: #104281;
@@ -43,6 +45,8 @@
     --serie-3: #199e70;
     --serie-4: #c98500;
     --serie-5: #d55181;
+    --serie-6: #008300;
+    --serie-7: #9085e9;
     --neutre: #6b6a64;
     --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
     --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #55544f; --vide: #242422; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
@@ -65,6 +69,8 @@
   --serie-3: #199e70;
   --serie-4: #c98500;
   --serie-5: #d55181;
+  --serie-6: #008300;
+  --serie-7: #9085e9;
   --neutre: #6b6a64;
   --seq-1: #16365e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #3987e5; --seq-5: #6da7ec; --seq-6: #b7d3f6;
   --div-baisse-forte: #e66767; --div-baisse: #7a3434; --div-stable: #55544f; --vide: #242422; --div-hausse: #1d4f8c; --div-hausse-forte: #5598e7;
@@ -343,3 +349,19 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 .camemberts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
 .portrait-groupe { display: flex; flex-direction: column; }
 .zone-camembert { position: relative; height: 170px; margin: 4px 0 8px; }
+
+/* Icône « ? » d'explication et sa bulle */
+.aide {
+  display: inline-grid; place-items: center; vertical-align: middle;
+  width: 16px; height: 16px; margin-left: 5px; padding: 0;
+  border: 1px solid var(--texte-discret); border-radius: 50%;
+  background: none; color: var(--texte-secondaire);
+  font: 600 10px/1 system-ui, -apple-system, "Segoe UI", sans-serif; cursor: help;
+}
+.aide:hover, .aide:focus-visible, .aide[aria-expanded="true"] { border-color: var(--serie-1); color: var(--serie-1); outline: none; }
+.bulle-aide {
+  position: fixed; z-index: 50; max-width: min(320px, calc(100vw - 32px));
+  background: var(--fond-carte); color: var(--texte); border: 1px solid var(--axe); border-radius: 8px;
+  padding: 10px 12px; font-size: 0.85rem; line-height: 1.45; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}

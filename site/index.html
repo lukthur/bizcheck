@@ -80,14 +80,14 @@
         <h2 id="titre-evolution" class="titre-bloc">Évolution sur 10 ans</h2>
         <div class="graphiques">
           <figure class="carte">
-            <figcaption><h3>Entreprises actives au 31 décembre</h3></figcaption>
+            <figcaption><h3 data-explication="graphique_actives">Entreprises actives au 31 décembre</h3></figcaption>
             <div class="zone-graphique"><canvas id="graphique-actives" role="img"
               aria-label="Nombre d'entreprises actives au 31 décembre, par année"></canvas></div>
             <p class="note-source" data-note="actives"></p>
           </figure>
           <figure class="carte">
             <figcaption>
-              <h3>Créations et fermetures</h3>
+              <h3 data-explication="graphique_flux">Créations et fermetures</h3>
               <ul class="legende">
                 <li><span class="pastille" style="background: var(--serie-1)"></span>Créations</li>
                 <li><span class="pastille" style="background: var(--serie-2)"></span>Fermetures</li>
@@ -125,7 +125,7 @@
         <div class="graphiques pleine-largeur">
           <figure class="carte">
             <figcaption>
-              <h3>Taux de survie</h3>
+              <h3 data-explication="survie">Taux de survie</h3>
               <ul class="legende">
                 <li><span class="pastille" style="background: var(--serie-1)"></span>Ce secteur</li>
                 <li><span class="pastille" style="background: var(--neutre)"></span>Toutes activités</li>
@@ -149,14 +149,14 @@
         <h2 id="titre-economie" class="titre-bloc">Emploi, défaillances et rentabilité</h2>
         <div class="graphiques">
           <figure class="carte">
-            <figcaption><h3>Salariés du secteur au 31 décembre</h3></figcaption>
+            <figcaption><h3 data-explication="graphique_emploi">Salariés du secteur au 31 décembre</h3></figcaption>
             <dl id="chiffres-emploi" class="mini-chiffres"></dl>
             <div class="zone-graphique zone-basse"><canvas id="graphique-emploi" role="img"
               aria-label="Nombre de salariés du secteur privé au 31 décembre, par année"></canvas></div>
             <p class="note-source" data-note="emploi"></p>
           </figure>
           <figure class="carte">
-            <figcaption><h3>Défaillances d'entreprises</h3></figcaption>
+            <figcaption><h3 data-explication="graphique_defaillances">Défaillances d'entreprises</h3></figcaption>
             <dl id="chiffres-defaillances" class="mini-chiffres"></dl>
             <div class="zone-graphique zone-basse"><canvas id="graphique-defaillances" role="img"
               aria-label="Nombre d'entreprises en redressement ou liquidation judiciaire, par année"></canvas></div>
@@ -164,7 +164,7 @@
           </figure>
         </div>
         <div class="carte">
-          <h3 id="titre-comptes"></h3>
+          <h3 id="titre-comptes" data-explication="comptes"></h3>
           <p class="secondaire petit" id="intro-comptes"></p>
           <dl id="chiffres-comptes" class="comparaison-ville"></dl>
           <p class="note-source" data-note="comptes"></p>
@@ -176,7 +176,7 @@
         <h2 id="titre-saison" class="titre-bloc">Quand se créent les entreprises&nbsp;?</h2>
         <figure class="carte">
           <figcaption>
-            <h3 id="titre-graphique-saison"></h3>
+            <h3 id="titre-graphique-saison" data-explication="saison"></h3>
             <ul class="legende">
               <li><span class="pastille" style="background: var(--serie-1)"></span>Ce secteur</li>
               <li><span class="pastille" style="background: var(--neutre)"></span>Toutes activités</li>
@@ -197,6 +197,7 @@
               <button type="button" role="radio" data-indicateur="evolution" aria-checked="true">Évolution sur 3 ans</button>
               <button type="button" role="radio" data-indicateur="densite" aria-checked="false">Densité</button>
             </div>
+            <span data-explication="carte"></span>
             <div id="legende-carte" class="legende-carte"></div>
           </figcaption>
           <div class="conteneur-carte">
@@ -245,5 +246,6 @@
       </section>
     </section>
   </main>
+  <div id="bulle-aide" class="bulle-aide" role="tooltip" hidden></div>
 </body>
 </html>
