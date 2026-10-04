@@ -1,0 +1,44 @@
+{
+  "code_naf": "93.29Z",
+  "zone": "France",
+  "indicateurs": [
+    {
+      "annee": 2023,
+      "entreprises_actives_fin_annee": 117620,
+      "creations": 11825,
+      "fermetures": 6234,
+      "solde_net": 5591,
+      "taux_creation_pct": 10.6,
+      "taux_fermeture_pct": 5.6
+    },
+    {
+      "annee": 2024,
+      "entreprises_actives_fin_annee": 119290,
+      "creations": 11367,
+      "fermetures": 9697,
+      "solde_net": 1670,
+      "taux_creation_pct": 9.7,
+      "taux_fermeture_pct": 8.2
+    },
+    {
+      "annee": 2025,
+      "entreprises_actives_fin_annee": 121465,
+      "creations": 11540,
+      "fermetures": 9365,
+      "solde_net": 2175,
+      "taux_creation_pct": 9.7,
+      "taux_fermeture_pct": 7.9
+    }
+  ],
+  "source": {
+    "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
+    "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073325/stock-stockunitelegale-parquet.parquet",
+    "date_actualisation": "2026-10-01"
+  },
+  "date_calcul": "2026-10-04 12:16",
+  "limites": [
+    "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
+    "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
+    "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements."
+  ]
+}
