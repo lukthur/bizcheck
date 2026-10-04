@@ -39,6 +39,12 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
       + "sans salarié au cours de l'année ou au 31 décembre (dont presque tous les micro-entrepreneurs). "
       + "Décochez la case pour ne voir que les entreprises qui emploient : les pourcentages sont alors "
       + "calculés parmi elles.",
+    sans_salarie: "Pourquoi autant d'entreprises sans salarié ? Sirene recense toutes les structures "
+      + "immatriculées, pas seulement celles qui ont une activité importante. En France, à peine plus d'une "
+      + "entreprise sur dix emploie quelqu'un. Les autres sont surtout des entreprises individuelles (dont une "
+      + "grande part de micro-entrepreneurs, parfois peu actifs), des sociétés sans salarié (dirigeant seul, "
+      + "holdings, sociétés en sommeil), des sociétés civiles comme les SCI, et des associations. Le nombre "
+      + "d'entreprises qui emploient a été vérifié : il concorde avec les établissements employeurs de l'URSSAF.",
     forme: "Catégorie juridique Sirene. « Entreprise individuelle » inclut les micro-entrepreneurs ; « Autre "
       + "société » : SCI, SNC, SA, coopératives… ; « Association, autre » : associations, organismes publics…",
     age: "Ancienneté des entreprises actives à la date du fichier Sirene, d'après leur date de création.",

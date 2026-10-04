@@ -369,3 +369,5 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 /* Case à cocher sous un titre de graphique */
 .case-a-cocher { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--texte-secondaire); cursor: pointer; margin: -2px 0 4px; }
 .case-a-cocher input { accent-color: var(--serie-1); margin: 0; }
+.ligne-case { display: flex; align-items: center; margin: -2px 0 4px; }
+.ligne-case .case-a-cocher { margin: 0; }

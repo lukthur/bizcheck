@@ -553,7 +553,9 @@ function afficherSurvieEtPortrait() {
     remplirCamembertTaille(brut);
   });
   choix.append(caseACocher, " Inclure les entreprises sans salarié");
-  groupeTaille.querySelector(".portrait-titre").after(choix);
+  const ligneChoix = element("div", "ligne-case");
+  ligneChoix.append(choix, boutonAide(etat.aides.sans_salarie));
+  groupeTaille.querySelector(".portrait-titre").after(ligneChoix);
   const sansSalarie = brut.taille[0];
   if (sansSalarie) {
     groupeTaille.append(element("p", "secondaire petit",
