@@ -21,10 +21,14 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── CLAUDE.md
 ├── data/        ← fichiers téléchargés (parquet Sirene, COG) — ne pas versionner
 ├── bizcheck.py  ← script : indicateurs France + régions + départements pour un code NAF
+├── requirements.txt ← bibliothèques Python (pip install -r requirements.txt)
 ├── lancer_site.bat ← double-clic : serveur local + ouverture de http://localhost:8000
 └── site/        ← site statique (c'est ce dossier qu'on mettra en ligne)
     ├── index.html, style.css, app.js  (Chart.js via CDN jsdelivr)
-    └── donnees/ ← écrit par bizcheck.py : <NAF>.json (toutes les zones) + secteurs.json (liste)
+    └── donnees/ ← écrit par bizcheck.py (tous les codes NAF rév. 2 d'un coup, ~20 s) :
+        infos.json (années, sources, limites, date de calcul), zones.json, secteurs.json,
+        naf/<code>.json (nombres bruts par zone : actives_debut, actives_fin, creations, fermetures ;
+        zone absente = 0 ; taux et solde calculés par le site)
 ```
 Le site lit les JSON avec fetch : il ne marche pas en double-cliquant index.html (file://),
 il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --directory site`).
@@ -42,6 +46,8 @@ Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si
 - BODACC pour les défaillances. Code officiel géographique (INSEE) pour commune → département → région.
 
 ## Règles de calcul (StockUniteLegale + StockEtablissement)
+- Activité = `activitePrincipaleUniteLegale`, seulement si `nomenclatureActivitePrincipaleUniteLegale = 'NAFRev2'`
+  (~3 % des actives encore en NAF 1993/NAP : exclues, signalé dans les limites).
 - Création = `dateCreationUniteLegale`.
 - Fermeture = `etatAdministratifUniteLegale = 'C'`, date = `dateDebut` (début de la dernière période).
 - Active au 31/12/A = créée au plus tard le 31/12/A et non fermée à cette date.

@@ -6,7 +6,8 @@ const SEUIL_TENDANCE_PCT = 2; // au-delà de ±2 % sur la période : croissance 
 const nombre = new Intl.NumberFormat("fr-FR");
 const dateLongue = new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 
-const etat = { secteur: null, zone: "FR", graphiques: [] };
+// infos, zones et secteurs sont lus une fois ; chiffres = fichier du secteur affiché
+const etat = { infos: null, zones: null, secteurs: {}, chiffres: null, zone: "FR", graphiques: [] };
 
 // --- Petits utilitaires -------------------------------------------------------
 
@@ -52,26 +53,54 @@ function afficherErreur(texte) {
   $("contenu").hidden = true;
 }
 
+// Indicateurs d'une zone, année par année, à partir des nombres bruts du fichier du secteur.
+// Une zone absente du fichier n'a aucune entreprise du secteur : tout vaut 0.
+function indicateursZone(codeZone) {
+  const brut = etat.chiffres.zones[codeZone];
+  return etat.infos.annees.map((annee, i) => {
+    const valeur = (nom) => (brut ? brut[nom][i] : 0);
+    const activesDebut = valeur("actives_debut");
+    const creations = valeur("creations");
+    const fermetures = valeur("fermetures");
+    return {
+      annee,
+      entreprises_actives_fin_annee: valeur("actives_fin"),
+      creations,
+      fermetures,
+      solde_net: creations - fermetures,
+      // taux rapportés aux entreprises actives au 1er janvier
+      taux_creation_pct: activesDebut ? (100 * creations) / activesDebut : null,
+      taux_fermeture_pct: activesDebut ? (100 * fermetures) / activesDebut : null,
+    };
+  });
+}
+
 // --- Chargement ---------------------------------------------------------------
 
 async function demarrer() {
   const parametres = new URLSearchParams(location.search);
-  let secteurs;
+  let listeSecteurs;
   try {
-    secteurs = await lireJson("donnees/secteurs.json");
+    [etat.infos, etat.zones, listeSecteurs] = await Promise.all([
+      lireJson("donnees/infos.json"),
+      lireJson("donnees/zones.json"),
+      lireJson("donnees/secteurs.json"),
+    ]);
   } catch (erreur) {
     afficherErreur("Impossible de lire les données. Le site doit être ouvert via le serveur local "
-      + "(voir les instructions), pas en double-cliquant sur index.html.");
+      + "(lancer_site.bat), pas en double-cliquant sur index.html.");
     return;
   }
 
   const choixSecteur = $("choix-secteur");
-  for (const s of secteurs) {
+  for (const s of listeSecteurs) {
+    etat.secteurs[s.code_naf] = s;
     choixSecteur.add(new Option(`${s.code_naf} — ${s.libelle_naf}`, s.code_naf));
   }
   const codeDemande = parametres.get("naf");
-  if (secteurs.some((s) => s.code_naf === codeDemande)) choixSecteur.value = codeDemande;
-  etat.zone = parametres.get("zone") || "FR";
+  choixSecteur.value = etat.secteurs[codeDemande] ? codeDemande : "93.29Z";
+  etat.zone = etat.zones[parametres.get("zone")] ? parametres.get("zone") : "FR";
+  remplirChoixZone();
 
   choixSecteur.addEventListener("change", () => chargerSecteur(choixSecteur.value));
   $("choix-zone").addEventListener("change", (e) => {
@@ -86,19 +115,17 @@ async function demarrer() {
 
 async function chargerSecteur(code) {
   try {
-    etat.secteur = await lireJson(`donnees/${code}.json`);
+    etat.chiffres = await lireJson(`donnees/naf/${code}.json`);
   } catch (erreur) {
     afficherErreur(`Les données du secteur ${code} sont introuvables.`);
     return;
   }
-  remplirChoixZone();
   afficher();
 }
 
 function remplirChoixZone() {
-  const zones = etat.secteur.zones;
+  const zones = etat.zones;
   const choix = $("choix-zone");
-  choix.innerHTML = "";
   choix.add(new Option("France entière", "FR"));
 
   const groupes = [
@@ -113,36 +140,63 @@ function remplirChoixZone() {
       .forEach((c) => groupe.append(new Option(libelle(c), c)));
     choix.append(groupe);
   }
-  if (!zones[etat.zone]) etat.zone = "FR";
   choix.value = etat.zone;
 }
 
 // --- Affichage ----------------------------------------------------------------
 
+// « 0 création », « 1 création », « 2 créations » (en français, 0 et 1 sont au singulier)
+function pluriel(n, singulier, pluriel) {
+  return `${nombre.format(n)} ${n > 1 ? pluriel : singulier}`;
+}
+
+// Phrase de résumé, accordée selon les nombres
+function commentaire(nomZone, premier, dernier, evo) {
+  const actives = dernier.entreprises_actives_fin_annee;
+  const phraseEvolution = evo === null
+    ? `alors qu'il n'y en avait aucune fin ${premier.annee}`
+    : `soit ${pourcent(evo)} par rapport à fin ${premier.annee}`;
+  let comparaison = "";
+  if (etat.zone !== "FR") comparaison = ` (France entière : ${pourcent(evolution(indicateursZone("FR")))})`;
+
+  const { creations, fermetures, solde_net: solde } = dernier;
+  const phraseCreations = creations === 0 ? "aucune entreprise n'a été créée"
+    : pluriel(creations, "entreprise a été créée", "entreprises ont été créées");
+  const phraseFermetures = fermetures === 0 ? "aucune n'a fermé" : `${nombre.format(fermetures)} ${fermetures > 1 ? "ont" : "a"} fermé`;
+  const phraseSolde = solde > 0 ? `il y a donc eu ${pluriel(solde, "création", "créations")} de plus que de fermetures`
+    : solde < 0 ? `il y a donc eu ${pluriel(-solde, "fermeture", "fermetures")} de plus que de créations`
+    : "créations et fermetures s'équilibrent";
+
+  return `${nomZone} : le secteur compte ${pluriel(actives, "entreprise active", "entreprises actives")} `
+    + `fin ${dernier.annee}, ${phraseEvolution}${comparaison}. `
+    + `En ${dernier.annee}, ${phraseCreations} et ${phraseFermetures} : ${phraseSolde}.`;
+}
+
 function afficher() {
-  if (!etat.secteur) return;
-  const secteur = etat.secteur;
-  const zone = secteur.zones[etat.zone];
-  const france = secteur.zones.FR;
-  const ind = zone.indicateurs;
+  if (!etat.chiffres) return;
+  const infos = etat.infos;
+  const code = etat.chiffres.code_naf;
+  const libelle = etat.secteurs[code].libelle_naf;
+  const zone = etat.zones[etat.zone];
+  const ind = indicateursZone(etat.zone);
   const premier = ind[0];
   const dernier = ind[ind.length - 1];
   const evo = evolution(ind);
 
   // L'adresse de la page garde le choix : on peut la copier et la partager
-  history.replaceState(null, "", `?naf=${encodeURIComponent(secteur.code_naf)}&zone=${etat.zone}`);
+  history.replaceState(null, "", `?naf=${encodeURIComponent(code)}&zone=${etat.zone}`);
 
   $("message-erreur").hidden = true;
   $("contenu").hidden = false;
-  $("titre").textContent = `${secteur.libelle_naf} — ${zone.nom}`;
-  $("sous-titre").textContent = `Code NAF ${secteur.code_naf} · années ${secteur.annees[0]} à `
-    + `${secteur.annees[secteur.annees.length - 1]} · ce code regroupe plusieurs activités proches.`;
-  document.title = `${secteur.libelle_naf} — ${zone.nom} · BizCheck`;
+  $("titre").textContent = `${libelle} — ${zone.nom}`;
+  $("sous-titre").textContent = `Code NAF ${code} · années ${premier.annee} à ${dernier.annee} `
+    + `· ce code regroupe plusieurs activités proches.`;
+  document.title = `${libelle} — ${zone.nom} · BizCheck`;
 
   // Avertissement petit effectif
   const alerte = $("alerte-petit-effectif");
-  alerte.hidden = !zone.alerte_petit_effectif;
-  alerte.textContent = `Attention : moins de ${secteur.seuil_petit_effectif} entreprises de ce secteur dans `
+  alerte.hidden = dernier.entreprises_actives_fin_annee >= infos.seuil_petit_effectif;
+  alerte.textContent = `Attention : moins de ${infos.seuil_petit_effectif} entreprises de ce secteur dans `
     + `cette zone. Quelques créations ou fermetures suffisent à faire varier fortement les chiffres : `
     + `ils sont à prendre avec prudence.`;
 
@@ -153,7 +207,7 @@ function afficher() {
   $("verdict").innerHTML = `<span class="icone-verdict ${tendance.classe}" aria-hidden="true">${tendance.icone}</span>`
     + tendance.texte;
   $("verdict-detail").textContent = `${pourcent(evo)} d'entreprises actives entre fin ${premier.annee} `
-    + `et fin ${dernier.annee} (stable = entre −${SEUIL_TENDANCE_PCT} % et +${SEUIL_TENDANCE_PCT} %)`;
+    + `et fin ${dernier.annee} (stable = entre −${SEUIL_TENDANCE_PCT} % et +${SEUIL_TENDANCE_PCT} %)`;
 
   // Tuiles
   $("libelle-actives").textContent = `Entreprises actives fin ${dernier.annee}`;
@@ -162,22 +216,21 @@ function afficher() {
     + `depuis fin ${premier.annee}`;
   $("libelle-creations").textContent = `Créations en ${dernier.annee}`;
   $("valeur-creations").textContent = nombre.format(dernier.creations);
-  $("detail-creations").textContent = `Taux de création : ${pourcent(dernier.taux_creation_pct, false)}`;
+  $("detail-creations").textContent = `Taux de création : ${pourcent(dernier.taux_creation_pct, false)}`;
   $("libelle-fermetures").textContent = `Fermetures en ${dernier.annee}`;
   $("valeur-fermetures").textContent = nombre.format(dernier.fermetures);
-  $("detail-fermetures").textContent = `Taux de fermeture : ${pourcent(dernier.taux_fermeture_pct, false)}`;
+  $("detail-fermetures").textContent = `Taux de fermeture : ${pourcent(dernier.taux_fermeture_pct, false)}`;
 
-  // Commentaire automatique
-  let comparaison = "";
-  if (etat.zone !== "FR") comparaison = ` (France entière : ${pourcent(evolution(france.indicateurs))})`;
-  const solde = dernier.solde_net;
-  const phraseSolde = solde > 0 ? `il y a donc eu ${nombre.format(solde)} créations de plus que de fermetures`
-    : solde < 0 ? `il y a donc eu ${nombre.format(-solde)} fermetures de plus que de créations`
-    : "créations et fermetures s'équilibrent";
-  $("commentaire").textContent = `${zone.nom} : le secteur compte ${nombre.format(dernier.entreprises_actives_fin_annee)} `
-    + `entreprises actives fin ${dernier.annee}, soit ${pourcent(evo)} par rapport à fin ${premier.annee}${comparaison}. `
-    + `En ${dernier.annee}, ${nombre.format(dernier.creations)} entreprises ont été créées et `
-    + `${nombre.format(dernier.fermetures)} ont fermé : ${phraseSolde}.`;
+  // Zone sans aucune entreprise du secteur sur toute la période
+  const zoneVide = ind.every((r) => r.entreprises_actives_fin_annee === 0 && r.creations === 0 && r.fermetures === 0);
+  if (zoneVide) {
+    $("verdict").innerHTML = `<span class="icone-verdict stable" aria-hidden="true">–</span>Aucune entreprise`;
+    $("verdict-detail").textContent = "Pas de tendance calculable dans cette zone.";
+  }
+
+  $("commentaire").textContent = zoneVide
+    ? `${zone.nom} : aucune entreprise de ce secteur n'y a son siège entre ${premier.annee} et ${dernier.annee}.`
+    : commentaire(zone.nom, premier, dernier, evo);
 
   // Tableau
   $("tableau").innerHTML = ind.map((r) => `<tr>
@@ -190,12 +243,12 @@ function afficher() {
       <td>${pourcent(r.taux_fermeture_pct, false)}</td>
     </tr>`).join("");
 
-  afficherSources(secteur);
+  afficherSources(infos);
   dessinerGraphiques(ind);
 }
 
-function afficherSources(secteur) {
-  const sirene = secteur.sources[0];
+function afficherSources(infos) {
+  const sirene = infos.sources[0];
   const dateSirene = formaterDate(sirene.date_actualisation);
   const debutNote = `Source : INSEE, base Sirene (fichier du ${dateSirene}).`;
   document.querySelector('[data-limite="actives"]').textContent = `${debutNote} Limite : une entreprise est `
@@ -204,21 +257,21 @@ function afficherSources(secteur) {
     + `déclarées sont comptées ; une entreprise sans activité mais non radiée reste « active ».`;
 
   $("liste-sources").innerHTML = "";
-  for (const source of secteur.sources) {
+  for (const source of infos.sources) {
     const li = document.createElement("li");
     const lien = document.createElement("a");
     lien.href = source.lien;
     lien.textContent = source.nom;
-    li.append(lien, ` — mis à jour le ${formaterDate(source.date_actualisation)}`);
+    li.append(lien, ` — version du ${formaterDate(source.date_actualisation)}`);
     $("liste-sources").append(li);
   }
   $("liste-limites").innerHTML = "";
-  for (const limite of secteur.limites) {
+  for (const limite of infos.limites) {
     const li = document.createElement("li");
     li.textContent = limite;
     $("liste-limites").append(li);
   }
-  const [jour, heure] = secteur.date_calcul.split(" ");
+  const [jour, heure] = infos.date_calcul.split(" ");
   $("date-calcul").textContent = `Chiffres calculés le ${formaterDate(jour)} à ${heure}.`;
 }
 

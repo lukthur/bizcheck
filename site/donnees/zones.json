@@ -1,0 +1,583 @@
+{
+  "FR": {
+    "type": "france",
+    "nom": "France"
+  },
+  "R01": {
+    "type": "region",
+    "nom": "Guadeloupe"
+  },
+  "R02": {
+    "type": "region",
+    "nom": "Martinique"
+  },
+  "R03": {
+    "type": "region",
+    "nom": "Guyane"
+  },
+  "R04": {
+    "type": "region",
+    "nom": "La Réunion"
+  },
+  "R06": {
+    "type": "region",
+    "nom": "Mayotte"
+  },
+  "R11": {
+    "type": "region",
+    "nom": "Île-de-France"
+  },
+  "R24": {
+    "type": "region",
+    "nom": "Centre-Val de Loire"
+  },
+  "R27": {
+    "type": "region",
+    "nom": "Bourgogne-Franche-Comté"
+  },
+  "R28": {
+    "type": "region",
+    "nom": "Normandie"
+  },
+  "R32": {
+    "type": "region",
+    "nom": "Hauts-de-France"
+  },
+  "R44": {
+    "type": "region",
+    "nom": "Grand Est"
+  },
+  "R52": {
+    "type": "region",
+    "nom": "Pays de la Loire"
+  },
+  "R53": {
+    "type": "region",
+    "nom": "Bretagne"
+  },
+  "R75": {
+    "type": "region",
+    "nom": "Nouvelle-Aquitaine"
+  },
+  "R76": {
+    "type": "region",
+    "nom": "Occitanie"
+  },
+  "R84": {
+    "type": "region",
+    "nom": "Auvergne-Rhône-Alpes"
+  },
+  "R93": {
+    "type": "region",
+    "nom": "Provence-Alpes-Côte d'Azur"
+  },
+  "R94": {
+    "type": "region",
+    "nom": "Corse"
+  },
+  "D01": {
+    "type": "departement",
+    "nom": "Ain",
+    "region": "R84"
+  },
+  "D02": {
+    "type": "departement",
+    "nom": "Aisne",
+    "region": "R32"
+  },
+  "D03": {
+    "type": "departement",
+    "nom": "Allier",
+    "region": "R84"
+  },
+  "D04": {
+    "type": "departement",
+    "nom": "Alpes-de-Haute-Provence",
+    "region": "R93"
+  },
+  "D05": {
+    "type": "departement",
+    "nom": "Hautes-Alpes",
+    "region": "R93"
+  },
+  "D06": {
+    "type": "departement",
+    "nom": "Alpes-Maritimes",
+    "region": "R93"
+  },
+  "D07": {
+    "type": "departement",
+    "nom": "Ardèche",
+    "region": "R84"
+  },
+  "D08": {
+    "type": "departement",
+    "nom": "Ardennes",
+    "region": "R44"
+  },
+  "D09": {
+    "type": "departement",
+    "nom": "Ariège",
+    "region": "R76"
+  },
+  "D10": {
+    "type": "departement",
+    "nom": "Aube",
+    "region": "R44"
+  },
+  "D11": {
+    "type": "departement",
+    "nom": "Aude",
+    "region": "R76"
+  },
+  "D12": {
+    "type": "departement",
+    "nom": "Aveyron",
+    "region": "R76"
+  },
+  "D13": {
+    "type": "departement",
+    "nom": "Bouches-du-Rhône",
+    "region": "R93"
+  },
+  "D14": {
+    "type": "departement",
+    "nom": "Calvados",
+    "region": "R28"
+  },
+  "D15": {
+    "type": "departement",
+    "nom": "Cantal",
+    "region": "R84"
+  },
+  "D16": {
+    "type": "departement",
+    "nom": "Charente",
+    "region": "R75"
+  },
+  "D17": {
+    "type": "departement",
+    "nom": "Charente-Maritime",
+    "region": "R75"
+  },
+  "D18": {
+    "type": "departement",
+    "nom": "Cher",
+    "region": "R24"
+  },
+  "D19": {
+    "type": "departement",
+    "nom": "Corrèze",
+    "region": "R75"
+  },
+  "D21": {
+    "type": "departement",
+    "nom": "Côte-d'Or",
+    "region": "R27"
+  },
+  "D22": {
+    "type": "departement",
+    "nom": "Côtes-d'Armor",
+    "region": "R53"
+  },
+  "D23": {
+    "type": "departement",
+    "nom": "Creuse",
+    "region": "R75"
+  },
+  "D24": {
+    "type": "departement",
+    "nom": "Dordogne",
+    "region": "R75"
+  },
+  "D25": {
+    "type": "departement",
+    "nom": "Doubs",
+    "region": "R27"
+  },
+  "D26": {
+    "type": "departement",
+    "nom": "Drôme",
+    "region": "R84"
+  },
+  "D27": {
+    "type": "departement",
+    "nom": "Eure",
+    "region": "R28"
+  },
+  "D28": {
+    "type": "departement",
+    "nom": "Eure-et-Loir",
+    "region": "R24"
+  },
+  "D29": {
+    "type": "departement",
+    "nom": "Finistère",
+    "region": "R53"
+  },
+  "D2A": {
+    "type": "departement",
+    "nom": "Corse-du-Sud",
+    "region": "R94"
+  },
+  "D2B": {
+    "type": "departement",
+    "nom": "Haute-Corse",
+    "region": "R94"
+  },
+  "D30": {
+    "type": "departement",
+    "nom": "Gard",
+    "region": "R76"
+  },
+  "D31": {
+    "type": "departement",
+    "nom": "Haute-Garonne",
+    "region": "R76"
+  },
+  "D32": {
+    "type": "departement",
+    "nom": "Gers",
+    "region": "R76"
+  },
+  "D33": {
+    "type": "departement",
+    "nom": "Gironde",
+    "region": "R75"
+  },
+  "D34": {
+    "type": "departement",
+    "nom": "Hérault",
+    "region": "R76"
+  },
+  "D35": {
+    "type": "departement",
+    "nom": "Ille-et-Vilaine",
+    "region": "R53"
+  },
+  "D36": {
+    "type": "departement",
+    "nom": "Indre",
+    "region": "R24"
+  },
+  "D37": {
+    "type": "departement",
+    "nom": "Indre-et-Loire",
+    "region": "R24"
+  },
+  "D38": {
+    "type": "departement",
+    "nom": "Isère",
+    "region": "R84"
+  },
+  "D39": {
+    "type": "departement",
+    "nom": "Jura",
+    "region": "R27"
+  },
+  "D40": {
+    "type": "departement",
+    "nom": "Landes",
+    "region": "R75"
+  },
+  "D41": {
+    "type": "departement",
+    "nom": "Loir-et-Cher",
+    "region": "R24"
+  },
+  "D42": {
+    "type": "departement",
+    "nom": "Loire",
+    "region": "R84"
+  },
+  "D43": {
+    "type": "departement",
+    "nom": "Haute-Loire",
+    "region": "R84"
+  },
+  "D44": {
+    "type": "departement",
+    "nom": "Loire-Atlantique",
+    "region": "R52"
+  },
+  "D45": {
+    "type": "departement",
+    "nom": "Loiret",
+    "region": "R24"
+  },
+  "D46": {
+    "type": "departement",
+    "nom": "Lot",
+    "region": "R76"
+  },
+  "D47": {
+    "type": "departement",
+    "nom": "Lot-et-Garonne",
+    "region": "R75"
+  },
+  "D48": {
+    "type": "departement",
+    "nom": "Lozère",
+    "region": "R76"
+  },
+  "D49": {
+    "type": "departement",
+    "nom": "Maine-et-Loire",
+    "region": "R52"
+  },
+  "D50": {
+    "type": "departement",
+    "nom": "Manche",
+    "region": "R28"
+  },
+  "D51": {
+    "type": "departement",
+    "nom": "Marne",
+    "region": "R44"
+  },
+  "D52": {
+    "type": "departement",
+    "nom": "Haute-Marne",
+    "region": "R44"
+  },
+  "D53": {
+    "type": "departement",
+    "nom": "Mayenne",
+    "region": "R52"
+  },
+  "D54": {
+    "type": "departement",
+    "nom": "Meurthe-et-Moselle",
+    "region": "R44"
+  },
+  "D55": {
+    "type": "departement",
+    "nom": "Meuse",
+    "region": "R44"
+  },
+  "D56": {
+    "type": "departement",
+    "nom": "Morbihan",
+    "region": "R53"
+  },
+  "D57": {
+    "type": "departement",
+    "nom": "Moselle",
+    "region": "R44"
+  },
+  "D58": {
+    "type": "departement",
+    "nom": "Nièvre",
+    "region": "R27"
+  },
+  "D59": {
+    "type": "departement",
+    "nom": "Nord",
+    "region": "R32"
+  },
+  "D60": {
+    "type": "departement",
+    "nom": "Oise",
+    "region": "R32"
+  },
+  "D61": {
+    "type": "departement",
+    "nom": "Orne",
+    "region": "R28"
+  },
+  "D62": {
+    "type": "departement",
+    "nom": "Pas-de-Calais",
+    "region": "R32"
+  },
+  "D63": {
+    "type": "departement",
+    "nom": "Puy-de-Dôme",
+    "region": "R84"
+  },
+  "D64": {
+    "type": "departement",
+    "nom": "Pyrénées-Atlantiques",
+    "region": "R75"
+  },
+  "D65": {
+    "type": "departement",
+    "nom": "Hautes-Pyrénées",
+    "region": "R76"
+  },
+  "D66": {
+    "type": "departement",
+    "nom": "Pyrénées-Orientales",
+    "region": "R76"
+  },
+  "D67": {
+    "type": "departement",
+    "nom": "Bas-Rhin",
+    "region": "R44"
+  },
+  "D68": {
+    "type": "departement",
+    "nom": "Haut-Rhin",
+    "region": "R44"
+  },
+  "D69": {
+    "type": "departement",
+    "nom": "Rhône",
+    "region": "R84"
+  },
+  "D70": {
+    "type": "departement",
+    "nom": "Haute-Saône",
+    "region": "R27"
+  },
+  "D71": {
+    "type": "departement",
+    "nom": "Saône-et-Loire",
+    "region": "R27"
+  },
+  "D72": {
+    "type": "departement",
+    "nom": "Sarthe",
+    "region": "R52"
+  },
+  "D73": {
+    "type": "departement",
+    "nom": "Savoie",
+    "region": "R84"
+  },
+  "D74": {
+    "type": "departement",
+    "nom": "Haute-Savoie",
+    "region": "R84"
+  },
+  "D75": {
+    "type": "departement",
+    "nom": "Paris",
+    "region": "R11"
+  },
+  "D76": {
+    "type": "departement",
+    "nom": "Seine-Maritime",
+    "region": "R28"
+  },
+  "D77": {
+    "type": "departement",
+    "nom": "Seine-et-Marne",
+    "region": "R11"
+  },
+  "D78": {
+    "type": "departement",
+    "nom": "Yvelines",
+    "region": "R11"
+  },
+  "D79": {
+    "type": "departement",
+    "nom": "Deux-Sèvres",
+    "region": "R75"
+  },
+  "D80": {
+    "type": "departement",
+    "nom": "Somme",
+    "region": "R32"
+  },
+  "D81": {
+    "type": "departement",
+    "nom": "Tarn",
+    "region": "R76"
+  },
+  "D82": {
+    "type": "departement",
+    "nom": "Tarn-et-Garonne",
+    "region": "R76"
+  },
+  "D83": {
+    "type": "departement",
+    "nom": "Var",
+    "region": "R93"
+  },
+  "D84": {
+    "type": "departement",
+    "nom": "Vaucluse",
+    "region": "R93"
+  },
+  "D85": {
+    "type": "departement",
+    "nom": "Vendée",
+    "region": "R52"
+  },
+  "D86": {
+    "type": "departement",
+    "nom": "Vienne",
+    "region": "R75"
+  },
+  "D87": {
+    "type": "departement",
+    "nom": "Haute-Vienne",
+    "region": "R75"
+  },
+  "D88": {
+    "type": "departement",
+    "nom": "Vosges",
+    "region": "R44"
+  },
+  "D89": {
+    "type": "departement",
+    "nom": "Yonne",
+    "region": "R27"
+  },
+  "D90": {
+    "type": "departement",
+    "nom": "Territoire de Belfort",
+    "region": "R27"
+  },
+  "D91": {
+    "type": "departement",
+    "nom": "Essonne",
+    "region": "R11"
+  },
+  "D92": {
+    "type": "departement",
+    "nom": "Hauts-de-Seine",
+    "region": "R11"
+  },
+  "D93": {
+    "type": "departement",
+    "nom": "Seine-Saint-Denis",
+    "region": "R11"
+  },
+  "D94": {
+    "type": "departement",
+    "nom": "Val-de-Marne",
+    "region": "R11"
+  },
+  "D95": {
+    "type": "departement",
+    "nom": "Val-d'Oise",
+    "region": "R11"
+  },
+  "D971": {
+    "type": "departement",
+    "nom": "Guadeloupe",
+    "region": "R01"
+  },
+  "D972": {
+    "type": "departement",
+    "nom": "Martinique",
+    "region": "R02"
+  },
+  "D973": {
+    "type": "departement",
+    "nom": "Guyane",
+    "region": "R03"
+  },
+  "D974": {
+    "type": "departement",
+    "nom": "La Réunion",
+    "region": "R04"
+  },
+  "D976": {
+    "type": "departement",
+    "nom": "Mayotte",
+    "region": "R06"
+  }
+}

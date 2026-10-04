@@ -2,17 +2,25 @@
 BizCheck
 ========
 
-Calcule, pour UN code NAF, l'évolution du secteur sur les 3 dernières années
-complètes, pour la France entière, chaque région et chaque département :
-  - entreprises actives au 31 décembre
-  - créations, fermetures, solde net
-  - taux de création et de fermeture
+Calcule, pour TOUS les codes NAF (732 sous-classes de la NAF rév. 2), l'évolution
+du secteur sur les 3 dernières années complètes, pour la France entière, chaque
+région et chaque département :
+  - entreprises actives au 1er janvier et au 31 décembre
+  - créations, fermetures
+(le solde net et les taux sont calculés par le site à partir de ces nombres)
 
 Sources (téléchargées automatiquement si elles ne sont pas déjà dans data/) :
   - base Sirene (INSEE, data.gouv.fr), fichiers parquet :
       StockUniteLegale   → activité, date de création, date de fermeture
       StockEtablissement → commune du siège de chaque entreprise
   - Code officiel géographique (INSEE) → départements et régions
+  - Nomenclature NAF rév. 2 (INSEE) → libellés des codes d'activité
+
+Fichiers écrits dans site/donnees/ :
+  - infos.json     : années, sources, dates, limites (communs à tous les secteurs)
+  - zones.json     : France, régions, départements (codes et noms)
+  - secteurs.json  : liste des secteurs (code, libellé, nombre d'entreprises)
+  - naf/<code>.json : chiffres d'un secteur pour chaque zone
 
 Lancement (depuis le dossier BizCheck) :
     python bizcheck.py
@@ -21,20 +29,19 @@ Lancement (depuis le dossier BizCheck) :
 import csv
 import json
 import re
+import shutil
 import sys
 import urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
 import duckdb
+import xlrd  # lecture du fichier Excel (.xls) de la nomenclature NAF
 
 # Affiche correctement les accents dans le terminal Windows
 sys.stdout.reconfigure(encoding="utf-8")
 
 # --- Paramètres à modifier ---------------------------------------------------
-
-CODE_NAF = "93.29Z"
-LIBELLE_NAF = "Autres activités récréatives et de loisirs"  # libellé INSEE (automatique en semaine 4)
 
 ANNEE_EN_COURS = date.today().year
 ANNEES = [ANNEE_EN_COURS - 3, ANNEE_EN_COURS - 2, ANNEE_EN_COURS - 1]
@@ -46,15 +53,20 @@ SEUIL_PETIT_EFFECTIF = 20  # en dessous : avertissement « chiffres peu fiables 
 DOSSIER_PROJET = Path(__file__).resolve().parent
 DOSSIER_DATA = DOSSIER_PROJET / "data"
 DOSSIER_SORTIES = DOSSIER_PROJET / "site" / "donnees"  # lu directement par le site
+DOSSIER_SECTEURS = DOSSIER_SORTIES / "naf"
 
 FICHIER_DEPARTEMENTS = DOSSIER_DATA / "cog_departements.csv"
 FICHIER_REGIONS = DOSSIER_DATA / "cog_regions.csv"
 FICHIER_INFOS_COG = DOSSIER_DATA / "cog.infos.json"
+FICHIER_NAF = DOSSIER_DATA / "naf_rev2_niveau5.xls"
 
 # Identifiants des jeux de données sur data.gouv.fr
 API_SIRENE = "https://www.data.gouv.fr/api/1/datasets/5b7ffc618b4c4169d30727e0/"
 API_COG = "https://www.data.gouv.fr/api/1/datasets/58c984b088ee386cdb1261f3/"
 
+# La NAF rév. 2 date de 2008 et ne change plus : adresse fixe sur insee.fr
+URL_NAF = "https://www.insee.fr/fr/statistiques/fichier/2120875/naf2008_liste_n5.xls"
+PAGE_NAF = "https://www.insee.fr/fr/information/2120875"
 
 # --- 1. Téléchargements ------------------------------------------------------
 
@@ -154,9 +166,30 @@ def lire_zones():
     return zones
 
 
+
+def telecharger_naf():
+    if not FICHIER_NAF.exists():
+        print("Téléchargement de la nomenclature NAF rév. 2...")
+        telecharger(URL_NAF, FICHIER_NAF)
+    else:
+        print("Nomenclature NAF rév. 2 déjà présente.")
+
+
+def lire_libelles_naf():
+    """Renvoie {code NAF: libellé}, ex. {'93.29Z': 'Autres activités récréatives et de loisirs'}."""
+    feuille = xlrd.open_workbook(FICHIER_NAF).sheet_by_index(0)
+    libelles = {}
+    for numero_ligne in range(feuille.nrows):
+        code, libelle = feuille.row_values(numero_ligne)[:2]
+        if re.fullmatch(r"\d\d\.\d\d[A-Z]", str(code).strip()):
+            libelles[code.strip()] = libelle.strip()
+    return libelles
+
+
 # --- 2. Calcul des indicateurs -----------------------------------------------
 
 # Règles utilisées (fichiers stock = situation actuelle de chaque entreprise) :
+#   - activité  : activitePrincipaleUniteLegale, seulement si codée en NAF rév. 2
 #   - création  : dateCreationUniteLegale
 #   - fermeture : etatAdministratifUniteLegale = 'C' (cessée) ; la date de cessation
 #                 est alors dateDebut (début de la dernière période, celle de la fermeture)
@@ -164,14 +197,21 @@ def lire_zones():
 #   - lieu      : commune actuelle (ou la dernière connue) du siège de l'entreprise ;
 #                 département = 2 premiers caractères du code commune (3 pour l'outre-mer)
 REQUETE = """
-WITH entreprises AS (
+WITH toutes AS (
     SELECT
         siren,
+        activitePrincipaleUniteLegale AS naf,
         TRY_CAST(dateCreationUniteLegale AS DATE) AS date_creation,
         CASE WHEN etatAdministratifUniteLegale = 'C'
              THEN TRY_CAST(dateDebut AS DATE) END AS date_fermeture
     FROM read_parquet($unites_legales)
-    WHERE activitePrincipaleUniteLegale = $code_naf
+    WHERE nomenclatureActivitePrincipaleUniteLegale = 'NAFRev2'
+),
+entreprises AS (
+    -- on ne garde que les entreprises qui ont existé pendant la période étudiée
+    SELECT * FROM toutes
+    WHERE date_creation <= MAKE_DATE($derniere_annee, 12, 31)
+      AND (date_fermeture IS NULL OR date_fermeture > MAKE_DATE($premiere_annee - 1, 12, 31))
 ),
 sieges AS (
     SELECT
@@ -194,10 +234,11 @@ annees AS (
     SELECT UNNEST($annees::INTEGER[]) AS annee
 )
 SELECT
-    a.annee,
+    s.naf,
     CASE WHEN GROUPING(s.dep) = 0 THEN 'D' || s.dep
          WHEN GROUPING(s.reg) = 0 THEN 'R' || s.reg
          ELSE 'FR' END AS zone,
+    a.annee,
     COUNT(*) FILTER (
         WHERE s.date_creation <= MAKE_DATE(a.annee - 1, 12, 31)
           AND (s.date_fermeture IS NULL OR s.date_fermeture > MAKE_DATE(a.annee - 1, 12, 31))
@@ -210,101 +251,96 @@ SELECT
     COUNT(*) FILTER (WHERE YEAR(s.date_fermeture) = a.annee) AS fermetures
 FROM annees a
 CROSS JOIN secteur s
-GROUP BY GROUPING SETS ((a.annee), (a.annee, s.reg), (a.annee, s.dep))
+GROUP BY GROUPING SETS ((s.naf, a.annee), (s.naf, a.annee, s.reg), (s.naf, a.annee, s.dep))
 HAVING zone IS NOT NULL  -- entreprises sans zone connue : comptées en France seulement
-ORDER BY zone, a.annee
 """
 
-
-def indicateurs_annee(annee, actives_debut, actives_fin, creations, fermetures):
-    return {
-        "annee": annee,
-        "entreprises_actives_fin_annee": actives_fin,
-        "creations": creations,
-        "fermetures": fermetures,
-        "solde_net": creations - fermetures,
-        # taux calculés par rapport au nombre d'entreprises actives au 1er janvier
-        "taux_creation_pct": round(100 * creations / actives_debut, 1) if actives_debut else None,
-        "taux_fermeture_pct": round(100 * fermetures / actives_debut, 1) if actives_debut else None,
-    }
+NOMS_INDICATEURS = ["actives_debut", "actives_fin", "creations", "fermetures"]
 
 
-def calculer_indicateurs(zones):
+def calculer_indicateurs(libelles_naf):
+    """Renvoie {code NAF: {code zone: {indicateur: [valeur année 1, année 2, année 3]}}}."""
+    print("  Lecture des fichiers Sirene et calcul (environ une minute)...")
     connexion = duckdb.connect()
     lignes = connexion.execute(REQUETE, {
         "unites_legales": str(DOSSIER_DATA / "StockUniteLegale.parquet"),
         "etablissements": str(DOSSIER_DATA / "StockEtablissement.parquet"),
         "departements": str(FICHIER_DEPARTEMENTS),
-        "code_naf": CODE_NAF,
         "annees": ANNEES,
+        "premiere_annee": ANNEES[0],
+        "derniere_annee": ANNEES[-1],
     }).fetchall()
 
-    trouves = {(zone, annee): ligne for annee, zone, *ligne in lignes}
-
-    resultats = {}
-    for code_zone, zone in zones.items():
-        # une zone sans aucune entreprise du secteur n'apparaît pas dans la requête : on met 0
-        indicateurs = [indicateurs_annee(annee, *trouves.get((code_zone, annee), (0, 0, 0, 0)))
-                       for annee in ANNEES]
-        resultats[code_zone] = {
-            **zone,
-            "indicateurs": indicateurs,
-            "alerte_petit_effectif":
-                indicateurs[-1]["entreprises_actives_fin_annee"] < SEUIL_PETIT_EFFECTIF,
-        }
+    resultats = {code: {} for code in libelles_naf}
+    codes_inconnus = set()
+    for naf, zone, annee, *valeurs in lignes:
+        if naf not in resultats:
+            codes_inconnus.add(naf)
+            continue
+        # une zone sans aucune entreprise du secteur n'est pas écrite : le site affiche 0
+        chiffres = resultats[naf].setdefault(zone, {nom: [0] * len(ANNEES) for nom in NOMS_INDICATEURS})
+        position = ANNEES.index(annee)
+        for nom, valeur in zip(NOMS_INDICATEURS, valeurs):
+            chiffres[nom][position] = valeur
+    if codes_inconnus:
+        print(f"  Codes absents de la nomenclature, ignorés : {', '.join(sorted(map(str, codes_inconnus)))}")
     return resultats
 
 
 # --- 3. Affichage et enregistrement ------------------------------------------
 
-def evolution_pct(indicateurs):
-    debut = indicateurs[0]["entreprises_actives_fin_annee"]
-    fin = indicateurs[-1]["entreprises_actives_fin_annee"]
-    return 100 * (fin / debut - 1) if debut else None
+def actives_fin(resultats, naf, zone="FR"):
+    return resultats[naf].get(zone, {}).get("actives_fin", [0] * len(ANNEES))
 
 
-def afficher(resultats):
-    france = resultats["FR"]["indicateurs"]
+def afficher(resultats, libelles_naf):
     print()
-    print(f"Secteur {CODE_NAF} — France entière")
-    print("-" * 78)
-    print(f"{'Année':<7}{'Actives 31/12':>14}{'Créations':>11}{'Fermetures':>12}"
-          f"{'Solde':>8}{'Tx créa.':>11}{'Tx ferm.':>11}")
-    for r in france:
-        print(f"{r['annee']:<7}{r['entreprises_actives_fin_annee']:>14,}{r['creations']:>11,}"
-              f"{r['fermetures']:>12,}{r['solde_net']:>+8,}"
-              f"{r['taux_creation_pct']:>10} %{r['taux_fermeture_pct']:>9} %".replace(",", " "))
-    print("-" * 78)
-    evolution = evolution_pct(france)
-    if evolution is not None:
-        print(f"Évolution des entreprises actives {ANNEES[0]} → {ANNEES[-1]} : {evolution:+.1f} %")
+    print(f"{len(resultats)} secteurs calculés, années {ANNEES[0]} à {ANNEES[-1]}.")
+    total = sum(actives_fin(resultats, naf)[-1] for naf in resultats)
+    print(f"Entreprises actives fin {ANNEES[-1]}, tous secteurs : {total:,}".replace(",", " "))
 
-    print()
-    print(f"Par région — entreprises actives au 31/12 et évolution {ANNEES[0]} → {ANNEES[-1]}")
-    print("-" * 78)
-    for zone in resultats.values():
-        if zone["type"] != "region":
-            continue
-        actives = zone["indicateurs"][-1]["entreprises_actives_fin_annee"]
-        evolution = evolution_pct(zone["indicateurs"])
-        texte_evolution = f"{evolution:+.1f} %" if evolution is not None else "—"
-        alerte = "  (moins de 20 entreprises)" if zone["alerte_petit_effectif"] else ""
-        print(f"{zone['nom']:<32}{actives:>10,}{texte_evolution:>12}{alerte}".replace(",", " "))
-    print("-" * 78)
-    nb_alertes = sum(1 for z in resultats.values()
-                     if z["type"] == "departement" and z["alerte_petit_effectif"])
-    print(f"{nb_alertes} département(s) sur {sum(1 for z in resultats.values() if z['type'] == 'departement')} "
-          f"ont moins de {SEUIL_PETIT_EFFECTIF} entreprises dans ce secteur.")
+    def evolution(naf):
+        debut, *_, fin = actives_fin(resultats, naf)
+        return 100 * (fin / debut - 1) if debut else 0
+
+    # Classement parmi les secteurs d'au moins 1 000 entreprises (moins parlant en dessous)
+    grands = [naf for naf in resultats if actives_fin(resultats, naf)[-1] >= 1000]
+    grands.sort(key=evolution)
+    for titre, liste in [("Plus fortes hausses", grands[::-1][:5]), ("Plus fortes baisses", grands[:5])]:
+        print(f"\n{titre} (secteurs d'au moins 1 000 entreprises), fin {ANNEES[0]} → fin {ANNEES[-1]} :")
+        for naf in liste:
+            print(f"  {naf}  {evolution(naf):+6.1f} %  {libelles_naf[naf][:60]}")
 
 
-def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
-    DOSSIER_SORTIES.mkdir(parents=True, exist_ok=True)
-    sortie = {
-        "code_naf": CODE_NAF,
-        "libelle_naf": LIBELLE_NAF,
+def ecrire_json(fichier, contenu, lisible=False):
+    texte = json.dumps(contenu, ensure_ascii=False, indent=2 if lisible else None,
+                       separators=None if lisible else (",", ":"))
+    fichier.write_text(texte, encoding="utf-8")
+
+
+def enregistrer(resultats, libelles_naf, zones, infos_ul, infos_etab, infos_cog):
+    # On repart d'un dossier vide pour ne pas garder de fichiers d'un ancien calcul
+    if DOSSIER_SECTEURS.exists():
+        shutil.rmtree(DOSSIER_SECTEURS)
+    DOSSIER_SECTEURS.mkdir(parents=True)
+    for ancien in DOSSIER_SORTIES.glob("*.json"):
+        ancien.unlink()
+
+    for naf, chiffres_zones in resultats.items():
+        ecrire_json(DOSSIER_SECTEURS / f"{naf}.json", {"code_naf": naf, "zones": chiffres_zones})
+
+    ecrire_json(DOSSIER_SORTIES / "secteurs.json", [
+        {"code_naf": naf, "libelle_naf": libelles_naf[naf],
+         "entreprises_actives": actives_fin(resultats, naf)[-1]}
+        for naf in sorted(resultats)
+    ], lisible=True)
+
+    ecrire_json(DOSSIER_SORTIES / "zones.json", zones, lisible=True)
+
+    ecrire_json(DOSSIER_SORTIES / "infos.json", {
         "annees": ANNEES,
         "seuil_petit_effectif": SEUIL_PETIT_EFFECTIF,
-        "zones": resultats,
+        "date_calcul": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "sources": [
             {
                 "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
@@ -321,8 +357,12 @@ def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
                 "lien": infos_cog["url_departements"],
                 "date_actualisation": f"{infos_cog['millesime']}-01-01",
             },
+            {
+                "nom": "Nomenclature d'activités française NAF rév. 2 (INSEE)",
+                "lien": PAGE_NAF,
+                "date_actualisation": "2008-01-01",
+            },
         ],
-        "date_calcul": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "limites": [
             "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise "
             "qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
@@ -330,37 +370,29 @@ def enregistrer(resultats, infos_ul, infos_etab, infos_cog):
             "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
             "Seules les fermetures déclarées sont comptées : une entreprise sans activité "
             "mais non radiée reste comptée comme active.",
+            "Les entreprises encore codées dans une ancienne nomenclature (NAF 1993, NAP…), "
+            "environ 3 % des entreprises actives, ne sont rattachées à aucun secteur.",
             "L'entreprise est placée dans la région et le département de son siège actuel "
             "(ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
             "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer "
             "(Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement.",
         ],
-    }
-    fichier = DOSSIER_SORTIES / f"{CODE_NAF}.json"
-    fichier.write_text(json.dumps(sortie, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\nRésultats enregistrés dans : {fichier.relative_to(DOSSIER_PROJET)}")
-    mettre_a_jour_liste_secteurs()
+    }, lisible=True)
 
-
-def mettre_a_jour_liste_secteurs():
-    """Écrit secteurs.json : la liste des secteurs déjà calculés, lue par le site."""
-    secteurs = []
-    for fichier in sorted(DOSSIER_SORTIES.glob("*.json")):
-        if fichier.name == "secteurs.json":
-            continue
-        donnees = json.loads(fichier.read_text(encoding="utf-8"))
-        secteurs.append({"code_naf": donnees["code_naf"], "libelle_naf": donnees.get("libelle_naf", "")})
-    (DOSSIER_SORTIES / "secteurs.json").write_text(
-        json.dumps(secteurs, ensure_ascii=False, indent=2), encoding="utf-8")
+    taille = sum(f.stat().st_size for f in DOSSIER_SORTIES.rglob("*.json")) / 1_000_000
+    print(f"\nRésultats enregistrés dans : {DOSSIER_SORTIES.relative_to(DOSSIER_PROJET)} "
+          f"({len(resultats)} fichiers de secteur, {taille:.1f} Mo au total)")
 
 
 if __name__ == "__main__":
     infos_ul = telecharger_sirene("StockUniteLegale")
     infos_etab = telecharger_sirene("StockEtablissement")
     infos_cog = telecharger_cog()
+    telecharger_naf()
     zones = lire_zones()
-    print(f"Calcul des indicateurs pour {CODE_NAF}, années {ANNEES[0]} à {ANNEES[-1]}, "
-          f"{len(zones)} zones...")
-    resultats = calculer_indicateurs(zones)
-    afficher(resultats)
-    enregistrer(resultats, infos_ul, infos_etab, infos_cog)
+    libelles_naf = lire_libelles_naf()
+    print(f"Calcul des indicateurs : {len(libelles_naf)} secteurs × {len(zones)} zones, "
+          f"années {ANNEES[0]} à {ANNEES[-1]}...")
+    resultats = calculer_indicateurs(libelles_naf)
+    afficher(resultats, libelles_naf)
+    enregistrer(resultats, libelles_naf, zones, infos_ul, infos_etab, infos_cog)

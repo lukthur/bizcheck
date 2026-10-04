@@ -1,0 +1,40 @@
+{
+  "annees": [
+    2023,
+    2024,
+    2025
+  ],
+  "seuil_petit_effectif": 20,
+  "date_calcul": "2026-10-04 14:07",
+  "sources": [
+    {
+      "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
+      "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073325/stock-stockunitelegale-parquet.parquet",
+      "date_actualisation": "2026-10-01"
+    },
+    {
+      "nom": "Base Sirene des entreprises (INSEE) — fichier StockEtablissement (commune du siège)",
+      "lien": "https://static.data.gouv.fr/resources/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/20261001-073823/stock-stocketablissement-parquet.parquet",
+      "date_actualisation": "2026-10-01"
+    },
+    {
+      "nom": "Code officiel géographique (INSEE) — millésime 2026",
+      "lien": "https://www.insee.fr/fr/statistiques/fichier/8740222/v_departement_2026.csv",
+      "date_actualisation": "2026-01-01"
+    },
+    {
+      "nom": "Nomenclature d'activités française NAF rév. 2 (INSEE)",
+      "lien": "https://www.insee.fr/fr/information/2120875",
+      "date_actualisation": "2008-01-01"
+    }
+  ],
+  "limites": [
+    "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise qui a changé d'activité est comptée dans son secteur actuel pour toutes les années.",
+    "Le code NAF regroupe souvent plusieurs activités proches (plus large que l'activité recherchée).",
+    "Une unité légale = une entreprise (siège), quel que soit son nombre d'établissements.",
+    "Seules les fermetures déclarées sont comptées : une entreprise sans activité mais non radiée reste comptée comme active.",
+    "Les entreprises encore codées dans une ancienne nomenclature (NAF 1993, NAP…), environ 3 % des entreprises actives, ne sont rattachées à aucun secteur.",
+    "L'entreprise est placée dans la région et le département de son siège actuel (ou du dernier siège connu si elle est fermée), même si elle a déménagé ou travaille ailleurs.",
+    "Les entreprises dont le siège est à l'étranger ou dans une collectivité d'outre-mer (Saint-Martin, Polynésie…) sont comptées dans la France entière uniquement."
+  ]
+}
