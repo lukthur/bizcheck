@@ -5,100 +5,140 @@
     2025
   ],
   "divisions": {
-    "14": {
-      "libelle": "Industrie de l'habillement",
+    "08": {
+      "libelle": "autres industries extractives",
       "salaires": [
-        35099,
-        36502,
-        38029
+        37178,
+        38555,
+        39384
       ]
     },
-    "25": {
-      "libelle": "Fabrication de produits métalliques, à l'exception des machines et des équipements",
+    "19": {
+      "libelle": "Cokéfaction et raffinage",
       "salaires": [
-        35702,
-        36925,
-        37694
+        62412,
+        65407,
+        67655
       ]
     },
-    "41": {
-      "libelle": "Construction de bâtiments",
+    "20": {
+      "libelle": "Industrie chimique",
       "salaires": [
-        36336,
-        36715,
-        37137
+        51284,
+        52905,
+        54403
       ]
     },
-    "56": {
-      "libelle": "Restauration",
+    "26": {
+      "libelle": "Fabrication de produits informatiques, électroniques et optiques",
       "salaires": [
-        22702,
-        23182,
-        23588
+        51812,
+        53712,
+        55188
       ]
     },
-    "52": {
-      "libelle": "Entreposage et services auxiliaires des transports",
+    "47": {
+      "libelle": "Commerce de détail, à l'exception des automobiles et des motocycles",
       "salaires": [
-        36912,
-        38355,
-        38952
+        25852,
+        26488,
+        26978
       ]
     },
-    "60": {
-      "libelle": "Programmation et diffusion",
+    "58": {
+      "libelle": "Édition",
       "salaires": [
-        58967,
-        60110,
-        60822
+        53216,
+        54719,
+        56639
       ]
     },
-    "66": {
-      "libelle": "Activités auxiliaires de services financiers et d'assurance",
+    "61": {
+      "libelle": "Télécommunications",
       "salaires": [
-        54704,
-        56819,
-        59133
+        49007,
+        51010,
+        52678
       ]
     },
-    "69": {
-      "libelle": "Activités juridiques et comptables",
+    "73": {
+      "libelle": "Publicité et études de marché",
       "salaires": [
-        39250,
-        39988,
-        40608
+        44334,
+        47752,
+        50641
       ]
     },
-    "70": {
-      "libelle": "Activités des sièges sociaux ; conseil de gestion",
+    "75": {
+      "libelle": "Activités vétérinaires",
       "salaires": [
-        57972,
-        59646,
-        60706
+        28610,
+        29996,
+        30729
       ]
     },
-    "91": {
-      "libelle": "Bibliothèques, archives, musées et autres activités culturelles",
+    "79": {
+      "libelle": "Activités des agences de voyage, voyagistes, services de réservation et activités connexes",
       "salaires": [
-        32207,
-        33249,
-        34055
+        34055,
+        35318,
+        36059
       ]
     },
-    "84": {
-      "libelle": "Administration publique et défense ; sécurité sociale obligatoire",
+    "82": {
+      "libelle": "Activités administratives et autres activités de soutien aux entreprises",
       "salaires": [
-        37251,
-        38935,
-        40939
+        38664,
+        40098,
+        41061
       ]
     },
-    "24": {
-      "libelle": "Métallurgie",
+    "90": {
+      "libelle": "Activités créatives, artistiques et de spectacle",
       "salaires": [
-        42259,
-        43749,
-        44888
+        34581,
+        34751,
+        34368
+      ]
+    },
+    "96": {
+      "libelle": "autres services personnels",
+      "salaires": [
+        19908,
+        20339,
+        20598
+      ]
+    },
+    "86": {
+      "libelle": "Activités pour la santé humaine",
+      "salaires": [
+        33254,
+        33987,
+        34670
+      ]
+    },
+    "87": {
+      "libelle": "Hébergement médico-social et social",
+      "salaires": [
+        29436,
+        29845,
+        30339
+      ]
+    },
+    "88": {
+      "libelle": "Action sociale sans hébergement",
+      "salaires": [
+        20113,
+        20634,
+        20940
+      ]
+    },
+    "62": {
+      "libelle": "Programmation, conseil et autres activités informatiques",
+      "salaires": [
+        53537,
+        55123,
+        56450
       ]
     },
     "15": {
@@ -237,134 +277,6 @@
         72774
       ]
     },
-    "08": {
-      "libelle": "autres industries extractives",
-      "salaires": [
-        37178,
-        38555,
-        39384
-      ]
-    },
-    "19": {
-      "libelle": "Cokéfaction et raffinage",
-      "salaires": [
-        62412,
-        65407,
-        67655
-      ]
-    },
-    "20": {
-      "libelle": "Industrie chimique",
-      "salaires": [
-        51284,
-        52905,
-        54403
-      ]
-    },
-    "28": {
-      "libelle": "Fabrication de machines et équipements n.c.a.",
-      "salaires": [
-        43008,
-        44661,
-        45869
-      ]
-    },
-    "58": {
-      "libelle": "Édition",
-      "salaires": [
-        53216,
-        54719,
-        56639
-      ]
-    },
-    "59": {
-      "libelle": "Production de films cinématographiques, de vidéo et de programmes de télévision ; enregistrement sonore et édition musicale",
-      "salaires": [
-        52712,
-        53931,
-        53551
-      ]
-    },
-    "61": {
-      "libelle": "Télécommunications",
-      "salaires": [
-        49007,
-        51010,
-        52678
-      ]
-    },
-    "62": {
-      "libelle": "Programmation, conseil et autres activités informatiques",
-      "salaires": [
-        53537,
-        55123,
-        56450
-      ]
-    },
-    "65": {
-      "libelle": "Assurance",
-      "salaires": [
-        51059,
-        52758,
-        53675
-      ]
-    },
-    "73": {
-      "libelle": "Publicité et études de marché",
-      "salaires": [
-        44334,
-        47752,
-        50641
-      ]
-    },
-    "79": {
-      "libelle": "Activités des agences de voyage, voyagistes, services de réservation et activités connexes",
-      "salaires": [
-        34055,
-        35318,
-        36059
-      ]
-    },
-    "82": {
-      "libelle": "Activités administratives et autres activités de soutien aux entreprises",
-      "salaires": [
-        38664,
-        40098,
-        41061
-      ]
-    },
-    "96": {
-      "libelle": "autres services personnels",
-      "salaires": [
-        19908,
-        20339,
-        20598
-      ]
-    },
-    "86": {
-      "libelle": "Activités pour la santé humaine",
-      "salaires": [
-        33254,
-        33987,
-        34670
-      ]
-    },
-    "47": {
-      "libelle": "Commerce de détail, à l'exception des automobiles et des motocycles",
-      "salaires": [
-        25852,
-        26488,
-        26978
-      ]
-    },
-    "75": {
-      "libelle": "Activités vétérinaires",
-      "salaires": [
-        28610,
-        29996,
-        30729
-      ]
-    },
     "22": {
       "libelle": "Fabrication de produits en caoutchouc et en plastique",
       "salaires": [
@@ -387,30 +299,6 @@
         31411,
         32541,
         32809
-      ]
-    },
-    "53": {
-      "libelle": "Activités de poste et de courrier",
-      "salaires": [
-        28349,
-        29658,
-        30410
-      ]
-    },
-    "27": {
-      "libelle": "Fabrication d'équipements électriques",
-      "salaires": [
-        45727,
-        48233,
-        48947
-      ]
-    },
-    "38": {
-      "libelle": "Collecte, traitement et élimination des déchets ; récupération",
-      "salaires": [
-        34151,
-        35358,
-        36062
       ]
     },
     "68": {
@@ -437,52 +325,52 @@
         30387
       ]
     },
-    "26": {
-      "libelle": "Fabrication de produits informatiques, électroniques et optiques",
+    "27": {
+      "libelle": "Fabrication d'équipements électriques",
       "salaires": [
-        51812,
-        53712,
-        55188
+        45727,
+        48233,
+        48947
       ]
     },
-    "90": {
-      "libelle": "Activités créatives, artistiques et de spectacle",
+    "38": {
+      "libelle": "Collecte, traitement et élimination des déchets ; récupération",
       "salaires": [
-        34581,
-        34751,
-        34368
+        34151,
+        35358,
+        36062
       ]
     },
-    "87": {
-      "libelle": "Hébergement médico-social et social",
+    "53": {
+      "libelle": "Activités de poste et de courrier",
       "salaires": [
-        29436,
-        29845,
-        30339
+        28349,
+        29658,
+        30410
       ]
     },
-    "88": {
-      "libelle": "Action sociale sans hébergement",
+    "28": {
+      "libelle": "Fabrication de machines et équipements n.c.a.",
       "salaires": [
-        20113,
-        20634,
-        20940
+        43008,
+        44661,
+        45869
       ]
     },
-    "17": {
-      "libelle": "Industrie du papier et du carton",
+    "59": {
+      "libelle": "Production de films cinématographiques, de vidéo et de programmes de télévision ; enregistrement sonore et édition musicale",
       "salaires": [
-        39077,
-        40491,
-        41540
+        52712,
+        53931,
+        53551
       ]
     },
-    "43": {
-      "libelle": "Travaux de construction spécialisés",
+    "65": {
+      "libelle": "Assurance",
       "salaires": [
-        27280,
-        27910,
-        28552
+        51059,
+        52758,
+        53675
       ]
     },
     "07": {
@@ -621,6 +509,86 @@
         56528
       ]
     },
+    "17": {
+      "libelle": "Industrie du papier et du carton",
+      "salaires": [
+        39077,
+        40491,
+        41540
+      ]
+    },
+    "41": {
+      "libelle": "Construction de bâtiments",
+      "salaires": [
+        36336,
+        36715,
+        37137
+      ]
+    },
+    "43": {
+      "libelle": "Travaux de construction spécialisés",
+      "salaires": [
+        27280,
+        27910,
+        28552
+      ]
+    },
+    "56": {
+      "libelle": "Restauration",
+      "salaires": [
+        22702,
+        23182,
+        23588
+      ]
+    },
+    "60": {
+      "libelle": "Programmation et diffusion",
+      "salaires": [
+        58967,
+        60110,
+        60822
+      ]
+    },
+    "91": {
+      "libelle": "Bibliothèques, archives, musées et autres activités culturelles",
+      "salaires": [
+        32207,
+        33249,
+        34055
+      ]
+    },
+    "25": {
+      "libelle": "Fabrication de produits métalliques, à l'exception des machines et des équipements",
+      "salaires": [
+        35702,
+        36925,
+        37694
+      ]
+    },
+    "52": {
+      "libelle": "Entreposage et services auxiliaires des transports",
+      "salaires": [
+        36912,
+        38355,
+        38952
+      ]
+    },
+    "14": {
+      "libelle": "Industrie de l'habillement",
+      "salaires": [
+        35099,
+        36502,
+        38029
+      ]
+    },
+    "69": {
+      "libelle": "Activités juridiques et comptables",
+      "salaires": [
+        39250,
+        39988,
+        40608
+      ]
+    },
     "50": {
       "libelle": "Transports par eau",
       "salaires": [
@@ -637,6 +605,14 @@
         64027
       ]
     },
+    "74": {
+      "libelle": "autres activités spécialisées, scientifiques et techniques",
+      "salaires": [
+        43734,
+        45551,
+        46659
+      ]
+    },
     "93": {
       "libelle": "Activités sportives, récréatives et de loisirs",
       "salaires": [
@@ -645,12 +621,36 @@
         27805
       ]
     },
-    "74": {
-      "libelle": "autres activités spécialisées, scientifiques et techniques",
+    "24": {
+      "libelle": "Métallurgie",
       "salaires": [
-        43734,
-        45551,
-        46659
+        42259,
+        43749,
+        44888
+      ]
+    },
+    "66": {
+      "libelle": "Activités auxiliaires de services financiers et d'assurance",
+      "salaires": [
+        54704,
+        56819,
+        59133
+      ]
+    },
+    "70": {
+      "libelle": "Activités des sièges sociaux ; conseil de gestion",
+      "salaires": [
+        57972,
+        59646,
+        60706
+      ]
+    },
+    "84": {
+      "libelle": "Administration publique et défense ; sécurité sociale obligatoire",
+      "salaires": [
+        37251,
+        38935,
+        40939
       ]
     }
   },

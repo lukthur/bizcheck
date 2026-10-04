@@ -36,7 +36,9 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
       + `pour 3 ans, ${n - 5} pour 5 ans) et on compte la part de celles qui n'avaient pas fermé au bout de `
       + "cette durée. Le gris donne le même calcul pour toutes les activités de la zone.",
     taille: "Tranche d'effectif salarié déclarée la plus récente. « Aucun salarié » regroupe les entreprises "
-      + "sans salarié au cours de l'année ou au 31 décembre (dont presque tous les micro-entrepreneurs).",
+      + "sans salarié au cours de l'année ou au 31 décembre (dont presque tous les micro-entrepreneurs). "
+      + "Décochez la case pour ne voir que les entreprises qui emploient : les pourcentages sont alors "
+      + "calculés parmi elles.",
     forme: "Catégorie juridique Sirene. « Entreprise individuelle » inclut les micro-entrepreneurs ; « Autre "
       + "société » : SCI, SNC, SA, coopératives… ; « Association, autre » : associations, organismes publics…",
     age: "Ancienneté des entreprises actives à la date du fichier Sirene, d'après leur date de création.",

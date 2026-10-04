@@ -31,6 +31,7 @@ const etat = {
   chiffres: null,     // naf/<code>.json du secteur affiché
   zone: "FR",
   aides: {},         // textes des bulles « ? » (aides.js)
+  inclureSansSalarie: true, // camembert « Taille » : avec ou sans les entreprises sans salarié
   suggestions: [],
   suggestionActive: -1,
 };
@@ -474,9 +475,8 @@ const PORTRAIT = [
   },
 ];
 
-// Un camembert + sa légende (pourcentages écrits en toutes lettres)
-function camembert(cle, titre, valeurs, couleurs, libelles) {
-  const total = valeurs.reduce((a, b) => a + b, 0);
+// Emplacement d'un camembert : titre + bulle « ? », dessin, légende (remplis par remplirCamembert)
+function emplacementCamembert(cle, titre) {
   const groupe = element("div", "portrait-groupe");
   const enTete = element("p", "portrait-titre", titre);
   enTete.append(boutonAide(etat.aides[cle]));
@@ -485,19 +485,40 @@ function camembert(cle, titre, valeurs, couleurs, libelles) {
   const canvas = element("canvas");
   canvas.id = `camembert-${cle}`;
   canvas.setAttribute("role", "img");
-  canvas.setAttribute("aria-label", `${titre} : ` + libelles
-    .map((l, i) => `${l} ${pourcent(total ? (100 * valeurs[i]) / total : 0, false, 0)}`).join(", "));
   zone.append(canvas);
   const legende = element("ul", "legende-empilee");
-  valeurs.forEach((valeur, i) => {
-    const item = element("li");
-    const pastille = element("span", "pastille");
-    pastille.style.background = `var(${couleurs[i]})`;
-    item.append(pastille, `${libelles[i]} `, element("strong", null, pourcent(total ? (100 * valeur) / total : 0, false, 0)));
-    legende.append(item);
-  });
+  legende.id = `legende-${cle}`;
   groupe.append(zone, legende);
   return groupe;
+}
+
+// Dessine le camembert et écrit la légende avec les pourcentages (calculés sur les parts affichées)
+function remplirCamembert(cle, titre, valeurs, couleurs, libelles) {
+  const total = valeurs.reduce((a, b) => a + b, 0);
+  const part = (v) => pourcent(total ? (100 * v) / total : 0, false, 0);
+  $(`camembert-${cle}`).setAttribute("aria-label",
+    `${titre} : ${libelles.map((l, i) => `${l} ${part(valeurs[i])}`).join(", ")}`);
+  const legende = $(`legende-${cle}`);
+  legende.innerHTML = "";
+  if (!total) {
+    legende.append(element("li", null, "Aucune entreprise dans ces catégories pour cette zone."));
+  } else {
+    valeurs.forEach((valeur, i) => {
+      const item = element("li");
+      const pastille = element("span", "pastille");
+      pastille.style.background = `var(${couleurs[i]})`;
+      item.append(pastille, `${libelles[i]} `, element("strong", null, part(valeur)));
+      legende.append(item);
+    });
+  }
+  dessinerCamembert(`camembert-${cle}`, valeurs, couleurs, libelles);
+}
+
+// Taille : avec ou sans les entreprises sans salarié, selon la case à cocher
+function remplirCamembertTaille(brut) {
+  const { titre, parts, couleurs } = PORTRAIT[0];
+  const debut = etat.inclureSansSalarie ? 0 : 1;
+  remplirCamembert("taille", titre, brut.taille.slice(debut), couleurs.slice(debut), parts.slice(debut));
 }
 
 function afficherSurvieEtPortrait() {
@@ -519,12 +540,33 @@ function afficherSurvieEtPortrait() {
   }
   const camemberts = element("div", "camemberts");
   portrait.append(camemberts);
-  for (const { cle, titre, parts, couleurs } of PORTRAIT) {
-    camemberts.append(camembert(cle, titre, brut[cle], couleurs, parts));
+  for (const { cle, titre } of PORTRAIT) camemberts.append(emplacementCamembert(cle, titre));
+
+  // Taille : case « inclure les entreprises sans salarié » + phrase sur leur composition
+  const groupeTaille = camemberts.firstElementChild;
+  const choix = element("label", "case-a-cocher");
+  const caseACocher = element("input");
+  caseACocher.type = "checkbox";
+  caseACocher.checked = etat.inclureSansSalarie;
+  caseACocher.addEventListener("change", () => {
+    etat.inclureSansSalarie = caseACocher.checked;
+    remplirCamembertTaille(brut);
+  });
+  choix.append(caseACocher, " Inclure les entreprises sans salarié");
+  groupeTaille.querySelector(".portrait-titre").after(choix);
+  const sansSalarie = brut.taille[0];
+  if (sansSalarie) {
+    groupeTaille.append(element("p", "secondaire petit",
+      `${pourcent((100 * sansSalarie) / actives, false, 0)} des entreprises n'ont aucun salarié, dont `
+      + `${pourcent((100 * (brut.sans_salarie_individuelles || 0)) / sansSalarie, false, 0)} d'entreprises `
+      + "individuelles (souvent des micro-entrepreneurs) ; les autres sont des sociétés ou des associations "
+      + "sans salarié (dirigeant seul, structure peu ou pas active…)."));
   }
+
   // on dessine une fois les trois emplacements en place (sinon le premier prend toute la largeur)
-  for (const { cle, parts, couleurs } of PORTRAIT) {
-    dessinerCamembert(`camembert-${cle}`, brut[cle], couleurs, parts);
+  remplirCamembertTaille(brut);
+  for (const { cle, titre, parts, couleurs } of PORTRAIT.slice(1)) {
+    remplirCamembert(cle, titre, brut[cle], couleurs, parts);
   }
   const partReseaux = (100 * (brut.plusieurs_etablissements || 0)) / actives;
   const partReseauxTous = (100 * (brutTous.plusieurs_etablissements || 0)) / (brutTous.actives_aujourdhui || 1);

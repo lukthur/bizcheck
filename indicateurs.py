@@ -145,6 +145,9 @@ SELECT {NAF_ET_ZONE},
     COUNT(*) FILTER (WHERE tranche IN ('11', '12')) AS taille_10_49,
     COUNT(*) FILTER (WHERE tranche IN ('21', '22', '31')) AS taille_50_249,
     COUNT(*) FILTER (WHERE tranche IN ('32', '41', '42', '51', '52', '53')) AS taille_250,
+    -- parmi les entreprises sans salarié, celles qui sont des entreprises individuelles (dont micro)
+    COUNT(*) FILTER (WHERE (tranche IN ('NN', '00') OR tranche IS NULL) AND forme = '1000')
+        AS sans_salarie_individuelles,
     -- forme juridique (catégories juridiques INSEE)
     COUNT(*) FILTER (WHERE forme = '1000') AS forme_individuelle,
     COUNT(*) FILTER (WHERE forme LIKE '54%') AS forme_sarl,
@@ -366,6 +369,7 @@ def calculer(codes_naf, date_reference):
         for nom, colonnes in PORTRAIT.items():
             zone[nom] = [ligne[c] for c in colonnes]
         zone["plusieurs_etablissements"] = ligne["plusieurs_etablissements"]
+        zone["sans_salarie_individuelles"] = ligne["sans_salarie_individuelles"]
 
     print("  Saisonnalité des créations...")
     for ligne in executer(REQUETE_SAISON, derniere_annee=DERNIERE_ANNEE, nb_annees=NB_ANNEES_SAISONNALITE):
