@@ -19,24 +19,35 @@ sur les 3 dernières années complètes, pour la France entière puis par régio
 ```
 BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le bureau)
 ├── CLAUDE.md
-├── data/        ← fichiers téléchargés (parquet Sirene, COG) — ne pas versionner
-├── bizcheck.py  ← script principal : indicateurs de tous les codes NAF × zones
-├── recherche.py ← appelé par bizcheck.py : notes INSEE (SPARQL rdf.insee.fr) + synonymes → recherche.json
-├── synonymes.csv ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
+├── data/          ← fichiers téléchargés (Sirene, COG, NAF, population, contours) — ne pas versionner
+├── bizcheck.py    ← script principal (orchestration, affichage, écriture des JSON) — ~1 min
+├── parametres.py  ← années (10 ans d'historique, 3 ans de tendance), seuils, chemins
+├── sources.py     ← téléchargements : Sirene, COG, NAF, population (geo.api.gouv.fr), contours (france-geojson)
+├── indicateurs.py ← requêtes DuckDB (GROUPING SETS France/région/département + « TOUS » = toutes activités)
+├── carte.py       ← contours GeoJSON → tracés SVG (DOM en encadrés, zoom Paris + petite couronne)
+├── recherche.py   ← notes INSEE (SPARQL rdf.insee.fr) + synonymes → recherche.json
+├── synonymes.csv  ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
 ├── requirements.txt ← bibliothèques Python (pip install -r requirements.txt)
-├── lancer_site.bat ← double-clic : serveur local + ouverture de http://localhost:8000
-└── site/        ← site statique (c'est ce dossier qu'on mettra en ligne)
-    ├── index.html, style.css, app.js (module ES), recherche.js (moteur de recherche)
-    │   Chart.js via CDN jsdelivr
-    └── donnees/ ← écrit par bizcheck.py (tous les codes NAF rév. 2 d'un coup, ~20 s) :
-        infos.json (années, sources, limites, date de calcul), zones.json, secteurs.json,
-        recherche.json (libellé, synonymes, comprend / comprend_aussi / ne_comprend_pas + renvois),
-        naf/<code>.json (nombres bruts par zone : actives_debut, actives_fin, creations, fermetures ;
-        zone absente = 0 ; taux et solde calculés par le site)
+├── lancer_site.bat  ← double-clic : serveur local + ouverture de http://localhost:8000
+└── site/          ← site statique (c'est ce dossier qu'on mettra en ligne)
+    ├── index.html, style.css
+    ├── app.js (page), recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
+    └── donnees/   ← écrit par bizcheck.py (~55 Mo) :
+        infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json,
+        communes.json, carte.json, naf/<code>.json (+ naf/TOUS.json = toutes activités),
+        communes/<code>.json (établissements actifs par commune) ; zone absente d'un fichier = 0
 ```
 Le site lit les JSON avec fetch : il ne marche pas en double-cliquant index.html (file://),
 il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --directory site`).
-Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si ≤ −2 %, sinon stable.
+
+## Contenu d'une page secteur
+- Ce que regroupe le secteur (notes INSEE) ; 6 tuiles : tendance (±2 % sur 3 ans) + rang national
+  (secteurs ≥ 100 entreprises), actives, créations, fermetures, survie à 3 ans, établissements / 10 000 hab.
+- Évolution 10 ans (actives, créations/fermetures, tableau) ; survie 1/3/5 ans vs toutes activités ;
+  portrait (taille, forme juridique, âge, réseaux) ; saisonnalité (France) ; carte (évolution / densité,
+  clic = zone) ; « Et dans ma ville ? » (établissements de la commune, densité vs département et France).
+- Densité et ville = établissements actifs selon LEUR activité et LEUR adresse ; le reste = entreprises (siège).
+- Survie = administrative (non radiée), plus haute que la survie économique des études INSEE : toujours le dire.
 
 ## Recherche par activité (fonction la plus importante)
 - Fait (sem. 4) : recherche/recherche.js, tout dans le navigateur. Poids : synonyme 10, libellé 4,
@@ -74,4 +85,6 @@ Tendance affichée : croissance si actives fin N ≥ +2 % vs fin N-2, déclin si
 - Sem. 1–2 : environnement + script Sirene ← fait
 - Sem. 3 : site avec graphiques et filtres géographiques ← fait (filtres zone ; sélecteur de secteur provisoire)
 - Sem. 4 : recherche par mots-clés ← fait (tous les codes NAF calculés, synonymes à enrichir)
-- Sem. 5–6 : CA, défaillances, export PDF, mise en ligne
+- Lot 1 d'infos supplémentaires ← fait (voir « Contenu d'une page secteur »)
+- Lot 2 : emploi et salaire (URSSAF), CA / marge (Esane), défaillances (BODACC), contexte local
+- Sem. 5–6 : export PDF, direction artistique, mise en ligne
