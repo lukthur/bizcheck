@@ -43,8 +43,7 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
       + "immatriculées, pas seulement celles qui ont une activité importante. En France, à peine plus d'une "
       + "entreprise sur dix emploie quelqu'un. Les autres sont surtout des entreprises individuelles (dont une "
       + "grande part de micro-entrepreneurs, parfois peu actifs), des sociétés sans salarié (dirigeant seul, "
-      + "holdings, sociétés en sommeil), des sociétés civiles comme les SCI, et des associations. Le nombre "
-      + "d'entreprises qui emploient a été vérifié : il concorde avec les établissements employeurs de l'URSSAF.",
+      + "holdings, sociétés en sommeil), des sociétés civiles comme les SCI, et des associations.",
     forme: "Catégorie juridique Sirene. « Entreprise individuelle » inclut les micro-entrepreneurs ; « Autre "
       + "société » : SCI, SNC, SA, coopératives… ; « Association, autre » : associations, organismes publics…",
     age: "Ancienneté des entreprises actives à la date du fichier Sirene, d'après leur date de création.",
