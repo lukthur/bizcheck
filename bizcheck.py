@@ -329,7 +329,9 @@ def enregistrer(resultats, libelles_naf, zones, infos_ul, infos_etab, infos_cog)
         ancien.unlink()
 
     for naf, chiffres_zones in resultats.items():
-        ecrire_json(DOSSIER_SECTEURS / f"{naf}.json", {"code_naf": naf, "zones": chiffres_zones})
+        # ordre fixe (France, régions, départements) : un nouveau calcul identique donne un fichier identique
+        dans_l_ordre = {zone: chiffres_zones[zone] for zone in zones if zone in chiffres_zones}
+        ecrire_json(DOSSIER_SECTEURS / f"{naf}.json", {"code_naf": naf, "zones": dans_l_ordre})
 
     ecrire_json(DOSSIER_SORTIES / "secteurs.json", [
         {"code_naf": naf, "libelle_naf": libelles_naf[naf],
