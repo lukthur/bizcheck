@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-da="pulse">
+<html lang="fr" data-da="menthe" data-logo="1">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +13,11 @@
   <!-- appliqué avant l'affichage pour éviter un « flash » de la mauvaise proposition -->
   <script>
     (function () {
-      var da = new URLSearchParams(location.search).get("da");
-      try { da = da || localStorage.getItem("bizcheck-da"); } catch (e) {}
+      var parametres = new URLSearchParams(location.search);
+      var da = parametres.get("da"), logo = parametres.get("logo");
+      try { da = da || localStorage.getItem("bizcheck-da"); logo = logo || localStorage.getItem("bizcheck-logo"); } catch (e) {}
       if (da) document.documentElement.dataset.da = da;
+      if (logo) document.documentElement.dataset.logo = logo;
     })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -30,6 +32,10 @@
     <button type="button" data-da="neon">Néon</button>
     <button type="button" data-da="corail">Corail</button>
     <button type="button" data-da="actuelle">Actuelle</button>
+    <span class="separateur-da">Logo (style Menthe) :</span>
+    <button type="button" data-logo="1">Logo 1</button>
+    <button type="button" data-logo="2">Logo 2</button>
+    <button type="button" data-logo="3">Logo 3</button>
   </nav>
 
   <header class="entete">
@@ -53,6 +59,29 @@
         <svg class="logo logo-corail" viewBox="0 0 32 32" aria-hidden="true">
           <circle cx="14" cy="14" r="10.5" fill="var(--logo-fond)"/>
           <path d="M9.5 14.2l3 3 6-6.2" fill="none" stroke="var(--logo-trait)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <!-- mélanges Menthe × Corail : une loupe dont la lentille contient les barres montantes -->
+        <svg class="logo logo-mix-1" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="13.5" cy="13.5" r="11" fill="var(--logo-fond)"/>
+          <rect x="7.6" y="15" width="3" height="5.5" rx="1.5" fill="var(--logo-trait)"/>
+          <rect x="12" y="11.5" width="3" height="9" rx="1.5" fill="var(--logo-trait)"/>
+          <rect x="16.4" y="8" width="3" height="12.5" rx="1.5" fill="var(--logo-trait)"/>
+          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="logo logo-mix-2" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="13.5" cy="13.5" r="10" fill="var(--accent-doux)" stroke="var(--logo-fond)" stroke-width="3"/>
+          <rect x="7.8" y="15" width="3" height="5" rx="1.5" fill="var(--logo-fond)"/>
+          <rect x="12" y="11.5" width="3" height="8.5" rx="1.5" fill="var(--logo-fond)"/>
+          <rect x="16.2" y="8.5" width="3" height="11.5" rx="1.5" fill="var(--logo-fond)"/>
+          <path d="M21.5 21.5l7.5 7.5" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="logo logo-mix-3" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="13.5" cy="13.5" r="11" fill="var(--logo-fond)"/>
+          <rect x="7.6" y="15.5" width="3" height="5" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
+          <rect x="12" y="12.5" width="3" height="8" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
+          <rect x="16.4" y="9.5" width="3" height="11" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
+          <path d="M7.5 12.5l4 3.5 8-8" fill="none" stroke="var(--logo-trait)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
         </svg>
         <span class="nom-marque">Biz<span class="nom-marque-2">Check</span></span>

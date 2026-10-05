@@ -17,6 +17,12 @@
 .logo { display: none; width: 32px; height: 32px; flex: none; }
 .badge-entete, .sur-titre { display: none; }
 :root[data-da="actuelle"] .nom-marque-2 { color: inherit; }
+.choix-da .separateur-da { margin-left: 12px; }
+/* Menthe : logo mélangé (Menthe × Corail) choisi dans la barre ; il remplace le logo Menthe */
+:root[data-da="menthe"][data-logo] .logo-menthe { display: none; }
+:root[data-da="menthe"][data-logo="1"] .logo-mix-1,
+:root[data-da="menthe"][data-logo="2"] .logo-mix-2,
+:root[data-da="menthe"][data-logo="3"] .logo-mix-3 { display: block; }
 
 /* ===== Pulse ===== */
 :root[data-da="pulse"] {

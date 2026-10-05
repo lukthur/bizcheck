@@ -166,7 +166,20 @@ function remplirChoixZone() {
 // (barre en haut de page ; à retirer une fois la proposition choisie)
 
 function brancherChoixDA() {
-  const boutons = document.querySelectorAll(".choix-da button");
+  const boutonsLogo = document.querySelectorAll(".choix-da button[data-logo]");
+  const marquerLogo = () => boutonsLogo.forEach((b) => b.setAttribute("aria-pressed",
+    String(b.dataset.logo === document.documentElement.dataset.logo)));
+  marquerLogo();
+  boutonsLogo.forEach((bouton) => bouton.addEventListener("click", () => {
+    document.documentElement.dataset.logo = bouton.dataset.logo;
+    try { localStorage.setItem("bizcheck-logo", bouton.dataset.logo); } catch (e) { /* navigation privée */ }
+    const adresse = new URL(location.href);
+    adresse.searchParams.set("logo", bouton.dataset.logo);
+    history.replaceState(null, "", adresse);
+    marquerLogo();
+  }));
+
+  const boutons = document.querySelectorAll(".choix-da button[data-da]");
   const marquer = () => boutons.forEach((b) => b.setAttribute("aria-pressed",
     String(b.dataset.da === document.documentElement.dataset.da)));
   marquer();
