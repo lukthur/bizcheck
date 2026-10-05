@@ -108,6 +108,7 @@ async function demarrer() {
   $("choix-zone").addEventListener("change", (e) => changerZone(e.target.value));
   brancherRecherche();
   installerBulles();
+  brancherChoixDA();
   await preparerCarte(fondDeCarte, changerZone);
   brancherVille(parametres.get("ville"));
   // Mode clair / sombre changé dans le système : on redessine avec les bonnes couleurs
@@ -159,6 +160,25 @@ function remplirChoixZone() {
     choix.append(groupe);
   }
   choix.value = etat.zone;
+}
+
+// --- TEMPORAIRE : choix de la direction artistique ------------------------------------
+// (barre en haut de page ; à retirer une fois la proposition choisie)
+
+function brancherChoixDA() {
+  const boutons = document.querySelectorAll(".choix-da button");
+  const marquer = () => boutons.forEach((b) => b.setAttribute("aria-pressed",
+    String(b.dataset.da === document.documentElement.dataset.da)));
+  marquer();
+  boutons.forEach((bouton) => bouton.addEventListener("click", () => {
+    document.documentElement.dataset.da = bouton.dataset.da;
+    try { localStorage.setItem("bizcheck-da", bouton.dataset.da); } catch (e) { /* navigation privée */ }
+    const adresse = new URL(location.href);
+    adresse.searchParams.set("da", bouton.dataset.da);
+    history.replaceState(null, "", adresse);
+    marquer();
+    afficher(); // les graphiques relisent leurs couleurs
+  }));
 }
 
 // --- Recherche d'activité --------------------------------------------------------------

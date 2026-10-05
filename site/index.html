@@ -1,19 +1,64 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-da="pulse">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BizCheck</title>
   <meta name="description" content="Comment se porte un secteur d'activité en France, par région et département.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
+  <!-- appliqué avant l'affichage pour éviter un « flash » de la mauvaise proposition -->
+  <script>
+    (function () {
+      var da = new URLSearchParams(location.search).get("da");
+      try { da = da || localStorage.getItem("bizcheck-da"); } catch (e) {}
+      if (da) document.documentElement.dataset.da = da;
+    })();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script type="module" src="app.js"></script>
 </head>
 <body>
+  <!-- TEMPORAIRE : choix de la direction artistique (à retirer une fois la proposition choisie) -->
+  <nav class="choix-da" aria-label="Propositions de direction artistique">
+    <span>Propositions de DA :</span>
+    <button type="button" data-da="pulse">Pulse</button>
+    <button type="button" data-da="menthe">Menthe</button>
+    <button type="button" data-da="neon">Néon</button>
+    <button type="button" data-da="corail">Corail</button>
+    <button type="button" data-da="actuelle">Actuelle</button>
+  </nav>
+
   <header class="entete">
     <div class="conteneur">
-      <p class="marque">BizCheck</p>
+      <a class="marque" href="./" aria-label="BizCheck, accueil">
+        <!-- un logo par proposition : seul celui de la proposition affichée est visible -->
+        <svg class="logo logo-pulse" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="var(--logo-fond)"/>
+          <path d="M5 17h5l2.5-6 4 11 3-8 2 3h5.5" fill="none" stroke="var(--logo-trait)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="logo logo-menthe" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="16" fill="var(--logo-fond)"/>
+          <rect x="8.5" y="17" width="3.6" height="7" rx="1.8" fill="var(--logo-trait)"/>
+          <rect x="14.2" y="12.5" width="3.6" height="11.5" rx="1.8" fill="var(--logo-trait)"/>
+          <rect x="19.9" y="8" width="3.6" height="16" rx="1.8" fill="var(--logo-trait)"/>
+        </svg>
+        <svg class="logo logo-neon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="var(--logo-fond)" stroke-width="3"/>
+          <path d="M9 16.5l4.5 4.5L23 11" fill="none" stroke="var(--logo-fond)" stroke-width="3.2" stroke-linecap="square"/>
+        </svg>
+        <svg class="logo logo-corail" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="14" cy="14" r="10.5" fill="var(--logo-fond)"/>
+          <path d="M9.5 14.2l3 3 6-6.2" fill="none" stroke="var(--logo-trait)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="nom-marque">Biz<span class="nom-marque-2">Check</span></span>
+      </a>
       <p class="accroche">Comment se porte un secteur d'activité en France ?</p>
+      <p class="badge-entete">Données publiques officielles</p>
     </div>
   </header>
 
@@ -38,7 +83,8 @@
     <p id="message-erreur" class="erreur" hidden></p>
 
     <section id="accueil" class="accueil" hidden>
-      <h1>Comment se porte votre secteur&nbsp;?</h1>
+      <p class="sur-titre">Gratuit · sources INSEE, URSSAF, Banque de France</p>
+      <h1>Comment se porte <span class="mot-fort">votre secteur</span>&nbsp;?</h1>
       <p class="secondaire">Tapez une activité en langage courant : BizCheck trouve le secteur officiel
         (code NAF) qui la contient et montre combien d'entreprises s'y créent et ferment, en France,
         par région et par département.</p>
