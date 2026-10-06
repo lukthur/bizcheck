@@ -17,22 +17,81 @@
   :root :is(.entete, .filtres, #accueil, .suggestions, .bouton-pdf, .aide, .bulle-aide, .ligne-case,
             .choix-indicateur, .infobulle, #bloc-exclusions, .tableau-details > summary) { display: none !important; }
 
-  /* En-tête du rapport */
-  :root .entete-impression {
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-    padding-bottom: 6px; margin-bottom: 10px; border-bottom: 2px solid var(--accent);
-    font-size: 8.5pt; color: var(--texte-secondaire);
+  /* --- En-tête de la page 1 : bandeau vert + titre du secteur sur fond clair --- */
+  :root .entete-impression { display: block; margin-bottom: 0; }
+  :root .bandeau-impression {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 18px; border-radius: 14px 14px 0 0; color: #ffffff;
+    /* deux grands ronds translucides en décoration */
+    background:
+      radial-gradient(circle at 92% -40%, rgba(255, 255, 255, 0.22) 0 70px, transparent 71px),
+      radial-gradient(circle at 78% 160%, rgba(255, 255, 255, 0.14) 0 60px, transparent 61px),
+      linear-gradient(120deg, #0b7a5c, #0f9d76 55%, #33c49b);
   }
-  :root .marque-impression { display: inline-flex; align-items: center; gap: 6px; font-size: 14pt; font-weight: 800; color: var(--texte); }
-  :root .marque-impression b { color: var(--accent); }
-  :root #infos-impression { text-align: right; }
+  :root .marque-impression { display: inline-flex; align-items: center; gap: 8px; font-size: 15pt; font-weight: 800; }
+  :root .marque-impression b { color: #c9f3e3; }
+  :root .etiquette-rapport {
+    padding: 4px 12px; border: 1.5px solid rgba(255, 255, 255, 0.7); border-radius: 999px;
+    font-size: 8pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  :root #infos-impression {
+    margin: 0; padding: 6px 18px; background: #0b5e47; color: #d6f2e8; font-size: 7.5pt;
+  }
+  :root .titre-secteur {
+    margin: 0 0 8px; padding: 10px 18px 12px; border-radius: 0 0 14px 14px;
+    background: linear-gradient(180deg, #e2f5ee, #f4faf7);
+  }
+  :root .titre-secteur #titre { margin: 0 0 2px; }
+
+  /* --- Rappel en haut des pages suivantes --- */
+  @page {
+    @top-left { content: "BizCheck · Rapport sectoriel"; font: 700 8pt "Manrope", sans-serif; color: #0f9d76; }
+  }
+  @page :first { @top-left { content: none; } }
+
+  /* --- Titres de parties numérotés : pastille « 01 » + filet sur toute la largeur --- */
+  :root #contenu { counter-reset: partie; }
+  :root .bloc { counter-increment: partie; }
+  :root .titre-bloc {
+    display: flex; align-items: center; gap: 10px; padding-bottom: 6px; margin-bottom: 10px;
+    border-bottom: 1.5px solid #cdeee1;
+  }
+  :root .titre-bloc::before {
+    content: counter(partie, decimal-leading-zero); display: inline-grid; place-items: center;
+    width: auto; height: auto; min-width: 30px; padding: 3px 8px; margin: 0; border-radius: 8px;
+    background: linear-gradient(120deg, #0b7a5c, #33c49b); color: #ffffff; font-size: 10pt; font-weight: 800;
+  }
+
+  /* --- Titres de graphiques : petit point vert --- */
+  :root figcaption h3::before, :root .carte > h3::before, :root .perimetre h2::before {
+    content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%;
+    background: var(--accent); vertical-align: 2px;
+  }
+
+  /* --- Chiffres clés : liseré vert en haut --- */
+  :root .tuiles .tuile { border-top: 3px solid var(--accent) !important; }
+  :root .tuile-verdict { background: linear-gradient(135deg, #e2f5ee, #ffffff 75%) !important; }
+
+  /* --- Commentaire : encadré façon citation --- */
+  :root .commentaire {
+    position: relative; max-width: none; padding: 10px 16px 10px 46px; border-radius: 12px;
+    background: #f1faf6; border-left: 4px solid var(--accent);
+  }
+  :root .commentaire::before {
+    content: "“"; position: absolute; left: 12px; top: 2px;
+    font: 800 40pt/1 Georgia, serif; color: #33c49b;
+  }
+
+  /* --- Sources : bandeau de titre --- */
+  :root .sources > h2 { display: flex; align-items: center; gap: 8px; padding-bottom: 6px; border-bottom: 1.5px solid #cdeee1; }
+  :root .sources h3 { color: var(--accent-fonce); }
 
   /* Cartes : pas d'ombre (rendu gris à l'impression), un simple filet */
   :root :is(.tuile, .carte) { box-shadow: none !important; border: 1px solid #d5e3dd !important; break-inside: avoid; }
   :root #titre { font-size: 18pt; }
   :root .titre-bloc { font-size: 14pt; margin-bottom: 8px; }
   :root .titre-bloc::before { margin-bottom: 6px; }
-  :root .commentaire { font-size: 10.5pt; margin-bottom: 0; }
+  :root .commentaire { font-size: 10pt; margin-bottom: 0; }
   :root .note-source { font-size: 7.5pt; }
 
   /* Une grande partie par page */

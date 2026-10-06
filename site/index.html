@@ -72,8 +72,20 @@
     <section id="contenu" hidden>
       <!-- En-tête du rapport PDF (invisible à l'écran) -->
       <div id="entete-impression" class="entete-impression" aria-hidden="true">
-        <span class="marque-impression"><img src="favicon.svg" alt="" width="28" height="28"><span>Biz<b>Check</b></span></span>
-        <span id="infos-impression"></span>
+        <div class="bandeau-impression">
+          <span class="marque-impression">
+            <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+              <circle cx="13.5" cy="13.5" r="10" fill="rgba(255,255,255,0.18)" stroke="#ffffff" stroke-width="3"/>
+              <rect x="7.8" y="15" width="3" height="5" rx="1.5" fill="#ffffff"/>
+              <rect x="12" y="11.5" width="3" height="8.5" rx="1.5" fill="#ffffff"/>
+              <rect x="16.2" y="8.5" width="3" height="11.5" rx="1.5" fill="#ffffff"/>
+              <path d="M21.5 21.5l7.5 7.5" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span>Biz<b>Check</b></span>
+          </span>
+          <span class="etiquette-rapport">Rapport sectoriel</span>
+        </div>
+        <p id="infos-impression"></p>
       </div>
 
       <div class="titre-secteur">
