@@ -1,0 +1,102 @@
+/* BizCheck — mise en page du rapport PDF (bouton « Exporter en PDF » → impression du navigateur).
+   A4 paysage ; une grande partie par page ; les couleurs sont imprimées telles quelles. */
+
+@page {
+  size: A4 landscape;
+  margin: 12mm 12mm 14mm;
+  @bottom-left { content: "BizCheck — données publiques (INSEE, URSSAF, BODACC, Banque de France)"; font: 8pt "Manrope", sans-serif; color: #6b7c75; }
+  @bottom-right { content: "Page " counter(page) " / " counter(pages); font: 8pt "Manrope", sans-serif; color: #6b7c75; }
+}
+
+@media print {
+  :root { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  :root body { background: #ffffff; font-size: 10pt; }
+  :root .conteneur { max-width: none; padding: 0; }
+
+  /* Ce qui ne sert à rien sur papier */
+  :root :is(.entete, .filtres, #accueil, .suggestions, .bouton-pdf, .aide, .bulle-aide, .ligne-case,
+            .choix-indicateur, .infobulle, #bloc-exclusions, .tableau-details > summary) { display: none !important; }
+
+  /* En-tête du rapport */
+  :root .entete-impression {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding-bottom: 6px; margin-bottom: 10px; border-bottom: 2px solid var(--accent);
+    font-size: 8.5pt; color: var(--texte-secondaire);
+  }
+  :root .marque-impression { display: inline-flex; align-items: center; gap: 6px; font-size: 14pt; font-weight: 800; color: var(--texte); }
+  :root .marque-impression b { color: var(--accent); }
+  :root #infos-impression { text-align: right; }
+
+  /* Cartes : pas d'ombre (rendu gris à l'impression), un simple filet */
+  :root :is(.tuile, .carte) { box-shadow: none !important; border: 1px solid #d5e3dd !important; break-inside: avoid; }
+  :root #titre { font-size: 18pt; }
+  :root .titre-bloc { font-size: 14pt; margin-bottom: 8px; }
+  :root .titre-bloc::before { margin-bottom: 6px; }
+  :root .commentaire { font-size: 10.5pt; margin-bottom: 0; }
+  :root .note-source { font-size: 7.5pt; }
+
+  /* Une grande partie par page */
+  :root .bloc { margin: 0; break-before: page; }
+  :root .bloc figure, :root .bloc .carte { break-inside: avoid; }
+  :root .titre-bloc { break-after: avoid; }
+  :root .tuiles { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 8px; }
+  :root .tuile { padding: 7px 10px; }
+  :root .tuile-valeur { font-size: 15pt; line-height: 1.2; }
+  :root .verdict { font-size: 13pt; }
+  :root :is(.tuile-libelle, .tuile-detail) { font-size: 7.5pt; }
+  :root .perimetre { padding: 8px 12px; margin-bottom: 8px; }
+  :root .perimetre ul { columns: 3; font-size: 7.5pt; line-height: 1.35; }
+  :root .perimetre li { margin-bottom: 1px; }
+  :root .titre-secteur { margin-bottom: 6px; }
+
+  /* Graphiques : dessinés à l'écran puis réduits proportionnellement à la largeur de la page */
+  :root canvas {
+    width: auto !important; height: auto !important; max-width: 100% !important; max-height: 62mm;
+    display: block; margin: 0 auto;
+  }
+  :root .zone-basse canvas { max-height: 46mm; }
+  :root .zone-graphique { height: auto !important; }
+  :root .graphiques { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  :root .carte { padding: 10px 12px; }
+  /* Survie et portrait côte à côte */
+  :root .graphiques.pleine-largeur { grid-template-columns: 1fr 1.35fr; }
+  :root .camemberts { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  :root .zone-camembert { height: auto !important; margin: 2px 0 4px; }
+  :root .zone-camembert canvas { max-height: 34mm; }
+  :root .legende-empilee { font-size: 7pt; gap: 2px 8px; }
+  :root .portrait { gap: 8px; }
+  :root :is(.portrait-phrase, .portrait-groupe .petit) { font-size: 7.5pt; }
+  :root .mini-chiffres { margin: 4px 0 6px; gap: 4px 16px; }
+  :root .mini-chiffres dd { font-size: 10.5pt; }
+
+  /* Tableau des 10 ans : toujours déplié */
+  :root .tableau-details { margin-top: 10px; }
+  :root .tableau-details table { font-size: 7.5pt; }
+  :root th, :root td { padding: 2px 8px; }
+  :root .tableau-defilant { margin-top: 0; }
+
+  /* Carte de France : limitée à la hauteur de la page */
+  :root .conteneur-carte { max-width: none; }
+  :root #carte-departements { width: auto; max-width: 100%; max-height: 138mm; margin: 0 auto; }
+
+  /* Ville : seulement si une commune a été choisie (sinon le bloc est retiré par app.js) */
+  :root .champ:has(#champ-ville) { display: none; }
+  :root .bloc:has(#titre-ville) { break-before: auto; margin-top: 6mm; }
+  :root .resultat-ville { margin-top: 0; }
+  :root .comparaison-ville { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  :root .comparaison-ville dd { font-size: 11pt; }
+  :root #chiffres-comptes { grid-template-columns: repeat(5, 1fr); margin-top: 6px; }
+  :root #chiffres-comptes div { padding: 6px 8px; }
+  :root .bloc-sans-ville { display: none !important; }
+
+  /* Sources et limites : sur une nouvelle page, en deux colonnes */
+  :root .sources { break-before: page; font-size: 8.5pt; }
+  :root .sources ul { columns: 2; column-gap: 24px; }
+  :root .sources li { break-inside: avoid; }
+  :root .sources a { color: inherit; text-decoration: none; }
+}
+
+/* À l'écran, l'en-tête du rapport est caché */
+@media screen {
+  .entete-impression { display: none; }
+}

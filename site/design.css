@@ -157,3 +157,14 @@
 }
 :root .bulle-aide { border-radius: calc(var(--rayon) / 1.5); }
 :root .comparaison-ville div { border-radius: calc(var(--rayon) / 1.5); }
+
+/* Titre du secteur + bouton « Exporter en PDF » */
+:root .titre-et-bouton { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; }
+:root .titre-et-bouton h1 { flex: 1 1 420px; }
+:root .bouton-pdf {
+  display: inline-flex; align-items: center; gap: 8px; flex: none; margin-top: 4px;
+  padding: 10px 18px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--accent); color: var(--accent-texte); font: 700 0.95rem var(--police);
+}
+:root .bouton-pdf:hover { background: var(--accent-fonce); color: var(--fond-carte); }
+:root .bouton-pdf:focus-visible { outline: 3px solid var(--accent-halo); outline-offset: 2px; }

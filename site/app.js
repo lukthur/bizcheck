@@ -108,6 +108,7 @@ async function demarrer() {
   $("choix-zone").addEventListener("change", (e) => changerZone(e.target.value));
   brancherRecherche();
   installerBulles();
+  brancherExportPdf();
   await preparerCarte(fondDeCarte, changerZone);
   brancherVille(parametres.get("ville"));
   // Mode clair / sombre changé dans le système : on redessine avec les bonnes couleurs
@@ -159,6 +160,45 @@ function remplirChoixZone() {
     choix.append(groupe);
   }
   choix.value = etat.zone;
+}
+
+// --- Export PDF (impression du navigateur, mise en page dans impression.css) -----------
+
+function brancherExportPdf() {
+  $("bouton-pdf").addEventListener("click", () => window.print());
+
+  let avant = null; // état de la page à remettre après l'impression
+  addEventListener("beforeprint", () => {
+    if (!etat.chiffres) return;
+    const racine = document.documentElement;
+    avant = {
+      theme: racine.dataset.theme,
+      tableauOuvert: document.querySelector(".tableau-details").open,
+      animation: Chart.defaults.animation,
+    };
+    racine.dataset.theme = "light";                      // rapport toujours en clair
+    Chart.defaults.animation = false;                    // graphiques complets dès le premier dessin
+    document.querySelector(".tableau-details").open = true;
+    const sansVille = $("resultat-ville").hidden;
+    $("titre-ville").closest(".bloc").classList.toggle("bloc-sans-ville", sansVille);
+
+    const code = etat.chiffres.code_naf;
+    const aujourdhui = new Date().toISOString().slice(0, 10);
+    $("infos-impression").textContent = `Rapport édité le ${formaterDate(aujourdhui)} · données Sirene du `
+      + `${formaterDate(etat.infos.sources[0].date_actualisation)} · secteur ${code}, ${etat.zones[etat.zone].nom}`
+      + ` · ${location.href}`;
+    afficher(); // redessine les graphiques avec les couleurs du mode clair
+  });
+  addEventListener("afterprint", () => {
+    if (!avant) return;
+    const racine = document.documentElement;
+    if (avant.theme) racine.dataset.theme = avant.theme;
+    else delete racine.dataset.theme;
+    document.querySelector(".tableau-details").open = avant.tableauOuvert;
+    Chart.defaults.animation = avant.animation;
+    avant = null;
+    afficher();
+  });
 }
 
 // --- Recherche d'activité --------------------------------------------------------------

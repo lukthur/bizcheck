@@ -33,6 +33,8 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 └── site/          ← site statique (c'est ce dossier qu'on mettra en ligne)
     ├── index.html, style.css (base + couleurs des graphiques), design.css (DA « Menthe » : couleurs
     │   d'interface, police Manrope, formes, mode sombre), favicon.svg (logo : loupe + barres)
+    │   impression.css (rapport PDF A4 paysage, ~8 pages : bouton « Exporter en PDF » → window.print ;
+    │   app.js passe en mode clair, sans animation, tableau déplié avant l'impression)
     ├── app.js (page), aides.js (textes des bulles), economie.js, recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
     └── donnees/   ← écrit par bizcheck.py (~55 Mo) :
         infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json,
@@ -101,4 +103,5 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Lot 1 d'infos supplémentaires ← fait (voir « Contenu d'une page secteur »)
 - Lot 2 : emploi, salaires, comptes, défaillances, territoire ← fait
 - Direction artistique ← fait (Menthe + logo loupe/barres, choisie le 2026-10-05)
-- Sem. 5–6 : export PDF, mise en ligne
+- Export PDF ← fait (2026-10-06)
+- Mise en ligne : à faire (compte GitHub à créer, réécrire l'e-mail des commits avant le 1er push)
