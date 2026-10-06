@@ -31,7 +31,8 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── requirements.txt ← bibliothèques Python (pip install -r requirements.txt)
 ├── lancer_site.bat  ← double-clic : serveur local + ouverture de http://localhost:8000
 └── site/          ← site statique (c'est ce dossier qu'on mettra en ligne)
-    ├── index.html, style.css
+    ├── index.html, style.css (base + couleurs des graphiques), design.css (DA « Menthe » : couleurs
+    │   d'interface, police Manrope, formes, mode sombre), favicon.svg (logo : loupe + barres)
     ├── app.js (page), aides.js (textes des bulles), economie.js, recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
     └── donnees/   ← écrit par bizcheck.py (~55 Mo) :
         infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json,
@@ -99,4 +100,5 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Sem. 4 : recherche par mots-clés ← fait (tous les codes NAF calculés, synonymes à enrichir)
 - Lot 1 d'infos supplémentaires ← fait (voir « Contenu d'une page secteur »)
 - Lot 2 : emploi, salaires, comptes, défaillances, territoire ← fait
-- Sem. 5–6 : export PDF, direction artistique, mise en ligne
+- Direction artistique ← fait (Menthe + logo loupe/barres, choisie le 2026-10-05)
+- Sem. 5–6 : export PDF, mise en ligne

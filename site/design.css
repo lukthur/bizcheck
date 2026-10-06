@@ -1,0 +1,159 @@
+/* BizCheck — direction artistique « Menthe » (couleurs de l'interface, police Manrope, formes).
+   Les couleurs des graphiques et de la carte sont dans style.css (vérifiées pour les daltoniens). */
+
+/* Couleurs, mode clair */
+:root {
+  --police: "Manrope", system-ui, sans-serif;
+  --rayon: 24px;
+  --rayon-champ: 999px;
+  --espacement-titre: -0.02em;
+  --fond-page: #f4faf7;
+  --fond-carte: #ffffff;
+  --texte: #0f2a22;
+  --texte-secondaire: #4f6b62;
+  --bordure: transparent;
+  --accent: #0f9d76;
+  --accent-2: #33c49b;
+  --accent-texte: #ffffff;
+  --accent-doux: #e2f5ee;
+  --accent-fonce: #0b7a5c;
+  --accent-halo: rgba(15, 157, 118, 0.25);
+  --entete-fond: #ffffff;
+  --entete-bord: rgba(15, 42, 34, 0.06);
+  --entete-texte: #0f2a22;
+  --entete-texte-2: #4f6b62;
+  --marque-2: #0f9d76;
+  --badge-fond: #e2f5ee;
+  --badge-texte: #0b7a5c;
+  --logo-fond: #0f9d76;
+  --logo-trait: #ffffff;
+  --verdict-fond: #e9f8f2;
+  --ombre: 0 10px 30px rgba(15, 42, 34, 0.07);
+}
+
+/* Mode sombre (réglage du système, sauf si la page est forcée en clair) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fond-page: #0b1714;
+    --fond-carte: #11221d;
+    --texte: #e8f5f0;
+    --texte-secondaire: #9db8ae;
+    --bordure: rgba(255, 255, 255, 0.06);
+    --accent: #2fc497;
+    --accent-doux: #163a30;
+    --accent-fonce: #8fe3c6;
+    --entete-fond: #0b1714;
+    --entete-bord: rgba(255, 255, 255, 0.06);
+    --entete-texte: #e8f5f0;
+    --entete-texte-2: #9db8ae;
+    --marque-2: #2fc497;
+    --badge-fond: #163a30;
+    --badge-texte: #8fe3c6;
+    --logo-fond: #2fc497;
+    --logo-trait: #0b1714;
+    --verdict-fond: #143029;
+    --ombre: none;
+  }
+}
+:root[data-theme="dark"] {
+  --fond-page: #0b1714;
+  --fond-carte: #11221d;
+  --texte: #e8f5f0;
+  --texte-secondaire: #9db8ae;
+  --bordure: rgba(255, 255, 255, 0.06);
+  --accent: #2fc497;
+  --accent-doux: #163a30;
+  --accent-fonce: #8fe3c6;
+  --entete-fond: #0b1714;
+  --entete-bord: rgba(255, 255, 255, 0.06);
+  --entete-texte: #e8f5f0;
+  --entete-texte-2: #9db8ae;
+  --marque-2: #2fc497;
+  --badge-fond: #163a30;
+  --badge-texte: #8fe3c6;
+  --logo-fond: #2fc497;
+  --logo-trait: #0b1714;
+  --verdict-fond: #143029;
+  --ombre: none;
+}
+
+/* Logo */
+.logo { display: block; width: 32px; height: 32px; flex: none; }
+
+/* ===== Mise en forme ===== */
+:root body { font-family: var(--police); }
+:root :is(h1, h2, .titre-bloc, .tuile-valeur, .verdict, .nom-marque) {
+  font-family: var(--police); letter-spacing: var(--espacement-titre);
+}
+:root h1 { font-weight: 800; }
+:root a { color: var(--accent-fonce); }
+
+/* En-tête */
+:root .entete {
+  background: var(--entete-fond); border-bottom: 1px solid var(--entete-bord); color: var(--entete-texte);
+}
+:root .entete .conteneur { align-items: center; padding-top: 14px; padding-bottom: 14px; }
+:root .marque {
+  display: inline-flex; align-items: center; gap: 10px; color: var(--entete-texte);
+  text-decoration: none; font-size: 1.3rem; font-weight: 800;
+}
+:root .nom-marque-2 { color: var(--marque-2); }
+:root .accroche { color: var(--entete-texte-2); font-size: 0.9rem; }
+:root .badge-entete {
+  display: block; margin: 0 0 0 auto; padding: 4px 12px; border-radius: 999px; font-size: 0.75rem;
+  font-weight: 600; background: var(--badge-fond); color: var(--badge-texte); white-space: nowrap;
+}
+
+/* Accueil : grand titre centré, au-dessus de la recherche */
+:root main.conteneur { display: flex; flex-direction: column; }
+:root .accueil { order: -1; text-align: center; margin: 48px auto 0; padding-bottom: 8px; }
+:root .accueil h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.08; margin: 12px 0 16px; }
+:root .accueil .exemples { justify-content: center; }
+:root .mot-fort {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text;
+  background-clip: text; color: transparent;
+}
+:root .sur-titre {
+  display: inline-block; margin: 0; padding: 5px 14px; border-radius: 999px; font-size: 0.8rem;
+  font-weight: 600; background: var(--accent-doux); color: var(--accent-fonce);
+}
+
+/* Recherche et filtres */
+:root input[type="search"] {
+  border: 2px solid var(--bordure-champ, var(--axe)); border-radius: var(--rayon-champ);
+  padding: 14px 18px; font-size: 1.1rem; background: var(--fond-carte);
+}
+:root select { border-radius: var(--rayon-champ); padding: 12px 14px; }
+:root :is(input[type="search"], select):focus {
+  outline: 3px solid var(--accent-halo); outline-offset: 0; border-color: var(--accent);
+}
+:root .suggestions { border-radius: var(--rayon); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14); }
+:root .suggestions li[aria-selected="true"],
+:root .suggestions li:hover { background: var(--accent-doux); }
+:root .exemple {
+  border: 0; background: var(--accent-doux); color: var(--accent-fonce); font-weight: 600; padding: 6px 14px;
+}
+:root .exemple:hover { background: var(--accent); color: var(--accent-texte); }
+
+/* Cartes, tuiles, titres de sections */
+:root :is(.tuile, .carte) {
+  border-radius: var(--rayon); box-shadow: var(--ombre); border: 1px solid var(--bordure);
+}
+:root .tuile-verdict { background: var(--verdict-fond); }
+:root .tuile-valeur { font-weight: 700; }
+:root .titre-bloc { font-size: 1.45rem; font-weight: 800; }
+:root .titre-bloc::before {
+  content: ""; display: block; width: 36px; height: 4px; border-radius: 4px; margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+:root #titre { font-size: clamp(1.6rem, 4vw, 2.1rem); }
+:root .alerte { border-radius: var(--rayon); }
+:root .choix-indicateur { border-radius: var(--rayon-champ); }
+:root .choix-indicateur button[aria-checked="true"] {
+  background: var(--accent); color: var(--accent-texte);
+}
+:root :is(.aide:hover, .aide:focus-visible, .aide[aria-expanded="true"]) {
+  border-color: var(--accent-fonce); color: var(--accent-fonce);
+}
+:root .bulle-aide { border-radius: calc(var(--rayon) / 1.5); }
+:root .comparaison-ville div { border-radius: calc(var(--rayon) / 1.5); }

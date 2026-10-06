@@ -1,88 +1,30 @@
 <!doctype html>
-<html lang="fr" data-da="menthe" data-logo="1">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BizCheck</title>
   <meta name="description" content="Comment se porte un secteur d'activité en France, par région et département.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="themes.css">
-  <!-- appliqué avant l'affichage pour éviter un « flash » de la mauvaise proposition -->
-  <script>
-    (function () {
-      var parametres = new URLSearchParams(location.search);
-      var da = parametres.get("da"), logo = parametres.get("logo");
-      try { da = da || localStorage.getItem("bizcheck-da"); logo = logo || localStorage.getItem("bizcheck-logo"); } catch (e) {}
-      if (da) document.documentElement.dataset.da = da;
-      if (logo) document.documentElement.dataset.logo = logo;
-    })();
-  </script>
+  <link rel="stylesheet" href="design.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script type="module" src="app.js"></script>
 </head>
 <body>
-  <!-- TEMPORAIRE : choix de la direction artistique (à retirer une fois la proposition choisie) -->
-  <nav class="choix-da" aria-label="Propositions de direction artistique">
-    <span>Propositions de DA :</span>
-    <button type="button" data-da="pulse">Pulse</button>
-    <button type="button" data-da="menthe">Menthe</button>
-    <button type="button" data-da="neon">Néon</button>
-    <button type="button" data-da="corail">Corail</button>
-    <button type="button" data-da="actuelle">Actuelle</button>
-    <span class="separateur-da">Logo (style Menthe) :</span>
-    <button type="button" data-logo="1">Logo 1</button>
-    <button type="button" data-logo="2">Logo 2</button>
-    <button type="button" data-logo="3">Logo 3</button>
-  </nav>
-
   <header class="entete">
     <div class="conteneur">
       <a class="marque" href="./" aria-label="BizCheck, accueil">
-        <!-- un logo par proposition : seul celui de la proposition affichée est visible -->
-        <svg class="logo logo-pulse" viewBox="0 0 32 32" aria-hidden="true">
-          <rect width="32" height="32" rx="9" fill="var(--logo-fond)"/>
-          <path d="M5 17h5l2.5-6 4 11 3-8 2 3h5.5" fill="none" stroke="var(--logo-trait)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="logo logo-menthe" viewBox="0 0 32 32" aria-hidden="true">
-          <rect width="32" height="32" rx="16" fill="var(--logo-fond)"/>
-          <rect x="8.5" y="17" width="3.6" height="7" rx="1.8" fill="var(--logo-trait)"/>
-          <rect x="14.2" y="12.5" width="3.6" height="11.5" rx="1.8" fill="var(--logo-trait)"/>
-          <rect x="19.9" y="8" width="3.6" height="16" rx="1.8" fill="var(--logo-trait)"/>
-        </svg>
-        <svg class="logo logo-neon" viewBox="0 0 32 32" aria-hidden="true">
-          <rect x="1.5" y="1.5" width="29" height="29" rx="6" fill="none" stroke="var(--logo-fond)" stroke-width="3"/>
-          <path d="M9 16.5l4.5 4.5L23 11" fill="none" stroke="var(--logo-fond)" stroke-width="3.2" stroke-linecap="square"/>
-        </svg>
-        <svg class="logo logo-corail" viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="14" cy="14" r="10.5" fill="var(--logo-fond)"/>
-          <path d="M9.5 14.2l3 3 6-6.2" fill="none" stroke="var(--logo-trait)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <!-- mélanges Menthe × Corail : une loupe dont la lentille contient les barres montantes -->
-        <svg class="logo logo-mix-1" viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="13.5" cy="13.5" r="11" fill="var(--logo-fond)"/>
-          <rect x="7.6" y="15" width="3" height="5.5" rx="1.5" fill="var(--logo-trait)"/>
-          <rect x="12" y="11.5" width="3" height="9" rx="1.5" fill="var(--logo-trait)"/>
-          <rect x="16.4" y="8" width="3" height="12.5" rx="1.5" fill="var(--logo-trait)"/>
-          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <svg class="logo logo-mix-2" viewBox="0 0 32 32" aria-hidden="true">
+        <!-- logo : une loupe dont la lentille contient des barres qui montent -->
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
           <circle cx="13.5" cy="13.5" r="10" fill="var(--accent-doux)" stroke="var(--logo-fond)" stroke-width="3"/>
           <rect x="7.8" y="15" width="3" height="5" rx="1.5" fill="var(--logo-fond)"/>
           <rect x="12" y="11.5" width="3" height="8.5" rx="1.5" fill="var(--logo-fond)"/>
           <rect x="16.2" y="8.5" width="3" height="11.5" rx="1.5" fill="var(--logo-fond)"/>
           <path d="M21.5 21.5l7.5 7.5" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-        <svg class="logo logo-mix-3" viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="13.5" cy="13.5" r="11" fill="var(--logo-fond)"/>
-          <rect x="7.6" y="15.5" width="3" height="5" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
-          <rect x="12" y="12.5" width="3" height="8" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
-          <rect x="16.4" y="9.5" width="3" height="11" rx="1.5" fill="var(--logo-trait)" opacity=".55"/>
-          <path d="M7.5 12.5l4 3.5 8-8" fill="none" stroke="var(--logo-trait)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 22l7 7" stroke="var(--logo-fond)" stroke-width="4" stroke-linecap="round"/>
         </svg>
         <span class="nom-marque">Biz<span class="nom-marque-2">Check</span></span>
       </a>
