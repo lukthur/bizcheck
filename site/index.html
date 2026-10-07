@@ -278,14 +278,24 @@
         </div>
       </section>
 
-      <section class="carte sources" aria-labelledby="titre-sources">
-        <h2 id="titre-sources">Sources et limites</h2>
+      <!-- Sources et limites : repliées à l'écran (un clic les déplie), retirées du PDF -->
+      <details class="carte sources">
+        <summary><span id="titre-sources">Sources et limites</span>
+          <span class="secondaire petit">Bases de données utilisées, dates de mise à jour et limites des chiffres</span></summary>
         <h3>Sources</h3>
         <ul id="liste-sources"></ul>
         <h3>Ce que ces chiffres ne disent pas</h3>
         <ul id="liste-limites"></ul>
         <p id="date-calcul" class="secondaire"></p>
-      </section>
+      </details>
+
+      <!-- Version courte pour le PDF : seulement le nom des bases de données -->
+      <div class="sources-pdf">
+        <p><strong>Sources :</strong> base Sirene, Code officiel géographique et nomenclature NAF (INSEE) ·
+          effectifs et salaires du secteur privé (URSSAF) · BODACC · ratios financiers (Banque de France / INPI) ·
+          populations et revenus Filosofi (INSEE) · contours des départements (IGN).</p>
+        <p id="renvoi-pdf">Méthodes, dates de mise à jour et limites détaillées sur la page en ligne.</p>
+      </div>
     </section>
   </main>
   <div id="bulle-aide" class="bulle-aide" role="tooltip" hidden></div>

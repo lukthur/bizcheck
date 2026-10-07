@@ -374,3 +374,12 @@ figcaption h3, .carte h3 { font-size: 1rem; margin: 0; color: var(--texte); }
 
 /* Marque (logo + nom) : lien vers l'accueil */
 .marque { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+
+/* Sources et limites : bloc repliable */
+.sources > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.sources > summary::-webkit-details-marker { display: none; }
+.sources > summary::before { content: "▸"; color: var(--texte-secondaire); transition: transform 0.15s; }
+.sources[open] > summary::before { transform: rotate(90deg); }
+.sources > summary #titre-sources { font-weight: 700; font-size: 1.05rem; }
+.sources[open] > summary { margin-bottom: 8px; }
+.sources-pdf { display: none; }

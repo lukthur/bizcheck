@@ -83,8 +83,6 @@
   }
 
   /* --- Sources : bandeau de titre --- */
-  :root .sources > h2 { display: flex; align-items: center; gap: 8px; padding-bottom: 6px; border-bottom: 1.5px solid #cdeee1; }
-  :root .sources h3 { color: var(--accent-fonce); }
 
   /* Cartes : pas d'ombre (rendu gris à l'impression), un simple filet */
   :root :is(.tuile, .carte) { box-shadow: none !important; border: 1px solid #d5e3dd !important; break-inside: avoid; }
@@ -148,11 +146,16 @@
   :root #chiffres-comptes div { padding: 6px 8px; }
   :root .bloc-sans-ville { display: none !important; }
 
-  /* Sources et limites : sur une nouvelle page, en deux colonnes */
-  :root .sources { break-before: page; font-size: 8.5pt; }
-  :root .sources ul { columns: 2; column-gap: 24px; }
-  :root .sources li { break-inside: avoid; }
-  :root .sources a { color: inherit; text-decoration: none; }
+  /* Sources : le détail est retiré du PDF, remplacé par la liste courte des bases utilisées */
+  :root details.sources { display: none !important; }
+  :root .sources-pdf {
+    display: block; margin-top: 8mm; padding: 8px 14px; border-radius: 10px;
+    background: #f1faf6; border-left: 4px solid var(--accent); font-size: 7.5pt; color: var(--texte-secondaire);
+    break-inside: avoid;
+  }
+  :root .sources-pdf p { margin: 0; }
+  :root .sources-pdf p + p { margin-top: 3px; }
+  :root .sources-pdf strong { color: var(--texte); }
 }
 
 /* À l'écran, l'en-tête du rapport est caché */

@@ -187,6 +187,7 @@ function brancherExportPdf() {
     $("infos-impression").textContent = `Rapport édité le ${formaterDate(aujourdhui)} · données Sirene du `
       + `${formaterDate(etat.infos.sources[0].date_actualisation)} · secteur ${code}, ${etat.zones[etat.zone].nom}`
       + ` · ${location.href}`;
+    $("renvoi-pdf").textContent = `Méthodes, dates de mise à jour et limites détaillées : ${location.href}`;
     afficher(); // redessine les graphiques avec les couleurs du mode clair
   });
   addEventListener("afterprint", () => {

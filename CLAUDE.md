@@ -92,6 +92,8 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Siège à l'étranger ou en collectivité d'outre-mer (975, 977, 978, 98x) : compté en France seulement.
 
 ## Transparence (obligatoire, site ET PDF)
+- Site : « Sources et limites » en bloc repliable (fermé par défaut). PDF : seulement la liste courte des
+  bases utilisées + lien vers la page (choix du porteur, 2026-10-07) ; les notes sous chaque graphique restent.
 - Sous chaque graphique : source, date d'actualisation, limite de l'indicateur.
 - Dates d'actualisation écrites automatiquement par les scripts dans les JSON, jamais à la main.
 - Avertissement si moins de 20 entreprises dans la zone.
