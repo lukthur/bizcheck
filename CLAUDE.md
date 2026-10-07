@@ -106,4 +106,6 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Lot 2 : emploi, salaires, comptes, défaillances, territoire ← fait
 - Direction artistique ← fait (Menthe + logo loupe/barres, choisie le 2026-10-05)
 - Export PDF ← fait (2026-10-06)
-- Mise en ligne : à faire (compte GitHub à créer, réécrire l'e-mail des commits avant le 1er push)
+- Mise en ligne ← fait le 2026-10-07 : https://lukthur.github.io/bizcheck/ (dépôt public github.com/lukthur/bizcheck,
+  licence MIT). Chaque `git push` sur main republie site/ automatiquement (.github/workflows/publier-site.yml).
+- Prochaine étape : compteur de visites sans cookies (GoatCounter).

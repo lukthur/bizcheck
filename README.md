@@ -1,6 +1,6 @@
 # BizCheck
 
-**Comment se porte un secteur d'activité en France ?**
+**Comment se porte un secteur d'activité en France ?** → **https://lukthur.github.io/bizcheck/**
 
 BizCheck est un outil gratuit et d'utilité publique pour les futurs entrepreneurs et toutes les personnes
 qui veulent comprendre un marché. On tape une activité en langage courant (« escape game », « boulangerie »,
