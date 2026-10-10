@@ -38,6 +38,16 @@ const etat = {
   suggestionActive: -1,
 };
 
+// --- Mesure d'audience (GoatCounter, sans cookie) ---------------------------------------
+
+// Le site ne recharge pas la page quand on change de secteur : on compte nous-mêmes chaque vue.
+// Si le script est bloqué (bloqueur de publicité) ou pas encore chargé, on attend ou on renonce.
+function compter(chemin, titre, evenement = false) {
+  const envoyer = () => window.goatcounter?.count?.({ path: chemin, title: titre, event: evenement });
+  if (window.goatcounter?.count) envoyer();
+  else document.querySelector("script[data-goatcounter]")?.addEventListener("load", envoyer, { once: true });
+}
+
 // --- Lecture des chiffres --------------------------------------------------------
 
 // Indicateurs année par année d'une zone (10 ans), à partir des nombres bruts d'un fichier.
@@ -122,6 +132,7 @@ async function demarrer() {
   } else {
     $("accueil").hidden = false;
     afficherPalmares();
+    compter("/", "Accueil");
     $("champ-recherche").focus();
   }
 }
@@ -138,6 +149,7 @@ async function chargerSecteur(code) {
   $("champ-recherche").value = etat.secteurs[code].libelle_naf;
   afficherPerimetre(etat.secteurs[code]);
   afficher();
+  compter(`/secteur/${code}`, etat.secteurs[code].libelle_naf);
 }
 
 function changerZone(codeZone) {
@@ -212,7 +224,10 @@ function remplirPalmares(liste, secteurs, classe) {
 // --- Export PDF (impression du navigateur, mise en page dans impression.css) -----------
 
 function brancherExportPdf() {
-  $("bouton-pdf").addEventListener("click", () => window.print());
+  $("bouton-pdf").addEventListener("click", () => {
+    compter("export-pdf", "Export PDF", true);
+    window.print();
+  });
 
   let avant = null; // état de la page à remettre après l'impression
   addEventListener("beforeprint", () => {

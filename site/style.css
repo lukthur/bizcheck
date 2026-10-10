@@ -172,6 +172,10 @@ input[type="search"]:focus, select:focus { outline: 2px solid var(--serie-1); ou
   overflow: hidden;
 }
 
+/* Pied de page */
+.pied { padding-top: 24px; padding-bottom: 32px; font-size: 0.8rem; color: var(--texte-secondaire); }
+.pied p { margin: 0; }
+
 /* Accueil */
 .accueil { padding: 24px 0 48px; max-width: 68ch; }
 .exemples { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }

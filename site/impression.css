@@ -12,6 +12,7 @@
   :root { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   :root body { background: #ffffff; font-size: 10pt; }
   :root .conteneur { max-width: none; padding: 0; }
+  :root .pied { display: none; }
 
   /* Ce qui ne sert à rien sur papier */
   :root :is(.entete, .filtres, #accueil, .suggestions, .bouton-pdf, .aide, .bulle-aide, .ligne-case,

@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="impression.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script type="module" src="app.js"></script>
+  <!-- Mesure d'audience GoatCounter : sans cookie, sans donnée personnelle. Ne compte rien en local
+       (localhost). Pas de comptage automatique : app.js compte l'accueil et chaque secteur affiché. -->
+  <script data-goatcounter="https://lukthu.goatcounter.com/count" data-goatcounter-settings='{"no_onload": true}'
+    async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
   <header class="entete">
@@ -319,6 +323,10 @@
       </div>
     </section>
   </main>
+  <footer class="pied conteneur">
+    <p>Mesure d'audience anonyme, sans cookie (GoatCounter) ·
+      <a href="https://github.com/lukthur/bizcheck">code source</a> (licence MIT)</p>
+  </footer>
   <div id="bulle-aide" class="bulle-aide" role="tooltip" hidden></div>
 </body>
 </html>

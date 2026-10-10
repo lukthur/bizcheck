@@ -118,4 +118,6 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
   ancienne adresse lukthur.github.io/bizcheck/ redirigée ; dépôt public github.com/lukthur/bizcheck,
   licence MIT). Chaque `git push` sur main republie site/ automatiquement (.github/workflows/publier-site.yml).
 - Nom de domaine bizcheck.fr ← fait le 2026-10-10.
-- Prochaine étape : compteur de visites sans cookies (GoatCounter).
+- Compteur de visites GoatCounter (sans cookie) ← fait le 2026-10-10 : https://lukthu.goatcounter.com ;
+  script dans index.html (no_onload), app.js compter() : « / » (accueil), « /secteur/<code> » à chaque secteur
+  affiché, événement « export-pdf » ; rien n'est compté en local (localhost). Mention dans le pied de page.
