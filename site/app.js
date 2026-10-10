@@ -19,6 +19,8 @@ import { creerIndex, rechercher } from "./recherche.js";
 import { brancherVille, mettreAJourVille } from "./ville.js";
 
 const SEUIL_TENDANCE_PCT = 2; // au-delà de ±2 % sur 3 ans : croissance ou déclin
+const SEUIL_PALMARES = 1000;  // accueil : seuls les secteurs d'au moins 1 000 entreprises (comme bizcheck.py)
+const TAILLE_PALMARES = 5;
 
 const etat = {
   infos: null,        // infos.json : années, sources, limites
@@ -119,6 +121,7 @@ async function demarrer() {
     await chargerSecteur(codeDemande);
   } else {
     $("accueil").hidden = false;
+    afficherPalmares();
     $("champ-recherche").focus();
   }
 }
@@ -131,6 +134,7 @@ async function chargerSecteur(code) {
     return;
   }
   $("accueil").hidden = true;
+  $("palmares").hidden = true;
   $("champ-recherche").value = etat.secteurs[code].libelle_naf;
   afficherPerimetre(etat.secteurs[code]);
   afficher();
@@ -160,6 +164,49 @@ function remplirChoixZone() {
     choix.append(groupe);
   }
   choix.value = etat.zone;
+}
+
+// --- Accueil : secteurs en plus forte progression / plus fort déclin (France entière) ----
+
+function afficherPalmares() {
+  // secteurs.json donne déjà le rang national (1 = plus forte hausse) ; on écarte les petits secteurs,
+  // où quelques entreprises de plus ou de moins suffisent à faire un gros pourcentage
+  const classes = Object.values(etat.classement)
+    .filter((s) => s.rang && s.entreprises_actives >= SEUIL_PALMARES)
+    .sort((a, b) => a.rang - b.rang);
+  remplirPalmares($("palmares-hausse"), classes.slice(0, TAILLE_PALMARES), "hausse");
+  remplirPalmares($("palmares-baisse"), classes.slice(-TAILLE_PALMARES).reverse(), "baisse");
+
+  const annees = etat.infos.annees;
+  const debut = annees[annees.length - etat.infos.nb_annees_principales];
+  $("note-palmares").textContent = `Évolution du nombre d'entreprises actives entre fin ${debut} et fin `
+    + `${annees[annees.length - 1]}, France entière, parmi les ${nombre.format(classes.length)} secteurs `
+    + `d'au moins ${nombre.format(SEUIL_PALMARES)} entreprises. Source : Sirene (INSEE), données du `
+    + `${formaterDate(etat.infos.sources[0].date_actualisation)}. Limite : on compte des entreprises, pas `
+    + `leur activité réelle (une hausse peut venir surtout de micro-entreprises).`;
+  $("palmares").hidden = false;
+}
+
+function remplirPalmares(liste, secteurs, classe) {
+  liste.innerHTML = "";
+  for (const s of secteurs) {
+    const texte = element("div");
+    texte.append(
+      element("p", "palmares-libelle", s.libelle_naf),
+      element("p", "palmares-detail", `${s.code_naf} · ${pluriel(s.entreprises_actives, "entreprise", "entreprises")}`),
+    );
+    const bouton = element("button", "bouton-voir", "Voir le secteur");
+    bouton.type = "button";
+    bouton.setAttribute("aria-label", `Voir le secteur ${s.libelle_naf}`);
+    bouton.addEventListener("click", () => {
+      changerZone("FR");
+      chargerSecteur(s.code_naf);
+      scrollTo(0, 0);
+    });
+    const li = element("li");
+    li.append(texte, element("span", `palmares-evolution ${classe}`, pourcent(s.evolution_pct)), bouton);
+    liste.append(li);
+  }
 }
 
 // --- Export PDF (impression du navigateur, mise en page dans impression.css) -----------
@@ -357,6 +404,7 @@ function afficher() {
     + `cette zone. Quelques créations ou fermetures suffisent à faire varier fortement les chiffres : `
     + `ils sont à prendre avec prudence.`;
 
+  afficherRappelSiege(zone);
   afficherTuiles(code, zone, periode);
   afficherCommentaire(zone, periode);
   dessinerEvolution(historique);
@@ -371,6 +419,30 @@ function afficher() {
   // bulles « ? » des titres de graphiques (attribut data-explication dans index.html)
   document.querySelectorAll("[data-explication]")
     .forEach((titre) => poserAide(titre, etat.aides[titre.dataset.explication]));
+}
+
+// Région ou département : les entreprises sont placées à leur siège social. Un établissement local
+// d'une entreprise dont le siège est ailleurs (ex. un grand studio en province, siège à Paris) n'est pas
+// compté, sauf dans les indicateurs d'établissements (salariés, densité, ville).
+function afficherRappelSiege(zone) {
+  const local = zone.type !== "france";
+  const territoire = zone.type === "region" ? "cette région" : "ce département";
+  const rappel = $("rappel-siege");
+  rappel.hidden = !local;
+  $("intro-portrait").hidden = !local;
+  if (!local) return;
+
+  rappel.innerHTML = "";
+  rappel.append(
+    element("strong", null, `${zone.nom} : seules les entreprises dont le siège social est dans ${territoire} `
+      + "sont comptées."),
+    ` Une entreprise installée ici mais dont le siège est ailleurs (par exemple l'antenne locale d'un grand `
+      + "groupe) n'apparaît ni dans les chiffres clés, ni dans l'évolution, la survie, le portrait, les "
+      + "défaillances ou les comptes. Les salariés, la densité et « Et dans ma ville ? » comptent, eux, "
+      + "tous les établissements présents sur place, quel que soit leur siège.",
+  );
+  $("intro-portrait").textContent = `Entreprises dont le siège est dans ${territoire} : les établissements `
+    + "d'entreprises installées ici avec un siège ailleurs n'y figurent pas, même s'ils emploient beaucoup de monde.";
 }
 
 // --- Chiffres clés -----------------------------------------------------------------------

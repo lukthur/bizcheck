@@ -69,6 +69,24 @@
       </p>
     </section>
 
+    <!-- Accueil : les 5 secteurs qui progressent le plus et les 5 qui reculent le plus (France entière) -->
+    <section id="palmares" class="palmares" aria-labelledby="titre-palmares" hidden>
+      <h2 id="titre-palmares" class="titre-bloc">Les secteurs qui bougent le plus en France</h2>
+      <div class="colonnes-palmares">
+        <div class="carte carte-hausse">
+          <h3 class="titre-palmares"><span class="icone-verdict hausse" aria-hidden="true">↗</span>
+            En plus forte progression</h3>
+          <ol id="palmares-hausse" class="liste-palmares"></ol>
+        </div>
+        <div class="carte carte-baisse">
+          <h3 class="titre-palmares"><span class="icone-verdict baisse" aria-hidden="true">↘</span>
+            En plus fort déclin</h3>
+          <ol id="palmares-baisse" class="liste-palmares"></ol>
+        </div>
+      </div>
+      <p id="note-palmares" class="note-source"></p>
+    </section>
+
     <section id="contenu" hidden>
       <!-- En-tête du rapport PDF (invisible à l'écran) -->
       <div id="entete-impression" class="entete-impression" aria-hidden="true">
@@ -111,6 +129,8 @@
       </section>
 
       <div id="alerte-petit-effectif" class="alerte" role="note" hidden></div>
+      <!-- Région ou département : rappel que les chiffres portent sur les sièges sociaux (rempli par app.js) -->
+      <div id="rappel-siege" class="rappel" role="note" hidden></div>
 
       <!-- Verdict + chiffres clés (remplis par app.js) -->
       <div id="tuiles" class="tuiles"></div>
@@ -180,6 +200,7 @@
           </figure>
           <figure class="carte">
             <figcaption><h3>Portrait des entreprises actives</h3></figcaption>
+            <p class="secondaire petit" id="intro-portrait" hidden></p>
             <div id="portrait" class="portrait"></div>
             <p class="note-source" data-note="portrait"></p>
           </figure>

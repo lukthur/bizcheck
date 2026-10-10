@@ -30,6 +30,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── synonymes.csv  ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
 ├── requirements.txt ← bibliothèques Python (pip install -r requirements.txt)
 ├── lancer_site.bat  ← double-clic : serveur local + ouverture de http://localhost:8000
+├── serveur_local.py ← serveur lancé par le .bat (comme http.server, mais sans cache navigateur)
 └── site/          ← site statique (c'est ce dossier qu'on mettra en ligne)
     ├── index.html, style.css (base + couleurs des graphiques), design.css (DA « Menthe » : couleurs
     │   d'interface, police Manrope, formes, mode sombre), favicon.svg (logo : loupe + barres)
@@ -44,6 +45,11 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 Le site lit les JSON avec fetch : il ne marche pas en double-cliquant index.html (file://),
 il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --directory site`).
 
+## Page d'accueil
+- Sous la recherche : 5 secteurs en plus forte progression (vert, à gauche) et 5 en plus fort déclin
+  (rouge doux, à droite), France entière, secteurs ≥ 1 000 entreprises (SEUIL_PALMARES dans app.js),
+  calculés dans le navigateur depuis secteurs.json ; bouton « Voir le secteur » (zone remise sur France).
+
 ## Contenu d'une page secteur
 - Ce que regroupe le secteur (notes INSEE) ; 6 tuiles : tendance (±2 % sur 3 ans) + rang national
   (secteurs ≥ 100 entreprises), actives, créations, fermetures, survie à 3 ans, établissements / 10 000 hab.
@@ -51,6 +57,8 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
   portrait (camemberts : taille, forme juridique, âge ; réseaux) ; saisonnalité (France) ; carte (évolution / densité,
   clic = zone) ; « Et dans ma ville ? » (établissements de la commune, densité vs département et France).
 - Densité et ville = établissements actifs selon LEUR activité et LEUR adresse ; le reste = entreprises (siège).
+  Région / département : encadré « rappel-siege » en haut + phrase sous le portrait (app.js, afficherRappelSiege),
+  car un établissement local d'une entreprise au siège ailleurs (ex. Ubisoft Annecy) n'est pas compté.
 - Bulles « ? » à côté de chaque chiffre : textes dans site/aides.js (années auto), affichage dans
   outils.js (installerBulles) ; titres de graphiques via l'attribut data-explication.
 - Survie = administrative (non radiée), plus haute que la survie économique des études INSEE : toujours le dire.
@@ -106,6 +114,8 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Lot 2 : emploi, salaires, comptes, défaillances, territoire ← fait
 - Direction artistique ← fait (Menthe + logo loupe/barres, choisie le 2026-10-05)
 - Export PDF ← fait (2026-10-06)
-- Mise en ligne ← fait le 2026-10-07 : https://lukthur.github.io/bizcheck/ (dépôt public github.com/lukthur/bizcheck,
+- Mise en ligne ← fait le 2026-10-07 : https://bizcheck.fr (domaine OVH, DNSSEC ; DNS : 4 A GitHub + CNAME www ;
+  ancienne adresse lukthur.github.io/bizcheck/ redirigée ; dépôt public github.com/lukthur/bizcheck,
   licence MIT). Chaque `git push` sur main republie site/ automatiquement (.github/workflows/publier-site.yml).
+- Nom de domaine bizcheck.fr ← fait le 2026-10-10.
 - Prochaine étape : compteur de visites sans cookies (GoatCounter).
