@@ -19,6 +19,7 @@
   ],
   "nb_annees_saisonnalite": 5,
   "annee_comptes": 2024,
+  "annee_esane": 2023,
   "annees_population": [
     2017,
     2023
@@ -27,7 +28,7 @@
   "date_reference": "2026-10-01",
   "seuil_petit_effectif": 20,
   "seuil_classement": 100,
-  "date_calcul": "2026-10-04 17:21",
+  "date_calcul": "2026-10-14 13:31",
   "sources": [
     {
       "nom": "Base Sirene des entreprises (INSEE) — fichier StockUniteLegale",
@@ -60,32 +61,37 @@
       "date_actualisation": "2018-01-01"
     },
     {
-      "nom": "URSSAF effectifs",
-      "lien": "x",
+      "nom": "Établissements employeurs et effectifs salariés du secteur privé, par commune × APE (URSSAF)",
+      "lien": "https://open.urssaf.fr/explore/dataset/etablissements-et-effectifs-salaries-au-niveau-commune-x-ape-last/",
       "date_actualisation": "2026-05-29"
     },
     {
-      "nom": "Salaires NA88 (URSSAF)",
-      "lien": "x",
+      "nom": "Effectifs salariés et masse salariale du secteur privé, France × secteur NA88 (URSSAF)",
+      "lien": "https://open.urssaf.fr/explore/dataset/effectifs-salaries-et-masse-salariale-du-secteur-prive-france-entiere-x-na88/",
       "date_actualisation": "2026-08-28"
     },
     {
-      "nom": "Ratios financiers des entreprises (Banque de France / INPI)",
+      "nom": "Ratios financiers des entreprises, d'après les comptes déposés à l'INPI (ministère de l'Économie)",
       "lien": "https://data.economie.gouv.fr/explore/dataset/ratios_inpi_bce/",
       "date_actualisation": "2026-09-15"
     },
     {
-      "nom": "BODACC",
-      "lien": "x",
+      "nom": "Comptes des entreprises par secteur, Ésane 2023 (INSEE)",
+      "lien": "https://www.insee.fr/fr/statistiques/8611642",
+      "date_actualisation": "2025-09-18"
+    },
+    {
+      "nom": "Bulletin officiel des annonces civiles et commerciales (BODACC) — procédures collectives",
+      "lien": "https://bodacc-datadila.opendatasoft.com/explore/dataset/annonces-commerciales/",
       "date_actualisation": "2026-10-02"
     },
     {
-      "nom": "Filosofi",
+      "nom": "Niveau de vie et pauvreté (INSEE, Filosofi)",
       "lien": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_FILOSOFI_CC",
       "date_actualisation": "2026-08-06"
     },
     {
-      "nom": "Pop hist",
+      "nom": "Populations municipales de 1968 à 2023 (INSEE)",
       "lien": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_POPULATIONS_HISTORIQUES",
       "date_actualisation": "2025-12-18"
     }
@@ -104,6 +110,7 @@
     "Emploi : salariés du secteur privé au 31 décembre (URSSAF), dans les établissements employeurs. Les indépendants, les micro-entrepreneurs et la fonction publique ne sont pas comptés.",
     "Salaire moyen : brut annuel par salarié (temps partiels compris), pour la grande famille de secteurs (2 premiers chiffres du code NAF), France entière.",
     "Comptes : seulement les sociétés qui déposent des comptes publics (ni les entrepreneurs individuels, ni les micro-entreprises, ni les comptes confidentiels). Ce sont des médianes : la moitié des entreprises fait plus, l'autre moitié moins.",
+    "Comptes des secteurs (INSEE Ésane) : toutes les entreprises du secteur en France, micro-entrepreneurs compris, une seule année, publiée avec près de deux ans de décalage. Pas de détail par région. Les moyennes sont tirées vers le haut par les grandes entreprises. La répartition des coûts porte sur le groupe de secteurs (3 premiers chiffres du code NAF), plus large que le code NAF.",
     "Défaillances : ouvertures de redressement ou de liquidation judiciaire publiées au BODACC, une fois par entreprise et par an. Une défaillance ne veut pas toujours dire disparition (un redressement peut réussir)."
   ]
 }

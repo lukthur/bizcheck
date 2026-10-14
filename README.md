@@ -27,7 +27,7 @@ Uniquement des données publiques :
 | Populations légales, populations historiques, niveau de vie (Filosofi) | INSEE |
 | Établissements employeurs, effectifs salariés et masse salariale | URSSAF (open.urssaf.fr) |
 | Procédures collectives (redressements, liquidations) | BODACC (DILA) |
-| Ratios financiers des entreprises | Banque de France / INPI (data.economie.gouv.fr) |
+| Ratios financiers des entreprises | comptes déposés à l'INPI, ratios du ministère de l'Économie (data.economie.gouv.fr) |
 | Contours des départements | IGN Admin Express, via france-geojson |
 
 Ces données sont réutilisées dans le respect de leurs licences (principalement la Licence Ouverte / Open Licence

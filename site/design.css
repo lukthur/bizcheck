@@ -127,6 +127,10 @@
 :root .accueil { order: -1; text-align: center; margin: 48px auto 0; padding-bottom: 8px; }
 :root .accueil h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.08; margin: 12px 0 16px; }
 :root .accueil .exemples { justify-content: center; }
+:root .periode-donnees {
+  display: inline-block; margin: 14px 0 0; padding: 6px 14px; border-radius: 16px; font-size: 0.85rem;
+  font-weight: 600; background: var(--fond-carte); color: var(--texte-secondaire); box-shadow: var(--ombre);
+}
 :root .mot-fort {
   background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text;
   background-clip: text; color: transparent;

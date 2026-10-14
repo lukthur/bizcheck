@@ -43,3 +43,7 @@ FICHIER_RATIOS = DOSSIER_DATA / "ratios_financiers.parquet"
 FICHIER_BODACC = DOSSIER_DATA / "bodacc_defaillances.parquet"
 FICHIER_FILOSOFI = DOSSIER_DATA / "insee_filosofi.zip"
 FICHIER_POPULATIONS_HISTORIQUES = DOSSIER_DATA / "insee_populations_historiques.zip"
+
+# Comptes des secteurs (INSEE Ésane) : fichiers Excel de la dernière édition
+DOSSIER_ESANE = DOSSIER_DATA / "esane"
+FICHIER_INFOS_ESANE = DOSSIER_ESANE / "esane.infos.json"

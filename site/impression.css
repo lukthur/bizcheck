@@ -4,7 +4,7 @@
 @page {
   size: A4 landscape;
   margin: 12mm 12mm 14mm;
-  @bottom-left { content: "BizCheck — données publiques (INSEE, URSSAF, BODACC, Banque de France)"; font: 8pt "Manrope", sans-serif; color: #6b7c75; }
+  @bottom-left { content: "BizCheck — données publiques (INSEE, URSSAF, BODACC, INPI)"; font: 8pt "Manrope", sans-serif; color: #6b7c75; }
   @bottom-right { content: "Page " counter(page) " / " counter(pages); font: 8pt "Manrope", sans-serif; color: #6b7c75; }
 }
 
@@ -144,6 +144,15 @@
   :root .comparaison-ville { grid-template-columns: repeat(4, 1fr); gap: 6px; }
   :root .comparaison-ville dd { font-size: 11pt; }
   :root #chiffres-comptes { grid-template-columns: repeat(5, 1fr); margin-top: 6px; }
+  /* Chiffre d'affaires et coûts : chiffres INSEE + graphique sur une page, comptes INPI sur la suivante */
+  :root #chiffres-secteur { grid-template-columns: repeat(4, 1fr); gap: 4px 6px; margin-top: 4px; }
+  :root #chiffres-secteur div { padding: 4px 8px; }
+  :root #chiffres-secteur dd { font-size: 10.5pt; }
+  :root #chiffres-secteur :is(dt, small) { font-size: 7pt; }
+  :root #intro-finances, :root #intro-couts { font-size: 8pt; margin: 0 0 4px; }
+  :root .zone-haute canvas { max-height: 60mm; }
+  :root #carte-couts { margin-top: 6px; }
+  :root #carte-couts + .carte { margin-top: 0; break-before: page; }
   :root #chiffres-comptes div { padding: 6px 8px; }
   :root .bloc-sans-ville { display: none !important; }
 

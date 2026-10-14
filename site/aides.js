@@ -7,6 +7,7 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
   const debut = annees[annees.length - infos.nb_annees_principales];
   const [popDebut, popFin] = infos.annees_population;
   const comptes = infos.annee_comptes;
+  const esane = infos.annee_esane;
 
   return {
     // Chiffres clés
@@ -71,7 +72,7 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
       + "pour toutes les activités de la zone.",
 
     // Comptes
-    comptes: `Comptes annuels ${comptes} des sociétés qui les publient (Banque de France / INPI). Ni les `
+    comptes: `Comptes annuels ${comptes} des sociétés qui les déposent publiquement (INPI, ratios calculés par le ministère de l'Économie). Ni les `
       + "entrepreneurs individuels, ni les micro-entreprises, ni les comptes confidentiels.",
     ca: `Chiffre d'affaires de l'exercice ${comptes}. Médiane : la moitié des sociétés du secteur fait plus, `
       + "l'autre moitié moins.",
@@ -82,6 +83,38 @@ export function textesAide(infos, { famillesalaire = "" } = {}) {
     en_perte: `Part des sociétés dont le résultat net de l'exercice ${comptes} est négatif.`,
     delai_clients: "Créances clients ÷ chiffre d'affaires × 360 : nombre de jours que mettent les clients à "
       + "payer. 0 jour = paiement comptant (commerce, restauration…). Valeur médiane.",
+    ca_fourchette: `Un quart des sociétés du secteur fait moins que le premier montant, un quart fait plus que le `
+      + `second (chiffre d'affaires ${comptes}). La moitié restante se situe entre les deux.`,
+    delai_fournisseurs: "Dettes fournisseurs ÷ achats × 360 : nombre de jours que mettent les sociétés à payer "
+      + "leurs fournisseurs. Plus il est long par rapport au délai des clients, plus cela aide la trésorerie. "
+      + "Valeur médiane.",
+    jours_stock: "Stocks ÷ chiffre d'affaires × 360 : nombre de jours de ventes que représentent les stocks. "
+      + "Calculé seulement sur les sociétés qui ont des stocks. Valeur médiane.",
+    endettement: "Dettes financières (emprunts) ÷ fonds propres. 50 % = 1 € emprunté pour 2 € de fonds "
+      + "propres ; 0 % = pas d'emprunt. Valeur médiane.",
+
+    // Comptes du secteur en France (INSEE Ésane)
+    esane: `Comptes ${esane} de toutes les entreprises du secteur en France, y compris les entrepreneurs `
+      + "individuels et les micro-entrepreneurs, publiés par l'INSEE (Ésane). Ni l'agriculture, ni les banques "
+      + "et assurances ne sont couvertes.",
+    ca_secteur: `Somme des chiffres d'affaires hors taxes ${esane} de toutes les entreprises du secteur en France : `
+      + "la taille du marché tenu par ces entreprises.",
+    ca_moyen: "Chiffre d'affaires du secteur ÷ nombre d'entreprises. C'est une moyenne : quelques grandes "
+      + "entreprises la tirent vers le haut. La médiane, plus bas, est souvent bien plus faible.",
+    ca_salarie: "Chiffre d'affaires du secteur ÷ salariés en équivalent temps plein. Peu parlant quand le secteur "
+      + "compte surtout des indépendants sans salarié.",
+    salaries_entreprise: "Salariés en équivalent temps plein ÷ nombre d'entreprises (deux mi-temps = un temps "
+      + "plein). Les dirigeants non salariés ne sont pas comptés.",
+    part_salaires: "Frais de personnel (salaires et cotisations patronales) ÷ chiffre d'affaires.",
+    benefice_100: "Résultat net de toutes les entreprises du secteur ÷ leur chiffre d'affaires × 100 : ce qui "
+      + "reste, en moyenne, sur 100 € de ventes une fois tout payé. Les pertes des unes compensent les "
+      + "bénéfices des autres.",
+    export: "Chiffre d'affaires réalisé à l'étranger ÷ chiffre d'affaires total.",
+    investissements: "Achats de machines, véhicules, bâtiments, équipements… de l'année ÷ chiffre d'affaires.",
+    couts: "Pour 100 € de ventes, combien partent dans chaque poste de dépense et combien reste en bénéfice. "
+      + "Achats : marchandises revendues et matières premières. Autres charges externes : énergie, honoraires, "
+      + "publicité, transport, assurances, intérim… Amortissements : usure des équipements. Le gris donne la "
+      + `même répartition pour toutes les activités. Comptes ${esane} (INSEE Ésane).`,
 
     // Territoire et ville
     habitants: `Population municipale ${popFin} (recensement INSEE).`,

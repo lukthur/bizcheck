@@ -25,6 +25,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
 ├── sources.py     ← téléchargements : Sirene, COG, NAF, population (geo.api.gouv.fr), contours (france-geojson)
 ├── indicateurs.py ← requêtes DuckDB (GROUPING SETS France/région/département + « TOUS » = toutes activités)
 ├── territoires.py ← contexte local (INSEE Melodi) + salaires moyens (URSSAF NA88)
+├── esane.py       ← comptes des secteurs en France (INSEE Ésane, fichiers Excel lus avec l'extension excel de DuckDB)
 ├── carte.py       ← contours GeoJSON → tracés SVG (DOM en encadrés, zoom Paris + petite couronne)
 ├── recherche.py   ← notes INSEE (SPARQL rdf.insee.fr) + synonymes → recherche.json
 ├── synonymes.csv  ← mots courants → code NAF (expression;code_naf;remarque), rempli à la main
@@ -38,7 +39,7 @@ BizCheck/        (C:\Users\thure\BizCheck, hors OneDrive, raccourci sur le burea
     │   app.js passe en mode clair, sans animation, tableau déplié avant l'impression)
     ├── app.js (page), aides.js (textes des bulles), economie.js, recherche.js, graphiques.js (Chart.js via CDN), carte.js, ville.js, outils.js — modules ES
     └── donnees/   ← écrit par bizcheck.py (~55 Mo) :
-        infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json,
+        infos.json, zones.json (+ population), secteurs.json (évolution, rang), recherche.json, esane.json,
         communes.json, carte.json, naf/<code>.json (+ naf/TOUS.json = toutes activités),
         communes/<code>.json (établissements actifs par commune) ; zone absente d'un fichier = 0
 ```
@@ -65,12 +66,21 @@ il faut le serveur local (`lancer_site.bat` ou `python -m http.server 8000 --dir
 - Lot 2 (economie.js) : salariés 10 ans + employeurs (URSSAF commune × APE), salaire moyen brut
   (URSSAF NA88, division = 2 premiers chiffres du NAF, France), défaillances 10 ans + taux (BODACC :
   jugements d'ouverture RJ/LJ, 1 par SIREN et par an — ≈ 66 700 en 2024, cohérent Banque de France),
-  comptes médians (ratios BdF/INPI : CA, marge EBE, marge nette, % en perte, délai clients ; comptes
-  C/S publics, année = dernière ayant ≥ 80 % des comptes de l'année d'avant, seuil 20 comptes),
+  comptes médians par zone (ratios « BCE / INPI » du ministère de l'Économie — PAS la Banque de France :
+  CA médian + fourchette 1er–3e quartile, marge EBE, marge nette, % en perte, délais clients et fournisseurs,
+  endettement (dettes financières / fonds propres), jours de stock si ≥ 20 % des sociétés ont des stocks ;
+  comptes C/S publics, année = dernière ayant ≥ 80 % des comptes de l'année d'avant, seuil 20 comptes),
   « Le territoire » (population 2017→2023, niveau de vie médian et pauvreté Filosofi 2023, via INSEE
   Melodi) ; la ville affiche aussi salariés, niveau de vie, évolution de la population.
-- Fichiers lot 2 dans data/ : urssaf_*.parquet, ratios_financiers.parquet (230 Mo), bodacc_defaillances.parquet,
-  insee_*.zip ; territoires.py = contexte local + salaires ; communes/<code>.json = [établissements, salariés].
+- Bloc « Chiffre d'affaires, coûts et rentabilité » (economie.js, afficherFinances) : INSEE Ésane, France
+  entière seulement, une année (2023, parue le 18/09/2025) : CA du secteur, CA moyen par entreprise et par
+  salarié ETP, salariés par entreprise, part des salaires, bénéfice pour 100 €, export, investissements
+  (par code NAF) ; graphique « Pour 100 € de chiffre d'affaires » (achats, loyers, sous-traitance, autres
+  charges externes, salaires, impôts, amortissements, IS, bénéfice) par groupe NAF (3 chiffres, sinon
+  division). Puis la carte des comptes médians INPI (par zone). Nouvelle édition Ésane chaque septembre :
+  changer PAGE_ESANE dans sources.py, supprimer data/esane/, relancer bizcheck.py.
+- Fichiers lot 2 dans data/ : urssaf_*.parquet, ratios_financiers.parquet (~260 Mo), bodacc_defaillances.parquet,
+  insee_*.zip, esane/ (28 fichiers Excel) ; territoires.py = contexte local + salaires ; communes/<code>.json = [établissements, salariés].
 
 ## Recherche par activité (fonction la plus importante)
 - Fait (sem. 4) : recherche/recherche.js, tout dans le navigateur. Poids : synonyme 10, libellé 4,

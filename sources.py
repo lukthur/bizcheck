@@ -20,7 +20,7 @@ from parametres import (
     DOSSIER_DATA, FICHIER_CONTOURS, FICHIER_DEPARTEMENTS, FICHIER_INFOS_COG, FICHIER_INFOS_POPULATION,
     FICHIER_NAF, FICHIER_POPULATION, FICHIER_REGIONS,
     FICHIER_BODACC, FICHIER_FILOSOFI, FICHIER_POPULATIONS_HISTORIQUES, FICHIER_RATIOS,
-    FICHIER_URSSAF_EFFECTIFS, FICHIER_URSSAF_SALAIRES,
+    FICHIER_URSSAF_EFFECTIFS, FICHIER_URSSAF_SALAIRES, DOSSIER_ESANE, FICHIER_INFOS_ESANE,
 )
 
 # Identifiants des jeux de données sur data.gouv.fr
@@ -34,6 +34,12 @@ PAGE_NAF = "https://www.insee.fr/fr/information/2120875"
 # Population municipale de chaque commune (populations légales INSEE), via l'API officielle
 URL_POPULATION = "https://geo.api.gouv.fr/communes?fields=code,nom,population,codeDepartement,codesPostaux"
 PAGE_POPULATION = "https://geo.api.gouv.fr/decoupage-administratif"
+
+# Comptes des entreprises par secteur (INSEE, Ésane) : page de la dernière édition parue,
+# « Caractéristiques comptables, financières et d'emploi des entreprises en 20XX ».
+# L'INSEE publie une nouvelle édition chaque année vers septembre (données de l'avant-dernière année) :
+# remplacer alors cette adresse, supprimer le dossier data/esane et relancer bizcheck.py.
+PAGE_ESANE = "https://www.insee.fr/fr/statistiques/8611642"
 
 # Contours des départements (IGN Admin Express, licence ouverte), convertis en GeoJSON
 URL_CONTOURS = ("https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/"
@@ -271,10 +277,11 @@ def telecharger_lot2():
         "https://open.urssaf.fr/explore/dataset/effectifs-salaries-et-masse-salariale-du-secteur-prive-france-entiere-x-na88/")
     infos["comptes"] = telecharger_opendatasoft(
         "data.economie.gouv.fr", "ratios_inpi_bce", FICHIER_RATIOS,
-        "Ratios financiers des entreprises (Banque de France / INPI)",
+        "Ratios financiers des entreprises, d'après les comptes déposés à l'INPI (ministère de l'Économie)",
         "https://data.economie.gouv.fr/explore/dataset/ratios_inpi_bce/",
         select="siren,date_cloture_exercice,chiffre_d_affaires,ebe,resultat_net,marge_ebe,"
-               "credit_clients_jours,type_bilan,confidentiality")
+               "credit_clients_jours,credit_fournisseurs_jours,rotation_des_stocks_jours,"
+               "taux_d_endettement,type_bilan,confidentiality")
     # Défaillances : jugements d'ouverture de redressement ou de liquidation judiciaire
     infos["defaillances"] = telecharger_opendatasoft(
         "bodacc-datadila.opendatasoft.com", "annonces-commerciales", FICHIER_BODACC,
@@ -290,4 +297,58 @@ def telecharger_lot2():
     infos["population_historique"] = telecharger_melodi(
         "DS_POPULATIONS_HISTORIQUES", "DS_POPULATIONS_HISTORIQUES_CSV_FR", FICHIER_POPULATIONS_HISTORIQUES,
         "Populations municipales de 1968 à 2023 (INSEE)")
+    return infos
+
+
+# --- Comptes des secteurs (INSEE Ésane) -------------------------------------------------------
+
+def lire_page(url):
+    with urllib.request.urlopen(url) as reponse:
+        contenu = reponse.read()
+    if contenu[:2] == b"\x1f\x8b":
+        contenu = gzip.decompress(contenu)
+    return contenu.decode("utf-8", errors="replace")
+
+
+def telecharger_esane():
+    """
+    Fichiers Excel de l'édition Ésane indiquée par PAGE_ESANE : principales caractéristiques par
+    code NAF (sous-classe) et comptes de résultat par groupe (3 premiers chiffres du code NAF).
+    La page et ses sous-pages sont lues pour trouver les fichiers : rien à changer d'une année sur l'autre.
+    """
+    if FICHIER_INFOS_ESANE.exists():
+        infos = json.loads(FICHIER_INFOS_ESANE.read_text(encoding="utf-8"))
+        print(f"Comptes des secteurs (Ésane {infos['annee']}) déjà présents.")
+        return infos
+    print("Téléchargement des comptes des secteurs (INSEE, Ésane)...")
+    page = lire_page(PAGE_ESANE)
+    jour, mois, an = re.search(r"Paru le.{0,200}?(\d\d)/(\d\d)/(\d{4})", page, re.S).groups()
+    sous_pages = sorted(set(re.findall(r'href="/fr/statistiques/(\d+)\?sommaire=', page)))
+
+    # Chaque sous-page propose l'édition de l'année et celle de l'année d'avant « pour comparaison » :
+    # on garde l'année la plus récente (« 23m23 » = données 2023, édition 2023)
+    modeles = [r"DD_esane(\d\d)m\d\dep_caracteristiques\.xlsx", r"CR_NV_.*_(\d\d)m\d\d\.xlsx"]
+    trouves = {}
+    for numero in sous_pages:
+        for chemin in re.findall(r'"(/fr/statistiques/fichier/\d+/[^"]+\.xlsx)"', lire_page(
+                f"https://www.insee.fr/fr/statistiques/{numero}")):
+            nom = chemin.rsplit("/", 1)[1]
+            for modele in modeles:
+                correspondance = re.fullmatch(modele, nom)
+                if correspondance:
+                    trouves[nom] = (int(correspondance.group(1)), chemin)
+    annee = max(a for a, _ in trouves.values())
+    fichiers = {nom: chemin for nom, (a, chemin) in trouves.items() if a == annee}
+
+    DOSSIER_ESANE.mkdir(parents=True, exist_ok=True)
+    for nom, chemin in sorted(fichiers.items()):
+        print(f"  {nom}")
+        urllib.request.urlretrieve(f"https://www.insee.fr{chemin}", DOSSIER_ESANE / nom)
+    infos = {
+        "nom": f"Comptes des entreprises par secteur, Ésane {2000 + annee} (INSEE)",
+        "url": PAGE_ESANE,
+        "date_mise_a_jour": f"{an}-{mois}-{jour}",
+        "annee": 2000 + annee,
+    }
+    FICHIER_INFOS_ESANE.write_text(json.dumps(infos, ensure_ascii=False, indent=2), encoding="utf-8")
     return infos

@@ -34,7 +34,7 @@
         <span class="nom-marque">Biz<span class="nom-marque-2">Check</span></span>
       </a>
       <p class="accroche">Comment se porte un secteur d'activité en France ?</p>
-      <p class="badge-entete">Données publiques officielles</p>
+      <p id="badge-entete" class="badge-entete">Données publiques officielles</p>
     </div>
   </header>
 
@@ -59,11 +59,12 @@
     <p id="message-erreur" class="erreur" hidden></p>
 
     <section id="accueil" class="accueil" hidden>
-      <p class="sur-titre">Gratuit · sources INSEE, URSSAF, Banque de France</p>
+      <p class="sur-titre">Gratuit · sources INSEE, URSSAF, INPI, BODACC</p>
       <h1>Comment se porte <span class="mot-fort">votre secteur</span>&nbsp;?</h1>
       <p class="secondaire">Tapez une activité en langage courant : BizCheck trouve le secteur officiel
         (code NAF) qui la contient et montre combien d'entreprises s'y créent et ferment, en France,
         par région et par département.</p>
+      <p id="periode-donnees" class="periode-donnees"></p>
       <p class="exemples">Exemples :
         <button type="button" class="exemple">escape game</button>
         <button type="button" class="exemple">boulangerie</button>
@@ -211,9 +212,9 @@
         </div>
       </section>
 
-      <!-- 2 bis. Emploi, défaillances, rentabilité -->
+      <!-- 2 bis. Emploi et défaillances -->
       <section class="bloc" aria-labelledby="titre-economie">
-        <h2 id="titre-economie" class="titre-bloc">Emploi, défaillances et rentabilité</h2>
+        <h2 id="titre-economie" class="titre-bloc">Emploi et défaillances</h2>
         <div class="graphiques">
           <figure class="carte">
             <figcaption><h3 data-explication="graphique_emploi">Salariés du secteur au 31 décembre</h3></figcaption>
@@ -230,6 +231,29 @@
             <p class="note-source" data-note="defaillances"></p>
           </figure>
         </div>
+      </section>
+
+      <!-- 2 ter. Chiffre d'affaires, coûts et rentabilité (INSEE Ésane pour la France ; comptes INPI par zone) -->
+      <section class="bloc" aria-labelledby="titre-finances">
+        <h2 id="titre-finances" class="titre-bloc">Chiffre d'affaires, coûts et rentabilité</h2>
+        <p id="intro-finances" class="secondaire petit"></p>
+        <div class="carte">
+          <h3 id="titre-chiffres-secteur" data-explication="esane"></h3>
+          <dl id="chiffres-secteur" class="comparaison-ville"></dl>
+        </div>
+        <figure class="carte" id="carte-couts">
+          <figcaption>
+            <h3 id="titre-couts" data-explication="couts"></h3>
+            <ul class="legende">
+              <li><span class="pastille" style="background: var(--serie-1)"></span>Ce secteur</li>
+              <li><span class="pastille" style="background: var(--neutre)"></span>Toutes activités</li>
+            </ul>
+          </figcaption>
+          <p class="secondaire petit" id="intro-couts"></p>
+          <div class="zone-graphique zone-haute"><canvas id="graphique-couts" role="img"
+            aria-label="Répartition de 100 euros de chiffre d'affaires entre les achats, les charges, les salaires, les impôts et le bénéfice"></canvas></div>
+          <p class="note-source" data-note="esane"></p>
+        </figure>
         <div class="carte">
           <h3 id="titre-comptes" data-explication="comptes"></h3>
           <p class="secondaire petit" id="intro-comptes"></p>
@@ -317,7 +341,7 @@
       <!-- Version courte pour le PDF : seulement le nom des bases de données -->
       <div class="sources-pdf">
         <p><strong>Sources :</strong> base Sirene, Code officiel géographique et nomenclature NAF (INSEE) ·
-          effectifs et salaires du secteur privé (URSSAF) · BODACC · ratios financiers (Banque de France / INPI) ·
+          effectifs et salaires du secteur privé (URSSAF) · BODACC · comptes annuels (INPI, ratios du ministère de l'Économie) · comptes des secteurs (INSEE Ésane) ·
           populations et revenus Filosofi (INSEE) · contours des départements (IGN).</p>
         <p id="renvoi-pdf">Méthodes, dates de mise à jour et limites détaillées sur la page en ligne.</p>
       </div>

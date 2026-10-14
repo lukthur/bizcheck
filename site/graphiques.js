@@ -236,6 +236,28 @@ export function dessinerDefaillances(annees, defaillances) {
   });
 }
 
+// --- Pour 100 € de chiffre d'affaires (INSEE Ésane) ----------------------------------
+
+const euros100 = (v) => `${v.toLocaleString("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 1 })} €`;
+
+export function dessinerCouts(libelles, secteur, tous) {
+  dessiner("graphique-couts", {
+    type: "bar",
+    data: {
+      labels: libelles,
+      datasets: [
+        barres("Ce secteur", secteur, "--serie-1", true),
+        barres("Toutes activités", tous, "--neutre", true),
+      ],
+    },
+    options: {
+      ...options({ horizontal: true, formatAxe: (v) => `${v} €`, formatInfobulle: euros100 }),
+      datasets: { bar: { categoryPercentage: 0.8, barPercentage: 0.9 } },
+    },
+    plugins: [etiquetteFinale(euros100, [0], true)],
+  });
+}
+
 // --- Camemberts (portrait des entreprises) ------------------------------------------
 
 export function dessinerCamembert(idCanvas, valeurs, variablesCouleurs, libelles) {

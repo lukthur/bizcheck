@@ -247,7 +247,7 @@ GROUP BY {niveaux("f.annee")}
 HAVING zone IS NOT NULL
 """
 
-# Comptes annuels (ratios Banque de France / INPI) : un exercice par entreprise et par année,
+# Comptes annuels (ratios financiers BCE / INPI, ministère de l'Économie) : un exercice par entreprise et par année,
 # comptes complets ou simplifiés (pas les comptes consolidés de groupes), chiffre d'affaires > 0
 TABLE_COMPTES = """
 CREATE TEMP TABLE comptes AS
@@ -258,6 +258,9 @@ SELECT
     r.marge_ebe,
     r.resultat_net,
     r.credit_clients_jours,
+    r.credit_fournisseurs_jours,
+    r.rotation_des_stocks_jours,
+    r.taux_d_endettement,
     e.naf, e.dep, e.reg
 FROM read_parquet($ratios) r
 JOIN entreprises e USING (siren)
@@ -277,7 +280,14 @@ SELECT {NAF_ET_ZONE},
     MEDIAN(marge_ebe) AS marge_ebe_mediane,
     MEDIAN(100.0 * resultat_net / ca) AS marge_nette_mediane,
     100.0 * AVG(CASE WHEN resultat_net < 0 THEN 1 ELSE 0 END) AS part_deficitaires,
-    MEDIAN(credit_clients_jours) AS delai_clients_median
+    MEDIAN(credit_clients_jours) AS delai_clients_median,
+    QUANTILE_CONT(ca, 0.25) AS ca_quartile_bas,
+    QUANTILE_CONT(ca, 0.75) AS ca_quartile_haut,
+    MEDIAN(credit_fournisseurs_jours) AS delai_fournisseurs_median,
+    -- jours de stock : seulement les sociétés qui ont des stocks (les services n'en ont souvent pas)
+    MEDIAN(rotation_des_stocks_jours) FILTER (WHERE rotation_des_stocks_jours > 0) AS jours_stock_median,
+    100.0 * AVG(CASE WHEN rotation_des_stocks_jours > 0 THEN 1 ELSE 0 END) AS part_avec_stock,
+    MEDIAN(taux_d_endettement) AS endettement_median
 FROM comptes
 WHERE annee = $annee
 GROUP BY {niveaux()}
@@ -285,7 +295,9 @@ HAVING zone IS NOT NULL
 """
 
 INDICATEURS_COMPTES = ["nombre", "ca_median", "marge_ebe_mediane", "marge_nette_mediane",
-                       "part_deficitaires", "delai_clients_median"]
+                       "part_deficitaires", "delai_clients_median", "ca_quartile_bas", "ca_quartile_haut",
+                       "delai_fournisseurs_median", "jours_stock_median", "part_avec_stock",
+                       "endettement_median"]
 
 
 def calculer_comptes(executer, zone_de):

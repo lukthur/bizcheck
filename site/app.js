@@ -7,7 +7,7 @@
 
 import { colorer, preparerCarte } from "./carte.js";
 import { textesAide } from "./aides.js";
-import { afficherEconomie, afficherTerritoire } from "./economie.js";
+import { afficherEconomie, afficherFinances, afficherTerritoire } from "./economie.js";
 import {
   dessinerCamembert, dessinerEvolution, dessinerSaison, dessinerSurvie, tauxSurvie,
 } from "./graphiques.js";
@@ -29,6 +29,7 @@ const etat = {
   classement: {},     // secteurs.json, par code NAF : évolution et rang national
   tous: null,         // naf/TOUS.json : toutes activités confondues (point de comparaison)
   salaires: null,     // salaires.json : salaire moyen par famille de secteurs
+  esane: null,        // esane.json : comptes des secteurs en France (INSEE Ésane)
   index: null,        // index du moteur de recherche
   chiffres: null,     // naf/<code>.json du secteur affiché
   zone: "FR",
@@ -97,15 +98,17 @@ async function demarrer() {
   let classement;
   let fondDeCarte;
   try {
-    [etat.infos, etat.zones, listeSecteurs, classement, etat.tous, fondDeCarte, etat.salaires] = await Promise.all([
-      lireJson("donnees/infos.json"),
-      lireJson("donnees/zones.json"),
-      lireJson("donnees/recherche.json"),
-      lireJson("donnees/secteurs.json"),
-      lireJson("donnees/naf/TOUS.json"),
-      lireJson("donnees/carte.json"),
-      lireJson("donnees/salaires.json"),
-    ]);
+    [etat.infos, etat.zones, listeSecteurs, classement, etat.tous, fondDeCarte, etat.salaires, etat.esane] =
+      await Promise.all([
+        lireJson("donnees/infos.json"),
+        lireJson("donnees/zones.json"),
+        lireJson("donnees/recherche.json"),
+        lireJson("donnees/secteurs.json"),
+        lireJson("donnees/naf/TOUS.json"),
+        lireJson("donnees/carte.json"),
+        lireJson("donnees/salaires.json"),
+        lireJson("donnees/esane.json"),
+      ]);
   } catch (erreur) {
     afficherErreur("Impossible de lire les données. Le site doit être ouvert via le serveur local "
       + "(lancer_site.bat), pas en double-cliquant sur index.html.");
@@ -116,6 +119,7 @@ async function demarrer() {
   etat.index = creerIndex(listeSecteurs);
 
   etat.zone = etat.zones[parametres.get("zone")] ? parametres.get("zone") : "FR";
+  afficherPeriodeDonnees();
   remplirChoixZone();
   $("choix-zone").addEventListener("change", (e) => changerZone(e.target.value));
   brancherRecherche();
@@ -176,6 +180,16 @@ function remplirChoixZone() {
     choix.append(groupe);
   }
   choix.value = etat.zone;
+}
+
+// Période couverte, lue dans infos.json (rien d'écrit à la main : change seule chaque année)
+function afficherPeriodeDonnees() {
+  const derniere = etat.infos.annees[etat.infos.annees.length - 1];
+  const { annee_esane: esane, annee_comptes: comptes } = etat.infos;
+  const anneesComptes = esane && esane !== comptes ? `${Math.min(esane, comptes)}–${Math.max(esane, comptes)}` : comptes;
+  $("badge-entete").textContent = `Données officielles jusqu'à fin ${derniere}`;
+  $("periode-donnees").textContent = `Chiffres jusqu'à fin ${derniere} · base Sirene du `
+    + `${formaterDate(etat.infos.sources[0].date_actualisation)} · comptes ${anneesComptes}`;
 }
 
 // --- Accueil : secteurs en plus forte progression / plus fort déclin (France entière) ----
@@ -426,6 +440,7 @@ function afficher() {
   afficherTableau(historique);
   afficherSurvieEtPortrait();
   afficherEconomie({ ...etat, zone: etat.zone, codeNaf: code });
+  afficherFinances({ esane: etat.esane, zone: etat.zone, codeNaf: code, aides: etat.aides });
   afficherTerritoire({ infos: etat.infos, zones: etat.zones, zone: etat.zone, aides: etat.aides });
   afficherSaison();
   colorer(etat.chiffres, etat.zones, etat.zone, etat.infos);
@@ -744,9 +759,13 @@ function afficherSources() {
     defaillances: `Source : BODACC, jugements d'ouverture de redressement ou de liquidation judiciaire, une fois `
       + `par entreprise et par an, rattachés au secteur et au siège via Sirene. Limite : un redressement peut `
       + `réussir ; taux = défaillances / entreprises actives au 1er janvier.`,
-    comptes: `Source : ratios financiers Banque de France / INPI. Limite : seulement les sociétés qui publient `
+    comptes: `Source : comptes annuels déposés à l'INPI, ratios du ministère de l'Économie (data.economie.gouv.fr). Limite : seulement les sociétés qui publient `
       + `leurs comptes (ni entrepreneurs individuels, ni micro-entreprises, ni comptes confidentiels) ; les `
       + `comptes arrivent avec un an de décalage.`,
+    esane: `Source : INSEE, Ésane ${infos.annee_esane} (comptes de toutes les entreprises du secteur en France, `
+      + `publiés le ${formaterDate(infos.sources.find((s) => s.nom.includes("Ésane")).date_actualisation)}). Limite : France entière `
+      + `seulement, une seule année, environ deux ans de décalage ; moyennes tirées vers le haut par les grandes `
+      + `entreprises ; « entreprise » au sens de l'INSEE (un groupe de sociétés peut compter pour une seule).`,
     territoire: `Sources : INSEE, populations municipales (recensement) et Filosofi (niveau de vie par unité de `
       + `consommation, après impôts et prestations). Limite : Filosofi ne couvre pas Mayotte.`,
   };

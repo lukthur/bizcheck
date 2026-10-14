@@ -10,6 +10,7 @@ France, chaque région et chaque département :
   - saisonnalité des créations (France)
   - établissements actifs par zone et par commune (concurrence locale)
   - emploi salarié (URSSAF), défaillances (BODACC), médianes financières (comptes annuels)
+  - comptes de chaque secteur en France (INSEE Ésane) : chiffre d'affaires, coûts, bénéfice
 puis prépare la recherche par activité et le fond de carte.
 
 Les calculs sont dans indicateurs.py, les téléchargements dans sources.py,
@@ -22,6 +23,7 @@ Fichiers écrits dans site/donnees/ :
   - recherche.json   : libellés, notes INSEE et synonymes pour la barre de recherche
   - communes.json    : liste des communes (nom, département, population, revenu, évolution)
   - salaires.json    : salaire moyen par famille de secteurs (URSSAF)
+  - esane.json       : comptes des secteurs en France (INSEE Ésane, une année)
   - carte.json       : tracés des départements
   - naf/<code>.json  : chiffres d'un secteur pour chaque zone (naf/TOUS.json : tous secteurs)
   - communes/<code>.json : établissements actifs d'un secteur par commune
@@ -36,6 +38,7 @@ import sys
 from datetime import date, datetime
 
 import carte
+import esane
 import indicateurs
 import sources
 import territoires
@@ -136,7 +139,7 @@ def vider_sorties():
 
 
 def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources,
-                contexte, salaires, annee_comptes):
+                contexte, salaires, annee_comptes, comptes_secteurs):
     vider_sorties()
 
     for naf, chiffres_zones in resultats.items():
@@ -151,6 +154,7 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
     ecrire_json(DOSSIER_SORTIES / "zones.json", zones, lisible=True)
     ecrire_json(DOSSIER_SORTIES / "carte.json", carte.construire_carte())
     ecrire_json(DOSSIER_SORTIES / "salaires.json", salaires, lisible=True)
+    ecrire_json(DOSSIER_SORTIES / "esane.json", comptes_secteurs)
 
     # Communes, de la plus peuplée à la moins peuplée (ordre utile pour la recherche de ville) :
     # [code, nom, département, population, codes postaux, niveau de vie médian, évolution de la population en %]
@@ -171,6 +175,7 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
         "durees_survie": DUREES_SURVIE,
         "nb_annees_saisonnalite": NB_ANNEES_SAISONNALITE,
         "annee_comptes": annee_comptes,
+        "annee_esane": comptes_secteurs["annee"],
         "annees_population": [territoires.ANNEE_POPULATION_DEBUT, territoires.ANNEE_POPULATION_FIN],
         "annee_revenus": 2023,
         "date_reference": ul["date_mise_a_jour"],
@@ -211,7 +216,8 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
         ] + [
             {"nom": infos_sources[cle]["nom"], "lien": infos_sources[cle]["url"],
              "date_actualisation": infos_sources[cle]["date_mise_a_jour"]}
-            for cle in ("effectifs", "salaires", "comptes", "defaillances", "revenus", "population_historique")
+            for cle in ("effectifs", "salaires", "comptes", "esane", "defaillances", "revenus",
+                        "population_historique")
         ],
         "limites": [
             "Le code NAF est l'activité principale actuelle de l'entreprise : une entreprise "
@@ -239,6 +245,10 @@ def enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_so
             "Comptes : seulement les sociétés qui déposent des comptes publics (ni les entrepreneurs "
             "individuels, ni les micro-entreprises, ni les comptes confidentiels). Ce sont des médianes : "
             "la moitié des entreprises fait plus, l'autre moitié moins.",
+            "Comptes des secteurs (INSEE Ésane) : toutes les entreprises du secteur en France, micro-entrepreneurs "
+            "compris, une seule année, publiée avec près de deux ans de décalage. Pas de détail par région. "
+            "Les moyennes sont tirées vers le haut par les grandes entreprises. La répartition des coûts porte "
+            "sur le groupe de secteurs (3 premiers chiffres du code NAF), plus large que le code NAF.",
             "Défaillances : ouvertures de redressement ou de liquidation judiciaire publiées au BODACC, "
             "une fois par entreprise et par an. Une défaillance ne veut pas toujours dire disparition "
             "(un redressement peut réussir).",
@@ -256,6 +266,7 @@ if __name__ == "__main__":
         "cog": sources.telecharger_cog(),
         "population": sources.telecharger_population(),
         **sources.telecharger_lot2(),
+        "esane": sources.telecharger_esane(),
     }
     sources.telecharger_naf()
     sources.telecharger_contours()
@@ -269,6 +280,7 @@ if __name__ == "__main__":
     for code, zone in zones.items():
         zone.update(contexte.get(code, {}))
     salaires = territoires.salaires_par_division()
+    comptes_secteurs = esane.comptes_des_secteurs(infos_sources["esane"])
 
     print(f"\nCalcul des indicateurs : {len(libelles_naf)} secteurs × {len(zones)} zones, "
           f"années {ANNEES[0]} à {ANNEES[-1]}...")
@@ -278,7 +290,7 @@ if __name__ == "__main__":
     secteurs = classement(resultats, libelles_naf)
     afficher(resultats, libelles_naf, secteurs)
     enregistrer(resultats, communes_par_naf, secteurs, zones, communes, infos_sources,
-                contexte, salaires, annee_comptes)
+                contexte, salaires, annee_comptes, comptes_secteurs)
     print()
     preparer_recherche(libelles_naf, {s["code_naf"]: s["entreprises_actives"] for s in secteurs},
                        DOSSIER_SORTIES / "recherche.json")
